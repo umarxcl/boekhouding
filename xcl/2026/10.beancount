@@ -508,7 +508,7 @@
   wio-fee-ref: "323267128"
   goedkeuring: "2026-11-03"
   antwoord: "zakelijk, waarderingen van bedrijven"
-  note: "neWings invoice 2026-0098 is addressed to MZML Holding B.V.; XCL paid on its behalf: receivable on MZML Holding B.V."
+  note: "neWings invoice 2026-0098 (revaluation Ekmekci Group B.V. and The Ocean B.V., Sept 2026) is for MZML Holding B.V. itself (owner decision 3-11-2026); XCL paid on its behalf: receivable on MZML Holding B.V., to be repaid"
   Assets:Bank:Wio-AED                             -3,756.10 AED
   Assets:Bank:Wio-AED                                -75.12 AED
   Assets:Rekening-courant:MZML-BV                     75.12 AED

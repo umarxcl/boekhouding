@@ -69,4 +69,4 @@ Eén regel per besluit dat de boekingen of de werkwijze bepaalt. Bron is altijd 
 | 2026-11-03 | Bonnen in Gmail gevonden: Emirates D2CWJ6 (11-5), ACUNS lidmaatschap en Annual Meeting | Vlag weg, verwijzing in metadata `document` |
 | 2026-11-03 | Emirates AED 122, 57, 11 (augustus): geen bon in Gmail | Privé (rekening-courant) |
 | 2026-11-03 | Herinnering: doorbelastingsfactuur aan Point Sixteen (koerier AED 516,68) opstellen bij de start van de facturatiemodule | Assets:Debiteuren:Point-Sixteen, vlag ! tot de factuur er is |
-| 2026-11-03 | neWings 2026-0098 staat op MZML Holding B.V. ADVIES Claude (nog geen besluit Umar): niet omzetten naar XCL, de waarderingen dienen de NL-structuur en niet de omzet van XCL | Assets:Rekening-courant:MZML-BV, terug te vorderen van MZML B.V. |
+| 2026-11-03 | neWings 2026-0098 (herwaardering Ekmekci en The Ocean, sept 2026) is voor MZML Holding B.V. zelf (besluit Umar); factuur blijft op MZML B.V. | Assets:Rekening-courant:MZML-BV AED 3.831,22; MZML B.V. betaalt XCL terug (Hans boekt in AFAS) |
