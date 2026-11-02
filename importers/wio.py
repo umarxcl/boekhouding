@@ -1,24 +1,25 @@
 #!/usr/bin/env python3
-"""Importer voor Wio Business CSV-exporten (XCL).
+"""Importer for Wio Business CSV exports (XCL).
 
-Gebruik:
+Usage:
     python3 importers/wio.py <export.csv> [--ledger xcl/main.beancount] [--rules importers/rules_xcl.yaml]
-                             [--out xcl/2026/import_<datum>.beancount] [--dry-run]
+                             [--out xcl/2026/import_<date>.beancount] [--dry-run]
 
-Wat het doet:
-  1. Leest de Wio-export (beide rekeningen, AED en EUR, in een bestand).
-  2. Slaat regels over waarvan het referentienummer al in het grootboek staat (dedup).
-  3. Koppelt valutawissels (EUR-regel + AED-regel met opeenvolgende referentienummers) tot een boeking met koers.
-  4. Koppelt Wio's wisselkoersopslag ("Original ref. number") aan de kaartbetaling waar hij bij hoort.
-  5. Categoriseert op de regels in rules_xcl.yaml; zonder regel: Expenses:Onbekend met vlag "!".
-  6. Schrijft Beancount-boekingen met metadata (ref, bron, uitleg) en een uitzonderingenlijst (JSON) voor de goedkeurings-Sheet.
+What it does:
+  1. Reads the Wio export (both accounts, AED and EUR, in one file).
+  2. Skips lines whose reference number is already in the ledger (dedup).
+  3. Pairs currency exchanges (EUR line + AED line with nearby reference numbers) into one entry with the rate.
+  4. Attaches Wio's foreign exchange mark-up ("Original ref. number") to the card payment it belongs to.
+  5. Categorises with the rules in rules_xcl.yaml; without a rule: Expenses:Suspense with flag "!".
+  6. Writes Beancount entries with metadata (ref, source, note) and an exceptions list (JSON) for the approval Sheet.
+  7. Links attachments in Drive via importers/documenten_xcl.yaml (key: Wio reference): document/drive-id metadata and,
+     when the receipt makes the expense business (owner rule 2-11-2026), the business account instead of the
+     director's current account.
+  8. Writes a balance assertion per bank account on the first of each month, so every month-end balance ties to the
+     Wio statement.
 
-  7. Koppelt bijlagen uit Drive via importers/documenten_xcl.yaml (sleutel: Wio-referentie): metadata document/drive-id en,
-     als de bon de uitgave zakelijk maakt (regel Umar 2-11-2026), de zakelijke rekening in plaats van de rekening-courant.
-  8. Schrijft per maand-eerste een balance-regel per bankrekening, zodat elk maandsaldo tegen het Wio-afschrift sluit.
-
-Alles wat de importer niet zeker weet krijgt de vlag "!" en komt op de lijst. De importer boekt nooit iets definitief:
-pas na goedkeuring wordt de vlag weggehaald en de maand gesloten.
+Everything the importer is not sure about gets flag "!" and goes on the list. The importer never books anything as final:
+only after approval is the flag removed and the month closed.
 """
 from __future__ import annotations
 
@@ -39,12 +40,12 @@ ACCOUNT_BY_IBAN = {
     "AE450860000009202341633": ("Assets:Bank:Wio-AED", "AED"),
     "AE320860000009506419892": ("Assets:Bank:Wio-EUR", "EUR"),
 }
-UNKNOWN = "Expenses:Onbekend"
+UNKNOWN = "Expenses:Suspense"
 PRICES = Path(__file__).resolve().parent.parent / "shared/prices.beancount"
 
 
 def load_prices() -> list[tuple[date, Decimal]]:
-    """EUR/AED-koersen uit shared/prices.beancount (CBUAE), oplopend op datum."""
+    """EUR/AED rates from shared/prices.beancount (CBUAE), ascending by date."""
     out = []
     for line in PRICES.read_text(encoding="utf-8").splitlines():
         m = re.match(r"^(\d{4}-\d{2}-\d{2})\s+price\s+EUR\s+([\d.]+)\s+AED", line)
@@ -54,7 +55,7 @@ def load_prices() -> list[tuple[date, Decimal]]:
 
 
 def rate_on(prices: list[tuple[date, Decimal]], d: date) -> tuple[date, Decimal] | None:
-    """Laatste CBUAE-koers op of vóór de datum (None als er geen is: dan komt de post op de lijst)."""
+    """Last CBUAE rate on or before the date (None if there is none: the item then goes on the list)."""
     r = None
     for pd_, px in prices:
         if pd_ <= d:
@@ -65,7 +66,7 @@ def rate_on(prices: list[tuple[date, Decimal]], d: date) -> tuple[date, Decimal]
 
 
 def load_account_currencies(accounts: Path) -> dict[str, set[str]]:
-    """Toegestane valuta's per rekening uit accounts.beancount (de importer past het rekeningschema nooit aan)."""
+    """Allowed currencies per account from accounts.beancount (the importer never changes the chart of accounts)."""
     out: dict[str, set[str]] = {}
     for line in accounts.read_text(encoding="utf-8").splitlines():
         m = re.match(r"^\d{4}-\d{2}-\d{2}\s+open\s+(\S+)\s+([A-Z,]+)", line)
@@ -75,11 +76,11 @@ def load_account_currencies(accounts: Path) -> dict[str, set[str]]:
 
 
 def load_documents(path: Path) -> dict[str, dict]:
-    """Bijlagekoppelingen per Wio-referentie (importers/documenten_xcl.yaml)."""
+    """Attachment links per Wio reference (importers/documenten_xcl.yaml)."""
     if not path.exists():
         return {}
     data = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
-    return {str(k): v for k, v in (data.get("documenten") or {}).items()}
+    return {str(k): v for k, v in (data.get("documents") or {}).items()}
 
 
 @dataclass
@@ -97,7 +98,7 @@ class Row:
     account: str = ""
     payee: str = ""
     flag: str = ""
-    nl: str = ""
+    note: str = ""
     fx_fee: Decimal | None = None
     fx_fee_ref: str = ""
     fx_fee_kind: str = ""
@@ -120,7 +121,7 @@ def read_export(path: Path) -> list[Row]:
         for r in csv.DictReader(f):
             iban = r["Account IBAN"].strip()
             if iban not in ACCOUNT_BY_IBAN:
-                raise SystemExit(f"Onbekende rekening in export: {iban}")
+                raise SystemExit(f"Unknown account in export: {iban}")
             rows.append(Row(
                 iban=iban,
                 currency=r["Account currency"].strip(),
@@ -137,7 +138,7 @@ def read_export(path: Path) -> list[Row]:
 
 
 def existing_refs(ledger: Path) -> set[str]:
-    """Referentienummers die al in het grootboek staan (metadata wio-ref en wio-fee-ref)."""
+    """Reference numbers already in the ledger (metadata wio-ref, wio-ref-2 and wio-fee-ref)."""
     refs: set[str] = set()
     pat = re.compile(r'^\s*wio-(?:ref|fee-ref|ref-2):\s*"?(\d+)"?', re.M)
     for p in [ledger.parent / "2026"]:
@@ -173,8 +174,8 @@ def match_rule(row: Row, rules: list[dict]) -> dict | None:
 
 
 def pair_fx(rows: list[Row]) -> list[tuple[Row, Row]]:
-    """Koppel valutawissels: de afboeking (negatief) en de bijboeking (positief) in de andere valuta staan op dezelfde dag met
-    dicht bij elkaar liggende referentienummers; de koers EUR/AED moet geloofwaardig zijn (3,9 tot 4,7)."""
+    """Pair currency exchanges: the debit (negative) and the credit (positive) in the other currency are on the same day with
+    nearby reference numbers; the EUR/AED rate must be plausible (3.9 to 4.7)."""
     ex = sorted((r for r in rows if r.ttype == "Currency exchange"), key=lambda r: (r.date, int(r.ref)))
     pairs: list[tuple[Row, Row]] = []
     used: set[str] = set()
@@ -196,7 +197,7 @@ def pair_fx(rows: list[Row]) -> list[tuple[Row, Row]]:
 
 
 def attach_fees(rows: list[Row]) -> None:
-    """Wio's wisselkoersopslag hoort bij de kaartbetaling met hetzelfde 'Original ref. number'."""
+    """Wio's foreign exchange mark-up belongs to the card payment with the same 'Original ref. number'."""
     by_ref = {r.ref: r for r in rows}
     for r in rows:
         if r.ttype == "Fees" and r.orig_ref and r.orig_ref in by_ref:
@@ -205,7 +206,7 @@ def attach_fees(rows: list[Row]) -> None:
             parent.fx_fee_ref = r.ref
             parent.tags += " " + r.desc.lower()
             if "foreign exchange" not in r.desc.lower():
-                parent.fx_fee_kind = "overig"
+                parent.fx_fee_kind = "other"
             r.ttype = "_attached"
 
 
@@ -213,29 +214,29 @@ def fmt_amount(x: Decimal, cur: str) -> str:
     return f"{q2(x):,.2f} {cur}"
 
 
-PRIVATE = "Assets:Rekening-courant:Umar"
+PRIVATE = "Assets:Receivables:Director:Umar"
 
 
 def entry_for(row: Row, prices: list[tuple[date, Decimal]], acct_cur: dict[str, set[str]] | None = None) -> str:
     acct = row.account or UNKNOWN
     flag = row.flag or ("!" if acct == UNKNOWN else "*")
     allowed = (acct_cur or {}).get(acct)
-    extra_nl = ""
-    # Rekeningen die geen EUR voeren (resultaat, eigen vermogen, AED-debiteuren): een EUR-regel wordt omgerekend tegen de
-    # CBUAE-koers van de dag. Geen koers = vlag "!". Een AED-regel op een rekening zonder AED valt terug op Onbekend.
+    extra_note = ""
+    # Accounts that do not hold EUR (income, expenses, equity, AED receivables): an EUR line is converted at the
+    # CBUAE rate of the day. No rate = flag "!". An AED line on an account without AED falls back to Suspense.
     convert = row.currency == "EUR" and allowed is not None and "EUR" not in allowed
     if convert is False and row.currency == "EUR" and allowed is None:
         convert = acct.split(":")[0] in ("Income", "Expenses")
     if allowed is not None and row.currency not in allowed and not convert:
-        extra_nl = f"Rekening {acct} kent geen {row.currency}: ontbrekende rekening of andere keuze nodig"
+        extra_note = f"Account {acct} does not hold {row.currency}: missing account or another choice needed"
         acct, flag = UNKNOWN, "!"
     found = rate_on(prices, row.date) if convert else None
     rate = found[1] if found else None
     stale = bool(found) and (row.date - found[0]).days > 4
     if convert and (rate is None or stale):
         flag = "!"
-        extra_nl = ("Geen CBUAE-koers van deze dag in shared/prices.beancount; laatst bekende koers gebruikt, koers toevoegen"
-                    if rate is not None else "Geen CBUAE-koers beschikbaar: koers toevoegen")
+        extra_note = ("No CBUAE rate for this day in shared/prices.beancount; last known rate used, add the rate"
+                      if rate is not None else "No CBUAE rate available: add the rate")
     payee = row.payee or row.desc
     narration = row.desc if row.notes in ("", "N/A") else f"{row.desc} | {row.notes}"
     narration = narration.replace('"', "'")
@@ -243,28 +244,28 @@ def entry_for(row: Row, prices: list[tuple[date, Decimal]], acct_cur: dict[str, 
     lines = [f'{row.date.isoformat()} {flag} "{payee}" "{narration}"',
              f'  wio-ref: "{row.ref}"',
              f'  wio-type: "{row.ttype}"',
-             f'  bron: "Wio-export"']
+             f'  source: "Wio export"']
     inv = re.search(r"INV-\d{4}", row.notes)
     if inv:
-        lines.append(f'  factuur: "{inv.group(0)}"')
+        lines.append(f'  invoice: "{inv.group(0)}"')
     for i, (dname, did) in enumerate(row.docs):
         suf = "" if i == 0 else f"-{i + 1}"
         lines.append(f'  document{suf}: "{dname}"')
         lines.append(f'  drive-id{suf}: "{did}"')
-    nl = row.nl or extra_nl
-    if row.nl and extra_nl:
-        nl = f"{row.nl} | {extra_nl}"
-    if nl:
-        lines.append(f'  nl: "{nl}"')
+    note = row.note or extra_note
+    if row.note and extra_note:
+        note = f"{row.note} | {extra_note}"
+    if note:
+        lines.append(f'  note: "{note}"')
     if row.fx_fee:
         lines.append(f'  wio-fee-ref: "{row.fx_fee_ref}"')
-    # Kosten die Wio bij de betaling rekent: bij een privé-uitgave horen ze bij de rekening-courant, anders bankkosten.
-    fee_acct = ("Expenses:Bank:Kosten" if row.fx_fee_kind == "overig" else "Expenses:Bank:Wisselkosten")
+    # Fees Wio charges with the payment: for a private expense they go to the director's current account, else bank charges.
+    fee_acct = ("Expenses:Bank:Charges" if row.fx_fee_kind == "other" else "Expenses:Bank:FXCharges")
     if row.fx_fee and acct == PRIVATE:
         fee_acct = PRIVATE
     if convert and rate is not None:
         aed = q2(-row.amount * rate)
-        lines.append(f'  koers: "CBUAE {rate} AED per EUR (koers van {found[0].isoformat()})"')
+        lines.append(f'  rate: "CBUAE {rate} AED per EUR (rate of {found[0].isoformat()})"')
         lines.append(f"  {row.bank_account:<42} {fmt_amount(row.amount, 'EUR'):>18} @@ {fmt_amount(abs(aed), 'AED')}")
         lines.append(f"  {acct:<42} {fmt_amount(aed, 'AED'):>18}")
         return "\n".join(lines) + "\n"
@@ -280,22 +281,22 @@ def entry_for(row: Row, prices: list[tuple[date, Decimal]], acct_cur: dict[str, 
 
 
 def entry_for_fx(a: Row, b: Row) -> str:
-    """a = afboeking (negatief), b = bijboeking (positief) in de andere valuta."""
+    """a = debit line (negative), b = credit line (positive) in the other currency."""
     aed, eur = (b.amount, -a.amount) if b.currency == "AED" else (-a.amount, b.amount)
     rate = (aed / eur).quantize(Decimal("0.0001"))
     return "\n".join([
-        f'{a.date.isoformat()} * "Wio" "Valutawissel {a.currency} naar {b.currency} (koers {rate})"',
+        f'{a.date.isoformat()} * "Wio" "Currency exchange {a.currency} to {b.currency} (rate {rate})"',
         f'  wio-ref: "{a.ref}"',
         f'  wio-ref-2: "{b.ref}"',
         f'  wio-type: "Currency exchange"',
-        f'  bron: "Wio-export"',
+        f'  source: "Wio export"',
         f"  {a.bank_account:<42} {fmt_amount(a.amount, a.currency):>18} @@ {fmt_amount(b.amount, b.currency)}",
         f"  {b.bank_account:<42} {fmt_amount(b.amount, b.currency):>18}",
     ]) + "\n"
 
 
 def month_starts(d0: date, d1: date) -> list[date]:
-    """Eerste dag van elke maand na d0 tot en met d1."""
+    """First day of every month after d0 up to and including d1."""
     out, y, m = [], d0.year, d0.month
     while True:
         m += 1
@@ -313,10 +314,10 @@ def main() -> None:
     ap.add_argument("--ledger", type=Path, default=Path("xcl/main.beancount"))
     ap.add_argument("--rules", type=Path, default=Path("importers/rules_xcl.yaml"))
     ap.add_argument("--documents", type=Path, default=Path("importers/documenten_xcl.yaml"))
-    ap.add_argument("--since", type=date.fromisoformat, help="alleen regels vanaf deze datum (inclusief)")
-    ap.add_argument("--until", type=date.fromisoformat, help="alleen regels tot en met deze datum")
+    ap.add_argument("--since", type=date.fromisoformat, help="only lines from this date (inclusive)")
+    ap.add_argument("--until", type=date.fromisoformat, help="only lines up to and including this date")
     ap.add_argument("--out", type=Path)
-    ap.add_argument("--exceptions", type=Path, help="JSON met de uitzonderingenlijst voor de goedkeurings-Sheet")
+    ap.add_argument("--exceptions", type=Path, help="JSON with the exceptions list for the approval Sheet")
     ap.add_argument("--dry-run", action="store_true")
     args = ap.parse_args()
 
@@ -346,7 +347,7 @@ def main() -> None:
 
     for r in sorted(rows, key=lambda x: (x.date, int(x.ref))):
         if r.iban not in first_balance:
-            # saldo vóór de eerste regel van de export: moet aansluiten op wat al in het grootboek staat
+            # balance before the first line of the export: must tie to what is already in the ledger
             first_balance[r.iban] = (r.date, r.balance - r.amount, r.currency)
         series.setdefault(r.iban, []).append((r.date, r.balance))
         if r.ttype == "_attached" or r.ref in fx_refs:
@@ -354,34 +355,34 @@ def main() -> None:
         rule = match_rule(r, rules)
         if rule:
             r.account, r.payee = rule["account"], rule.get("payee", "")
-            r.flag, r.nl = rule.get("flag", ""), rule.get("nl", "")
+            r.flag, r.note = rule.get("flag", ""), rule.get("note", "")
         doc = docs.get(r.ref)
         if doc:
-            r.docs = [(d["naam"], d["id"]) for d in doc.get("bestanden", [])]
+            r.docs = [(d["name"], d["id"]) for d in doc.get("files", [])]
             if doc.get("account"):
                 r.account = doc["account"]
             if "flag" in doc:
                 r.flag = doc["flag"] or ""
-            if doc.get("nl"):
-                r.nl = doc["nl"]
+            if doc.get("note"):
+                r.note = doc["note"]
             elif doc.get("account") and not doc.get("flag"):
-                r.nl = "Bon of factuur in Drive gekoppeld: zakelijk (regel Umar 2-11-2026)"
+                r.note = "Receipt or invoice linked in Drive: business (owner rule 2-11-2026)"
         entries.append(entry_for(r, prices, acct_cur))
         acct, flag = r.final
         if flag == "!":
             exceptions.append({
-                "datum": r.date.isoformat(), "ref": r.ref, "rekening": r.bank_account,
-                "bedrag": str(q2(r.amount)), "valuta": r.currency,
-                "omschrijving": r.desc, "notitie": r.notes,
-                "voorstel": acct, "uitleg": r.nl or "Geen regel gevonden: welke rekening?",
+                "date": r.date.isoformat(), "ref": r.ref, "bank_account": r.bank_account,
+                "amount": str(q2(r.amount)), "currency": r.currency,
+                "description": r.desc, "bank_notes": r.notes,
+                "proposed_account": acct, "explanation": r.note or "No rule found: which account?",
                 "document": r.docs[0][0] if r.docs else "",
-                "akkoord": "", "opmerking": "",
+                "approved": "", "comment": "",
             })
     for a, b in fx_pairs:
         entries.append(entry_for_fx(a, b))
 
-    # Saldocontroles: begin (sluit aan op het grootboek vóór deze export), elke maandeerste en einde (dag na de laatste regel).
-    balances = ["; Saldocontroles: begin, elke maandeerste en einde, tegen het Wio-afschrift\n"]
+    # Balance assertions: start (ties to the ledger before this export), first of every month and end (day after the last line).
+    balances = ["; Balance assertions: start, first of every month and end, against the Wio statement\n"]
     for iban, (d, bal, cur) in first_balance.items():
         acct = ACCOUNT_BY_IBAN[iban][0]
         balances.append(f"{d.isoformat()} balance {acct:<32} {fmt_amount(bal, cur)}\n")
@@ -396,8 +397,8 @@ def main() -> None:
         if end not in marks:
             balances.append(f"{end.isoformat()} balance {acct:<32} {fmt_amount(ser[-1][1], cur)}\n")
 
-    header = (f"; Import uit {args.csv.name}\n; {len(entries)} boekingen, {len(fx_pairs)} valutawissels, "
-              f"{skipped} regels overgeslagen (al aanwezig), {len(exceptions)} op de uitzonderingenlijst\n\n")
+    header = (f"; Import from {args.csv.name}\n; {len(entries)} entries, {len(fx_pairs)} currency exchanges, "
+              f"{skipped} lines skipped (already present), {len(exceptions)} on the exceptions list\n\n")
     text = header + "\n".join(sorted(entries)) + "\n" + "".join(balances)
 
     if args.dry_run or not args.out:
@@ -405,7 +406,7 @@ def main() -> None:
     else:
         args.out.parent.mkdir(parents=True, exist_ok=True)
         args.out.write_text(text, encoding="utf-8")
-        print(f"Geschreven: {args.out} ({len(entries)} boekingen, {len(exceptions)} uitzonderingen, {skipped} overgeslagen)")
+        print(f"Written: {args.out} ({len(entries)} entries, {len(exceptions)} exceptions, {skipped} skipped)")
     if args.exceptions:
         args.exceptions.write_text(json.dumps(exceptions, ensure_ascii=False, indent=1), encoding="utf-8")
 

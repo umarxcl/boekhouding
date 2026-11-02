@@ -1,158 +1,158 @@
-# Categoriseringsregels voor XCL (Wio-export).
-# Hoofdregel (Umar, 2-11-2026): is er een bon of factuur in Drive, dan is de uitgave zakelijk; is die er niet, dan privé.
-# De importer boekt eerst op de regel hieronder; de documentkoppeling herboekt daarna naar zakelijk zodra een bon matcht.
-# Volgorde telt: de eerste regel die past, wint. Matching is hoofdletterongevoelig op
-# "Transaction type", "Description" en "Notes" samen. Geen regel = Expenses:Onbekend met vlag "!"
-# (komt op de uitzonderingenlijst). Nieuwe regels komen hier bij na goedkeuring van Umar.
+# Categorisation rules for XCL (Wio export).
+# Main rule (Umar, 2-11-2026): if there is a receipt or invoice in Drive, the expense is business; if not, it is private.
+# The importer first books per the rule below; the document link (documenten_xcl.yaml) then rebooks to business once a receipt matches.
+# Order matters: the first matching rule wins. Matching is case-insensitive on
+# "Transaction type", "Description" and "Notes" combined. No rule = Expenses:Suspense with flag "!"
+# (goes on the exceptions list). New rules are added here after Umar's approval.
 #
-# Velden per regel:
-#   match:   lijst van tekstfragmenten of regex (prefix "re:"); alle moeten voorkomen (AND)
-#   type:    optioneel, Wio "Transaction type" (Card, Fees, Transfers, Currency exchange)
-#   account: tegenrekening
-#   payee:   nette naam van de tegenpartij
-#   flag:    optioneel "!" om altijd op de uitzonderingenlijst te zetten (bijv. grote bedragen)
-#   currency: optioneel, alleen voor regels in deze valuta (EUR of AED)
-#   nl:      optioneel, uitleg die op de maandlijst komt
+# Fields per rule:
+#   match:   list of text fragments or regexes (prefix "re:"); all must occur (AND)
+#   type:    optional, Wio "Transaction type" (Card, Fees, Transfers, Currency exchange)
+#   account: contra account
+#   payee:   clean name of the counterparty
+#   flag:    optional "!" to always put the item on the exceptions list (e.g. large amounts)
+#   currency: optional, only for lines in this currency (EUR or AED)
+#   note:    optional, explanation shown on the monthly review list
 
 rules:
-  # --- Contant geld ------------------------------------------------------
-  # De importer geeft de pinopname een tag 'atm withdrawal fee' omdat Wio daar een aparte kostenregel voor boekt.
+  # --- Cash ---------------------------------------------------------------
+  # The importer tags the cash withdrawal 'atm withdrawal fee' because Wio books a separate fee line for it.
   - match: ["atm withdrawal"]
-    account: Assets:Rekening-courant:Umar
-    payee: "Contante opname"
-    nl: "Contante opname met de XCL-pas: rekening-courant directeur (besluit 18-10-2026)"
+    account: Assets:Receivables:Director:Umar
+    payee: "Cash withdrawal"
+    note: "Cash withdrawal with the XCL card: director's current account (decision 18-10-2026)"
 
-  # --- Villahuur (nog niet gespreid: dat volgt na besluit Umar) --------------
+  # --- Villa rent (not yet spread: follows after Umar's decision) ----------
   - match: ["sheikha latifa"]
     type: Transfers
-    account: Assets:Vooruitbetaald:Huisvesting
-    payee: "Verhuurder villa 1153A (Sheikha Latifa Ahmed Sultan al Qassemi)"
+    account: Assets:Prepayments:Housing
+    payee: "Landlord villa 1153A (Sheikha Latifa Ahmed Sultan al Qassemi)"
     flag: "!"
-    nl: "Kwartaalhuur villa (AED 42.500, 15 mei t/m 14 aug): vooruitbetaald, spreiding per maand volgt na jouw besluit"
+    note: "Quarterly villa rent (AED 42,500, 15 May to 14 Aug): prepaid, monthly spreading follows after your decision"
   - match: ["cheque payment"]
     type: Cheque
-    account: Assets:Vooruitbetaald:Huisvesting
-    payee: "Verhuurder villa (cheque 000002)"
+    account: Assets:Prepayments:Housing
+    payee: "Landlord villa (cheque 000002)"
     flag: "!"
-    nl: "Cheque van AED 42.500, zelfde bedrag als de kwartaalhuur: waarschijnlijk huur 15 aug t/m 14 nov; bevestig en lever de chequekopie"
+    note: "Cheque of AED 42,500, same amount as the quarterly rent: probably rent 15 Aug to 14 Nov; please confirm and provide the cheque copy"
   - match: ["to sajjad hussain"]
     type: Transfers
-    account: Assets:Vooruitbetaald:Huisvesting
+    account: Assets:Prepayments:Housing
     payee: "Sajjad Hussain"
     flag: "!"
-    nl: "Huur en commissie voor het huis (omschrijving 'Rent and commission Nesma house'): splitsing huur, commissie en borg nodig"
+    note: "Rent and commission for the house (description 'Rent and commission Nesma house'): split into rent, commission and deposit needed"
   - match: ["to azeem hussain"]
     type: Transfers
-    account: Assets:Rekening-courant:Umar
+    account: Assets:Receivables:Director:Umar
     payee: "Azeem Hussain"
     flag: "!"
-    nl: "Omschrijving 'Support': waarschijnlijk privé (rekening-courant); wie is dit en waarvoor?"
-  # --- Omzet en klanten -------------------------------------------------
+    note: "Description 'Support': probably private (director's current account); who is this and what was it for?"
+  # --- Revenue and customers -------------------------------------------
   - match: ["from ekmekci"]
     type: Transfers
-    account: Assets:Debiteuren:Ekmekci
+    account: Assets:Receivables:Trade:Ekmekci
     payee: "Ekmekci Group B.V."
-    nl: "Ontvangst managementfee; wordt afgeboekt op de openstaande factuur"
+    note: "Management fee received; settles the open invoice"
   - match: ["from mdi"]
     type: Transfers
-    account: Assets:Debiteuren:MDI
+    account: Assets:Receivables:Trade:MDI
     payee: "MDI Consultants B.V."
   - match: ["inclusionair"]
     type: Transfers
-    account: Assets:Debiteuren:Inclusionair
+    account: Assets:Receivables:Trade:Inclusionair
     payee: "Inclusionair"
   - match: ["point sixteen"]
     type: Transfers
-    account: Assets:Debiteuren:Point-Sixteen
+    account: Assets:Receivables:Trade:PointSixteen
     payee: "Point Sixteen B.V."
 
-  # --- Geld van Umar privé naar XCL ---------------------------------------
-  # EUR: lening aandeelhouder (rekening is alleen EUR). AED: de leningrekening kent geen AED; tot Umar beslist
-  # (en een AED-rekening is toegevoegd) staat dit op de rekening-courant, met vlag.
+  # --- Money from Umar (private) to XCL ----------------------------------
+  # EUR: shareholder loan (EUR account). AED: booked to the director's current account with a flag until Umar decides
+  # per transfer (loan, capital or repayment); Liabilities:ShareholderLoan:Umar-AED exists for the loan case.
   - match: ["re:from (hr |mr )?u ?f mirza|from umar"]
     type: Transfers
     currency: EUR
-    account: Liabilities:Lening-aandeelhouder:Umar
-    payee: "Umar Fahad Mirza (privé)"
+    account: Liabilities:ShareholderLoan:Umar-EUR
+    payee: "Umar Fahad Mirza (private)"
     flag: "!"
-    nl: "Geld van Umar privé naar XCL: lening van de aandeelhouder, tenzij het (deels) de kapitaalstorting van AED 48.000 is; vaststellen per overboeking"
+    note: "Money from Umar (private) to XCL: shareholder loan, unless it is (partly) the AED 48,000 capital payment; to be determined per transfer"
   - match: ["re:from (hr |mr )?u ?f mirza|from umar"]
     type: Transfers
     currency: AED
-    account: Assets:Rekening-courant:Umar
-    payee: "Umar Fahad Mirza (privé)"
+    account: Assets:Receivables:Director:Umar
+    payee: "Umar Fahad Mirza (private)"
     flag: "!"
-    nl: "Geld van Umar privé naar XCL in dirham: lening of kapitaal of terugstorting? De leningrekening kent alleen euro, daarom tijdelijk op de rekening-courant"
+    note: "Money from Umar (private) to XCL in dirham: loan, capital or repayment? The loan account is EUR only, so temporarily on the director's current account"
 
-  # --- Overboekingen naar Umar -------------------------------------------
+  # --- Transfers to Umar ------------------------------------------------
   - match: ["to umar fahad mirza", "salary"]
     type: Transfers
-    account: Liabilities:Personeel:Loonschuld-Umar
+    account: Liabilities:Employees:SalaryPayable-Umar
     payee: "Umar Fahad Mirza"
-    nl: "Salarisbetaling; verlaagt de loonschuld"
+    note: "Salary payment; reduces salary payable"
   - match: ["re:to umar fahad mirza (n|m)$"]
     type: Transfers
-    account: Assets:Rekening-courant:Umar
+    account: Assets:Receivables:Director:Umar
     payee: "Umar Fahad Mirza"
     flag: "!"
-    nl: "Overboeking naar jou met alleen een letter als omschrijving (juli 2026, samen AED 10.000): wat was dit? Zonder uitleg boek ik het als rekening-courant"
+    note: "Transfer to you with only a letter as description (July 2026, AED 10,000 in total): what was this? Without explanation it is booked to the director's current account"
   - match: ["to umar fahad mirza", "car rental"]
     type: Transfers
-    account: Assets:Rekening-courant:Umar
+    account: Assets:Receivables:Director:Umar
     payee: "Umar Fahad Mirza"
     flag: "!"
-    nl: "Omschrijving 'Car rental': was dit een zakelijke autohuur die jij betaald hebt (dan Auto:Huur) of privé (rekening-courant)?"
+    note: "Description 'Car rental': was this a business car rental that you paid (then Car:Rental) or private (director's current account)?"
   - match: ["to umar fahad mirza"]
     type: Transfers
-    account: Assets:Rekening-courant:Umar
+    account: Assets:Receivables:Director:Umar
     payee: "Umar Fahad Mirza"
-    nl: "Overboeking naar privé zonder Salary: rekening-courant directeur (besluit 18-10-2026), later verrekend met de loonschuld"
+    note: "Transfer to private account without 'Salary': director's current account (decision 18-10-2026), later set off against salary payable"
   - match: ["samira"]
     type: Transfers
-    account: Assets:Rekening-courant:Umar
+    account: Assets:Receivables:Director:Umar
     payee: "Samira (via Umar)"
-    nl: "Privé: leefgeld gezin, rekening-courant directeur"
+    note: "Private: family living allowance, director's current account"
 
-  # --- Leveranciers en overheid -------------------------------------------
+  # --- Suppliers and government --------------------------------------------
   - match: ["rd advisory"]
-    account: Expenses:Advies:Corporate-services
+    account: Expenses:Professional:CorporateServices
     payee: "RD Advisory FZCO"
   - match: ["ifza"]
-    account: Assets:Vooruitbetaald:Licentie
+    account: Assets:Prepayments:Licence
     payee: "IFZA"
     flag: "!"
-    nl: "Licentie of establishment card: eerst op vooruitbetaald, daarna maandelijks naar kosten over de licentieperiode"
+    note: "Licence or establishment card: first to prepayments, then expensed monthly over the licence period"
   - match: ["decisive zone"]
-    account: Assets:Rekening-courant:MZML-Ltd
-    payee: "Decisive Zone (voor MZML Ltd)"
+    account: Assets:Receivables:Related:MZML-Ltd
+    payee: "Decisive Zone (for MZML Ltd)"
     flag: "!"
 
-  # --- Auto -------------------------------------------------------------
+  # --- Car --------------------------------------------------------------
   - match: ["ezhire"]
-    account: Expenses:Auto:Huur
-    payee: "Ezhire (autohuur)"
+    account: Expenses:Car:Rental
+    payee: "Ezhire (car rental)"
   - match: ["adnoc"]
-    account: Expenses:Auto:Brandstof
+    account: Expenses:Car:Fuel
     payee: "ADNOC"
   - match: ["enoc"]
-    account: Expenses:Auto:Brandstof
+    account: Expenses:Car:Fuel
     payee: "ENOC"
   - match: ["salik"]
-    account: Expenses:Auto:Tol-parkeren
+    account: Expenses:Car:TollsParking
     payee: "Salik"
   - match: ["re:car park|parking|rta |mawaqif"]
-    account: Expenses:Auto:Tol-parkeren
-    payee: "Parkeren / RTA"
+    account: Expenses:Car:TollsParking
+    payee: "Parking / RTA"
 
-  # --- Vervoer en reizen ------------------------------------------------
+  # --- Transport and travel ---------------------------------------------
   - match: ["uber"]
-    account: Expenses:Reis:Vervoer
+    account: Expenses:Travel:LocalTransport
     payee: "Uber"
   - match: ["taxi"]
-    account: Expenses:Reis:Vervoer
+    account: Expenses:Travel:LocalTransport
     payee: "Taxi"
   - match: ["careem"]
-    account: Expenses:Reis:Vervoer
+    account: Expenses:Travel:LocalTransport
     payee: "Careem"
 
   # --- Telecom ----------------------------------------------------------
@@ -166,7 +166,7 @@ rules:
     account: Expenses:Telecom
     payee: "du"
 
-  # --- Software en AI ---------------------------------------------------
+  # --- Software and AI --------------------------------------------------
   - match: ["anthropic"]
     account: Expenses:Software:AI
     payee: "Anthropic"
@@ -180,207 +180,207 @@ rules:
     account: Expenses:Software:AI
     payee: "xAI (Grok)"
   - match: ["google workspace"]
-    account: Expenses:Software:Overig
+    account: Expenses:Software:Other
     payee: "Google Workspace"
   - match: ["google play"]
-    account: Assets:Rekening-courant:Umar
-    payee: "Google Play (apps en abonnementen)"
-    nl: "Regel Umar 2-11-2026: zakelijk zodra er een bon of factuur in Drive staat, anders privé (rekening-courant)"
+    account: Assets:Receivables:Director:Umar
+    payee: "Google Play (apps and subscriptions)"
+    note: "Owner rule 2-11-2026: business once a receipt or invoice is in Drive, otherwise private (director's current account)"
   - match: ["wl*google"]
-    account: Expenses:Software:Overig
+    account: Expenses:Software:Other
     payee: "Google (via Wio)"
   - match: ["dropbox"]
-    account: Expenses:Software:Overig
+    account: Expenses:Software:Other
     payee: "Dropbox"
   - match: ["transip"]
-    account: Expenses:Software:Overig
+    account: Expenses:Software:Other
     payee: "TransIP"
   - match: ["microsoft"]
-    account: Expenses:Software:Overig
+    account: Expenses:Software:Other
     payee: "Microsoft"
   - match: ["figma"]
-    account: Expenses:Software:Overig
+    account: Expenses:Software:Other
     payee: "Figma"
   - match: ["netlify"]
-    account: Expenses:Software:Overig
+    account: Expenses:Software:Other
     payee: "Netlify"
   - match: ["fiskl"]
-    account: Expenses:Software:Overig
+    account: Expenses:Software:Other
     payee: "Fiskl"
   - match: ["linkedin"]
     account: Expenses:Marketing
     payee: "LinkedIn Premium"
   - match: ["cardoo"]
-    account: Expenses:Auto:Huur
+    account: Expenses:Car:Rental
     payee: "Cardoo"
-    nl: "Autohuur (Cardoo Cyprus, contract 26020060); bevestigd door Umar 3-11-2026"
+    note: "Car rental (Cardoo Cyprus, contract 26020060); confirmed by Umar 3-11-2026"
   - match: ["olo technologi"]
-    account: Expenses:Software:Overig
+    account: Expenses:Software:Other
     payee: "Olo Technologies"
     flag: "!"
   - match: ["terrapinn"]
-    account: Expenses:Kantoor:Boeken-opleiding
-    payee: "Terrapinn (congres)"
-    nl: "Congres (Dubai AI Festival): zakelijk, bevestigd door Umar 3-11-2026"
+    account: Expenses:Office:BooksTraining
+    payee: "Terrapinn (conference)"
+    note: "Conference (Dubai AI Festival): business, confirmed by Umar 3-11-2026"
 
-  # --- Kantoor en inkopen ------------------------------------------------
+  # --- Office and purchases ---------------------------------------------
   - match: ["amazon"]
-    account: Assets:Rekening-courant:Umar
+    account: Assets:Receivables:Director:Umar
     payee: "Amazon"
-    nl: "Regel Umar 2-11-2026: zakelijk zodra er een bon of factuur in Drive staat (dan Kantoor:Benodigdheden of Boeken-opleiding), anders privé (rekening-courant)"
+    note: "Owner rule 2-11-2026: business once a receipt or invoice is in Drive (then Office:Supplies or Office:BooksTraining), otherwise private (director's current account)"
 
-  # --- Eten en drinken (standaard privé via rekening-courant, tenzij bon met zakelijk doel) ---
+  # --- Food and drink (private by default via the director's current account, unless a receipt shows a business purpose) ---
   - match: ["re:restaurant|rest\\b|cafe|caf\\xe9|coffee|starbucks|mcdonald|kfc|talabat|deliveroo|noon food|carrefour|lulu|spinneys|union coop|venice|chinese house|saya|mondieu|centr"]
-    account: Assets:Rekening-courant:Umar
-    payee: "Eten en boodschappen"
-    nl: "Standaard privé (rekening-courant); alleen zakelijk als er een bon met klant of doel is"
+    account: Assets:Receivables:Director:Umar
+    payee: "Food and groceries"
+    note: "Private by default (director's current account); business only with a receipt showing the client or purpose"
 
-  # --- Auto's (besluit 21-10-2026: auto via XCL is zakelijk) ----------------------
+  # --- Cars (decision 21-10-2026: car via XCL is business) ----------------------
   - match: ["amazon car park"]
-    account: Expenses:Auto:Tol-parkeren
-    payee: "Parkeren (Amazon Car Park Rental)"
+    account: Expenses:Car:TollsParking
+    payee: "Parking (Amazon Car Park Rental)"
   - match: ["re:third car rental|cca third"]
-    account: Expenses:Auto:Huur
+    account: Expenses:Car:Rental
     payee: "Third Car Rental"
   - match: ["re:speedy machine"]
-    account: Expenses:Auto:Huur
+    account: Expenses:Car:Rental
     payee: "Speedy Machine Car Rental (via Mamo)"
   - match: ["invygo"]
-    account: Expenses:Auto:Huur
-    payee: "Invygo (autoabonnement)"
+    account: Expenses:Car:Rental
+    payee: "Invygo (car subscription)"
   - match: ["fleet master"]
-    account: Expenses:Auto:Huur
+    account: Expenses:Car:Rental
     payee: "Fleet Master"
-    nl: "Autohuur (Fleet Master); bevestigd door Umar 3-11-2026"
+    note: "Car rental (Fleet Master); confirmed by Umar 3-11-2026"
   - match: ["re:emarat|eppco"]
-    account: Expenses:Auto:Brandstof
-    payee: "Brandstof (EMARAT/EPPCO)"
+    account: Expenses:Car:Fuel
+    payee: "Fuel (EMARAT/EPPCO)"
   - match: ["ev charge"]
-    account: Expenses:Auto:Brandstof
-    payee: "Elektrisch laden"
+    account: Expenses:Car:Fuel
+    payee: "EV charging"
   - match: ["re:\\bmawgif\\b|parkonic"]
-    account: Expenses:Auto:Tol-parkeren
-    payee: "Parkeren"
+    account: Expenses:Car:TollsParking
+    payee: "Parking"
   - match: ["re:dubai taxi|union taxi|aman taxi|sharjah taxi|yango|zed mobility|dtc vip"]
-    account: Expenses:Reis:Vervoer
-    payee: "Taxi en chauffeur"
+    account: Expenses:Travel:LocalTransport
+    payee: "Taxi and chauffeur"
 
-  # --- Woning (loon in natura, besluit 21-10-2026) en overig zakelijk --------------
+  # --- Residence (benefit in kind, decision 21-10-2026) and other business --------
   - match: ["sewa"]
-    account: Expenses:Personeel:Huisvesting-nuts
-    payee: "SEWA (water en stroom woning)"
+    account: Expenses:Staff:HousingUtilities
+    payee: "SEWA (water and electricity, residence)"
   - match: ["hostinger"]
-    account: Expenses:Software:Overig
+    account: Expenses:Software:Other
     payee: "Hostinger"
   - match: ["claude"]
     account: Expenses:Software:AI
     payee: "Anthropic (Claude)"
   - match: ["re:google.?workspace"]
-    account: Expenses:Software:Overig
+    account: Expenses:Software:Other
     payee: "Google Workspace"
   - match: ["khidmat al qal"]
-    account: Expenses:Overig
+    account: Expenses:Other
     payee: "Khidmat Al Qalam Typing Services"
     flag: "!"
-    nl: "Typing-centrum (visa, vertalingen, koerier): waarvoor was dit en voor wie?"
+    note: "Typing centre (visas, translations, courier): what was this for and for whom?"
   - match: ["acuns"]
-    account: Expenses:Kantoor:Boeken-opleiding
+    account: Expenses:Office:BooksTraining
     payee: "ACUNS"
     flag: "!"
-    nl: "ACUNS (lidmaatschap of congres): zakelijk? Je hebt een rol bij ACUNS 2026; bon opsturen"
+    note: "ACUNS (membership or conference): business? You have a role at ACUNS 2026; please send the receipt"
   - match: ["newings"]
-    account: Assets:Rekening-courant:Umar
+    account: Assets:Receivables:Director:Umar
     payee: "neWings B.V."
     flag: "!"
-    nl: "Factuur 2026-0098 (EUR 907,50) staat op MZML Holding B.V., niet op XCL: XCL heeft betaald voor MZML Holding B.V. De rekening Rekening-courant MZML-BV bestaat nog niet; tijdelijk op rekening-courant Umar"
-  # Antwoorden Umar 3-11-2026 op terugkerende patronen (staan vóór de vangnetregel hieronder)
+    note: "Invoice 2026-0098 (EUR 907.50) is addressed to MZML Holding B.V., not to XCL: XCL paid on behalf of MZML Holding B.V. The MZML-BV receivable account did not exist yet; temporarily on the director's current account"
+  # Umar's answers 3-11-2026 on recurring patterns (placed before the catch-all rule below)
   - match: ["digital sharjah"]
-    account: Expenses:Auto:Tol-parkeren
-    payee: "Digital Sharjah (parkeren)"
-    nl: "Parkeren in Sharjah: zakelijk (autokosten), bevestigd door Umar 3-11-2026"
+    account: Expenses:Car:TollsParking
+    payee: "Digital Sharjah (parking)"
+    note: "Parking in Sharjah: business (car costs), confirmed by Umar 3-11-2026"
   - match: ["efon io"]
     account: Expenses:Telecom
     payee: "Efon.io"
-    nl: "Zakelijke telefonie, bevestigd door Umar 3-11-2026"
+    note: "Business telephony, confirmed by Umar 3-11-2026"
   - match: ["supernova"]
-    account: Expenses:Representatie:Klanten
-    payee: "Supernova Charters (jachtcharter)"
+    account: Expenses:Entertainment:Clients
+    payee: "Supernova Charters (yacht charter)"
     flag: "!"
-    nl: "Jachtcharter voor zakelijk netwerkevent (Umar 3-11-2026): representatie; vermeld doel en gasten, bon in Drive"
+    note: "Yacht charter for a business networking event (Umar 3-11-2026): entertainment; state purpose and guests, receipt in Drive"
   - match: ["re:tourist hub|clean car wash|red desert|\\bsquare\\b"]
-    account: Assets:Rekening-courant:Umar
-    payee: "Privé-uitgave"
-    nl: "Privé (antwoord Umar 3-11-2026): rekening-courant"
+    account: Assets:Receivables:Director:Umar
+    payee: "Private expense"
+    note: "Private (Umar's answer 3-11-2026): director's current account"
   - match: ["re:efon io|\\bsquare\\b|ziina|nlbcuae|supernova|nextuaeaedecomic|\\bcard e dubai|\\bcard e sas\\b|red desert|danat al rabei|dark door|digital sharjah|masaar|clean car wash"]
-    account: Expenses:Onbekend
-    payee: "Onbekende leverancier"
+    account: Expenses:Suspense
+    payee: "Unknown supplier"
     flag: "!"
-    nl: "Onbekende betaling: wat is dit, en zakelijk of privé?"
+    note: "Unknown payment: what is this, and is it business or private?"
 
-  # --- Reizen zonder bon: volgens je regel privé, tenzij je een bon levert -----------
+  # --- Travel without receipt: private under your rule unless you provide a receipt -----------
   - match: ["re:hotel|premier inn|viola|vida creek|booking|westin|invygo hotel"]
-    account: Assets:Rekening-courant:Umar
-    payee: "Hotel of verblijf"
+    account: Assets:Receivables:Director:Umar
+    payee: "Hotel or accommodation"
     flag: "!"
-    nl: "Verblijf zonder bon: volgens je regel privé (rekening-courant); zakelijke reis? Zet 'zakelijk, bon volgt'"
+    note: "Accommodation without receipt: private under your rule (director's current account); business trip? Answer 'business, receipt to follow'"
   - match: ["re:emirates|qatar airways|fly jinnah|flydubai|etihad|klm|transavia"]
-    account: Assets:Rekening-courant:Umar
-    payee: "Vliegticket of bagage"
+    account: Assets:Receivables:Director:Umar
+    payee: "Flight ticket or baggage"
     flag: "!"
-    nl: "Vlucht zonder bon: volgens je regel privé (rekening-courant); zakelijke reis? Zet 'zakelijk, bon volgt'"
+    note: "Flight without receipt: private under your rule (director's current account); business trip? Answer 'business, receipt to follow'"
   - match: ["re:tourist hub|dubai airport|supernova"]
-    account: Assets:Rekening-courant:Umar
-    payee: "Toerisme en luchthaven"
+    account: Assets:Receivables:Director:Umar
+    payee: "Tourism and airport"
     flag: "!"
-    nl: "Reisgerelateerd zonder bon: privé tenzij zakelijk met bon"
+    note: "Travel-related without receipt: private unless business with a receipt"
 
-  # --- Duidelijk privé (rekening-courant, besluit 18-10-2026): huishouden, kleding, zorg, sport, kinderen --------
+  # --- Clearly private (director's current account, decision 18-10-2026): household, clothing, care, sport, children --------
   - match: ["re:mango|landmark|ikea|home centre|danube|mumuso|swarovski|flat moda|torino moda|xseswary|temu|royal melody|yateem|\\bsadaf\\b|al futtaim|\\bseven\\b|\\bpaul\\b|\\bexpert\\b|\\bcarts\\b|gift"]
-    account: Assets:Rekening-courant:Umar
-    payee: "Winkelen en kleding (privé)"
-    nl: "Winkel of kleding: privé tenzij er een bon met zakelijk doel is (regel Umar 2-11-2026)"
+    account: Assets:Receivables:Director:Umar
+    payee: "Shopping and clothing (private)"
+    note: "Retail or clothing: private unless there is a receipt with a business purpose (owner rule 2-11-2026)"
   - match: ["re:laundry|haircutting|antaliya|grooming|lockup|salon|platform health|energy fitness|\\bcentr\\b|\\brise\\b|pharmacy|optic"]
-    account: Assets:Rekening-courant:Umar
-    payee: "Verzorging, sport en zorg (privé)"
-    nl: "Persoonlijke verzorging, sport of apotheek: privé (rekening-courant)"
+    account: Assets:Receivables:Director:Umar
+    payee: "Personal care, sport and health (private)"
+    note: "Personal care, sport or pharmacy: private (director's current account)"
   - match: ["re:jump n fun|global village|noqodi|nshama|pygmy|mosque|tph center|bab alwadi|valley lock|amir al arab|tech corner|dar molhimon|greensouq|royal bay|khafayef|al mutameyzah|al insaf auto|fakhr"]
-    account: Assets:Rekening-courant:Umar
-    payee: "Gezin, huishouden en klein inkopen (privé)"
-    nl: "Gezinsuitje, huishoudelijke hulp of kleine aankoop: privé tenzij er een bon met zakelijk doel is"
+    account: Assets:Receivables:Director:Umar
+    payee: "Family, household and small purchases (private)"
+    note: "Family outing, household help or small purchase: private unless there is a receipt with a business purpose"
   - match: ["re:to (al jimi curtains|m n j global|asim khan|mohamed ahmed attia)"]
     type: Transfers
-    account: Assets:Rekening-courant:Umar
-    payee: "Inrichting en onderhoud woning (privé)"
-    nl: "Gordijnen, tuin, installatie of training voor de woning/jezelf: privé (rekening-courant)"
+    account: Assets:Receivables:Director:Umar
+    payee: "Home furnishing and maintenance (private)"
+    note: "Curtains, garden, installation or training for the home or yourself: private (director's current account)"
   - match: ["re:from (silk valley|1 jamal|mourad)"]
     type: Transfers
-    account: Expenses:Onbekend
-    payee: "Onbekende ontvangst"
+    account: Expenses:Suspense
+    payee: "Unknown incoming payment"
     flag: "!"
-    nl: "Geld ontvangen van een onbekende partij: terugbetaling van een privé-uitgave (dan rekening-courant) of omzet?"
+    note: "Money received from an unknown party: refund of a private expense (then director's current account) or revenue?"
   - match: ["re:to mahmad"]
     type: Transfers
-    account: Expenses:Personeel:Visa-overheid
-    payee: "Khidmat Al Qalam / Mahmad Muslihar (typing-centrum)"
+    account: Expenses:Staff:VisaGovernment
+    payee: "Khidmat Al Qalam / Mahmad Muslihar (typing centre)"
     flag: "!"
-    nl: "Visum of koerier via typing-centrum: familievisum is een persoonlijk voordeel (loon in natura?) of zakelijk; wat was dit?"
+    note: "Visa or courier via typing centre: a family visa is a personal benefit (benefit in kind?) or business; what was this?"
 
-  # --- Meer eten en boodschappen (uit de jaar-export 2026); standaard privé -------------------------
+  # --- More food and groceries (from the 2026 annual export); private by default -------------------------
   - match: ["re:shj cooperative|express eat|smoked meat|qlub|bateel|bhuk|the bh |al ain food|chaiiwala|candy castle|tlr service|farooj|reyadah|frozen factory|mian jee|caffe nero|home bakery|tikka and kabab|dash hospitality|blue bird|\\bpunjab\\b|telal al rabie|papa johns|texas sahara|gmg consumer|carry food|bait al shai|bonanza|backyard|albert heijn|barbecue station|thouq|qasr al seyouh|one madison|grandiose|oporto|yougurtland|flafil|seyouh al madinah|al dana|first house of tea|alhayawia|tim hortons|shake shack|grand mos|kuwait food|halla shawarma|katrina sweet|al hadeyah|zam zam|flevoland|\\bkiosk\\b|mall mart|fareej al|koukh|pk mart|bck be ce|hamzah|aswaq|le noir|good life|iceberg|tabaq|speciality club|french spirit|coffee seeds|mcdonald|starbucks|kfc|dubai hills"]
-    account: Assets:Rekening-courant:Umar
-    payee: "Eten en boodschappen"
-    nl: "Standaard privé (rekening-courant); alleen zakelijk als er een bon met klant of doel is"
+    account: Assets:Receivables:Director:Umar
+    payee: "Food and groceries"
+    note: "Private by default (director's current account); business only with a receipt showing the client or purpose"
 
   # --- Bank -------------------------------------------------------------
   - match: ["foreign exchange transaction fee"]
     type: Fees
-    account: Expenses:Bank:Wisselkosten
+    account: Expenses:Bank:FXCharges
     payee: "Wio"
   - match: ["subscription fee"]
     type: Fees
-    account: Expenses:Bank:Kosten
-    payee: "Wio (maandabonnement)"
+    account: Expenses:Bank:Charges
+    payee: "Wio (monthly subscription)"
   - match: ["re:fee|charge"]
     type: Fees
-    account: Expenses:Bank:Kosten
+    account: Expenses:Bank:Charges
     payee: "Wio"
