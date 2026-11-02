@@ -533,13 +533,13 @@
   Assets:Bank:Wio-AED                               -391.00 AED
   Expenses:Auto:Huur                                 391.00 AED
 
-2026-08-17 ! "Verhuurder villa (cheque 000002)" "Cheque payment | Ref. 000002"
+2026-08-17 * "Verhuurder villa (cheque 000002)" "Cheque payment | Ref. 000002"
   wio-ref: "288114878"
   wio-type: "Cheque"
   bron: "Wio-export"
-  nl: "Cheque van AED 42.500, zelfde bedrag als de kwartaalhuur: waarschijnlijk huur 15 aug t/m 14 nov; bevestig en lever de chequekopie"
+  nl: "Woning op naam van Umar: XCL betaalde namens hem; rekening-courant directeur, verrekend met de loonschuld (besluit Umar 2-11-2026)"
   Assets:Bank:Wio-AED                            -42,500.00 AED
-  Assets:Vooruitbetaald:Huisvesting               42,500.00 AED
+  Assets:Rekening-courant:Umar                    42,500.00 AED
 
 2026-08-17 ! "Vliegticket of bagage" "Emirates"
   wio-ref: "288294909"

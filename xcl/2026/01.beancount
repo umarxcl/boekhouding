@@ -13,13 +13,16 @@
 
 2026-01-26 balance Assets:Bank:Wio-EUR              0.00 EUR
 
-2026-01-26 ! "Umar Fahad Mirza (privé)" "From Hr U F Mirza | /OAT/Private nl account to uae acco unt"
+2026-01-26 * "Umar Fahad Mirza (privé)" "From Hr U F Mirza | /OAT/Private nl account to uae acco unt"
   wio-ref: "205413395"
   wio-type: "Transfers"
   bron: "Wio-export"
-  nl: "Geld van Umar privé naar XCL: lening van de aandeelhouder, tenzij het (deels) de kapitaalstorting van AED 48.000 is; vaststellen per overboeking"
-  Assets:Bank:Wio-EUR                             25,000.00 EUR
-  Liabilities:Lening-aandeelhouder:Umar          -25,000.00 EUR
+  nl: "Besluit Umar 2-11-2026: AED 48.000 hiervan is de storting van het aandelenkapitaal, de rest is een renteloze lening van Umar aan XCL. Omrekening tegen de werkelijke Wio-koers van dezelfde dag (EUR 25.000 = AED 106.061,75, koers 4,242470). Vast te leggen in een aandeelhoudersbesluit."
+  document: "Aandeelhoudersbesluit kapitaalstorting en lening (op te stellen)"
+  Assets:Bank:Wio-EUR                             11,314.15 EUR @@ 48,000.00 AED
+  Assets:Nog-te-storten-kapitaal                 -48,000.00 AED
+  Assets:Bank:Wio-EUR                             13,685.85 EUR
+  Liabilities:Lening-aandeelhouder:Umar          -13,685.85 EUR
 
 2026-01-26 * "MDI Consultants B.V." "From MDI Consultants B.V. | Invoice INV-0002"
   wio-ref: "205314645"
@@ -45,13 +48,13 @@
   Assets:Bank:Wio-EUR                            -25,000.00 EUR @@ 106,061.75 AED
   Assets:Bank:Wio-AED                            106,061.75 AED
 
-2026-01-27 ! "Sajjad Hussain" "To Sajjad Hussain | Rent and commission Nesma house"
+2026-01-27 * "Sajjad Hussain" "To Sajjad Hussain | Rent and commission Nesma house"
   wio-ref: "205820672"
   wio-type: "Transfers"
   bron: "Wio-export"
-  nl: "Huur en commissie voor het huis (omschrijving 'Rent and commission Nesma house'): splitsing huur, commissie en borg nodig"
+  nl: "Woning op naam van Umar: XCL betaalde namens hem; rekening-courant directeur, verrekend met de loonschuld (besluit Umar 2-11-2026)"
   Assets:Bank:Wio-AED                            -70,000.00 AED
-  Assets:Vooruitbetaald:Huisvesting               70,000.00 AED
+  Assets:Rekening-courant:Umar                    70,000.00 AED
 
 2026-01-29 ! "Azeem Hussain" "To Azeem Hussain | Support"
   wio-ref: "206698291"

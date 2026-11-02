@@ -6,8 +6,8 @@
 ; bankhistorie blijkt dat het nooit is gestort (dan blijft het een vordering; te beoordelen bij de jaarafsluiting).
 ; Flag "!" = te verifiëren bij de jaarafsluiting.
 
-2025-12-15 ! "Oprichting" "Geplaatst aandelenkapitaal, nog niet gestort"
-  verifieer: "Is er een kapitaalstorting van AED 48.000 op Wio geweest? Zo nee: blijft vordering op aandeelhouder."
+2025-12-15 * "Oprichting" "Geplaatst aandelenkapitaal, gestort op 26-1-2026"
+  nl: "Gestort op 26-1-2026 uit de overboeking van EUR 25.000 (besluit Umar 2-11-2026); zie xcl/2026/01.beancount"
   Assets:Nog-te-storten-kapitaal        48000.00 AED
   Equity:Aandelenkapitaal              -48000.00 AED
 

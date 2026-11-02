@@ -1387,13 +1387,13 @@
   Assets:Bank:Wio-EUR                               -968.34 EUR @@ 4,000.00 AED
   Assets:Bank:Wio-AED                              4,000.00 AED
 
-2026-05-31 ! "Verhuurder villa 1153A (Sheikha Latifa Ahmed Sultan al Qassemi)" "To Sheikha Latifa Ahmed Sultan al Qassemi | Villa 1153A rent payment q2 15 may - 14 aug"
+2026-05-31 * "Verhuurder villa 1153A (Sheikha Latifa Ahmed Sultan al Qassemi)" "To Sheikha Latifa Ahmed Sultan al Qassemi | Villa 1153A rent payment q2 15 may - 14 aug"
   wio-ref: "254262526"
   wio-type: "Transfers"
   bron: "Wio-export"
-  nl: "Kwartaalhuur villa (AED 42.500, 15 mei t/m 14 aug): vooruitbetaald, spreiding per maand volgt na jouw besluit"
+  nl: "Woning op naam van Umar: XCL betaalde namens hem; rekening-courant directeur, verrekend met de loonschuld (besluit Umar 2-11-2026)"
   Assets:Bank:Wio-AED                            -42,500.00 AED
-  Assets:Vooruitbetaald:Huisvesting               42,500.00 AED
+  Assets:Rekening-courant:Umar                    42,500.00 AED
 
 2026-05-31 * "Amazon" "Amazon"
   wio-ref: "254417475"

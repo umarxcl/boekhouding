@@ -47,3 +47,15 @@ Eén regel per besluit dat de boekingen of de werkwijze bepaalt. Bron is altijd 
 - 0% export na de bestuurswissel: toetsen door Dinesh en Davie vóór de bestuurswissel (vestigingsplaats van de NL-bv's voor de btw).
 - EUR 25.000 van 26-1-2026: kapitaalstorting (AED 48.000) plus lening, of alleen lening.
 - MZML Ltd: één financier (bankrekening) in plaats van voorschotten van MZML B.V. en XCL.
+
+## Besluiten Umar 2-11-2026 (avond)
+
+| Datum | Besluit | Gevolg in het grootboek |
+|---|---|---|
+| 2026-11-02 | Boekhouding in het Engels | Hernoemronde van rekeningnamen, uitleg, rapporten en documentatie (volgt) |
+| 2026-11-02 | Btw-registratie is verplicht; geen uitzondering aanvragen | Reverse charge en voorbelasting vanaf de registratiedatum |
+| 2026-11-02 | Addendum v1 is NIET getekend; geen overstap naar SRTIP | Contractloon AED 40.000 loopt door tot de tekendatum van een nieuw addendum; geen terugwerkende kracht |
+| 2026-11-02 | Villa (Nesma house) staat op naam van Umar | Alle huurbetalingen, commissie en borg door XCL zijn betalingen namens Umar: Assets:Rekening-courant:Umar, verrekend met de loonschuld; geen loon in natura, geen vooruitbetaalde huur bij XCL |
+| 2026-11-02 | Auto: privédeel 30% via de schuldroute | 30% van de autokosten maandelijks naar Assets:Rekening-courant:Umar; geen loon in natura |
+| 2026-11-02 | EUR 25.000 van 26-1-2026: AED 48.000 kapitaalstorting, rest renteloze lening | Kapitaal volgestort; Liabilities:Lening-aandeelhouder:Umar EUR 13.685,85; aandeelhoudersbesluit op te stellen |
+| 2026-11-02 | MZML Ltd: bankrekening in januari 2027; tot dan voorschotten als schuld aan de betalende partij | Liabilities:Rekening-courant:MZML-BV en :XCL |
