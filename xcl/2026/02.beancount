@@ -897,8 +897,9 @@
   wio-ref: "214792006"
   wio-type: "Card"
   source: "Wio export"
+  reclassified: "2026-11-03 after independent review: villa utilities are payments on behalf of Umar (villa in his name, decision 2-11-2026); to be confirmed by Umar"
   Assets:Bank:Wio-AED                             -4,054.11 AED
-  Expenses:Staff:HousingUtilities                  4,054.11 AED
+  Assets:Receivables:Director:Umar                  4,054.11 AED
 
 2026-02-18 * "Taxi and chauffeur" "DTC VIP"
   wio-ref: "214806756"

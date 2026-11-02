@@ -524,8 +524,9 @@
   wio-ref: "234149678"
   wio-type: "Card"
   source: "Wio export"
+  reclassified: "2026-11-03 after independent review: villa utilities are payments on behalf of Umar (villa in his name, decision 2-11-2026); to be confirmed by Umar"
   Assets:Bank:Wio-AED                               -108.18 AED
-  Expenses:Staff:HousingUtilities                    108.18 AED
+  Assets:Receivables:Director:Umar                    108.18 AED
 
 2026-04-12 * "Unknown supplier" "Supernova charters for"
   wio-ref: "234454351"

@@ -573,8 +573,9 @@
   wio-ref: "224062469"
   wio-type: "Card"
   source: "Wio export"
+  reclassified: "2026-11-03 after independent review: villa utilities are payments on behalf of Umar (villa in his name, decision 2-11-2026); to be confirmed by Umar"
   Assets:Bank:Wio-AED                               -958.98 AED
-  Expenses:Staff:HousingUtilities                    958.98 AED
+  Assets:Receivables:Director:Umar                    958.98 AED
 
 2026-03-16 * "Food and groceries" "Fareej al shuwaiheen c"
   wio-ref: "224458663"

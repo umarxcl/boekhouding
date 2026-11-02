@@ -1,7 +1,7 @@
 account,AED,EUR
 Assets:Bank:Wio-AED,3312.91,0.00
 Assets:Bank:Wio-EUR,0.00,10943.68
-Assets:Receivables:Director:Umar,378225.02,0.00
+Assets:Receivables:Director:Umar,383346.29,0.00
 Assets:Receivables:Related:MZML-BV,3831.22,0.00
 Assets:Receivables:Trade:Ekmekci,0.00,7716.00
 Assets:Receivables:Trade:PointSixteen,516.68,0.00
@@ -21,7 +21,6 @@ Expenses:Professional:CorporateServices,1200.00,0.00
 Expenses:Software:AI,11789.02,0.00
 Expenses:Software:Other,2057.09,0.00
 Expenses:Staff:EndOfService,24612.87,0.00
-Expenses:Staff:HousingUtilities,5121.27,0.00
 Expenses:Staff:Salary-Umar,421935.48,0.00
 Expenses:Staff:VisaGovernment,4980.00,0.00
 Expenses:Telecom,6387.88,0.00

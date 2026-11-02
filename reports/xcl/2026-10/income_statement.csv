@@ -19,14 +19,13 @@ Expenses:Professional:CorporateServices,1200.00
 Expenses:Software:AI,11789.02
 Expenses:Software:Other,2057.09
 Expenses:Staff:EndOfService,24612.87
-Expenses:Staff:HousingUtilities,5121.27
 Expenses:Staff:Salary-Umar,421935.48
 Expenses:Staff:VisaGovernment,4980.00
 Expenses:Telecom,6387.88
 Expenses:Travel:Accommodation,441.44
 Expenses:Travel:Flights,5738.34
 Expenses:Travel:LocalTransport,2054.48
-TOTAL EXPENSES,515030.76
-RESULT AS BOOKED,-77105.38
+TOTAL EXPENSES,509909.49
+RESULT AS BOOKED,-71984.11
 UNBOOKED FX DIFFERENCE ON EUR ITEMS (see balance_sheet.csv),-11898.79
-RESULT INCL. UNBOOKED FX,-89004.17
+RESULT INCL. UNBOOKED FX,-83882.90

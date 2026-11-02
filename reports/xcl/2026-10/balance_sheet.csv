@@ -1,7 +1,7 @@
 account,AED,EUR (native),AED value (EUR at rate 4.169505 of 2026-09-30)
 Assets:Bank:Wio-AED,3312.91,0.00,3312.91
 Assets:Bank:Wio-EUR,0.00,10943.68,45629.73
-Assets:Receivables:Director:Umar,378225.02,0.00,378225.02
+Assets:Receivables:Director:Umar,383346.29,0.00,383346.29
 Assets:Receivables:Related:MZML-BV,3831.22,0.00,3831.22
 Assets:Receivables:Trade:Ekmekci,0.00,7716.00,32171.90
 Assets:Receivables:Trade:PointSixteen,516.68,0.00,516.68
@@ -10,9 +10,9 @@ Liabilities:Employees:EndOfService,24612.87,-0.00,24612.87
 Liabilities:Employees:SalaryPayable-Umar,376935.48,-0.00,376935.48
 Liabilities:ShareholderLoan:Umar-AED,21063.03,-0.00,21063.03
 Liabilities:ShareholderLoan:Umar-EUR,-0.00,19685.85,82080.25
-TOTAL ASSETS,,,463687.46
+TOTAL ASSETS,,,468808.73
 TOTAL LIABILITIES,,,504691.63
 TOTAL EQUITY (booked),,,48000.00
-RESULT YEAR TO DATE,,,-77105.38
+RESULT YEAR TO DATE,,,-71984.11
 UNBOOKED FX DIFFERENCE ON EUR ITEMS (realised + unrealised; negative = loss),,,-11898.79
 CHECK after FX difference (must be 0.00),,,0.00

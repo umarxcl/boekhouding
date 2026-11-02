@@ -81,7 +81,8 @@ def main():
     rev_total = sum(v for _, v in inc)
     exp_total = sum(v for _, v in exp)
     result = rev_total - exp_total
-    fx = totals["Assets"] - totals["Liabilities"] - totals["Equity"] - result
+    fx = sum(v.get("AED", D(0)) for v in bal.values()) + sum(v.get("EUR", D(0)) for v in bal.values()) * rate
+    # independent of the statements: all AED units plus all EUR units at the closing rate (every transaction balances in weights)
     write_csv(out / "income_statement.csv", ["account", "AED"],
               [[x, f2(v)] for x, v in inc if v != 0] + [["TOTAL INCOME", f2(rev_total)]]
               + [[x, f2(v)] for x, v in exp if v != 0] + [["TOTAL EXPENSES", f2(exp_total)], ["RESULT AS BOOKED", f2(result)],
