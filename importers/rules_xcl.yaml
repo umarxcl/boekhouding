@@ -1,4 +1,6 @@
 # Categoriseringsregels voor XCL (Wio-export).
+# Hoofdregel (Umar, 2-11-2026): is er een bon of factuur in Drive, dan is de uitgave zakelijk; is die er niet, dan privé.
+# De importer boekt eerst op de regel hieronder; de documentkoppeling herboekt daarna naar zakelijk zodra een bon matcht.
 # Volgorde telt: de eerste regel die past, wint. Matching is hoofdletterongevoelig op
 # "Transaction type", "Description" en "Notes" samen. Geen regel = Expenses:Onbekend met vlag "!"
 # (komt op de uitzonderingenlijst). Nieuwe regels komen hier bij na goedkeuring van Umar.
@@ -127,10 +129,9 @@ rules:
     account: Expenses:Software:Overig
     payee: "Google Workspace"
   - match: ["google play"]
-    account: Expenses:Software:Overig
+    account: Assets:Rekening-courant:Umar
     payee: "Google Play (apps en abonnementen)"
-    flag: "!"
-    nl: "Google Play: controleren welk abonnement (YouTube Premium is zakelijk volgens Umar; apps kunnen privé zijn)"
+    nl: "Regel Umar 2-11-2026: zakelijk zodra er een bon of factuur in Drive staat, anders privé (rekening-courant)"
   - match: ["wl*google"]
     account: Expenses:Software:Overig
     payee: "Google (via Wio)"
@@ -171,10 +172,9 @@ rules:
 
   # --- Kantoor en inkopen ------------------------------------------------
   - match: ["amazon"]
-    account: Expenses:Kantoor:Benodigdheden
+    account: Assets:Rekening-courant:Umar
     payee: "Amazon"
-    flag: "!"
-    nl: "Amazon: bon nodig om te bepalen of het zakelijk is (boeken, kantoor) of privé"
+    nl: "Regel Umar 2-11-2026: zakelijk zodra er een bon of factuur in Drive staat (dan Kantoor:Benodigdheden of Boeken-opleiding), anders privé (rekening-courant)"
 
   # --- Eten en drinken (standaard privé via rekening-courant, tenzij bon met zakelijk doel) ---
   - match: ["re:restaurant|rest\\b|cafe|caf\\xe9|coffee|starbucks|mcdonald|kfc|talabat|deliveroo|noon food|carrefour|lulu|spinneys|union coop|venice|chinese house|saya|mondieu|centr"]
