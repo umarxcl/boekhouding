@@ -1,16 +1,16 @@
-; Openingsbalans XCL per 15-12-2025 (oprichting).
-; Bron: shareholder resolutions bij oprichting (project: "Resolution XCL MANAGEMENT CONSULTANCIES FZCO.pdf"):
-; geplaatst kapitaal AED 48.000, 100 aandelen van AED 480, aandeelhouder Umar Fahad Mirza.
-; Er was op 15-12-2025 nog geen bankrekening (Wio geopend 20-1-2026). Het kapitaal staat daarom
-; als vordering op de aandeelhouder totdat een storting op Wio is aangetoond, of totdat uit de
-; bankhistorie blijkt dat het nooit is gestort (dan blijft het een vordering; te beoordelen bij de jaarafsluiting).
-; Flag "!" = te verifiëren bij de jaarafsluiting.
+; Opening balance XCL at 15-12-2025 (incorporation).
+; Source: shareholder resolutions at incorporation (project: "Resolution XCL MANAGEMENT CONSULTANCIES FZCO.pdf"):
+; issued share capital AED 48,000, 100 shares of AED 480, shareholder Umar Fahad Mirza.
+; On 15-12-2025 there was no bank account yet (Wio opened 20-1-2026). The capital is therefore shown
+; as a receivable from the shareholder until a payment into Wio is evidenced, or until the bank history shows
+; it was never paid (it then remains a receivable; to be assessed at year-end close).
+; Flag "!" = to be verified at year-end close.
 
-2025-12-15 * "Oprichting" "Geplaatst aandelenkapitaal, gestort op 26-1-2026"
-  nl: "Gestort op 26-1-2026 uit de overboeking van EUR 25.000 (besluit Umar 2-11-2026); zie xcl/2026/01.beancount"
-  Assets:Nog-te-storten-kapitaal        48000.00 AED
-  Equity:Aandelenkapitaal              -48000.00 AED
+2025-12-15 * "Incorporation" "Issued share capital, paid up on 26-1-2026"
+  note: "Paid up on 26-1-2026 from the EUR 25,000 transfer (owner decision 2-11-2026); see xcl/2026/01.beancount"
+  Assets:ShareCapitalUnpaid             48000.00 AED
+  Equity:ShareCapital                  -48000.00 AED
 
-; Banksaldi bij opening van de rekeningen (bron: Wio-afschriften januari 2026; aan te vullen in de inhaalslag)
+; Bank balances at account opening (source: Wio statements January 2026)
 2026-01-20 balance Assets:Bank:Wio-AED   0.00 AED
 2026-01-20 balance Assets:Bank:Wio-EUR   0.00 EUR

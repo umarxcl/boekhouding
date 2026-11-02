@@ -1,74 +1,74 @@
-; Koersen EUR/AED.
-; Bron voor omrekening van facturen, kosten, reverse charge en herwaardering per maandeinde: de CBUAE-koers
-; van de dag (art. 69 btw-wet, FTA VATP004). Bron: centralbank.ae, maandoverzichten fx_<mmm><jj>_en.pdf.
-; Wio-wissels worden niet als prijs opgenomen: de werkelijke conversie boekt zichzelf (@@) en het verschil
-; met de CBUAE-koers is koersresultaat. Geen geschatte koersen. Elke regel heeft een bron.
+; EUR/AED exchange rates.
+; Basis for converting invoices, expenses, reverse charge and month-end revaluation: the CBUAE rate
+; of the day (art. 69 VAT Decree-Law, FTA VATP004). Source: centralbank.ae, monthly tables fx_<mmm><yy>_en.pdf.
+; Wio conversions are not recorded as prices: the actual conversion books itself (@@) and the difference
+; from the CBUAE rate is an exchange gain or loss. No estimated rates. Every line has a source.
 
-; CBUAE december 2025 (fx_dec25_en.pdf), laatste publicatiedag van het jaar
+; CBUAE December 2025 (fx_dec25_en.pdf), last publication day of the year
 2025-12-30 price EUR  4.319572 AED
-  bron: "CBUAE fx_dec25_en.pdf, 30-12-2025"
+  source: "CBUAE fx_dec25_en.pdf, 30-12-2025"
 
-; Koersen 2026 uit de CBUAE-maandoverzichten (centralbank.ae/media/.../fx_<mmm>26_en.pdf, 'Exchange Rates against UAE Dirham
-; for VAT related obligations'): maandeinde (laatste publicatiedag) plus de datums waarop een factuur of ontvangst in EUR is omgerekend.
-; Oktober 2026: het CBUAE-maandoverzicht was op 2-11-2026 nog niet gepubliceerd; geen koers, dus geen regel (INV-0012 staat op '!').
-; Weekenddagen hebben geen CBUAE-koers: dan de laatste publicatiedag ervoor (staat in de bron).
+; Rates 2026 from the CBUAE monthly tables (centralbank.ae/media/.../fx_<mmm>26_en.pdf, 'Exchange Rates against UAE Dirham
+; for VAT related obligations'): month-end (last publication day) plus the dates on which an EUR invoice or receipt was converted.
+; October 2026: the CBUAE monthly table had not been published on 2-11-2026; no rate, so no line (INV-0012 is flagged '!').
+; Weekend days have no CBUAE rate: the last publication day before it is used (stated in the source).
 
 2026-01-21 price EUR  4.310952 AED
-  bron: "CBUAE fx_jan26_en.pdf, factuurdatum INV-0001"
+  source: "CBUAE fx_jan26_en.pdf, invoice date INV-0001"
 
 2026-01-23 price EUR  4.309434 AED
-  bron: "CBUAE fx_jan26_en.pdf, laatste publicatiedag voor factuurdatum 24-1 (zaterdag), INV-0002"
+  source: "CBUAE fx_jan26_en.pdf, last publication day before invoice date 24-1 (Saturday), INV-0002"
 
 2026-01-30 price EUR  4.375149 AED
-  bron: "CBUAE fx_jan26_en.pdf, maandeinde januari"
+  source: "CBUAE fx_jan26_en.pdf, month-end January"
 
 2026-02-17 price EUR  4.341017 AED
-  bron: "CBUAE fx_feb26_en.pdf, factuurdatum INV-0003"
+  source: "CBUAE fx_feb26_en.pdf, invoice date INV-0003"
 
 2026-02-27 price EUR  4.330778 AED
-  bron: "CBUAE fx_feb26_en.pdf, maandeinde februari (laatste publicatiedag)"
+  source: "CBUAE fx_feb26_en.pdf, month-end February (last publication day)"
 
 2026-03-17 price EUR  4.233917 AED
-  bron: "CBUAE fx_mar26_en.pdf, factuurdatum INV-0004"
+  source: "CBUAE fx_mar26_en.pdf, invoice date INV-0004"
 
 2026-03-31 price EUR  4.234406 AED
-  bron: "CBUAE fx_mar26_en.pdf, maandeinde maart"
+  source: "CBUAE fx_mar26_en.pdf, month-end March"
 
 2026-04-17 price EUR  4.345125 AED
-  bron: "CBUAE fx_apr26_en.pdf, factuurdatum INV-0005"
+  source: "CBUAE fx_apr26_en.pdf, invoice date INV-0005"
 
 2026-04-30 price EUR  4.292811 AED
-  bron: "CBUAE fx_apr26_en.pdf, maandeinde april"
+  source: "CBUAE fx_apr26_en.pdf, month-end April"
 
 2026-05-15 price EUR  4.268364 AED
-  bron: "CBUAE fx_may26_en.pdf, laatste publicatiedag voor factuurdatum 17-5 (zondag), INV-0006"
+  source: "CBUAE fx_may26_en.pdf, last publication day before invoice date 17-5 (Sunday), INV-0006"
 
 2026-05-29 price EUR  4.277810 AED
-  bron: "CBUAE fx_may26_en.pdf, maandeinde mei (laatste publicatiedag)"
+  source: "CBUAE fx_may26_en.pdf, month-end May (last publication day)"
 
 2026-06-19 price EUR  4.209652 AED
-  bron: "CBUAE fx_jun26_en.pdf, factuurdatum INV-0007"
+  source: "CBUAE fx_jun26_en.pdf, invoice date INV-0007"
 
 2026-06-30 price EUR  4.184232 AED
-  bron: "CBUAE fx_jun26_en.pdf, maandeinde juni"
+  source: "CBUAE fx_jun26_en.pdf, month-end June"
 
 2026-07-17 price EUR  4.199543 AED
-  bron: "CBUAE fx_jul26_en.pdf, factuurdatum INV-0009"
+  source: "CBUAE fx_jul26_en.pdf, invoice date INV-0009"
 
 2026-07-30 price EUR  4.233429 AED
-  bron: "CBUAE fx_jul26_en.pdf, laatste leesbare dag van juli; 31-7 niet leesbaar in de PDF-weergave (afgekapt na 30-7), daarom niet het echte maandeinde"
+  source: "CBUAE fx_jul26_en.pdf, last legible day of July; 31-7 not legible in the PDF rendering (cut off after 30-7), so not the actual month-end"
 
 2026-08-04 price EUR  4.231966 AED
-  bron: "CBUAE fx_aug26_en.pdf, ontvangstdatum betaling Inclusionair (INV-0008) in EUR"
+  source: "CBUAE fx_aug26_en.pdf, receipt date of the Inclusionair payment (INV-0008) in EUR"
 
 2026-08-17 price EUR  4.257477 AED
-  bron: "CBUAE fx_aug26_en.pdf, factuurdatum INV-0010"
+  source: "CBUAE fx_aug26_en.pdf, invoice date INV-0010"
 
 2026-08-31 price EUR  4.258465 AED
-  bron: "CBUAE fx_aug26_en.pdf, maandeinde augustus"
+  source: "CBUAE fx_aug26_en.pdf, month-end August"
 
 2026-09-17 price EUR  4.219324 AED
-  bron: "CBUAE fx_sep26_en.pdf, factuurdatum INV-0011"
+  source: "CBUAE fx_sep26_en.pdf, invoice date INV-0011"
 
 2026-09-30 price EUR  4.169505 AED
-  bron: "CBUAE fx_sep26_en.pdf, maandeinde september"
+  source: "CBUAE fx_sep26_en.pdf, month-end September"

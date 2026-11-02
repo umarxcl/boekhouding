@@ -1,423 +1,423 @@
-; Boekingen XCL juli 2026 (importer wio.py uit de Wio-jaarexport; 42 boekingen)
-; Bijlagen: Drive Boekhouding/XCL/Inkoop 2026. Vlag ! = nog niet beoordeeld (zie Sheet Boekhouding - Goedkeuring).
+; XCL entries July 2026 (importer wio.py from the Wio annual export; 42 entries)
+; Attachments: Drive Boekhouding/XCL/Inkoop 2026. Flag ! = not yet reviewed (see Sheet 'Boekhouding - Goedkeuring').
 
 2026-07-01 balance Assets:Bank:Wio-AED              3,172.67 AED
 
 2026-07-01 balance Assets:Bank:Wio-EUR              2,068.40 EUR
 
-2026-07-01 * "Hotel of verblijf" "Hotel Ibis"
+2026-07-01 * "Hotel or accommodation" "Hotel Ibis"
   wio-ref: "268699937"
   wio-type: "Card"
-  bron: "Wio-export"
+  source: "Wio export"
   document: "260704 hotel lissabon 2pages.pdf"
   drive-id: "1MFiXodyZ-wpwfj9N_H4koUUHezB5-KQS"
-  nl: "Bon of factuur in Drive gekoppeld: zakelijk (regel Umar 2-11-2026)"
+  note: "Receipt or invoice linked in Drive: business (owner rule 2-11-2026)"
   wio-fee-ref: "268699942"
-  goedkeuring: "2026-11-03"
-  antwoord: "ja, Conferentie"
+  approved: "2026-11-03"
+  owner-answer: "ja, Conferentie"
   Assets:Bank:Wio-AED                               -448.59 AED
   Assets:Bank:Wio-AED                                 -8.97 AED
-  Expenses:Bank:Wisselkosten                           8.97 AED
-  Expenses:Reis:Verblijf                             448.59 AED
+  Expenses:Bank:FXCharges                              8.97 AED
+  Expenses:Travel:Accommodation                      448.59 AED
 
 2026-07-02 * "Google Workspace" "Google Workspace_umarmi"
   wio-ref: "269242669"
   wio-type: "Card"
-  bron: "Wio-export"
+  source: "Wio export"
   wio-fee-ref: "269242679"
   Assets:Bank:Wio-AED                                -57.67 AED
   Assets:Bank:Wio-AED                                 -1.15 AED
-  Expenses:Bank:Wisselkosten                           1.15 AED
-  Expenses:Software:Overig                            57.67 AED
+  Expenses:Bank:FXCharges                              1.15 AED
+  Expenses:Software:Other                             57.67 AED
 
-2026-07-03 * "Hotel of verblijf" "Hotel Ibis"
+2026-07-03 * "Hotel or accommodation" "Hotel Ibis"
   wio-ref: "269293904"
   wio-type: "Card"
-  bron: "Wio-export"
+  source: "Wio export"
   document: "260704 hotel lissabon 2pages.pdf"
   drive-id: "1MFiXodyZ-wpwfj9N_H4koUUHezB5-KQS"
-  nl: "Bon of factuur in Drive gekoppeld: zakelijk (regel Umar 2-11-2026)"
+  note: "Receipt or invoice linked in Drive: business (owner rule 2-11-2026)"
   wio-fee-ref: "269293908"
-  goedkeuring: "2026-11-03"
-  antwoord: "ja"
+  approved: "2026-11-03"
+  owner-answer: "ja"
   Assets:Bank:Wio-AED                             -1,512.85 AED
   Assets:Bank:Wio-AED                                -30.25 AED
-  Expenses:Bank:Wisselkosten                          30.25 AED
-  Expenses:Reis:Verblijf                           1,512.85 AED
+  Expenses:Bank:FXCharges                             30.25 AED
+  Expenses:Travel:Accommodation                    1,512.85 AED
 
 2026-07-03 * "Uber" "Uber"
   wio-ref: "269282222"
   wio-type: "Card"
-  bron: "Wio-export"
+  source: "Wio export"
   wio-fee-ref: "269282237"
   Assets:Bank:Wio-AED                                -21.64 AED
   Assets:Bank:Wio-AED                                 -0.43 AED
-  Expenses:Bank:Wisselkosten                           0.43 AED
-  Expenses:Reis:Vervoer                               21.64 AED
+  Expenses:Bank:FXCharges                              0.43 AED
+  Expenses:Travel:LocalTransport                      21.64 AED
 
 2026-07-03 * "Uber" "Uber"
   wio-ref: "269688318"
   wio-type: "Card"
-  bron: "Wio-export"
+  source: "Wio export"
   wio-fee-ref: "269688333"
   Assets:Bank:Wio-AED                                -64.39 AED
   Assets:Bank:Wio-AED                                 -1.28 AED
-  Expenses:Bank:Wisselkosten                           1.28 AED
-  Expenses:Reis:Vervoer                               64.39 AED
+  Expenses:Bank:FXCharges                              1.28 AED
+  Expenses:Travel:LocalTransport                      64.39 AED
 
 2026-07-03 * "Uber" "Uber"
   wio-ref: "269689910"
   wio-type: "Card"
-  bron: "Wio-export"
+  source: "Wio export"
   wio-fee-ref: "269689914"
   Assets:Bank:Wio-AED                                -55.05 AED
   Assets:Bank:Wio-AED                                 -1.10 AED
-  Expenses:Bank:Wisselkosten                           1.10 AED
-  Expenses:Reis:Vervoer                               55.05 AED
+  Expenses:Bank:FXCharges                              1.10 AED
+  Expenses:Travel:LocalTransport                      55.05 AED
 
 2026-07-05 * "Uber" "Uber"
   wio-ref: "270377738"
   wio-type: "Card"
-  bron: "Wio-export"
+  source: "Wio export"
   wio-fee-ref: "270377748"
   Assets:Bank:Wio-AED                                -46.55 AED
   Assets:Bank:Wio-AED                                 -0.93 AED
-  Expenses:Bank:Wisselkosten                           0.93 AED
-  Expenses:Reis:Vervoer                               46.55 AED
+  Expenses:Bank:FXCharges                              0.93 AED
+  Expenses:Travel:LocalTransport                      46.55 AED
 
 2026-07-07 * "Amazon" "Amazon"
   wio-ref: "271231260"
   wio-type: "Card"
-  bron: "Wio-export"
-  nl: "Regel Umar 2-11-2026: zakelijk zodra er een bon of factuur in Drive staat (dan Kantoor:Benodigdheden of Boeken-opleiding), anders privé (rekening-courant)"
+  source: "Wio export"
+  note: "Owner rule 2-11-2026: business once a receipt or invoice is in Drive (then Office:Supplies or Office:BooksTraining), otherwise private (director's current account)"
   Assets:Bank:Wio-AED                                -16.00 AED
-  Assets:Rekening-courant:Umar                        16.00 AED
+  Assets:Receivables:Director:Umar                    16.00 AED
 
-2026-07-08 * "Wio" "Valutawissel EUR naar AED (koers 4.0736)"
+2026-07-08 * "Wio" "Currency exchange EUR to AED (rate 4.0736)"
   wio-ref: "271485564"
   wio-ref-2: "271485567"
   wio-type: "Currency exchange"
-  bron: "Wio-export"
+  source: "Wio export"
   Assets:Bank:Wio-EUR                             -1,227.41 EUR @@ 5,000.00 AED
   Assets:Bank:Wio-AED                              5,000.00 AED
 
-2026-07-09 * "Khidmat Al Qalam / Mahmad Muslihar (typing-centrum)" "To Mahmad BURHENUDDIN KURUDI HUSSAIN MUSLIYAR | Visa processing"
+2026-07-09 * "Khidmat Al Qalam / Mahmad Muslihar (typing centre)" "To Mahmad BURHENUDDIN KURUDI HUSSAIN MUSLIYAR | Visa processing"
   wio-ref: "271747901"
   wio-type: "Transfers"
-  bron: "Wio-export"
+  source: "Wio export"
   document: "visa family.pdf"
   drive-id: "1hXGAFWmo0MEompYKxSkVxUj1sqjC_aUt"
-  nl: "Familievisum (1 volwassene, 2 kinderen) factuur INV0517 AED 4.800 op naam van XCL; betaald AED 3.000 hier en 1.980 op 13-8 (samen 4.980, AED 180 meer dan de factuur). Persoonlijk voordeel (loon in natura) of zakelijk?"
-  goedkeuring: "2026-11-03"
-  antwoord: "ja"
+  initial-note: "Family visa (1 adult, 2 children) invoice INV0517 AED 4,800 in XCL's name; paid AED 3,000 here and 1,980 on 13-8 (4,980 in total, AED 180 more than the invoice). Personal benefit (benefit in kind) or business?"
+  approved: "2026-11-03"
+  owner-answer: "ja"
   note: "Family visa; invoice INV0517 AED 4,800, paid 4,980 in total (AED 180 more, see 286702330)"
   Assets:Bank:Wio-AED                             -3,000.00 AED
-  Expenses:Personeel:Visa-overheid                 3,000.00 AED
+  Expenses:Staff:VisaGovernment                    3,000.00 AED
 
-2026-07-10 * "Wio" "Valutawissel EUR naar AED (koers 4.0840)"
+2026-07-10 * "Wio" "Currency exchange EUR to AED (rate 4.0840)"
   wio-ref: "272487828"
   wio-ref-2: "272487829"
   wio-type: "Currency exchange"
-  bron: "Wio-export"
+  source: "Wio export"
   Assets:Bank:Wio-EUR                               -500.00 EUR @@ 2,041.99 AED
   Assets:Bank:Wio-AED                              2,041.99 AED
 
-2026-07-10 * "Wio" "Valutawissel EUR naar AED (koers 4.0843)"
+2026-07-10 * "Wio" "Currency exchange EUR to AED (rate 4.0843)"
   wio-ref: "272488545"
   wio-ref-2: "272488548"
   wio-type: "Currency exchange"
-  bron: "Wio-export"
+  source: "Wio export"
   Assets:Bank:Wio-EUR                               -300.00 EUR @@ 1,225.30 AED
   Assets:Bank:Wio-AED                              1,225.30 AED
 
-2026-07-11 * "Vliegticket of bagage" "Qatar Airways"
+2026-07-11 * "Flight ticket or baggage" "Qatar Airways"
   wio-ref: "272814439"
   wio-type: "Card"
-  bron: "Wio-export"
-  nl: "Vlucht zonder bon: volgens je regel privé (rekening-courant); zakelijke reis? Zet 'zakelijk, bon volgt'"
-  goedkeuring: "2026-11-03"
-  antwoord: "25% zakelijk, rest prive"
+  source: "Wio export"
+  initial-note: "Flight without receipt: private under your rule (director's current account); business trip? Answer 'business, receipt to follow'"
+  approved: "2026-11-03"
+  owner-answer: "25% zakelijk, rest prive"
   note: "Return flight from business trip to NL with family: 25% business, 75% private (Umar)"
   Assets:Bank:Wio-AED                             -3,440.00 AED
-  Expenses:Reis:Vliegtickets                         860.00 AED
-  Assets:Rekening-courant:Umar                     2,580.00 AED
+  Expenses:Travel:Flights                            860.00 AED
+  Assets:Receivables:Director:Umar                 2,580.00 AED
 
 2026-07-12 * "Uber" "Uber"
   wio-ref: "273193284"
   wio-type: "Card"
-  bron: "Wio-export"
+  source: "Wio export"
   wio-fee-ref: "273193295"
   Assets:Bank:Wio-AED                                -78.76 AED
   Assets:Bank:Wio-AED                                 -1.57 AED
-  Expenses:Bank:Wisselkosten                           1.57 AED
-  Expenses:Reis:Vervoer                               78.76 AED
+  Expenses:Bank:FXCharges                              1.57 AED
+  Expenses:Travel:LocalTransport                      78.76 AED
 
-2026-07-13 * "Contante opname" "Ajman bank s"
+2026-07-13 * "Cash withdrawal" "Ajman bank s"
   wio-ref: "273350364"
   wio-type: "Card"
-  bron: "Wio-export"
-  nl: "Contante opname met de XCL-pas: rekening-courant directeur (besluit 18-10-2026)"
+  source: "Wio export"
+  note: "Cash withdrawal with the XCL card: director's current account (decision 18-10-2026)"
   wio-fee-ref: "273350374"
   Assets:Bank:Wio-AED                             -2,000.00 AED
   Assets:Bank:Wio-AED                                 -2.10 AED
-  Assets:Rekening-courant:Umar                         2.10 AED
-  Assets:Rekening-courant:Umar                     2,000.00 AED
+  Assets:Receivables:Director:Umar                     2.10 AED
+  Assets:Receivables:Director:Umar                 2,000.00 AED
 
 2026-07-13 * "Ekmekci Group B.V." "From Ekmekci Group B.V. | /BENEFRES/AE//PMS/ INV-0007"
   wio-ref: "273229841"
   wio-type: "Transfers"
-  bron: "Wio-export"
-  factuur: "INV-0007"
-  nl: "Ontvangst managementfee; wordt afgeboekt op de openstaande factuur"
+  source: "Wio export"
+  invoice: "INV-0007"
+  note: "Management fee received; settles the open invoice"
   Assets:Bank:Wio-EUR                              7,705.50 EUR
-  Assets:Debiteuren:Ekmekci                       -7,705.50 EUR
+  Assets:Receivables:Trade:Ekmekci                -7,705.50 EUR
 
 2026-07-13 * "Umar Fahad Mirza" "To Umar Fahad Mirza | N"
   wio-ref: "273389249"
   wio-type: "Transfers"
-  bron: "Wio-export"
-  nl: "Overboeking naar privé zonder Salary: rekening-courant directeur (besluit 18-10-2026), later verrekend met de loonschuld"
+  source: "Wio export"
+  note: "Transfer to private account without 'Salary': director's current account (decision 18-10-2026), later set off against salary payable"
   Assets:Bank:Wio-AED                             -5,000.00 AED
-  Assets:Rekening-courant:Umar                     5,000.00 AED
+  Assets:Receivables:Director:Umar                 5,000.00 AED
 
-2026-07-13 * "Wio" "Valutawissel EUR naar AED (koers 4.0711)"
+2026-07-13 * "Wio" "Currency exchange EUR to AED (rate 4.0711)"
   wio-ref: "273345956"
   wio-ref-2: "273345958"
   wio-type: "Currency exchange"
-  bron: "Wio-export"
+  source: "Wio export"
   Assets:Bank:Wio-EUR                             -4,912.65 EUR @@ 20,000.00 AED
   Assets:Bank:Wio-AED                             20,000.00 AED
 
-2026-07-14 * "Eten en boodschappen" "Express eat and drink r"
+2026-07-14 * "Food and groceries" "Express eat and drink r"
   wio-ref: "273983035"
   wio-type: "Card"
-  bron: "Wio-export"
-  nl: "Standaard privé (rekening-courant); alleen zakelijk als er een bon met klant of doel is"
+  source: "Wio export"
+  note: "Private by default (director's current account); business only with a receipt showing the client or purpose"
   Assets:Bank:Wio-AED                               -106.00 AED
-  Assets:Rekening-courant:Umar                       106.00 AED
+  Assets:Receivables:Director:Umar                   106.00 AED
 
-2026-07-14 * "Google Play (apps en abonnementen)" "GOOGLE *Google Play Ap"
+2026-07-14 * "Google Play (apps and subscriptions)" "GOOGLE *Google Play Ap"
   wio-ref: "274026023"
   wio-type: "Card"
-  bron: "Wio-export"
-  nl: "Regel Umar 2-11-2026: zakelijk zodra er een bon of factuur in Drive staat, anders privé (rekening-courant)"
+  source: "Wio export"
+  note: "Owner rule 2-11-2026: business once a receipt or invoice is in Drive, otherwise private (director's current account)"
   wio-fee-ref: "274026048"
   Assets:Bank:Wio-AED                                -27.50 AED
   Assets:Bank:Wio-AED                                 -0.55 AED
-  Assets:Rekening-courant:Umar                         0.55 AED
-  Assets:Rekening-courant:Umar                        27.50 AED
+  Assets:Receivables:Director:Umar                     0.55 AED
+  Assets:Receivables:Director:Umar                    27.50 AED
 
-2026-07-14 * "Winkelen en kleding (privé)" "Mango"
+2026-07-14 * "Shopping and clothing (private)" "Mango"
   wio-ref: "273946663"
   wio-type: "Card"
-  bron: "Wio-export"
-  nl: "Winkel of kleding: privé tenzij er een bon met zakelijk doel is (regel Umar 2-11-2026)"
+  source: "Wio export"
+  note: "Retail or clothing: private unless there is a receipt with a business purpose (owner rule 2-11-2026)"
   Assets:Bank:Wio-AED                               -212.10 AED
-  Assets:Rekening-courant:Umar                       212.10 AED
+  Assets:Receivables:Director:Umar                   212.10 AED
 
-2026-07-16 ! "Onbekende leverancier" "E dubai"
+2026-07-16 ! "Unknown supplier" "E dubai"
   wio-ref: "274848230"
   wio-type: "Card"
-  bron: "Wio-export"
-  nl: "Onbekende betaling: wat is dit, en zakelijk of privé?"
-  goedkeuring: "2026-11-03"
-  antwoord: "Bagage extra boeken"
+  source: "Wio export"
+  note: "Unknown payment: what is this, and is it business or private?"
+  approved: "2026-11-03"
+  owner-answer: "Bagage extra boeken"
   open: "Same as above"
   Assets:Bank:Wio-AED                               -775.83 AED
-  Expenses:Reis:Vliegtickets                         193.96 AED
-  Assets:Rekening-courant:Umar                       581.87 AED
+  Expenses:Travel:Flights                            193.96 AED
+  Assets:Receivables:Director:Umar                   581.87 AED
 
-2026-07-16 ! "Onbekende leverancier" "E sas"
+2026-07-16 ! "Unknown supplier" "E sas"
   wio-ref: "274848216"
   wio-type: "Card"
-  bron: "Wio-export"
-  nl: "Onbekende betaling: wat is dit, en zakelijk of privé?"
-  goedkeuring: "2026-11-03"
-  antwoord: "Bagage extra boeken"
+  source: "Wio export"
+  note: "Unknown payment: what is this, and is it business or private?"
+  approved: "2026-11-03"
+  owner-answer: "Bagage extra boeken"
   open: "Extra baggage on the NL trip; treated like the flight (25/75); confirm"
   Assets:Bank:Wio-AED                               -162.50 AED
-  Expenses:Reis:Vliegtickets                          40.63 AED
-  Assets:Rekening-courant:Umar                       121.87 AED
+  Expenses:Travel:Flights                             40.63 AED
+  Assets:Receivables:Director:Umar                   121.87 AED
 
 2026-07-16 * "Anthropic" "Anthropic claude sub"
   wio-ref: "274905106"
   wio-type: "Card"
-  bron: "Wio-export"
+  source: "Wio export"
   document: "260716 anthropic claude Invoice-QS2SZLW1-0007.pdf"
   drive-id: "1bxzNFl159SG4kFA3_b7G4lAAgYvUOiGG"
-  nl: "Bon of factuur in Drive gekoppeld: zakelijk (regel Umar 2-11-2026)"
+  note: "Receipt or invoice linked in Drive: business (owner rule 2-11-2026)"
   wio-fee-ref: "274905115"
   Assets:Bank:Wio-AED                               -777.00 AED
   Assets:Bank:Wio-AED                                -15.54 AED
-  Expenses:Bank:Wisselkosten                          15.54 AED
+  Expenses:Bank:FXCharges                             15.54 AED
   Expenses:Software:AI                               777.00 AED
 
 2026-07-16 * "Fireflies.ai" "Fireflies ai"
   wio-ref: "274898058"
   wio-type: "Card"
-  bron: "Wio-export"
+  source: "Wio export"
   wio-fee-ref: "274898068"
   Assets:Bank:Wio-AED                               -107.30 AED
   Assets:Bank:Wio-AED                                 -2.14 AED
-  Expenses:Bank:Wisselkosten                           2.14 AED
+  Expenses:Bank:FXCharges                              2.14 AED
   Expenses:Software:AI                               107.30 AED
 
 2026-07-16 * "Fireflies.ai" "Fireflies ai"
   wio-ref: "274901150"
   wio-type: "Card"
-  bron: "Wio-export"
+  source: "Wio export"
   wio-fee-ref: "274901160"
   Assets:Bank:Wio-AED                                -44.40 AED
   Assets:Bank:Wio-AED                                 -0.88 AED
-  Expenses:Bank:Wisselkosten                           0.88 AED
+  Expenses:Bank:FXCharges                              0.88 AED
   Expenses:Software:AI                                44.40 AED
 
-2026-07-18 * "Onbekende ontvangst" "From MOURAD  AOULAD EL HAJ"
+2026-07-18 * "Unknown incoming payment" "From MOURAD  AOULAD EL HAJ"
   wio-ref: "275460792"
   wio-type: "Transfers"
-  bron: "Wio-export"
-  nl: "Geld ontvangen van een onbekende partij: terugbetaling van een privé-uitgave (dan rekening-courant) of omzet?"
-  goedkeuring: "2026-11-03"
-  antwoord: "terugbetaling van prive uitgave"
+  source: "Wio export"
+  note: "Money received from an unknown party: refund of a private expense (then director's current account) or revenue?"
+  approved: "2026-11-03"
+  owner-answer: "terugbetaling van prive uitgave"
   Assets:Bank:Wio-AED                              1,675.00 AED
-  Assets:Rekening-courant:Umar                    -1,675.00 AED
+  Assets:Receivables:Director:Umar                -1,675.00 AED
 
 2026-07-18 * "Umar Fahad Mirza" "To Umar Fahad Mirza | Salary"
   wio-ref: "275489855"
   wio-type: "Transfers"
-  bron: "Wio-export"
-  nl: "Salarisbetaling; verlaagt de loonschuld"
+  source: "Wio export"
+  note: "Salary payment; reduces salary payable"
   Assets:Bank:Wio-AED                             -5,000.00 AED
-  Liabilities:Personeel:Loonschuld-Umar            5,000.00 AED
+  Liabilities:Employees:SalaryPayable-Umar         5,000.00 AED
 
-2026-07-19 * "Vliegticket of bagage" "Qatar Airways"
+2026-07-19 * "Flight ticket or baggage" "Qatar Airways"
   wio-ref: "275884054"
   wio-type: "Card"
-  bron: "Wio-export"
-  nl: "Vlucht zonder bon: volgens je regel privé (rekening-courant); zakelijke reis? Zet 'zakelijk, bon volgt'"
-  goedkeuring: "2026-11-03"
-  antwoord: "zie boven (25/75)"
+  source: "Wio export"
+  note: "Flight without receipt: private under your rule (director's current account); business trip? Answer 'business, receipt to follow'"
+  approved: "2026-11-03"
+  owner-answer: "zie boven (25/75)"
   Assets:Bank:Wio-AED                             -2,535.00 AED
-  Expenses:Reis:Vliegtickets                         633.75 AED
-  Assets:Rekening-courant:Umar                     1,901.25 AED
+  Expenses:Travel:Flights                            633.75 AED
+  Assets:Receivables:Director:Umar                 1,901.25 AED
 
-2026-07-19 * "Google Play (apps en abonnementen)" "GOOGLE*GOOGLE PLAY APP"
+2026-07-19 * "Google Play (apps and subscriptions)" "GOOGLE*GOOGLE PLAY APP"
   wio-ref: "275929039"
   wio-type: "Card"
-  bron: "Wio-export"
-  nl: "Regel Umar 2-11-2026: zakelijk zodra er een bon of factuur in Drive staat, anders privé (rekening-courant)"
+  source: "Wio export"
+  note: "Owner rule 2-11-2026: business once a receipt or invoice is in Drive, otherwise private (director's current account)"
   wio-fee-ref: "275929048"
   Assets:Bank:Wio-AED                                -55.13 AED
   Assets:Bank:Wio-AED                                 -1.10 AED
-  Assets:Rekening-courant:Umar                         1.10 AED
-  Assets:Rekening-courant:Umar                        55.13 AED
+  Assets:Receivables:Director:Umar                     1.10 AED
+  Assets:Receivables:Director:Umar                    55.13 AED
 
-2026-07-19 * "Wio (maandabonnement)" "Subscription fee for Jul 2026 | Essential"
+2026-07-19 * "Wio (monthly subscription)" "Subscription fee for Jul 2026 | Essential"
   wio-ref: "275681859"
   wio-type: "Fees"
-  bron: "Wio-export"
+  source: "Wio export"
   Assets:Bank:Wio-AED                                -99.00 AED
-  Expenses:Bank:Kosten                                99.00 AED
+  Expenses:Bank:Charges                               99.00 AED
 
-2026-07-23 * "Contante opname" "Ajman bank s"
+2026-07-23 * "Cash withdrawal" "Ajman bank s"
   wio-ref: "277347548"
   wio-type: "Card"
-  bron: "Wio-export"
-  nl: "Contante opname met de XCL-pas: rekening-courant directeur (besluit 18-10-2026)"
+  source: "Wio export"
+  note: "Cash withdrawal with the XCL card: director's current account (decision 18-10-2026)"
   wio-fee-ref: "277347551"
   Assets:Bank:Wio-AED                             -3,000.00 AED
   Assets:Bank:Wio-AED                                 -2.10 AED
-  Assets:Rekening-courant:Umar                         2.10 AED
-  Assets:Rekening-courant:Umar                     3,000.00 AED
+  Assets:Receivables:Director:Umar                     2.10 AED
+  Assets:Receivables:Director:Umar                 3,000.00 AED
 
-2026-07-23 * "Wio" "Valutawissel EUR naar AED (koers 4.0797)"
+2026-07-23 * "Wio" "Currency exchange EUR to AED (rate 4.0797)"
   wio-ref: "277340553"
   wio-ref-2: "277340554"
   wio-type: "Currency exchange"
-  bron: "Wio-export"
+  source: "Wio export"
   Assets:Bank:Wio-EUR                             -1,225.58 EUR @@ 5,000.00 AED
   Assets:Bank:Wio-AED                              5,000.00 AED
 
 2026-07-24 * "Umar Fahad Mirza" "To Umar Fahad Mirza | M"
   wio-ref: "277745524"
   wio-type: "Transfers"
-  bron: "Wio-export"
-  nl: "Overboeking naar privé zonder Salary: rekening-courant directeur (besluit 18-10-2026), later verrekend met de loonschuld"
+  source: "Wio export"
+  note: "Transfer to private account without 'Salary': director's current account (decision 18-10-2026), later set off against salary payable"
   Assets:Bank:Wio-AED                             -5,000.00 AED
-  Assets:Rekening-courant:Umar                     5,000.00 AED
+  Assets:Receivables:Director:Umar                 5,000.00 AED
 
-2026-07-26 * "Google Play (apps en abonnementen)" "Google Play Apps"
+2026-07-26 * "Google Play (apps and subscriptions)" "Google Play Apps"
   wio-ref: "278740038"
   wio-type: "Card"
-  bron: "Wio-export"
-  nl: "Regel Umar 2-11-2026: zakelijk zodra er een bon of factuur in Drive staat, anders privé (rekening-courant)"
+  source: "Wio export"
+  note: "Owner rule 2-11-2026: business once a receipt or invoice is in Drive, otherwise private (director's current account)"
   wio-fee-ref: "278740049"
   Assets:Bank:Wio-AED                                -14.30 AED
   Assets:Bank:Wio-AED                                 -0.28 AED
-  Assets:Rekening-courant:Umar                         0.28 AED
-  Assets:Rekening-courant:Umar                        14.30 AED
+  Assets:Receivables:Director:Umar                     0.28 AED
+  Assets:Receivables:Director:Umar                    14.30 AED
 
 2026-07-26 * "Netlify" "Netlify"
   wio-ref: "278776929"
   wio-type: "Card"
-  bron: "Wio-export"
+  source: "Wio export"
   wio-fee-ref: "278776937"
   Assets:Bank:Wio-AED                                -16.65 AED
   Assets:Bank:Wio-AED                                 -0.33 AED
-  Expenses:Bank:Wisselkosten                           0.33 AED
-  Expenses:Software:Overig                            16.65 AED
+  Expenses:Bank:FXCharges                              0.33 AED
+  Expenses:Software:Other                             16.65 AED
 
-2026-07-27 * "Eten en boodschappen" "Al Ain Food and Beverages"
+2026-07-27 * "Food and groceries" "Al Ain Food and Beverages"
   wio-ref: "279235378"
   wio-type: "Card"
-  bron: "Wio-export"
-  nl: "Standaard privé (rekening-courant); alleen zakelijk als er een bon met klant of doel is"
+  source: "Wio export"
+  note: "Private by default (director's current account); business only with a receipt showing the client or purpose"
   Assets:Bank:Wio-AED                                -50.00 AED
-  Assets:Rekening-courant:Umar                        50.00 AED
+  Assets:Receivables:Director:Umar                    50.00 AED
 
 2026-07-27 * "Fiskl" "Fiskl accounting"
   wio-ref: "279285348"
   wio-type: "Card"
-  bron: "Wio-export"
+  source: "Wio export"
   wio-fee-ref: "279285360"
   Assets:Bank:Wio-AED                                -50.62 AED
   Assets:Bank:Wio-AED                                 -1.01 AED
-  Expenses:Bank:Wisselkosten                           1.01 AED
-  Expenses:Software:Overig                            50.62 AED
+  Expenses:Bank:FXCharges                              1.01 AED
+  Expenses:Software:Other                             50.62 AED
 
 2026-07-29 * "Amazon" "Amazon ae"
   wio-ref: "280200815"
   wio-type: "Card"
-  bron: "Wio-export"
-  nl: "Regel Umar 2-11-2026: zakelijk zodra er een bon of factuur in Drive staat (dan Kantoor:Benodigdheden of Boeken-opleiding), anders privé (rekening-courant)"
+  source: "Wio export"
+  note: "Owner rule 2-11-2026: business once a receipt or invoice is in Drive (then Office:Supplies or Office:BooksTraining), otherwise private (director's current account)"
   Assets:Bank:Wio-AED                                  0.02 AED
-  Assets:Rekening-courant:Umar                        -0.02 AED
+  Assets:Receivables:Director:Umar                    -0.02 AED
 
-2026-07-29 * "Google Play (apps en abonnementen)" "Google Play Apps"
+2026-07-29 * "Google Play (apps and subscriptions)" "Google Play Apps"
   wio-ref: "280236741"
   wio-type: "Card"
-  bron: "Wio-export"
-  nl: "Regel Umar 2-11-2026: zakelijk zodra er een bon of factuur in Drive staat, anders privé (rekening-courant)"
+  source: "Wio export"
+  note: "Owner rule 2-11-2026: business once a receipt or invoice is in Drive, otherwise private (director's current account)"
   wio-fee-ref: "280236750"
   Assets:Bank:Wio-AED                               -169.42 AED
   Assets:Bank:Wio-AED                                 -3.38 AED
-  Assets:Rekening-courant:Umar                         3.38 AED
-  Assets:Rekening-courant:Umar                       169.42 AED
+  Assets:Receivables:Director:Umar                     3.38 AED
+  Assets:Receivables:Director:Umar                   169.42 AED
 
 2026-07-29 * "OpenAI" "Openai chatgpt subscr"
   wio-ref: "280247364"
   wio-type: "Card"
-  bron: "Wio-export"
+  source: "Wio export"
   wio-fee-ref: "280247377"
   Assets:Bank:Wio-AED                                -28.07 AED
   Assets:Bank:Wio-AED                                 -0.56 AED
-  Expenses:Bank:Wisselkosten                           0.56 AED
+  Expenses:Bank:FXCharges                              0.56 AED
   Expenses:Software:AI                                28.07 AED
 
-2026-07-31 * "Wio" "Valutawissel EUR naar AED (koers 4.1079)"
+2026-07-31 * "Wio" "Currency exchange EUR to AED (rate 4.1079)"
   wio-ref: "280899191"
   wio-ref-2: "280899192"
   wio-type: "Currency exchange"
-  bron: "Wio-export"
+  source: "Wio export"
   Assets:Bank:Wio-EUR                             -1,000.00 EUR @@ 4,107.90 AED
   Assets:Bank:Wio-AED                              4,107.90 AED

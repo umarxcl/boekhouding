@@ -1,75 +1,75 @@
-; Boekingen XCL januari 2026 (importer wio.py uit de Wio-jaarexport; 7 boekingen)
-; Bijlagen: Drive Boekhouding/XCL/Inkoop 2026. Vlag ! = nog niet beoordeeld (zie Sheet Boekhouding - Goedkeuring).
+; XCL entries January 2026 (importer wio.py from the Wio annual export; 7 entries)
+; Attachments: Drive Boekhouding/XCL/Inkoop 2026. Flag ! = not yet reviewed (see Sheet 'Boekhouding - Goedkeuring').
 
 2026-01-22 balance Assets:Bank:Wio-AED              0.00 AED
 
-2026-01-22 * "Onbekende ontvangst" "From SILK VALLEY HOLIDAY HOMES LLC | Mirza724BreezSD"
+2026-01-22 * "Unknown incoming payment" "From SILK VALLEY HOLIDAY HOMES LLC | Mirza724BreezSD"
   wio-ref: "204001669"
   wio-type: "Transfers"
-  bron: "Wio-export"
-  nl: "Geld ontvangen van een onbekende partij: terugbetaling van een privé-uitgave (dan rekening-courant) of omzet?"
-  goedkeuring: "2026-11-03"
-  antwoord: "zakelijke reis: huur van airbnb"
+  source: "Wio export"
+  initial-note: "Money received from an unknown party: refund of a private expense (then director's current account) or revenue?"
+  approved: "2026-11-03"
+  owner-answer: "zakelijke reis: huur van airbnb"
   note: "Incoming AED 1,500 from Silk Valley Holiday Homes: refund on a business stay (credit on travel cost)"
   Assets:Bank:Wio-AED                              1,500.00 AED
-  Expenses:Reis:Verblijf                          -1,500.00 AED
+  Expenses:Travel:Accommodation                   -1,500.00 AED
 
 2026-01-26 balance Assets:Bank:Wio-EUR              0.00 EUR
 
-2026-01-26 * "Umar Fahad Mirza (privé)" "From Hr U F Mirza | /OAT/Private nl account to uae acco unt"
+2026-01-26 * "Umar Fahad Mirza (private)" "From Hr U F Mirza | /OAT/Private nl account to uae acco unt"
   wio-ref: "205413395"
   wio-type: "Transfers"
-  bron: "Wio-export"
-  nl: "Besluit Umar 2-11-2026: AED 48.000 hiervan is de storting van het aandelenkapitaal, de rest is een renteloze lening van Umar aan XCL. Omrekening tegen de werkelijke Wio-koers van dezelfde dag (EUR 25.000 = AED 106.061,75, koers 4,242470). Vast te leggen in een aandeelhoudersbesluit."
-  document: "Aandeelhoudersbesluit kapitaalstorting en lening (op te stellen)"
-  goedkeuring: "2026-11-03"
-  antwoord: "ja"
+  source: "Wio export"
+  note: "Owner decision 2-11-2026: AED 48,000 of this is the payment of the share capital, the rest is an interest-free loan from Umar to XCL. Converted at the actual Wio rate of the same day (EUR 25,000 = AED 106,061.75, rate 4.242470). To be recorded in a shareholder resolution."
+  document: "Shareholder resolution on capital payment and loan (to be drafted)"
+  approved: "2026-11-03"
+  owner-answer: "ja"
   Assets:Bank:Wio-EUR                             11,314.15 EUR @@ 48,000.00 AED
-  Assets:Nog-te-storten-kapitaal                 -48,000.00 AED
+  Assets:ShareCapitalUnpaid                      -48,000.00 AED
   Assets:Bank:Wio-EUR                             13,685.85 EUR
-  Liabilities:Lening-aandeelhouder:Umar          -13,685.85 EUR
+  Liabilities:ShareholderLoan:Umar-EUR           -13,685.85 EUR
 
 2026-01-26 * "MDI Consultants B.V." "From MDI Consultants B.V. | Invoice INV-0002"
   wio-ref: "205314645"
   wio-type: "Transfers"
-  bron: "Wio-export"
-  factuur: "INV-0002"
+  source: "Wio export"
+  invoice: "INV-0002"
   Assets:Bank:Wio-EUR                              4,500.00 EUR
-  Assets:Debiteuren:MDI                           -4,500.00 EUR
+  Assets:Receivables:Trade:MDI                    -4,500.00 EUR
 
-2026-01-26 * "Wio" "Valutawissel EUR naar AED (koers 4.2339)"
+2026-01-26 * "Wio" "Currency exchange EUR to AED (rate 4.2339)"
   wio-ref: "205372200"
   wio-ref-2: "205372202"
   wio-type: "Currency exchange"
-  bron: "Wio-export"
+  source: "Wio export"
   Assets:Bank:Wio-EUR                             -4,500.00 EUR @@ 19,052.69 AED
   Assets:Bank:Wio-AED                             19,052.69 AED
 
-2026-01-26 * "Wio" "Valutawissel EUR naar AED (koers 4.2425)"
+2026-01-26 * "Wio" "Currency exchange EUR to AED (rate 4.2425)"
   wio-ref: "205648102"
   wio-ref-2: "205648106"
   wio-type: "Currency exchange"
-  bron: "Wio-export"
+  source: "Wio export"
   Assets:Bank:Wio-EUR                            -25,000.00 EUR @@ 106,061.75 AED
   Assets:Bank:Wio-AED                            106,061.75 AED
 
 2026-01-27 * "Sajjad Hussain" "To Sajjad Hussain | Rent and commission Nesma house"
   wio-ref: "205820672"
   wio-type: "Transfers"
-  bron: "Wio-export"
-  nl: "Woning op naam van Umar: XCL betaalde namens hem; rekening-courant directeur, verrekend met de loonschuld (besluit Umar 2-11-2026)"
-  goedkeuring: "2026-11-03"
-  antwoord: "ja"
+  source: "Wio export"
+  note: "Residence in Umar's name: XCL paid on his behalf; director's current account, set off against salary payable (owner decision 2-11-2026)"
+  approved: "2026-11-03"
+  owner-answer: "ja"
   Assets:Bank:Wio-AED                            -70,000.00 AED
-  Assets:Rekening-courant:Umar                    70,000.00 AED
+  Assets:Receivables:Director:Umar                70,000.00 AED
 
 2026-01-29 * "Azeem Hussain" "To Azeem Hussain | Support"
   wio-ref: "206698291"
   wio-type: "Transfers"
-  bron: "Wio-export"
-  nl: "Omschrijving 'Support': waarschijnlijk privé (rekening-courant); wie is dit en waarvoor?"
-  goedkeuring: "2026-11-03"
-  antwoord: "een lening aan een vriend"
+  source: "Wio export"
+  initial-note: "Description 'Support': probably private (director's current account); who is this and what was it for?"
+  approved: "2026-11-03"
+  owner-answer: "een lening aan een vriend"
   note: "Private loan by Umar to a friend, paid from the XCL account on his behalf"
   Assets:Bank:Wio-AED                             -8,000.00 AED
-  Assets:Rekening-courant:Umar                     8,000.00 AED
+  Assets:Receivables:Director:Umar                 8,000.00 AED

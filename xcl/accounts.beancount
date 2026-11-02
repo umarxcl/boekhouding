@@ -1,571 +1,573 @@
 ; =====================================================================
-; Rekeningschema XCL MANAGEMENT CONSULTANCIES - FZCO (IFZA, licentie 75707)
-; Boekjaar 1: 15-12-2025 t/m 31-12-2026. Rapportagevaluta AED, EUR als vreemde valuta.
-; Grondslag: accrual, IFRS for SMEs. Regime: Small Business Relief 2026.
-; Versie 2 (2-11-2026) na de onafhankelijke review (docs/review_rekeningschema.md).
+; Chart of accounts XCL MANAGEMENT CONSULTANCIES - FZCO (IFZA, licence 75707)
+; Financial year 1: 15-12-2025 to 31-12-2026. Functional and presentation currency AED, EUR held as foreign currency.
+; Basis: accrual, IFRS for SMEs. Regime: Small Business Relief 2026.
+; Version 2 (2-11-2026) after the independent review (docs/review_rekeningschema.md).
+; Account names in English since 3-11-2026; old Dutch names: docs/account_mapping_nl_en.md.
 ;
-; Valutaregel: resultaat- en eigenvermogensrekeningen alleen in AED (omrekening per boeking tegen de
-; CBUAE-koers van de dag); alleen monetaire balansrekeningen mogen EUR voeren en worden herwaardeerd.
+; Currency rule: income, expense and equity accounts in AED only (each posting converted at the CBUAE rate of the day);
+; only monetary balance sheet accounts may hold EUR, and they are revalued.
 ;
-; Metadata per rekening:
-;   nl:        uitleg in gewone taal (komt op de maandlijst en in rapporten)
-;   btw:       btw-code, gekoppeld aan een vak van de VAT 201 (zie docs/btw-codes.md):
-;              0-export | 5-binnenland | 5-voorbelasting | verlegd | geblokkeerd | vrijgesteld |
-;              buiten-reikwijdte | 0-inkoop | buitenland | nvt   (per boeking overschrijfbaar)
-;   ct:        behandeling in de CT-aangifte: aftrekbaar | 50-niet-aftrekbaar | niet-aftrekbaar |
-;              marktwaarde-toets (art. 36, connected person) | vrijgesteld | rente-art30-31 | nvt
-;   verbonden: related-party (art. 35) | connected-person (art. 36)   (weglaten als n.v.t.)
-;   ifrs:      regel in de jaarrekening
-;   rgs:       Nederlandse RGS-referentiecode voor vergelijkbaarheid met de NL-bv's;
-;              [v] = nog te verifiëren tegen het officiële RGS-bestand
+; Metadata per account:
+;   note:          plain-language explanation (shown on the monthly review list and in reports)
+;   vat:           VAT code, linked to a box of the VAT 201 return (explained in docs/chart_of_accounts.md):
+;                  zero-rated-export | standard-5 | input-5 | reverse-charge | blocked | exempt |
+;                  out-of-scope | zero-rated-purchase | foreign | n/a   (can be overridden per posting)
+;   ct:            treatment in the Corporate Tax return: deductible | 50-non-deductible | non-deductible |
+;                  arms-length-test (art. 36, connected person) | exempt | interest-art30-31 | n/a
+;   related-party: related-party (art. 35) | connected-person (art. 36)   (omitted when not applicable)
+;   ifrs:          line in the financial statements
+;   rgs:           Dutch RGS reference code for comparability with the Dutch B.V.s;
+;                  [v] = still to be verified against the official RGS file
+;   rgs-negative:  RGS code to use when the balance changes sign (e.g. receivable becomes payable)
 ; =====================================================================
 
 ; ---------------------------------------------------------------------
-; ACTIVA
+; ASSETS
 ; ---------------------------------------------------------------------
-2025-12-15 open Assets:Vaste-activa:Inventaris:Kostprijs    AED
-  nl: "Aanschafprijs van laptop, telefoon en apparatuur vanaf AED 2.500 per stuk"
-  btw: "5-voorbelasting"
-  ct: "aftrekbaar"
-  ifrs: "Materiële vaste activa"
+2025-12-15 open Assets:FixedAssets:Equipment:Cost    AED
+  note: "Purchase cost of laptop, phone and equipment from AED 2,500 per item"
+  vat: "input-5"
+  ct: "deductible"
+  ifrs: "Property, plant and equipment"
   rgs: "BMvaBei"
 
-2025-12-15 open Assets:Vaste-activa:Inventaris:Afschrijving AED
-  nl: "Opgebouwde afschrijving op apparatuur (lineair: laptop 3 jaar, telefoon 2 jaar)"
-  btw: "nvt"
-  ct: "aftrekbaar"
-  ifrs: "Materiële vaste activa (cumulatieve afschrijving)"
+2025-12-15 open Assets:FixedAssets:Equipment:AccumulatedDepreciation AED
+  note: "Accumulated depreciation on equipment (straight-line: laptop 3 years, phone 2 years)"
+  vat: "n/a"
+  ct: "deductible"
+  ifrs: "Property, plant and equipment (accumulated depreciation)"
   rgs: "BMvaBei"
 
 2025-12-15 open Assets:Bank:Wio-AED                      AED
-  nl: "Zakelijke betaalrekening Wio in dirham (pas voor zakelijke uitgaven)"
+  note: "Wio business current account in dirham (card for business expenses)"
   iban: "AE450860000009202341633"
-  ifrs: "Liquide middelen"
+  ifrs: "Cash and cash equivalents"
   rgs: "BLimBan"
 
 2025-12-15 open Assets:Bank:Wio-EUR                      EUR
-  nl: "Zakelijke rekening Wio in euro (ontvangst van de managementfees)"
+  note: "Wio business account in euro (receipt of the management fees)"
   iban: "AE320860000009506419892"
-  ifrs: "Liquide middelen"
+  ifrs: "Cash and cash equivalents"
   rgs: "BLimBan"
 
-2025-12-15 open Assets:Kruisposten                       AED,EUR
-  nl: "Geld onderweg tussen eigen rekeningen; moet bij maandafsluiting nul zijn"
-  btw: "nvt"
-  ifrs: "n.v.t."
+2025-12-15 open Assets:Suspense                          AED,EUR
+  note: "Money in transit between own accounts; must be nil at month-end close"
+  vat: "n/a"
+  ifrs: "n/a"
   rgs: "BVorTus"
-  rgs-omslag: "BSchTus"
+  rgs-negative: "BSchTus"
 
-2025-12-15 open Assets:Debiteuren:Ekmekci                EUR
-  nl: "Nog te ontvangen van Ekmekci Group B.V. (verstuurde facturen min ontvangsten)"
-  verbonden: "related-party"
-  ifrs: "Vorderingen op verbonden partijen"
+2025-12-15 open Assets:Receivables:Trade:Ekmekci         EUR
+  note: "Receivable from Ekmekci Group B.V. (invoices issued less receipts)"
+  related-party: "related-party"
+  ifrs: "Receivables from related parties"
   rgs: "BVorVov"
 
-2025-12-15 open Assets:Debiteuren:MDI                    EUR
-  nl: "Nog te ontvangen van MDI Consultants B.V."
-  verbonden: "related-party"
-  ifrs: "Vorderingen op verbonden partijen"
+2025-12-15 open Assets:Receivables:Trade:MDI             EUR
+  note: "Receivable from MDI Consultants B.V."
+  related-party: "related-party"
+  ifrs: "Receivables from related parties"
   rgs: "BVorVov"
 
-2025-12-15 open Assets:Debiteuren:Point-Sixteen          AED,EUR
-  nl: "Nog te ontvangen van Point Sixteen B.V. (fee vanaf besluit en managementovereenkomst)"
-  verbonden: "related-party"
-  ifrs: "Vorderingen op verbonden partijen"
+2025-12-15 open Assets:Receivables:Trade:PointSixteen    AED,EUR
+  note: "Receivable from Point Sixteen B.V. (fee from the board resolution and management agreement)"
+  related-party: "related-party"
+  ifrs: "Receivables from related parties"
   rgs: "BVorVov"
 
-2025-12-15 open Assets:Debiteuren:Inclusionair           AED
-  nl: "Nog te ontvangen van Inclusionair (Nederlandse bv), gefactureerd in AED"
-  ifrs: "Handelsvorderingen"
+2025-12-15 open Assets:Receivables:Trade:Inclusionair    AED
+  note: "Receivable from Inclusionair (Dutch B.V.), invoiced in AED"
+  ifrs: "Trade receivables"
   rgs: "BVorDeb"
 
-2025-12-15 open Assets:Debiteuren:Overig                 AED,EUR
-  nl: "Nog te ontvangen van overige klanten"
-  ifrs: "Handelsvorderingen"
+2025-12-15 open Assets:Receivables:Trade:Other           AED,EUR
+  note: "Receivables from other customers"
+  ifrs: "Trade receivables"
   rgs: "BVorDeb"
 
-2025-12-15 open Assets:Vooruitbetaald:Huisvesting        AED
-  nl: "Vooruitbetaalde villahuur: het deel van een kwartaalbetaling dat nog niet verstreken is"
-  ifrs: "Overlopende activa"
+2025-12-15 open Assets:Prepayments:Housing               AED
+  note: "Prepaid villa rent: the part of a quarterly payment that has not yet elapsed"
+  ifrs: "Prepayments"
   rgs: "BVorOva"
 
-2025-12-15 open Assets:Vooruitbetaald:Licentie           AED
-  nl: "Vooruitbetaalde IFZA-licentie en establishment card, gespreid over de licentieperiode"
-  ifrs: "Overlopende activa"
+2025-12-15 open Assets:Prepayments:Licence               AED
+  note: "Prepaid IFZA licence and establishment card, spread over the licence period"
+  ifrs: "Prepayments"
   rgs: "BVorOva"
 
-2025-12-15 open Assets:Vooruitbetaald:Overig             AED
-  nl: "Overige vooruitbetalingen (jaarabonnementen, verzekeringen)"
-  ifrs: "Overlopende activa"
+2025-12-15 open Assets:Prepayments:Other                 AED
+  note: "Other prepayments (annual subscriptions, insurance)"
+  ifrs: "Prepayments"
   rgs: "BVorOva"
 
-2025-12-15 open Assets:Waarborgsommen                    AED
-  nl: "Borg villa en huurauto; terug te ontvangen bij einde huur"
-  btw: "nvt"
-  ct: "nvt"
-  ifrs: "Overige vorderingen"
+2025-12-15 open Assets:Deposits                          AED
+  note: "Security deposits for villa and rental car; refundable at end of lease"
+  vat: "n/a"
+  ct: "n/a"
+  ifrs: "Other receivables"
   rgs: "BFvaOvr"
 
-2025-12-15 open Assets:Rekening-courant:Umar             AED,EUR
-  nl: "Rekening-courant directeur: wat XCL aan Umar heeft voorgeschoten (privé-opnames en privé-uitgaven via de XCL-pas); maandelijks verrekend met de loonschuld volgens de schriftelijke verrekeningsafspraak"
-  ct: "marktwaarde-toets"
-  verbonden: "connected-person"
-  ifrs: "Vordering op of schuld aan bestuurder"
+2025-12-15 open Assets:Receivables:Director:Umar         AED,EUR
+  note: "Director's current account: amounts XCL advanced to Umar (private withdrawals and private spending on the XCL card); set off monthly against salary payable under the written set-off agreement"
+  ct: "arms-length-test"
+  related-party: "connected-person"
+  ifrs: "Receivable from / payable to director"
   rgs: "BVorOvr"
-  rgs-omslag: "BSchOvs"
+  rgs-negative: "BSchOvs"
 
-2025-12-15 open Assets:Rekening-courant:MZML-Ltd         AED,EUR
-  nl: "Wat XCL heeft betaald voor MZML Holding Limited (af te wikkelen zodra MZML Ltd een bankrekening heeft)"
-  verbonden: "related-party"
-  ifrs: "Vordering op verbonden partij"
+2025-12-15 open Assets:Receivables:Related:MZML-Ltd      AED,EUR
+  note: "Amounts XCL paid on behalf of MZML Holding Limited (to be settled once MZML Ltd has a bank account)"
+  related-party: "related-party"
+  ifrs: "Receivable from related party"
   rgs: "BVorVov"
 
-2026-01-01 open Assets:Rekening-courant:MZML-BV           AED
-  nl: "Vordering op MZML Holding B.V. (Nederland): kosten die XCL heeft betaald voor rekening van MZML Holding B.V., bijvoorbeeld de neWings-factuur 2026-0098"
-  btw: "nvt"
-  ct: "marktwaarde-toets"
-  verbonden: "ja"
-  ifrs: "Vordering op verbonden partij"
+2026-01-01 open Assets:Receivables:Related:MZML-BV       AED
+  note: "Receivable from MZML Holding B.V. (Netherlands): costs XCL paid on behalf of MZML Holding B.V., e.g. neWings invoice 2026-0098"
+  vat: "n/a"
+  ct: "arms-length-test"
+  related-party: "related-party"
+  ifrs: "Receivable from related party"
   rgs: "BVorVov"
 
-2025-12-15 open Assets:Nog-te-storten-kapitaal           AED
-  nl: "Aandelenkapitaal dat de aandeelhouder nog niet heeft gestort; in de jaarrekening in mindering op het eigen vermogen"
-  verbonden: "connected-person"
-  ifrs: "In mindering op eigen vermogen (IFRS for SMEs 22.7(a))"
+2025-12-15 open Assets:ShareCapitalUnpaid                AED
+  note: "Share capital not yet paid up by the shareholder; deducted from equity in the financial statements"
+  related-party: "connected-person"
+  ifrs: "Deducted from equity (IFRS for SMEs 22.7(a))"
   rgs: "BVorVao"
 
-2025-12-15 open Assets:Btw:Voorbelasting                 AED
-  nl: "Btw op UAE-kosten die XCL mag terugvragen (alleen met TRN-factuur, alleen vanaf de registratiedatum)"
-  btw: "5-voorbelasting"
-  ifrs: "Belastingvordering"
+2025-12-15 open Assets:VAT:Input                         AED
+  note: "VAT on UAE costs that XCL may recover (only with a tax invoice showing a TRN, only from the registration date)"
+  vat: "input-5"
+  ifrs: "Tax receivable"
   rgs: "BVorVbk"
 
-2025-12-15 open Assets:Btw:Voorbelasting-verlegd         AED
-  nl: "Btw die XCL over buitenlandse diensten zelf berekent en tegelijk aftrekt (VAT 201 vak 10)"
-  btw: "verlegd"
-  ifrs: "Belastingvordering (gesaldeerd met Liabilities:Btw:Verlegd)"
+2025-12-15 open Assets:VAT:InputReverseCharge            AED
+  note: "VAT that XCL self-assesses on imported services and recovers at the same time (VAT 201 box 10)"
+  vat: "reverse-charge"
+  ifrs: "Tax receivable (offset against Liabilities:VAT:ReverseCharge)"
   rgs: "BVorVbk"
 
 ; ---------------------------------------------------------------------
-; PASSIVA
+; LIABILITIES
 ; ---------------------------------------------------------------------
-2025-12-15 open Liabilities:Crediteuren                  AED,EUR
-  nl: "Ontvangen inkoopfacturen die nog betaald moeten worden"
-  ifrs: "Handelsschulden"
+2025-12-15 open Liabilities:Payables:Trade               AED,EUR
+  note: "Purchase invoices received and not yet paid"
+  ifrs: "Trade payables"
   rgs: "BSchCre"
 
-2025-12-15 open Liabilities:Lening-aandeelhouder:Umar    EUR
-  nl: "Lening van Umar privé aan XCL (o.a. EUR 25.000 op 26-1-2026), renteloos; voorwaarden schriftelijk vastleggen; eerst vaststellen welk deel kapitaalstorting is"
-  ct: "marktwaarde-toets"
-  verbonden: "connected-person"
-  ifrs: "Schuld aan aandeelhouder"
+2025-12-15 open Liabilities:ShareholderLoan:Umar-EUR     EUR
+  note: "Loan from Umar (private) to XCL (including EUR 25,000 on 26-1-2026), interest-free; terms to be documented in writing; first determine which part is capital contribution"
+  ct: "arms-length-test"
+  related-party: "connected-person"
+  ifrs: "Loan from shareholder"
   rgs: "BLas"
 
-2026-01-01 open Liabilities:Lening-aandeelhouder:Umar-AED AED
-  nl: "Renteloze lening van Umar privé aan XCL in AED (bijvoorbeeld AED 21.063,03 op 3-8-2026 uit privémiddelen); voorwaarden schriftelijk vastleggen"
-  btw: "nvt"
-  ct: "marktwaarde-toets"
-  verbonden: "ja"
-  ifrs: "Schuld aan aandeelhouder"
+2026-01-01 open Liabilities:ShareholderLoan:Umar-AED     AED
+  note: "Interest-free loan from Umar (private) to XCL in AED (e.g. AED 21,063.03 on 3-8-2026 from private funds); terms to be documented in writing"
+  vat: "n/a"
+  ct: "arms-length-test"
+  related-party: "connected-person"
+  ifrs: "Loan from shareholder"
   rgs: "BLas"
 
-2025-12-15 open Liabilities:Personeel:Loonschuld-Umar    AED
-  nl: "Opgebouwd maar nog niet uitbetaald salaris van Umar (contractloon; schriftelijk uitgestelde betaling, route a)"
-  ct: "marktwaarde-toets"
-  verbonden: "connected-person"
-  ifrs: "Schuld aan bestuurder"
+2025-12-15 open Liabilities:Employees:SalaryPayable-Umar AED
+  note: "Salary for Umar accrued but not yet paid (contract salary; deferred payment agreed in writing, route a)"
+  ct: "arms-length-test"
+  related-party: "connected-person"
+  ifrs: "Payable to director"
   rgs: "BSchOvs"
 
-2025-12-15 open Liabilities:Personeel:End-of-service     AED
-  nl: "Voorziening eindevergoeding (end of service gratuity): 21 dagen basisloon per dienstjaar in de eerste vijf jaar, berekend op het laatste basisloon"
-  ct: "marktwaarde-toets"
-  verbonden: "connected-person"
-  ifrs: "Voorziening personeelsbeloningen"
+2025-12-15 open Liabilities:Employees:EndOfService       AED
+  note: "Provision for end-of-service gratuity: 21 days' basic salary per year of service in the first five years, based on the last basic salary"
+  ct: "arms-length-test"
+  related-party: "connected-person"
+  ifrs: "Provision for employee benefits"
   rgs: "BVrz"
 
-2025-12-15 open Liabilities:Personeel:Verlof             AED
-  nl: "Opgebouwde, nog niet opgenomen vakantiedagen (30 kalenderdagen per jaar) op het basisloon"
-  ct: "aftrekbaar"
-  verbonden: "connected-person"
-  ifrs: "Personeelsverplichtingen (kortlopend)"
+2025-12-15 open Liabilities:Employees:LeaveAccrual       AED
+  note: "Accrued, untaken annual leave (30 calendar days per year) at basic salary"
+  ct: "deductible"
+  related-party: "connected-person"
+  ifrs: "Employee benefit obligations (current)"
   rgs: "BSchOvs"
 
-2025-12-15 open Liabilities:Btw:Af-te-dragen             AED
-  nl: "Btw die XCL moet afdragen over binnenlandse omzet (VAT 201 vak 1); bij alleen export nihil"
-  btw: "5-binnenland"
-  ifrs: "Belastingschuld"
+2025-12-15 open Liabilities:VAT:Output                   AED
+  note: "Output VAT XCL must pay on domestic supplies (VAT 201 box 1); nil with exports only"
+  vat: "standard-5"
+  ifrs: "Tax payable"
   rgs: "BSchBepBaf"
 
-2025-12-15 open Liabilities:Btw:Verlegd                  AED
-  nl: "Btw over buitenlandse diensten (software, AI, NL-advies) die XCL zelf aangeeft (VAT 201 vak 3)"
-  btw: "verlegd"
-  ifrs: "Belastingschuld (gesaldeerd met Assets:Btw:Voorbelasting-verlegd)"
+2025-12-15 open Liabilities:VAT:ReverseCharge            AED
+  note: "VAT on imported services (software, AI, Dutch advisers) that XCL self-assesses (VAT 201 box 3)"
+  vat: "reverse-charge"
+  ifrs: "Tax payable (offset against Assets:VAT:InputReverseCharge)"
   rgs: "BSchBepBlw"
 
-2025-12-15 open Liabilities:CT:Te-betalen                AED
-  nl: "Vennootschapsbelasting UAE over het boekjaar (bij Small Business Relief nihil)"
-  ifrs: "Belastingschuld"
+2025-12-15 open Liabilities:CorporateTax:Payable         AED
+  note: "UAE Corporate Tax for the financial year (nil under Small Business Relief)"
+  ifrs: "Tax payable"
   rgs: "BSchBep"
 
-2025-12-15 open Liabilities:Vooruitontvangen:Omzet       AED
-  nl: "Door klanten vooruitbetaald voor diensten die nog geleverd moeten worden (bijv. INV-0008 Inclusionair); in AED tegen de ontvangstkoers"
-  btw: "nvt"
-  ct: "nvt"
-  ifrs: "Contractverplichting (vooruitontvangen omzet)"
+2025-12-15 open Liabilities:DeferredRevenue              AED
+  note: "Amounts prepaid by customers for services still to be delivered (e.g. INV-0008 Inclusionair); in AED at the receipt rate"
+  vat: "n/a"
+  ct: "n/a"
+  ifrs: "Contract liability (deferred revenue)"
   rgs: "BSchVobVob"
 
-2025-12-15 open Liabilities:Overlopend                   AED,EUR
-  nl: "Kosten die bij de maand horen maar nog niet gefactureerd of betaald zijn"
-  ifrs: "Overlopende passiva"
+2025-12-15 open Liabilities:Accruals                     AED,EUR
+  note: "Costs belonging to the month that have not yet been invoiced or paid"
+  ifrs: "Accruals"
   rgs: "BSchOpa"
 
 ; ---------------------------------------------------------------------
-; EIGEN VERMOGEN (alleen AED)
+; EQUITY (AED only)
 ; ---------------------------------------------------------------------
-2025-12-15 open Equity:Aandelenkapitaal                  AED
-  nl: "Geplaatst kapitaal: 100 aandelen van AED 480 (resolutie bij oprichting)"
-  ifrs: "Aandelenkapitaal"
+2025-12-15 open Equity:ShareCapital                      AED
+  note: "Issued share capital: 100 shares of AED 480 (resolution at incorporation)"
+  ifrs: "Share capital"
   rgs: "BEivGok"
 
-2025-12-15 open Equity:Kapitaalbijdrage                  AED
-  nl: "Inbreng van de aandeelhouder buiten aandelen om (bijv. een kwijtgescholden loonschuld)"
-  ifrs: "Overige reserves (kapitaalbijdrage aandeelhouder)"
+2025-12-15 open Equity:CapitalContribution               AED
+  note: "Contribution by the shareholder other than for shares (e.g. a waived salary payable)"
+  ifrs: "Other reserves (shareholder capital contribution)"
   rgs: "BEivAgi"
 
-2025-12-15 open Equity:Openingsbalans                    AED
-  nl: "Technische tegenrekening voor de openingsbalans"
-  ifrs: "n.v.t."
+2025-12-15 open Equity:OpeningBalance                    AED
+  note: "Technical contra account for the opening balance"
+  ifrs: "n/a"
 
-2025-12-15 open Equity:Resultaat                         AED
-  nl: "Winst of verlies van afgesloten boekjaren"
-  ifrs: "Overige reserves"
+2025-12-15 open Equity:RetainedEarnings                  AED
+  note: "Profit or loss of closed financial years"
+  ifrs: "Retained earnings"
   rgs: "BEivOvrAlr"
 
 ; ---------------------------------------------------------------------
-; OPBRENGSTEN (alleen AED; EUR-facturen omgerekend tegen de CBUAE-koers van de factuurdatum)
+; INCOME (AED only; EUR invoices converted at the CBUAE rate of the invoice date)
 ; ---------------------------------------------------------------------
-2025-12-15 open Income:Omzet:Managementfee:Ekmekci       AED
-  nl: "Managementfee aan Ekmekci Group B.V. (EUR 7.716 per maand)"
-  btw: "0-export"
-  ct: "aftrekbaar"
-  verbonden: "related-party"
-  ifrs: "Netto-omzet"
+2025-12-15 open Income:Revenue:ManagementFees:Ekmekci    AED
+  note: "Management fee charged to Ekmekci Group B.V. (EUR 7,716 per month)"
+  vat: "zero-rated-export"
+  ct: "deductible"
+  related-party: "related-party"
+  ifrs: "Revenue"
   rgs: "WOmzNod"
 
-2025-12-15 open Income:Omzet:Managementfee:MDI           AED
-  nl: "Fee aan MDI Consultants B.V. (leergang ABN AMRO)"
-  btw: "0-export"
-  ct: "aftrekbaar"
-  verbonden: "related-party"
-  ifrs: "Netto-omzet"
+2025-12-15 open Income:Revenue:ManagementFees:MDI        AED
+  note: "Fee charged to MDI Consultants B.V. (ABN AMRO leadership programme)"
+  vat: "zero-rated-export"
+  ct: "deductible"
+  related-party: "related-party"
+  ifrs: "Revenue"
   rgs: "WOmzNod"
 
-2025-12-15 open Income:Omzet:Managementfee:Point-Sixteen AED
-  nl: "Fee aan Point Sixteen B.V. (vanaf besluit en managementovereenkomst)"
-  btw: "0-export"
-  ct: "aftrekbaar"
-  verbonden: "related-party"
-  ifrs: "Netto-omzet"
+2025-12-15 open Income:Revenue:ManagementFees:PointSixteen AED
+  note: "Fee charged to Point Sixteen B.V. (from the board resolution and management agreement)"
+  vat: "zero-rated-export"
+  ct: "deductible"
+  related-party: "related-party"
+  ifrs: "Revenue"
   rgs: "WOmzNod"
 
-2025-12-15 open Income:Omzet:Advies:Inclusionair         AED
-  nl: "Adviesdiensten aan Inclusionair (Nederlandse bv)"
-  btw: "0-export"
-  ct: "aftrekbaar"
-  ifrs: "Netto-omzet"
+2025-12-15 open Income:Revenue:Advisory:Inclusionair     AED
+  note: "Advisory services to Inclusionair (Dutch B.V.)"
+  vat: "zero-rated-export"
+  ct: "deductible"
+  ifrs: "Revenue"
   rgs: "WOmzNod"
 
-2025-12-15 open Income:Omzet:Binnenland                  AED
-  nl: "Omzet aan klanten in de UAE (5% btw, alleen na registratie)"
-  btw: "5-binnenland"
-  ct: "aftrekbaar"
-  ifrs: "Netto-omzet"
+2025-12-15 open Income:Revenue:Domestic                  AED
+  note: "Revenue from customers in the UAE (5% VAT, only after registration)"
+  vat: "standard-5"
+  ct: "deductible"
+  ifrs: "Revenue"
   rgs: "WOmzNod"
 
-2025-12-15 open Income:Omzet:Overig                      AED
-  nl: "Overige omzet; btw-behandeling per factuur"
-  btw: "5-binnenland"
-  ct: "aftrekbaar"
-  ifrs: "Netto-omzet"
+2025-12-15 open Income:Revenue:Other                     AED
+  note: "Other revenue; VAT treatment per invoice"
+  vat: "standard-5"
+  ct: "deductible"
+  ifrs: "Revenue"
   rgs: "WOmzNod"
 
-2025-12-15 open Income:Koersresultaat                    AED
-  nl: "Winst op valutawissels en herwaardering van EUR-saldi en -vorderingen"
-  btw: "nvt"
-  ct: "aftrekbaar"
-  ifrs: "Financiële baten"
+2025-12-15 open Income:FXGain                            AED
+  note: "Gain on currency exchanges and on revaluation of EUR balances and receivables"
+  vat: "n/a"
+  ct: "deductible"
+  ifrs: "Finance income"
   rgs: "WFbe"
 
-2025-12-15 open Income:Overig                            AED
-  nl: "Overige baten (terugbetalingen e.d.)"
-  btw: "nvt"
-  ct: "aftrekbaar"
-  ifrs: "Overige baten"
+2025-12-15 open Income:Other                             AED
+  note: "Other income (refunds and similar)"
+  vat: "n/a"
+  ct: "deductible"
+  ifrs: "Other income"
   rgs: "WOvb"
 
 ; ---------------------------------------------------------------------
-; KOSTEN (alleen AED)
+; EXPENSES (AED only)
 ; ---------------------------------------------------------------------
-; Personeel
-2025-12-15 open Expenses:Personeel:Loon-Umar             AED
-  nl: "Brutosalaris Umar volgens arbeidscontract"
-  btw: "nvt"
-  ct: "marktwaarde-toets"
-  verbonden: "connected-person"
-  ifrs: "Personeelskosten"
+; Staff
+2025-12-15 open Expenses:Staff:Salary-Umar               AED
+  note: "Gross salary of Umar under the employment contract"
+  vat: "n/a"
+  ct: "arms-length-test"
+  related-party: "connected-person"
+  ifrs: "Staff costs"
   rgs: "WPerLes"
 
-2025-12-15 open Expenses:Personeel:Huisvesting           AED
-  nl: "Woning Sharjah als loon in natura (villahuur, gespreid per maand) tot 14-2-2027; woninghuur is btw-vrijgesteld"
-  btw: "vrijgesteld"
-  ct: "marktwaarde-toets"
-  verbonden: "connected-person"
-  ifrs: "Personeelskosten"
+2025-12-15 open Expenses:Staff:Housing                   AED
+  note: "Residence in Sharjah as benefit in kind (villa rent, spread per month) until 14-2-2027; residential rent is VAT-exempt"
+  vat: "exempt"
+  ct: "arms-length-test"
+  related-party: "connected-person"
+  ifrs: "Staff costs"
   rgs: "WPerLes"
 
-2025-12-15 open Expenses:Personeel:Huisvesting-nuts      AED
-  nl: "SEWA en andere woningkosten bij de woning als loon in natura; btw geblokkeerd (privévoorziening werknemer)"
-  btw: "geblokkeerd"
-  ct: "marktwaarde-toets"
-  verbonden: "connected-person"
-  ifrs: "Personeelskosten"
+2025-12-15 open Expenses:Staff:HousingUtilities          AED
+  note: "SEWA and other residence costs as benefit in kind; input VAT blocked (private provision for the employee)"
+  vat: "blocked"
+  ct: "arms-length-test"
+  related-party: "connected-person"
+  ifrs: "Staff costs"
   rgs: "WPerLes"
 
-2025-12-15 open Expenses:Personeel:Auto-prive            AED
-  nl: "Privégebruik van de bedrijfsauto als loon in natura (deel van de autokosten)"
-  btw: "nvt"
-  ct: "marktwaarde-toets"
-  verbonden: "connected-person"
-  ifrs: "Personeelskosten"
+2025-12-15 open Expenses:Staff:CarPrivateUse             AED
+  note: "Private use of the company car as benefit in kind (share of car costs)"
+  vat: "n/a"
+  ct: "arms-length-test"
+  related-party: "connected-person"
+  ifrs: "Staff costs"
   rgs: "WPerLes"
 
-2025-12-15 open Expenses:Personeel:End-of-service        AED
-  nl: "Dotatie aan de voorziening eindevergoeding"
-  btw: "nvt"
-  ct: "marktwaarde-toets"
-  verbonden: "connected-person"
-  ifrs: "Personeelskosten"
+2025-12-15 open Expenses:Staff:EndOfService              AED
+  note: "Addition to the end-of-service gratuity provision"
+  vat: "n/a"
+  ct: "arms-length-test"
+  related-party: "connected-person"
+  ifrs: "Staff costs"
   rgs: "WPerLes"
 
-2025-12-15 open Expenses:Personeel:Verlof                AED
-  nl: "Dotatie aan de verlofverplichting"
-  btw: "nvt"
-  ct: "marktwaarde-toets"
-  verbonden: "connected-person"
-  ifrs: "Personeelskosten"
+2025-12-15 open Expenses:Staff:Leave                     AED
+  note: "Addition to the annual leave accrual"
+  vat: "n/a"
+  ct: "arms-length-test"
+  related-party: "connected-person"
+  ifrs: "Staff costs"
   rgs: "WPerLes"
 
-2025-12-15 open Expenses:Personeel:Zorgverzekering       AED
-  nl: "Verplichte zorgverzekering van de werknemer (alleen de werknemer, niet het gezin)"
-  btw: "5-voorbelasting"
-  ct: "marktwaarde-toets"
-  verbonden: "connected-person"
-  ifrs: "Personeelskosten"
+2025-12-15 open Expenses:Staff:HealthInsurance           AED
+  note: "Mandatory health insurance for the employee (employee only, not the family)"
+  vat: "input-5"
+  ct: "arms-length-test"
+  related-party: "connected-person"
+  ifrs: "Staff costs"
   rgs: "WBedOvp"
 
-2025-12-15 open Expenses:Personeel:Visa-overheid         AED
-  nl: "Visum, Emirates ID, medische keuring (overheidsheffingen, geen btw)"
-  btw: "buiten-reikwijdte"
-  ct: "aftrekbaar"
-  ifrs: "Personeelskosten"
+2025-12-15 open Expenses:Staff:VisaGovernment            AED
+  note: "Visa, Emirates ID, medical test (government fees, no VAT)"
+  vat: "out-of-scope"
+  ct: "deductible"
+  ifrs: "Staff costs"
   rgs: "WBedOvp"
 
-; Overheid
-2025-12-15 open Expenses:Overheid:Licentie-IFZA          AED
-  nl: "IFZA-licentie, establishment card en registratie (maandelijks deel via Vooruitbetaald:Licentie); btw per factuur"
-  btw: "buiten-reikwijdte"
-  ct: "aftrekbaar"
-  ifrs: "Overige bedrijfskosten"
+; Government
+2025-12-15 open Expenses:Government:IFZALicence          AED
+  note: "IFZA licence, establishment card and registration (monthly share via Prepayments:Licence); VAT per invoice"
+  vat: "out-of-scope"
+  ct: "deductible"
+  ifrs: "Other operating expenses"
   rgs: "WBedAlk"
 
-2025-12-15 open Expenses:Overheid:Certificaten           AED
-  nl: "Certificaten en wijzigingen bij IFZA of FTA (heffingen zonder btw; de servicefee van een dienstverlener gaat naar Advies)"
-  btw: "buiten-reikwijdte"
-  ct: "aftrekbaar"
-  ifrs: "Overige bedrijfskosten"
+2025-12-15 open Expenses:Government:Certificates         AED
+  note: "Certificates and amendments at IFZA or FTA (fees without VAT; a service provider's fee goes to Professional)"
+  vat: "out-of-scope"
+  ct: "deductible"
+  ifrs: "Other operating expenses"
   rgs: "WBedAlk"
 
-2025-12-15 open Expenses:Overheid:Boetes                 AED
-  nl: "Boetes van FTA, IFZA of verkeer (niet aftrekbaar voor CT)"
-  btw: "buiten-reikwijdte"
-  ct: "niet-aftrekbaar"
-  ifrs: "Overige bedrijfskosten (niet aftrekbaar)"
+2025-12-15 open Expenses:Government:Fines                AED
+  note: "Fines from FTA, IFZA or traffic authorities (not deductible for Corporate Tax)"
+  vat: "out-of-scope"
+  ct: "non-deductible"
+  ifrs: "Other operating expenses (non-deductible)"
   rgs: "WBedAlk"
 
-2025-12-15 open Expenses:Vennootschapsbelasting          AED
-  nl: "UAE vennootschapsbelasting over het boekjaar (bij SBR nihil)"
-  btw: "nvt"
-  ct: "niet-aftrekbaar"
-  ifrs: "Belastinglast"
+2025-12-15 open Expenses:CorporateTax                    AED
+  note: "UAE Corporate Tax for the financial year (nil under SBR)"
+  vat: "n/a"
+  ct: "non-deductible"
+  ifrs: "Income tax expense"
   rgs: "WBel"
 
-; Auto
-2025-12-15 open Expenses:Auto:Huur                       AED
-  nl: "Huur van de bedrijfsauto (Ezhire e.d.); btw geblokkeerd omdat de auto ook privé beschikbaar is"
-  btw: "geblokkeerd"
-  ct: "aftrekbaar"
-  ifrs: "Overige bedrijfskosten"
+; Car
+2025-12-15 open Expenses:Car:Rental                      AED
+  note: "Rental of the company car (Ezhire and similar); input VAT blocked because the car is also available for private use"
+  vat: "blocked"
+  ct: "deductible"
+  ifrs: "Other operating expenses"
   rgs: "WBedAut"
 
-2025-12-15 open Expenses:Auto:Brandstof                  AED
-  nl: "Brandstof (ADNOC, ENOC); btw conservatief geblokkeerd zolang de auto privé beschikbaar is"
-  btw: "geblokkeerd"
-  ct: "aftrekbaar"
-  ifrs: "Overige bedrijfskosten"
+2025-12-15 open Expenses:Car:Fuel                        AED
+  note: "Fuel (ADNOC, ENOC); input VAT conservatively blocked while the car is available for private use"
+  vat: "blocked"
+  ct: "deductible"
+  ifrs: "Other operating expenses"
   rgs: "WBedAut"
 
-2025-12-15 open Expenses:Auto:Tol-parkeren               AED
-  nl: "Salik, RTA-parkeren en overheidsparkeren (geen btw)"
-  btw: "buiten-reikwijdte"
-  ct: "aftrekbaar"
-  ifrs: "Overige bedrijfskosten"
+2025-12-15 open Expenses:Car:TollsParking                AED
+  note: "Salik, RTA parking and government parking (no VAT)"
+  vat: "out-of-scope"
+  ct: "deductible"
+  ifrs: "Other operating expenses"
   rgs: "WBedAut"
 
-; Reis en representatie
-2025-12-15 open Expenses:Reis:Vervoer                    AED
-  nl: "Taxi, Uber, metro (lokaal personenvervoer is btw-vrijgesteld)"
-  btw: "vrijgesteld"
-  ct: "aftrekbaar"
-  ifrs: "Overige bedrijfskosten"
+; Travel and entertainment
+2025-12-15 open Expenses:Travel:LocalTransport           AED
+  note: "Taxi, Uber, metro (local passenger transport is VAT-exempt)"
+  vat: "exempt"
+  ct: "deductible"
+  ifrs: "Other operating expenses"
   rgs: "WBedVkk"
 
-2025-12-15 open Expenses:Reis:Vliegtickets               AED
-  nl: "Zakelijke vluchten (internationaal vervoer: nultarief)"
-  btw: "0-inkoop"
-  ct: "aftrekbaar"
-  ifrs: "Overige bedrijfskosten"
+2025-12-15 open Expenses:Travel:Flights                  AED
+  note: "Business flights (international transport: zero-rated)"
+  vat: "zero-rated-purchase"
+  ct: "deductible"
+  ifrs: "Other operating expenses"
   rgs: "WBedVkk"
 
-2025-12-15 open Expenses:Reis:Verblijf                   AED
-  nl: "Hotels en verblijfkosten op zakenreis (NL: geen UAE-btw; UAE-hotel: 5% voorbelasting)"
-  btw: "buitenland"
-  ct: "aftrekbaar"
-  ifrs: "Overige bedrijfskosten"
+2025-12-15 open Expenses:Travel:Accommodation            AED
+  note: "Hotels and subsistence on business trips (Netherlands: no UAE VAT; UAE hotel: 5% input VAT)"
+  vat: "foreign"
+  ct: "deductible"
+  ifrs: "Other operating expenses"
   rgs: "WBedVkk"
 
-2025-12-15 open Expenses:Representatie:Klanten           AED
-  nl: "Zakelijke lunches en diners met klanten of zakenpartners (btw geblokkeerd; 50% niet aftrekbaar voor CT)"
-  btw: "geblokkeerd"
-  ct: "50-niet-aftrekbaar"
-  ifrs: "Overige bedrijfskosten"
+2025-12-15 open Expenses:Entertainment:Clients           AED
+  note: "Business lunches and dinners with clients or business partners (input VAT blocked; 50% non-deductible for Corporate Tax)"
+  vat: "blocked"
+  ct: "50-non-deductible"
+  ifrs: "Other operating expenses"
   rgs: "WBedVkk"
 
-2025-12-15 open Expenses:Representatie:Relatiegeschenken AED
-  nl: "Relatiegeschenken (geen entertainment; aftrekbaar als zakelijk)"
-  btw: "geblokkeerd"
-  ct: "aftrekbaar"
-  ifrs: "Overige bedrijfskosten"
+2025-12-15 open Expenses:Entertainment:Gifts             AED
+  note: "Business gifts (not entertainment; deductible when business-related)"
+  vat: "blocked"
+  ct: "deductible"
+  ifrs: "Other operating expenses"
   rgs: "WBedVkkRel"
 
-; Kantoor, telecom, software
+; Office, telecom, software
 2025-12-15 open Expenses:Telecom                         AED
-  nl: "Mobiel en internet (e&, du); 5% voorbelasting op het zakelijke deel"
-  btw: "5-voorbelasting"
-  ct: "aftrekbaar"
-  ifrs: "Overige bedrijfskosten"
+  note: "Mobile and internet (e&, du); 5% input VAT on the business share"
+  vat: "input-5"
+  ct: "deductible"
+  ifrs: "Other operating expenses"
   rgs: "WBedKan"
 
 2025-12-15 open Expenses:Software:AI                     AED
-  nl: "AI-abonnementen van buitenlandse leveranciers (Anthropic, OpenAI, Fireflies, xAI): btw verlegd na registratie"
-  btw: "verlegd"
-  ct: "aftrekbaar"
-  ifrs: "Overige bedrijfskosten"
+  note: "AI subscriptions from foreign suppliers (Anthropic, OpenAI, Fireflies, xAI): reverse charge after registration"
+  vat: "reverse-charge"
+  ct: "deductible"
+  ifrs: "Other operating expenses"
   rgs: "WBedKan"
 
-2025-12-15 open Expenses:Software:Overig                 AED
-  nl: "Overige software (Google, Dropbox, TransIP, Microsoft, Figma, Netlify): verlegd; UAE-leverancier met TRN: 5% voorbelasting"
-  btw: "verlegd"
-  ct: "aftrekbaar"
-  ifrs: "Overige bedrijfskosten"
+2025-12-15 open Expenses:Software:Other                  AED
+  note: "Other software (Google, Dropbox, TransIP, Microsoft, Figma, Netlify): reverse charge; UAE supplier with TRN: 5% input VAT"
+  vat: "reverse-charge"
+  ct: "deductible"
+  ifrs: "Other operating expenses"
   rgs: "WBedKan"
 
-2025-12-15 open Expenses:Kantoor:Benodigdheden           AED
-  nl: "Kantoorbenodigdheden en kleine apparatuur onder AED 2.500 (Amazon.ae e.d.)"
-  btw: "5-voorbelasting"
-  ct: "aftrekbaar"
-  ifrs: "Overige bedrijfskosten"
+2025-12-15 open Expenses:Office:Supplies                 AED
+  note: "Office supplies and small equipment below AED 2,500 (Amazon.ae and similar)"
+  vat: "input-5"
+  ct: "deductible"
+  ifrs: "Other operating expenses"
   rgs: "WBedKan"
 
-2025-12-15 open Expenses:Kantoor:Boeken-opleiding        AED
-  nl: "Vakliteratuur, cursussen, congressen; btw per factuur (UAE-congres 5%, buitenlandse cursus verlegd)"
-  btw: "verlegd"
-  ct: "aftrekbaar"
-  ifrs: "Overige bedrijfskosten"
+2025-12-15 open Expenses:Office:BooksTraining            AED
+  note: "Professional literature, courses, conferences; VAT per invoice (UAE conference 5%, foreign course reverse charge)"
+  vat: "reverse-charge"
+  ct: "deductible"
+  ifrs: "Other operating expenses"
   rgs: "WBedOvp"
 
-2025-12-15 open Expenses:Afschrijvingen:Inventaris       AED
-  nl: "Afschrijving op laptop, telefoon en apparatuur"
-  btw: "nvt"
-  ct: "aftrekbaar"
-  ifrs: "Afschrijvingen"
+2025-12-15 open Expenses:Depreciation:Equipment          AED
+  note: "Depreciation of laptop, phone and equipment"
+  vat: "n/a"
+  ct: "deductible"
+  ifrs: "Depreciation"
   rgs: "WAfs"
 
 2025-12-15 open Expenses:Marketing                       AED
-  nl: "LinkedIn Premium, website, profilering (buitenlandse leveranciers: verlegd)"
-  btw: "verlegd"
-  ct: "aftrekbaar"
-  ifrs: "Verkoopkosten"
+  note: "LinkedIn Premium, website, profile building (foreign suppliers: reverse charge)"
+  vat: "reverse-charge"
+  ct: "deductible"
+  ifrs: "Selling and marketing expenses"
   rgs: "WBedVkk"
 
-; Advies, verzekering, bank
-2025-12-15 open Expenses:Advies:Corporate-services       AED
-  nl: "RD Advisory en andere PRO-diensten (servicefee 5% voorbelasting; doorbelaste overheidsheffingen buiten reikwijdte)"
-  btw: "5-voorbelasting"
-  ct: "aftrekbaar"
-  ifrs: "Overige bedrijfskosten"
+; Professional fees, insurance, bank
+2025-12-15 open Expenses:Professional:CorporateServices  AED
+  note: "RD Advisory and other PRO services (service fee 5% input VAT; government fees passed through are out of scope)"
+  vat: "input-5"
+  ct: "deductible"
+  ifrs: "Other operating expenses"
   rgs: "WBedAlk"
 
-2025-12-15 open Expenses:Advies:Fiscaal-juridisch        AED
-  nl: "Fiscaal en juridisch advies (UAE-adviseur 5% voorbelasting; NL-adviseur verlegd)"
-  btw: "5-voorbelasting"
-  ct: "aftrekbaar"
-  ifrs: "Overige bedrijfskosten"
+2025-12-15 open Expenses:Professional:TaxLegal           AED
+  note: "Tax and legal advice (UAE adviser 5% input VAT; Dutch adviser reverse charge)"
+  vat: "input-5"
+  ct: "deductible"
+  ifrs: "Other operating expenses"
   rgs: "WBedAlk"
 
-2025-12-15 open Expenses:Verzekering                     AED
-  nl: "Zakelijke schadeverzekeringen (5% voorbelasting); levensverzekering vrijgesteld"
-  btw: "5-voorbelasting"
-  ct: "aftrekbaar"
-  ifrs: "Overige bedrijfskosten"
+2025-12-15 open Expenses:Insurance                       AED
+  note: "Business property and liability insurance (5% input VAT); life insurance exempt"
+  vat: "input-5"
+  ct: "deductible"
+  ifrs: "Other operating expenses"
   rgs: "WBedAlk"
 
-2025-12-15 open Expenses:Bank:Kosten                     AED
-  nl: "Bankkosten Wio (maandabonnement, overboekingskosten); Wio stuurt een btw-factuur"
-  btw: "5-voorbelasting"
-  ct: "aftrekbaar"
-  ifrs: "Overige bedrijfskosten"
+2025-12-15 open Expenses:Bank:Charges                    AED
+  note: "Wio bank charges (monthly subscription, transfer fees); Wio issues a tax invoice"
+  vat: "input-5"
+  ct: "deductible"
+  ifrs: "Other operating expenses"
   rgs: "WBedAlk"
 
-2025-12-15 open Expenses:Bank:Wisselkosten               AED
-  nl: "Wisselkoersopslag van Wio op buitenlandse kaartbetalingen"
-  btw: "5-voorbelasting"
-  ct: "aftrekbaar"
-  ifrs: "Overige bedrijfskosten"
+2025-12-15 open Expenses:Bank:FXCharges                  AED
+  note: "Wio foreign exchange mark-up on foreign card payments"
+  vat: "input-5"
+  ct: "deductible"
+  ifrs: "Other operating expenses"
   rgs: "WBedAlk"
 
-2025-12-15 open Expenses:Koersverschil                   AED
-  nl: "Verlies op valutawissels en herwaardering van EUR-saldi en -vorderingen"
-  btw: "nvt"
-  ct: "aftrekbaar"
-  ifrs: "Financiële lasten"
+2025-12-15 open Expenses:FXLoss                          AED
+  note: "Loss on currency exchanges and on revaluation of EUR balances and receivables"
+  vat: "n/a"
+  ct: "deductible"
+  ifrs: "Finance costs"
   rgs: "WFbe"
 
-2025-12-15 open Expenses:Donaties                        AED
-  nl: "Giften; alleen aftrekbaar aan een Qualifying Public Benefit Entity"
-  btw: "nvt"
-  ct: "niet-aftrekbaar"
-  ifrs: "Overige bedrijfskosten"
+2025-12-15 open Expenses:Donations                       AED
+  note: "Donations; deductible only when made to a Qualifying Public Benefit Entity"
+  vat: "n/a"
+  ct: "non-deductible"
+  ifrs: "Other operating expenses"
   rgs: "WBedAlk"
 
-2025-12-15 open Expenses:Overig                          AED
-  nl: "Overige kosten die nergens anders passen (toelichting verplicht; btw per factuur)"
-  btw: "buiten-reikwijdte"
-  ct: "aftrekbaar"
-  ifrs: "Overige bedrijfskosten"
+2025-12-15 open Expenses:Other                           AED
+  note: "Other expenses that fit nowhere else (explanation required; VAT per invoice)"
+  vat: "out-of-scope"
+  ct: "deductible"
+  ifrs: "Other operating expenses"
   rgs: "WBedAlk"
 
-2025-12-15 open Expenses:Onbekend                        AED
-  nl: "Tijdelijk: nog te beoordelen posten (moet leeg zijn bij maandafsluiting)"
-  btw: "nvt"
-  ct: "nvt"
-  ifrs: "n.v.t."
+2025-12-15 open Expenses:Suspense                        AED
+  note: "Temporary: items still to be reviewed (must be empty at month-end close)"
+  vat: "n/a"
+  ct: "n/a"
+  ifrs: "n/a"

@@ -1,30 +1,30 @@
-; Openingsbalans MZML HOLDING LIMITED per 15-12-2025 en de aankoop van de deelnemingen per 31-12-2025.
-; Bronnen: register of members RAK ICC (100 aandelen x AED 1.000), SPA's en notariële akte 18127 van 31-12-2025,
-; boekhouddossier v2.10 en UAE-dossier v2 (Point Sixteen EUR 34.790,50; The Ocean EUR 84.344,70; Ekmekci equity value EUR 165.743).
-; Koers: CBUAE 30-12-2025 (laatste publicatie van het jaar) 1 EUR = 4.319572 AED, bron centralbank.ae fx_dec25_en.pdf.
-; Deelnemingen staan in EUR met de kostprijs in AED vastgelegd ({...}): niet-monetair, nooit herwaarderen.
-; Vendor loans staan in EUR met @ koers: monetair, wel herwaarderen bij maandeinde.
-; Flag "!" = te verifiëren: koopsommen tegen de getekende SPA's, voorwaarden van de vendor loans (Dropbox), kapitaalstorting.
+; Opening balance MZML HOLDING LIMITED at 15-12-2025 and the acquisition of the investments at 31-12-2025.
+; Sources: RAK ICC register of members (100 shares x AED 1,000), SPAs and notarial deed 18127 of 31-12-2025,
+; bookkeeping file v2.10 and UAE file v2 (Point Sixteen EUR 34,790.50; The Ocean EUR 84,344.70; Ekmekci equity value EUR 165,743).
+; Rate: CBUAE 30-12-2025 (last publication of the year) 1 EUR = 4.319572 AED, source centralbank.ae fx_dec25_en.pdf.
+; Investments are held in EUR with the cost in AED recorded ({...}): non-monetary, never revalued.
+; Vendor loans are held in EUR with @ rate: monetary, revalued at month-end.
+; Flag "!" = to be verified: purchase prices against the signed SPAs, terms of the vendor loans (Dropbox), capital payment.
 
-2025-12-15 ! "Oprichting" "Geplaatst aandelenkapitaal, nog niet gestort (geen bankrekening)"
-  verifieer: "RAK ICC vereist geen storting; vordering blijft staan tot opening van de bankrekening; in de jaarrekening in mindering op het eigen vermogen."
-  Assets:Nog-te-storten-kapitaal                       100000.00 AED
-  Equity:Aandelenkapitaal                             -100000.00 AED
+2025-12-15 ! "Incorporation" "Issued share capital, not yet paid up (no bank account)"
+  verify: "RAK ICC does not require payment; receivable remains until the bank account is opened; deducted from equity in the financial statements."
+  Assets:ShareCapitalUnpaid                            100000.00 AED
+  Equity:ShareCapital                                 -100000.00 AED
 
-2025-12-31 ! "MZML Holding B.V." "Aankoop 5.000 aandelen Point Sixteen B.V. tegen vendor loan"
-  bron: "SPA Point Sixteen 31-12-2025"
-  verifieer: "Koopsom en rente/looptijd volgens getekende SPA en leningsovereenkomst"
-  Assets:Deelnemingen:Point-Sixteen                     34790.50 EUR {4.319572 AED}
-  Liabilities:Vendor-loan:MZML-BV:Point-Sixteen        -34790.50 EUR @ 4.319572 AED
+2025-12-31 ! "MZML Holding B.V." "Acquisition of 5,000 shares in Point Sixteen B.V. against vendor loan"
+  source: "SPA Point Sixteen 31-12-2025"
+  verify: "Purchase price and interest/maturity per the signed SPA and loan agreement"
+  Assets:Investments:Cost:PointSixteen                  34790.50 EUR {4.319572 AED}
+  Liabilities:VendorLoans:MZML-BV:PointSixteen         -34790.50 EUR @ 4.319572 AED
 
-2025-12-31 ! "MZML Holding B.V." "Aankoop 720 aandelen The Ocean B.V. tegen vendor loan"
-  bron: "SPA The Ocean 31-12-2025 (dossier)"
-  verifieer: "Koopsom en rente/looptijd volgens getekende SPA en leningsovereenkomst"
-  Assets:Deelnemingen:The-Ocean                         84344.70 EUR {4.319572 AED}
-  Liabilities:Vendor-loan:MZML-BV:The-Ocean            -84344.70 EUR @ 4.319572 AED
+2025-12-31 ! "MZML Holding B.V." "Acquisition of 720 shares in The Ocean B.V. against vendor loan"
+  source: "SPA The Ocean 31-12-2025 (file)"
+  verify: "Purchase price and interest/maturity per the signed SPA and loan agreement"
+  Assets:Investments:Cost:TheOcean                      84344.70 EUR {4.319572 AED}
+  Liabilities:VendorLoans:MZML-BV:TheOcean             -84344.70 EUR @ 4.319572 AED
 
-2025-12-31 ! "MZML Holding B.V." "Aankoop 75 aandelen Ekmekci Group B.V. (18,80%) tegen vendor loan"
-  bron: "SPA Ekmekci 31-12-2025, equity value EUR 165.743 (Newings-waardering)"
-  verifieer: "Koopsom volgens getekende SPA; rente/looptijd volgens leningsovereenkomst in Dropbox"
-  Assets:Deelnemingen:Ekmekci                          165743.00 EUR {4.319572 AED}
-  Liabilities:Vendor-loan:MZML-BV:Ekmekci             -165743.00 EUR @ 4.319572 AED
+2025-12-31 ! "MZML Holding B.V." "Acquisition of 75 shares in Ekmekci Group B.V. (18.80%) against vendor loan"
+  source: "SPA Ekmekci 31-12-2025, equity value EUR 165,743 (neWings valuation)"
+  verify: "Purchase price per the signed SPA; interest/maturity per the loan agreement in Dropbox"
+  Assets:Investments:Cost:Ekmekci                      165743.00 EUR {4.319572 AED}
+  Liabilities:VendorLoans:MZML-BV:Ekmekci             -165743.00 EUR @ 4.319572 AED

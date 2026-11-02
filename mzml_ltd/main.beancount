@@ -1,5 +1,5 @@
-; Hoofdbestand MZML HOLDING LIMITED (RAK ICC)
-; Controleren: bean-check mzml_ltd/main.beancount
+; Main file MZML HOLDING LIMITED (RAK ICC)
+; Check: bean-check mzml_ltd/main.beancount
 
 option "title" "MZML HOLDING LIMITED"
 option "operating_currency" "AED"
