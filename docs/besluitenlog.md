@@ -59,3 +59,14 @@ Eén regel per besluit dat de boekingen of de werkwijze bepaalt. Bron is altijd 
 | 2026-11-02 | Auto: privédeel 30% via de schuldroute | 30% van de autokosten maandelijks naar Assets:Rekening-courant:Umar; geen loon in natura |
 | 2026-11-02 | EUR 25.000 van 26-1-2026: AED 48.000 kapitaalstorting, rest renteloze lening | Kapitaal volgestort; Liabilities:Lening-aandeelhouder:Umar EUR 13.685,85; aandeelhoudersbesluit op te stellen |
 | 2026-11-02 | MZML Ltd: bankrekening in januari 2027; tot dan voorschotten als schuld aan de betalende partij | Liabilities:Rekening-courant:MZML-BV en :XCL |
+
+## Besluiten en bevindingen 3-11-2026
+
+| Datum | Besluit | Gevolg in het grootboek |
+|---|---|---|
+| 2026-11-03 | Antwoorden Goedkeuring-Sheet verwerkt (docs/goedkeuring/2026-11-03.yaml) | 120 boekingen aangepast; open posten XCL van 113 naar 9 |
+| 2026-11-03 | NLBC UAE is zakelijk lidmaatschap; factuur INVM000102 in Gmail | Expenses:Marketing |
+| 2026-11-03 | Bonnen in Gmail gevonden: Emirates D2CWJ6 (11-5), ACUNS lidmaatschap en Annual Meeting | Vlag weg, verwijzing in metadata `document` |
+| 2026-11-03 | Emirates AED 122, 57, 11 (augustus): geen bon in Gmail | Privé (rekening-courant) |
+| 2026-11-03 | Herinnering: doorbelastingsfactuur aan Point Sixteen (koerier AED 516,68) opstellen bij de start van de facturatiemodule | Assets:Debiteuren:Point-Sixteen, vlag ! tot de factuur er is |
+| 2026-11-03 | neWings 2026-0098 staat op MZML Holding B.V.; niet omzetten naar XCL (waarderingen dienen de NL-structuur, niet de omzet van XCL) | Assets:Rekening-courant:MZML-BV, terug te vorderen van MZML B.V. |

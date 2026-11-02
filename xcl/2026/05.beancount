@@ -376,7 +376,7 @@
   Assets:Bank:Wio-AED                                -15.50 AED
   Assets:Rekening-courant:Umar                        15.50 AED
 
-2026-05-09 ! "ACUNS" "Acuns"
+2026-05-09 * "ACUNS" "Acuns"
   wio-ref: "245696497"
   wio-type: "Card"
   bron: "Wio-export"
@@ -384,7 +384,8 @@
   wio-fee-ref: "245696504"
   goedkeuring: "2026-11-03"
   antwoord: "zakelijk congres"
-  open: "ACUNS congress: business, receipt still missing"
+  note: "ACUNS membership"
+  document: "Gmail: ACUNS Membership Registration (May 2026)"
   Assets:Bank:Wio-AED                               -333.00 AED
   Assets:Bank:Wio-AED                                 -6.66 AED
   Expenses:Bank:Wisselkosten                           6.66 AED
@@ -558,14 +559,15 @@
   Assets:Bank:Wio-AED                                -18.00 AED
   Assets:Rekening-courant:Umar                        18.00 AED
 
-2026-05-11 ! "Vliegticket of bagage" "Emirates"
+2026-05-11 * "Vliegticket of bagage" "Emirates"
   wio-ref: "246337178"
   wio-type: "Card"
   bron: "Wio-export"
   nl: "Vlucht zonder bon: volgens je regel privé (rekening-courant); zakelijke reis? Zet 'zakelijk, bon volgt'"
   goedkeuring: "2026-11-03"
   antwoord: "zakelijk"
-  open: "Emirates AED 4,010 business per Umar: ticket/receipt and purpose of trip missing"
+  note: "Business trip to the Netherlands, flight 11-5-2026"
+  document: "Gmail: Emirates booking D2CWJ6 (9-5-2026)"
   Assets:Bank:Wio-AED                             -4,010.00 AED
   Expenses:Reis:Vliegtickets                       4,010.00 AED
 
@@ -1258,7 +1260,7 @@
   Assets:Bank:Wio-AED                               -301.89 AED
   Assets:Rekening-courant:Umar                       301.89 AED
 
-2026-05-27 ! "ACUNS" "Acuns"
+2026-05-27 * "ACUNS" "Acuns"
   wio-ref: "252874594"
   wio-type: "Card"
   bron: "Wio-export"
@@ -1266,7 +1268,8 @@
   wio-fee-ref: "252874604"
   goedkeuring: "2026-11-03"
   antwoord: "zakelijk"
-  open: "ACUNS: receipt missing"
+  note: "ACUNS 2026 Annual Meeting registration"
+  document: "Gmail: ACUNS Successful Registration for the 2026 Annual Meeting"
   Assets:Bank:Wio-AED                               -370.00 AED
   Assets:Bank:Wio-AED                                 -7.40 AED
   Expenses:Bank:Wisselkosten                           7.40 AED

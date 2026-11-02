@@ -5,16 +5,17 @@
 
 2026-04-01 balance Assets:Bank:Wio-EUR              2,461.00 EUR
 
-2026-04-01 ! "Onbekende leverancier" "Nlbcuae"
+2026-04-01 * "NLBC UAE" "Nlbcuae"
   wio-ref: "230499069"
   wio-type: "Card"
   bron: "Wio-export"
   nl: "Onbekende betaling: wat is dit, en zakelijk of privé?"
   goedkeuring: "2026-11-03"
-  antwoord: "(blank)"
-  open: "NLBC UAE AED 1,575: probably membership Netherlands Business Council UAE; confirm and add receipt"
+  antwoord: "klopt, zakelijk (3-11-2026)"
+  note: "Professional membership Netherlands Business Council UAE"
+  document: "Gmail: NLBC invoice INVM000102 (30-3-2026, glueup)"
   Assets:Bank:Wio-AED                             -1,575.00 AED
-  Expenses:Onbekend                                1,575.00 AED
+  Expenses:Marketing                                1,575.00 AED
 
 2026-04-01 * "Brandstof (EMARAT/EPPCO)" "Emarat"
   wio-ref: "230522529"

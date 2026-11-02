@@ -253,14 +253,14 @@
   Assets:Bank:Wio-AED                             -4,000.00 AED
   Assets:Rekening-courant:Umar                     4,000.00 AED
 
-2026-08-09 ! "Vliegticket of bagage" "Emirates"
+2026-08-09 * "Vliegticket of bagage" "Emirates"
   wio-ref: "285082547"
   wio-type: "Card"
   bron: "Wio-export"
   nl: "Vlucht zonder bon: volgens je regel privé (rekening-courant); zakelijke reis? Zet 'zakelijk, bon volgt'"
   goedkeuring: "2026-11-03"
   antwoord: "zoek in inbox, misschien telefonie"
-  open: "Search Gmail for Emirates/e& receipts of AED 122 on 9-8-2026"
+  note: "No receipt found in Gmail (searched 3-11-2026): private"
   Assets:Bank:Wio-AED                               -122.00 AED
   Assets:Rekening-courant:Umar                       122.00 AED
 
@@ -296,25 +296,25 @@
   Assets:Bank:Wio-AED                                 -2.50 AED
   Assets:Rekening-courant:Umar                         2.50 AED
 
-2026-08-10 ! "Vliegticket of bagage" "Emirates"
+2026-08-10 * "Vliegticket of bagage" "Emirates"
   wio-ref: "285528920"
   wio-type: "Card"
   bron: "Wio-export"
   nl: "Vlucht zonder bon: volgens je regel privé (rekening-courant); zakelijke reis? Zet 'zakelijk, bon volgt'"
   goedkeuring: "2026-11-03"
   antwoord: "zoek in inbox"
-  open: "Search Gmail, AED 57 on 10-8-2026"
+  note: "No receipt found in Gmail (searched 3-11-2026): private"
   Assets:Bank:Wio-AED                                -57.00 AED
   Assets:Rekening-courant:Umar                        57.00 AED
 
-2026-08-10 ! "Vliegticket of bagage" "Emirates"
+2026-08-10 * "Vliegticket of bagage" "Emirates"
   wio-ref: "285528925"
   wio-type: "Card"
   bron: "Wio-export"
   nl: "Vlucht zonder bon: volgens je regel privé (rekening-courant); zakelijke reis? Zet 'zakelijk, bon volgt'"
   goedkeuring: "2026-11-03"
   antwoord: "zoek in inbox"
-  open: "Search Gmail, AED 11 on 10-8-2026"
+  note: "No receipt found in Gmail (searched 3-11-2026): private"
   Assets:Bank:Wio-AED                                -11.00 AED
   Assets:Rekening-courant:Umar                        11.00 AED
 
