@@ -1,70 +1,77 @@
 # Runbook
 
-Doel: iemand zonder voorkennis (Umar zelf, een vervanger, of een boekhouder) kan hiermee het systeem begrijpen, draaien en herstellen. Stand: 2 november 2026, fase 1 (geen eigen server; runs als geplande Claude-taken).
+Purpose: someone without prior knowledge (Umar himself, a replacement, or an accountant) can use this to understand, run and recover the system. Status: 3 November 2026, phase 1 (no own server; runs as scheduled Claude tasks). The bookkeeping is in English since 3-11-2026; old Dutch account names: `docs/account_mapping_nl_en.md`.
 
-## 1. Onderdelen
+## 1. Components
 
-| Onderdeel | Waar | Eigenaar |
+| Component | Where | Owner |
 |---|---|---|
-| Grootboek | GitHub `umarxcl/boekhouding` (privé) | Umar |
-| Privé-grootboek | GitHub `umarxcl/boekhouding-prive` (privé, strenger) | Umar |
-| Bijlagen en bankexports | Google Drive, map Boekhouding (eigenaar mail@umarmirza.nl) | Umar |
-| Goedkeuring en rapporten | Google Sheet "Boekhouding – Goedkeuring" en de bestaande Sheet "Cashflow" | Umar |
-| Uitvoering | Claude (geplande taken in het project Boekhouding NL & UAE) | Claude |
+| Ledger | GitHub `umarxcl/boekhouding` (private) | Umar |
+| Private ledger | GitHub `umarxcl/boekhouding-prive` (private, stricter) | Umar |
+| Attachments and bank exports | Google Drive, folder Boekhouding (owner mail@umarmirza.nl) | Umar |
+| Approval and reports | Google Sheet "Boekhouding – Goedkeuring" and the existing Sheet "Cashflow" | Umar |
+| Execution | Claude (scheduled tasks in the project Boekhouding NL & UAE) | Claude |
 
-## 2. Maandcyclus
+## 2. Monthly cycle
 
-1. Umar zet twee keer per maand de Wio-export (CSV, beide rekeningen in één bestand) in Drive, map `Boekhouding/Bankexports/Wio/`. Bestandsnaam zoals Wio hem geeft; de importer leest de data uit de inhoud.
-2. De run haalt het grootboek op, leest nieuwe exports in (`importers/wio.py`), slaat bekende referentienummers over, categoriseert met `importers/rules_xcl.yaml`, koppelt bijlagen uit Drive, en schrijft `xcl/2026/MM.beancount`.
-3. Alles wat onzeker is krijgt vlag `!` en komt in de Sheet "Goedkeuring", tab van die maand, met één regel uitleg.
-4. Umar vult per regel "akkoord" of een opmerking in. Een opmerking kan een andere rekening zijn ("privé"), een bon ("staat in Drive onder ..."), of een vraag.
-5. De run verwerkt de antwoorden, haalt de vlaggen weg, voegt nieuwe regels toe aan `rules_xcl.yaml` als Umar dat aangeeft, boekt loon, huisvesting, voorzieningen en koersverschillen, controleert de banksaldi tegen het afschrift, en sluit de maand (git-tag).
-6. Rapporten (balans, P&L, kasstroom, rekening-courant, btw-overzicht) gaan naar de Sheet; de Cashflow-Sheet krijgt de actuals; Umar krijgt één bericht.
+1. Twice a month Umar puts the Wio export (CSV, both accounts in one file) in Drive, folder `Boekhouding/Bankexports/Wio/`. File name as Wio provides it; the importer reads the dates from the content.
+2. The run fetches the ledger, imports new exports (`importers/wio.py`), skips known reference numbers, categorises with `importers/rules_xcl.yaml`, links attachments from Drive (`importers/documenten_xcl.yaml`) and writes the entries to `xcl/2026/MM.beancount`.
+3. Everything uncertain gets flag `!` and goes in the Sheet "Goedkeuring", tab of that month, with a one-line explanation (the importer's exceptions JSON).
+4. Umar enters "akkoord" (approved) or a comment per line. A comment can be another account ("private"), a receipt ("it is in Drive under ..."), or a question.
+5. The run processes the answers (metadata `approved`, `owner-answer` verbatim, `note`), removes the flags, adds new rules to `rules_xcl.yaml` when Umar says so, books salary, housing, provisions and exchange differences (in `xcl/2026/adjustments.beancount`), checks the bank balances against the statement, and closes the month (git tag).
+6. Reports (balance sheet, P&L, cash flow, director's current account, VAT overview) go to the Sheet; the Cashflow Sheet gets the actuals; Umar gets one message.
 
-## 3. Controles die elke run doet
+## 3. Checks on every run
 
-- `bean-check` op beide grootboeken (sluitende boekingen, bestaande rekeningen, saldocontroles).
-- Begin- en eindsaldo van elke export tegen het grootboek (de importer schrijft `balance`-regels).
-- Geen `!` meer in een maand die gesloten wordt; `Expenses:Onbekend` moet nul zijn.
-- Rekening-courant directeur en loonschuld: maandelijkse verrekening geboekt.
-- Koers: afwijking groter dan 2% tegenover de vorige maand komt op de lijst.
-- Controle-agent (apart, zonder de boekingen te hebben gemaakt): btw-behandeling per rekening, periodesloten, vooruitbetaalde posten, voorzieningen.
+- `bash scripts/check.sh`: `bean-check` on both ledgers (balanced entries, existing accounts, balance assertions), count of open items (`!`), `facturen.beancount` matches `scripts/facturen.py`, balance of `Expenses:Suspense`.
+- `bash tests/test_importer.sh` after any change to the importer, the rules or the chart of accounts.
+- Opening and closing balance of each export against the ledger (the importer writes `balance` assertions).
+- No `!` left in a month that is being closed; `Expenses:Suspense` must be nil.
+- Director's current account (`Assets:Receivables:Director:Umar`) and salary payable (`Liabilities:Employees:SalaryPayable-Umar`): monthly set-off booked.
+- Exchange rate: a deviation of more than 2% from the previous month goes on the list.
+- Review agent (separate, did not make the entries): VAT treatment per account, period cut-off, prepayments, provisions.
 
-## 4. Handmatig draaien (als de geplande taak niet loopt)
+## 4. Running by hand (if the scheduled task does not run)
 
-Op elke computer met Python 3.11 of hoger:
+On any computer with Python 3.11 or later:
 
 ```
 git clone https://github.com/umarxcl/boekhouding
 cd boekhouding
 pip install -r requirements.txt
-python3 importers/wio.py <export.csv> --out xcl/2026/MM.beancount --exceptions uitzonderingen.json
+python3 importers/wio.py <export.csv> --out <new-entries>.beancount --exceptions exceptions.json
 bean-check xcl/main.beancount
 ```
 
-Of vraag Claude in het project: "Draai de maandrun voor XCL met de export in Drive."
+Then append the new entries to the month file (or use `scripts/split_maanden.py` for months that have no file yet; it refuses to overwrite existing month files without `--force`, because they contain review edits).
 
-## 5. Herstel
+Or ask Claude in the project: "Run the monthly run for XCL with the export in Drive."
 
-- Grootboek kwijt: `git clone` vanaf GitHub (volledige geschiedenis).
-- GitHub kwijt: de laatste maandrapporten staan in Sheets; de boekingen zijn te reconstrueren uit de Wio-exports in Drive met de importer.
-- Drive kwijt: de bankexports zijn opnieuw te downloaden bij Wio (7 jaar); bijlagen uit Gmail, Dropbox en leveranciersportalen. Daarom: jaarlijkse back-up van de Drive-map Boekhouding naar een tweede locatie (taak in januari).
-- Claude niet beschikbaar: elke boekhouder kan het grootboek lezen via `bean-query ... "select date, account, position, narration"` (CSV) of via Fava (`fava xcl/main.beancount`, webinterface).
+## 5. Recovery
 
-## 6. Bewaartermijnen
+- Ledger lost: `git clone` from GitHub (full history).
+- GitHub lost: the latest monthly reports are in Sheets; the entries can be reconstructed from the Wio exports in Drive with the importer (review edits from the history in Sheets).
+- Drive lost: bank exports can be downloaded again from Wio (7 years); attachments from Gmail, Dropbox and supplier portals. Hence: annual backup of the Drive folder Boekhouding to a second location (task in January).
+- Claude not available: any accountant can read the ledger via `bean-query ... "select date, account, position, narration"` (CSV) or via Fava (`fava xcl/main.beancount`, web interface).
 
-UAE: 7 jaar (Corporate Tax-wet; btw 5 jaar, voor onroerend goed 15). Nederland: 7 jaar. Afgesloten jaren blijven in de repository en in Drive; niets wordt verwijderd.
+## 6. Retention periods
 
-## 7. Toegang
+UAE: 7 years (Corporate Tax law; VAT 5 years, 15 for real estate). Netherlands: 7 years. Closed years remain in the repository and in Drive; nothing is deleted.
 
-- GitHub: Umar (eigenaar), Claude via de GitHub-koppeling in claude.ai.
-- Drive en Sheets: Umar (eigenaar), Claude via de Google-koppeling.
-- Geen bankinloggegevens in het systeem; exports komen handmatig uit de Wio-app.
+## 7. Access
 
-## 8. Inhaalslag XCL januari t/m oktober 2026 (2-11-2026)
+- GitHub: Umar (owner), Claude via the GitHub connection in claude.ai.
+- Drive and Sheets: Umar (owner), Claude via the Google connection.
+- No bank login details in the system; exports come manually from the Wio app.
 
-- Bankexport: `data/wio_2025-11-02_2026-11-02.csv` (staat in `.gitignore`; het origineel staat in Drive, niet in git).
-- Importeren: `python3 importers/wio.py data/<export>.csv --since 2026-01-01 --until 2026-10-31 --documents importers/documenten_xcl.yaml --out <tijdelijk>.beancount --exceptions <tijdelijk>.json`, daarna `python3 scripts/split_maanden.py <tijdelijk>.beancount` om per maand `xcl/2026/MM.beancount` te schrijven (saldoregels van het volgende maand-begin komen in de laatste maand).
-- `importers/documenten_xcl.yaml` koppelt bankregels (Wio-ref) aan bonnen in Drive (`document` en `drive-id`). Bon aanwezig = zakelijk; zonder bon = privé via `Assets:Rekening-courant:Umar` met vlag `!`.
-- Verkoopfacturen: `python3 scripts/facturen.py` schrijft `xcl/2026/facturen.beancount` (koersen uit `shared/prices.beancount`).
-- Goedkeuring: de open posten met vlag `!` staan in de Google Sheet 'Boekhouding – Goedkeuring' (tabs per kwartaal).
+## 8. XCL catch-up January to October 2026 (2-11-2026)
+
+- Bank export: `data/wio_2025-11-02_2026-11-02.csv` (listed in `.gitignore`; the original is in Drive, not in git).
+- Import: `python3 importers/wio.py data/<export>.csv --since 2026-01-01 --until 2026-10-31 --documents importers/documenten_xcl.yaml --out <temp>.beancount --exceptions <temp>.json`, then `python3 scripts/split_maanden.py <temp>.beancount` to write `xcl/2026/MM.beancount` per month (balance assertions of the first day of the following month go into the last month). The month files now exist and contain review edits; a rerun needs `--force` and would lose those edits.
+- `importers/documenten_xcl.yaml` links bank lines (Wio ref) to receipts in Drive (`document` and `drive-id`). Receipt available = business; without a receipt = private via `Assets:Receivables:Director:Umar` with flag `!`.
+- Sales invoices: `python3 scripts/facturen.py` writes `xcl/2026/facturen.beancount` (rates from `shared/prices.beancount`). The script owns that file: corrections to an invoice are made in the script's data, one-off journal entries (write-offs, reclassifications) go in `xcl/2026/adjustments.beancount`. It refuses to overwrite a file that differs from its output (`--check` compares only, `--force` overwrites).
+- Approval: the open items with flag `!` are in the Google Sheet 'Boekhouding – Goedkeuring' (tabs per quarter).
+
+## 9. Chart of accounts document
+
+`python3 scripts/chart_of_accounts_md.py` regenerates `docs/chart_of_accounts.md` from the metadata in `accounts.beancount` (note, vat, ct, related-party, ifrs, rgs). Change explanations in `accounts.beancount`, then regenerate.

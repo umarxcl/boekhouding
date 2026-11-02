@@ -1,5 +1,7 @@
 # Besluitenlog boekhouding
 
+> Note: account names in this log are the pre-2026-11-03 Dutch names; see `docs/account_mapping_nl_en.md` for the current English names.
+
 Eén regel per besluit dat de boekingen of de werkwijze bepaalt. Bron is altijd het project Boekhouding NL & UAE (briefing v9) tenzij anders vermeld.
 
 | Datum | Besluit | Gevolg in het grootboek |
