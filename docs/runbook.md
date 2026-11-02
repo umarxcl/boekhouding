@@ -75,3 +75,21 @@ UAE: 7 years (Corporate Tax law; VAT 5 years, 15 for real estate). Netherlands: 
 ## 9. Chart of accounts document
 
 `python3 scripts/chart_of_accounts_md.py` regenerates `docs/chart_of_accounts.md` from the metadata in `accounts.beancount` (note, vat, ct, related-party, ifrs, rgs). Change explanations in `accounts.beancount`, then regenerate.
+
+## 9. Month-end close (first run: October 2026, prepared on 3-11-2026)
+
+1. `python3 scripts/month_end.py --through YYYY-MM` writes `xcl/2026/month_end.beancount` (salary accrual, end-of-service accrual, private share of car costs) from `xcl/parameters.yaml`. Change a parameter only together with an entry in `docs/besluitenlog.md`.
+2. `bash scripts/check.sh` (ledgers, open flags, invoices file, month-end file, suspense account).
+3. `python3 scripts/reports.py --month YYYY-MM` writes trial balance, income statement, balance sheet, director position and open items to `reports/xcl/YYYY-MM/`.
+4. Independent review by a separate agent that did not make the entries.
+5. Seal: git tag `xcl-YYYY-MM` only when all of this holds: no `!` in the month, suspense account nil, CBUAE rate of the month-end published and FX difference booked, review findings processed.
+
+Deliberately NOT booked by the script:
+- Set-off of the director's current account against the salary payable: only after the addendum is signed, on its effective date (Schedule 1). Until then both are shown gross, plus a pro forma net in `director_position.csv`.
+- Annual leave accrual: needs the leave days actually taken (`leave.enabled` in `parameters.yaml`).
+- FX difference on EUR items: see section 10.
+- Corporate tax: nil for 2026 under Small Business Relief (a loss in an SBR year is forfeited).
+
+## 10. Known gap: FX on EUR items (found 3-11-2026)
+
+EUR amounts are booked in AED at the CBUAE rate of the invoice date, but EUR sold at Wio is converted at the Wio rate (about 2.5 to 4.5% below the CBUAE reference rate in 2026). The difference (realised on conversions, unrealised on the EUR balance) is not booked anywhere: AED 11,898.79 loss at 31-10-2026, valued at the rate of 30-9-2026 (October not yet published). The balance sheet report shows it as an explicit reconciling line. Sensitivity to the October rate is small (net EUR exposure about EUR 1,026, so about AED 50 per 0.05 of rate). The fix is a design change (EUR lots with cost basis so conversions realise the difference, plus a month-end revaluation); until it is built, a month cannot be sealed.

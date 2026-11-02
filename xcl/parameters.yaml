@@ -1,0 +1,26 @@
+# Parameters for scripts/month_end.py (recurring month-end adjusting entries, XCL).
+# Change a parameter only together with a decision in docs/besluitenlog.md.
+
+# Contract salary (AED per month, basic salary, no allowances).
+# Source: employment contract dated 18-12-2025, commencement 15-12-2025.
+# Addendum 2 (AED 22,000) is NOT signed yet: add a new period with the real signing date when it is.
+salary:
+  - from: 2025-12-15
+    monthly: 40000
+
+# End-of-service benefit: 21 days of basic salary per year of service (first 5 years), daily rate = monthly / 30.
+# Accrued from day one (IFRS for SMEs section 28), although the statutory entitlement starts after 1 year of service.
+eosb:
+  days_per_year: 21
+  day_divisor: 30
+
+# Unused annual leave is NOT accrued automatically: it depends on the leave days actually taken.
+# Set enabled: true and fill days_taken_to_date once Umar has given the number.
+leave:
+  enabled: false
+
+# Private share of car costs (Expenses:Car:*), charged to the director's current account.
+# Decision of Umar 2-11-2026 (debt route, no benefit in kind). Applies to the whole of 2026.
+car_private_share:
+  - from: 2026-01-01
+    share: 0.30

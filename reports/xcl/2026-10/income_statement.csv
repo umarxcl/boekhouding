@@ -1,0 +1,32 @@
+account,AED
+Income:FXGain,843.98
+Income:Revenue:Advisory:Inclusionair,89120.00
+Income:Revenue:ManagementFees:Ekmekci,328568.95
+Income:Revenue:ManagementFees:MDI,19392.45
+TOTAL INCOME,437925.38
+Expenses:Bank:Charges,1285.02
+Expenses:Bank:FXCharges,356.83
+Expenses:Car:Fuel,2886.44
+Expenses:Car:Rental,14655.19
+Expenses:Car:TollsParking,834.41
+Expenses:Entertainment:Clients,3002.00
+Expenses:Government:Certificates,3000.00
+Expenses:Government:Fines,165.75
+Expenses:Marketing,1575.00
+Expenses:Office:BooksTraining,897.25
+Expenses:Office:Supplies,55.00
+Expenses:Professional:CorporateServices,1200.00
+Expenses:Software:AI,11789.02
+Expenses:Software:Other,2057.09
+Expenses:Staff:EndOfService,24612.87
+Expenses:Staff:HousingUtilities,5121.27
+Expenses:Staff:Salary-Umar,421935.48
+Expenses:Staff:VisaGovernment,4980.00
+Expenses:Telecom,6387.88
+Expenses:Travel:Accommodation,441.44
+Expenses:Travel:Flights,5738.34
+Expenses:Travel:LocalTransport,2054.48
+TOTAL EXPENSES,515030.76
+RESULT AS BOOKED,-77105.38
+UNBOOKED FX DIFFERENCE ON EUR ITEMS (see balance_sheet.csv),-11898.79
+RESULT INCL. UNBOOKED FX,-89004.17

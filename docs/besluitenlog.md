@@ -72,3 +72,15 @@ Eén regel per besluit dat de boekingen of de werkwijze bepaalt. Bron is altijd 
 | 2026-11-03 | Emirates AED 122, 57, 11 (augustus): geen bon in Gmail | Privé (rekening-courant) |
 | 2026-11-03 | Herinnering: doorbelastingsfactuur aan Point Sixteen (koerier AED 516,68) opstellen bij de start van de facturatiemodule | Assets:Debiteuren:Point-Sixteen, vlag ! tot de factuur er is |
 | 2026-11-03 | neWings 2026-0098 (herwaardering Ekmekci en The Ocean, sept 2026) is voor MZML Holding B.V. zelf (besluit Umar); factuur blijft op MZML B.V. | Assets:Rekening-courant:MZML-BV AED 3.831,22; MZML B.V. betaalt XCL terug (Hans boekt in AFAS) |
+
+## Month-end close October 2026 (prepared 3-11-2026, NOT sealed)
+
+| Date | Decision / finding | Effect in the ledger |
+|---|---|---|
+| 2026-11-03 | Salary accrued at contract level AED 40,000 per month from 15-12-2025 (December 2025: 17/31); addendum 2 not signed yet | Expenses:Staff:Salary-Umar AED 421,935.48 against Liabilities:Employees:SalaryPayable-Umar (45,000 paid, payable 376,935.48) |
+| 2026-11-03 | End-of-service benefit accrued from day one: 21 days of basic salary per year, daily rate monthly/30 (statutory entitlement only after 1 year; accrual per IFRS for SMEs section 28) | AED 24,612.87 |
+| 2026-11-03 | Car costs 30% private via director's current account for January to October 2026 (decision 2-11-2026) | Assets:Receivables:Director:Umar +7,875.47 |
+| 2026-11-03 | Set-off of current account against salary payable NOT booked: no legal basis until the addendum is signed; pro forma net AED 1,289.54 owed by Umar | docs only (reports/xcl/2026-10/director_position.csv) |
+| 2026-11-03 | Leave accrual NOT booked: needs leave days taken (contract: leave after 1 year, unused leave paid out at end) | open question to Umar |
+| 2026-11-03 | IFZA first-year licence package (about AED 33,400 via RD Advisory) is not in the XCL ledger: paid before the Wio account existed, payer unknown | open: who paid, invoice |
+| 2026-11-03 | FX difference on EUR items AED 11,898.79 loss not booked (see runbook section 10); October CBUAE rate not published (checked 3-11) | open: design fix, month not sealed |
