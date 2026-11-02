@@ -1,5 +1,5 @@
-; Gedeelde valuta-definities voor alle administraties.
-; AED is de rapportagevaluta voor de UAE-entiteiten; EUR wordt aangehouden als vreemde valuta.
+; Shared currency definitions for all ledgers.
+; AED is the presentation currency of the UAE entities; EUR is held as a foreign currency.
 
 1900-01-01 commodity AED
   name: "UAE dirham"
