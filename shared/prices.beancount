@@ -1,0 +1,10 @@
+; Koersen EUR/AED voor herwaardering en rapportage.
+; Regel: alleen waargenomen koersen (werkelijke Wio-wissels, impliciete koers = AED ontvangen / EUR verkocht)
+; en, bij maandeinde zonder wissel, de ECB-referentiekoers van die dag met bronvermelding.
+; Geen geschatte koersen. Ontbrekende maanden worden tijdens de inhaalslag jan t/m sep 2026 aangevuld
+; uit de Wio-afschriften (Archief in Drive).
+
+; Waargenomen Wio-wissels oktober 2026 (bron: Wio statement 29-9 t/m 29-10-2026, ref. 312998962/312998963, 314399741/314399742, 322422498/322422499)
+2026-10-09 price EUR  4.0037 AED
+2026-10-12 price EUR  3.9944 AED
+2026-10-29 price EUR  3.9740 AED

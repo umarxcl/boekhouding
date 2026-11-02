@@ -1,0 +1,197 @@
+# Categoriseringsregels voor XCL (Wio-export).
+# Volgorde telt: de eerste regel die past, wint. Matching is hoofdletterongevoelig op
+# "Transaction type", "Description" en "Notes" samen. Geen regel = Expenses:Onbekend met vlag "!"
+# (komt op de uitzonderingenlijst). Nieuwe regels komen hier bij na goedkeuring van Umar.
+#
+# Velden per regel:
+#   match:   lijst van tekstfragmenten of regex (prefix "re:"); alle moeten voorkomen (AND)
+#   type:    optioneel, Wio "Transaction type" (Card, Fees, Transfers, Currency exchange)
+#   account: tegenrekening
+#   payee:   nette naam van de tegenpartij
+#   flag:    optioneel "!" om altijd op de uitzonderingenlijst te zetten (bijv. grote bedragen)
+#   nl:      optioneel, uitleg die op de maandlijst komt
+
+rules:
+  # --- Omzet en klanten -------------------------------------------------
+  - match: ["from ekmekci"]
+    type: Transfers
+    account: Assets:Debiteuren:Ekmekci
+    payee: "Ekmekci Group B.V."
+    nl: "Ontvangst managementfee; wordt afgeboekt op de openstaande factuur"
+  - match: ["from mdi"]
+    type: Transfers
+    account: Assets:Debiteuren:MDI
+    payee: "MDI Consultants B.V."
+  - match: ["inclusionair"]
+    type: Transfers
+    account: Assets:Debiteuren:Inclusionair
+    payee: "Inclusionair"
+  - match: ["point sixteen"]
+    type: Transfers
+    account: Assets:Debiteuren:Point-Sixteen
+    payee: "Point Sixteen B.V."
+
+  # --- Overboekingen naar Umar -------------------------------------------
+  - match: ["to umar fahad mirza", "salary"]
+    type: Transfers
+    account: Liabilities:Personeel:Loonschuld-Umar
+    payee: "Umar Fahad Mirza"
+    nl: "Salarisbetaling; verlaagt de loonschuld"
+  - match: ["to umar fahad mirza"]
+    type: Transfers
+    account: Assets:Rekening-courant:Umar
+    payee: "Umar Fahad Mirza"
+    flag: "!"
+    nl: "Overboeking naar privé zonder omschrijving Salary: rekening-courant directeur, verrekend met de loonschuld"
+  - match: ["samira"]
+    type: Transfers
+    account: Assets:Rekening-courant:Umar
+    payee: "Samira (via Umar)"
+    nl: "Privé: leefgeld gezin, rekening-courant directeur"
+
+  # --- Leveranciers en overheid -------------------------------------------
+  - match: ["rd advisory"]
+    account: Expenses:Advies:Corporate-services
+    payee: "RD Advisory FZCO"
+  - match: ["ifza"]
+    account: Expenses:Overheid:Licentie-IFZA
+    payee: "IFZA"
+    flag: "!"
+    nl: "Licentiekosten: controleren of dit over de looptijd gespreid moet worden"
+  - match: ["decisive zone"]
+    account: Assets:Rekening-courant:MZML-Ltd
+    payee: "Decisive Zone (voor MZML Ltd)"
+    flag: "!"
+
+  # --- Auto -------------------------------------------------------------
+  - match: ["ezhire"]
+    account: Expenses:Auto:Huur
+    payee: "Ezhire (autohuur)"
+  - match: ["adnoc"]
+    account: Expenses:Auto:Brandstof-tol
+    payee: "ADNOC"
+  - match: ["enoc"]
+    account: Expenses:Auto:Brandstof-tol
+    payee: "ENOC"
+  - match: ["salik"]
+    account: Expenses:Auto:Brandstof-tol
+    payee: "Salik"
+  - match: ["car park", "parking"]
+    account: Expenses:Auto:Brandstof-tol
+    payee: "Parkeren"
+  - match: ["re:car park|parking|rta "]
+    account: Expenses:Auto:Brandstof-tol
+    payee: "Parkeren / RTA"
+
+  # --- Vervoer en reizen ------------------------------------------------
+  - match: ["uber"]
+    account: Expenses:Reis:Vervoer
+    payee: "Uber"
+  - match: ["taxi"]
+    account: Expenses:Reis:Vervoer
+    payee: "Taxi"
+  - match: ["careem"]
+    account: Expenses:Reis:Vervoer
+    payee: "Careem"
+  - match: ["re:qatar airways|emirates|klm|flydubai|etihad|transavia"]
+    account: Expenses:Reis:Vliegtickets
+    payee: "Vliegticket"
+    flag: "!"
+    nl: "Vlucht: bevestigen dat de reis zakelijk was"
+
+  # --- Telecom ----------------------------------------------------------
+  - match: ["e& digital"]
+    account: Expenses:Telecom
+    payee: "e& (Etisalat)"
+  - match: ["etisalat"]
+    account: Expenses:Telecom
+    payee: "e& (Etisalat)"
+  - match: ["re:^du |du telecom"]
+    account: Expenses:Telecom
+    payee: "du"
+
+  # --- Software en AI ---------------------------------------------------
+  - match: ["anthropic"]
+    account: Expenses:Software:AI
+    payee: "Anthropic"
+  - match: ["openai"]
+    account: Expenses:Software:AI
+    payee: "OpenAI"
+  - match: ["fireflies"]
+    account: Expenses:Software:AI
+    payee: "Fireflies.ai"
+  - match: ["re:x\\.ai|grok|xai"]
+    account: Expenses:Software:AI
+    payee: "xAI (Grok)"
+  - match: ["google workspace"]
+    account: Expenses:Software:Overig
+    payee: "Google Workspace"
+  - match: ["google play"]
+    account: Expenses:Software:Overig
+    payee: "Google Play (apps en abonnementen)"
+    flag: "!"
+    nl: "Google Play: controleren welk abonnement (YouTube Premium is zakelijk volgens Umar; apps kunnen privé zijn)"
+  - match: ["wl*google"]
+    account: Expenses:Software:Overig
+    payee: "Google (via Wio)"
+  - match: ["dropbox"]
+    account: Expenses:Software:Overig
+    payee: "Dropbox"
+  - match: ["transip"]
+    account: Expenses:Software:Overig
+    payee: "TransIP"
+  - match: ["microsoft"]
+    account: Expenses:Software:Overig
+    payee: "Microsoft"
+  - match: ["figma"]
+    account: Expenses:Software:Overig
+    payee: "Figma"
+  - match: ["netlify"]
+    account: Expenses:Software:Overig
+    payee: "Netlify"
+  - match: ["fiskl"]
+    account: Expenses:Software:Overig
+    payee: "Fiskl"
+  - match: ["linkedin"]
+    account: Expenses:Marketing
+    payee: "LinkedIn Premium"
+  - match: ["cardoo"]
+    account: Expenses:Software:Overig
+    payee: "Cardoo"
+    flag: "!"
+    nl: "Onbekende leverancier Cardoo Cyprus: wat is dit?"
+  - match: ["olo technologi"]
+    account: Expenses:Software:Overig
+    payee: "Olo Technologies"
+    flag: "!"
+  - match: ["terrapinn"]
+    account: Expenses:Kantoor:Boeken-opleiding
+    payee: "Terrapinn (congres)"
+    flag: "!"
+
+  # --- Kantoor en inkopen ------------------------------------------------
+  - match: ["amazon"]
+    account: Expenses:Kantoor:Benodigdheden
+    payee: "Amazon"
+    flag: "!"
+    nl: "Amazon: bon nodig om te bepalen of het zakelijk is (boeken, kantoor) of privé"
+
+  # --- Eten en drinken (standaard privé via rekening-courant, tenzij bon met zakelijk doel) ---
+  - match: ["re:restaurant|rest\\b|cafe|caf\\xe9|coffee|starbucks|mcdonald|kfc|talabat|deliveroo|noon food|carrefour|lulu|spinneys|union coop|venice|chinese house|saya|mondieu|centr"]
+    account: Assets:Rekening-courant:Umar
+    payee: "Eten en boodschappen"
+    nl: "Standaard privé (rekening-courant); alleen zakelijk als er een bon met klant of doel is"
+
+  # --- Bank -------------------------------------------------------------
+  - match: ["foreign exchange transaction fee"]
+    type: Fees
+    account: Expenses:Bank:Wisselkosten
+    payee: "Wio"
+  - match: ["subscription fee"]
+    type: Fees
+    account: Expenses:Bank:Kosten
+    payee: "Wio (maandabonnement)"
+  - match: ["re:fee|charge"]
+    type: Fees
+    account: Expenses:Bank:Kosten
+    payee: "Wio"

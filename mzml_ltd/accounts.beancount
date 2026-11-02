@@ -1,0 +1,129 @@
+; =====================================================================
+; Rekeningschema MZML HOLDING LIMITED (RAK ICC, ICC20251044)
+; Boekjaar 1: 15-12-2025 t/m 31-12-2026. Rapportagevaluta AED; deelnemingen en vendor loans in EUR.
+; Zuivere holding: geen bankrekening (aanvraag januari 2027), geen omzet, kosten voorgeschoten door MZML Holding B.V.
+; Metadata zoals bij XCL: nl (uitleg), btw (hier overal nvt: niet btw-plichtig), ifrs (jaarrekeningregel).
+; =====================================================================
+
+; ACTIVA
+2025-12-15 open Assets:Bank:Nog-te-openen                AED
+  nl: "Bankrekening MZML Ltd, aan te vragen januari 2027"
+  ifrs: "Liquide middelen"
+
+2025-12-15 open Assets:Deelnemingen:Ekmekci              EUR
+  nl: "75 aandelen Ekmekci Group B.V. (18,80%), gekocht 31-12-2025 tegen kostprijs"
+  ifrs: "Financiële vaste activa, deelnemingen tegen kostprijs"
+
+2025-12-15 open Assets:Deelnemingen:Point-Sixteen        EUR
+  nl: "5.000 aandelen Point Sixteen B.V. (50%), gekocht 31-12-2025"
+  ifrs: "Financiële vaste activa, deelnemingen tegen kostprijs"
+
+2025-12-15 open Assets:Deelnemingen:The-Ocean            EUR
+  nl: "720 aandelen The Ocean B.V. (30%), gekocht 31-12-2025"
+  ifrs: "Financiële vaste activa, deelnemingen tegen kostprijs"
+
+2025-12-15 open Assets:Nog-te-storten-kapitaal           AED
+  nl: "Aandelenkapitaal (AED 100.000) dat nog niet is gestort; er is nog geen bankrekening"
+  ifrs: "Vordering op aandeelhouder (te verifiëren)"
+
+2025-12-15 open Assets:Rekening-courant:Umar             AED,EUR
+  nl: "Wat Umar privé heeft betaald voor MZML Ltd, of andersom"
+  ifrs: "Vordering op bestuurder"
+
+2025-12-15 open Assets:Te-ontvangen-dividend             EUR
+  nl: "Vastgesteld maar nog niet ontvangen dividend van deelnemingen"
+  ifrs: "Vorderingen"
+
+; PASSIVA
+2025-12-15 open Liabilities:Vendor-loan:MZML-BV:Ekmekci  EUR
+  nl: "Koopsom aandelen Ekmekci, schuldig gebleven aan MZML Holding B.V. (voorwaarden: overeenkomst in Dropbox)"
+  ifrs: "Langlopende schuld aan verbonden partij"
+
+2025-12-15 open Liabilities:Vendor-loan:MZML-BV:Point-Sixteen EUR
+  nl: "Koopsom aandelen Point Sixteen, schuldig gebleven aan MZML Holding B.V."
+  ifrs: "Langlopende schuld aan verbonden partij"
+
+2025-12-15 open Liabilities:Vendor-loan:MZML-BV:The-Ocean EUR
+  nl: "Koopsom aandelen The Ocean, schuldig gebleven aan MZML Holding B.V."
+  ifrs: "Langlopende schuld aan verbonden partij"
+
+2025-12-15 open Liabilities:Rekening-courant:MZML-BV     AED,EUR
+  nl: "Kosten van MZML Ltd die MZML Holding B.V. (NL) heeft voorgeschoten (oprichting, certificaten, RAK ICC)"
+  ifrs: "Kortlopende schuld aan verbonden partij"
+
+2025-12-15 open Liabilities:Rekening-courant:XCL         AED,EUR
+  nl: "Kosten van MZML Ltd die XCL heeft voorgeschoten"
+  ifrs: "Kortlopende schuld aan verbonden partij"
+
+2025-12-15 open Liabilities:Te-betalen-rente             EUR
+  nl: "Opgelopen maar nog niet betaalde rente op de vendor loans (als rente is afgesproken)"
+  ifrs: "Overlopende passiva"
+
+2025-12-15 open Liabilities:CT:Te-betalen                AED
+  nl: "Vennootschapsbelasting UAE (verwacht nihil)"
+  ifrs: "Belastingschuld"
+
+; EIGEN VERMOGEN
+2025-12-15 open Equity:Aandelenkapitaal                  AED
+  nl: "Geplaatst kapitaal: 100 aandelen van AED 1.000 (register of members RAK ICC)"
+  ifrs: "Aandelenkapitaal"
+
+2025-12-15 open Equity:Openingsbalans                    AED,EUR
+  nl: "Technische tegenrekening voor de openingsbalans"
+  ifrs: "n.v.t."
+
+2025-12-15 open Equity:Resultaat                         AED,EUR
+  nl: "Winst of verlies van afgesloten boekjaren"
+  ifrs: "Overige reserves"
+
+; OPBRENGSTEN
+2025-12-15 open Income:Dividend                          EUR
+  nl: "Dividend van deelnemingen (deelnemingsvrijstelling CT vanaf 1-1-2027)"
+  btw: "nvt"
+  ifrs: "Opbrengst deelnemingen"
+
+2025-12-15 open Income:Koersresultaat                    AED
+  nl: "Koerswinst op EUR-posities bij herwaardering"
+  btw: "nvt"
+  ifrs: "Financiële baten"
+
+; KOSTEN
+2025-12-15 open Expenses:Overheid:RAK-ICC                AED
+  nl: "Jaarlijkse verlenging RAK ICC inclusief registered agent"
+  btw: "nvt"
+  ifrs: "Overige bedrijfskosten"
+
+2025-12-15 open Expenses:Overheid:Certificaten           AED
+  nl: "Certificate of incumbency, good standing, CT-certificaat"
+  btw: "nvt"
+  ifrs: "Overige bedrijfskosten"
+
+2025-12-15 open Expenses:Oprichting                      AED
+  nl: "Oprichtingskosten (eenmalig, boekjaar 1)"
+  btw: "nvt"
+  ifrs: "Overige bedrijfskosten"
+
+2025-12-15 open Expenses:Advies                          AED,EUR
+  nl: "Fiscaal, juridisch en corporate-services advies"
+  btw: "nvt"
+  ifrs: "Overige bedrijfskosten"
+
+2025-12-15 open Expenses:Rente:Vendor-loan               EUR
+  nl: "Rente op de vendor loans aan MZML Holding B.V. (als afgesproken)"
+  btw: "nvt"
+  ifrs: "Financiële lasten"
+
+2025-12-15 open Expenses:Bank                            AED
+  nl: "Bankkosten (vanaf opening rekening)"
+  btw: "nvt"
+  ifrs: "Financiële lasten"
+
+2025-12-15 open Expenses:Koersverschil                   AED
+  nl: "Koersverlies op EUR-posities bij herwaardering"
+  btw: "nvt"
+  ifrs: "Financiële lasten"
+
+2025-12-15 open Expenses:Onbekend                        AED,EUR
+  nl: "Tijdelijk: nog te beoordelen (moet leeg zijn bij afsluiting)"
+  btw: "nvt"
+  ifrs: "n.v.t."

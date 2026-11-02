@@ -1,0 +1,16 @@
+; Openingsbalans XCL per 15-12-2025 (oprichting).
+; Bron: shareholder resolutions bij oprichting (project: "Resolution XCL MANAGEMENT CONSULTANCIES FZCO.pdf"):
+; geplaatst kapitaal AED 48.000, 100 aandelen van AED 480, aandeelhouder Umar Fahad Mirza.
+; Er was op 15-12-2025 nog geen bankrekening (Wio geopend 20-1-2026). Het kapitaal staat daarom
+; als vordering op de aandeelhouder totdat een storting op Wio is aangetoond, of totdat uit de
+; bankhistorie blijkt dat het nooit is gestort (dan blijft het een vordering; te beoordelen bij de jaarafsluiting).
+; Flag "!" = te verifiëren bij de jaarafsluiting.
+
+2025-12-15 ! "Oprichting" "Geplaatst aandelenkapitaal, nog niet gestort"
+  verifieer: "Is er een kapitaalstorting van AED 48.000 op Wio geweest? Zo nee: blijft vordering op aandeelhouder."
+  Assets:Nog-te-storten-kapitaal        48000.00 AED
+  Equity:Aandelenkapitaal              -48000.00 AED
+
+; Banksaldi bij opening van de rekeningen (bron: Wio-afschriften januari 2026; aan te vullen in de inhaalslag)
+2026-01-20 balance Assets:Bank:Wio-AED   0.00 AED
+2026-01-20 balance Assets:Bank:Wio-EUR   0.00 EUR

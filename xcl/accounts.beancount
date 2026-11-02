@@ -1,0 +1,296 @@
+; =====================================================================
+; Rekeningschema XCL MANAGEMENT CONSULTANCIES - FZCO (IFZA, licentie 75707)
+; Boekjaar 1: 15-12-2025 t/m 31-12-2026. Rapportagevaluta AED, EUR als vreemde valuta.
+; Grondslag: accrual, IFRS for SMEs. Regime: Small Business Relief 2026.
+;
+; Elke rekening heeft metadata:
+;   nl:   korte uitleg in gewone taal (komt op de maandlijst en in rapporten)
+;   btw:  btw-behandeling: "nvt" (geen btw-gevolg), "0-export" (omzet 0% export),
+;         "5-voorbelasting" (UAE-kosten met TRN-factuur, voorbelasting aftrekbaar na registratie),
+;         "geen-aftrek" (kosten zonder TRN-factuur of buiten de UAE: geen voorbelasting)
+;   ifrs: regel in de jaarrekening (balans of P&L)
+; =====================================================================
+
+; ---------------------------------------------------------------------
+; ACTIVA
+; ---------------------------------------------------------------------
+2025-12-15 open Assets:Bank:Wio-AED                      AED
+  nl: "Zakelijke betaalrekening Wio in dirham (pas voor zakelijke uitgaven)"
+  iban: "AE450860000009202341633"
+  ifrs: "Liquide middelen"
+
+2025-12-15 open Assets:Bank:Wio-EUR                      EUR
+  nl: "Zakelijke rekening Wio in euro (ontvangst van de managementfees)"
+  iban: "AE320860000009506419892"
+  ifrs: "Liquide middelen"
+
+2025-12-15 open Assets:Debiteuren:Ekmekci                EUR
+  nl: "Nog te ontvangen van Ekmekci Group B.V. (verstuurde facturen min ontvangsten)"
+  ifrs: "Handelsvorderingen"
+
+2025-12-15 open Assets:Debiteuren:MDI                    EUR
+  nl: "Nog te ontvangen van MDI Consultants B.V."
+  ifrs: "Handelsvorderingen"
+
+2025-12-15 open Assets:Debiteuren:Inclusionair           AED
+  nl: "Nog te ontvangen van Inclusionair (Nederlandse bv), gefactureerd in AED"
+  ifrs: "Handelsvorderingen"
+
+2025-12-15 open Assets:Debiteuren:Point-Sixteen          EUR
+  nl: "Nog te ontvangen van Point Sixteen B.V. (fee vanaf besluit)"
+  ifrs: "Handelsvorderingen"
+
+2025-12-15 open Assets:Debiteuren:Overig                 AED,EUR
+  nl: "Nog te ontvangen van overige klanten"
+  ifrs: "Handelsvorderingen"
+
+2025-12-15 open Assets:Vooruitbetaald:Huisvesting        AED
+  nl: "Vooruitbetaalde villahuur: het deel van een kwartaalbetaling dat nog niet verstreken is"
+  ifrs: "Overlopende activa"
+
+2025-12-15 open Assets:Vooruitbetaald:Licentie           AED
+  nl: "Vooruitbetaalde IFZA-licentie en visumkosten, gespreid over de looptijd"
+  ifrs: "Overlopende activa"
+
+2025-12-15 open Assets:Vooruitbetaald:Overig             AED,EUR
+  nl: "Overige vooruitbetalingen (jaarabonnementen e.d.)"
+  ifrs: "Overlopende activa"
+
+2025-12-15 open Assets:Rekening-courant:Umar             AED,EUR
+  nl: "Rekening-courant directeur: wat XCL aan Umar heeft voorgeschoten (privé-opnames en privé-uitgaven via de XCL-pas); wordt maandelijks verrekend met de loonschuld"
+  ifrs: "Vordering op bestuurder"
+
+2025-12-15 open Assets:Rekening-courant:MZML-Ltd         AED,EUR
+  nl: "Wat XCL heeft betaald voor MZML Holding Limited"
+  ifrs: "Vordering op verbonden partij"
+
+2025-12-15 open Assets:Nog-te-storten-kapitaal           AED
+  nl: "Aandelenkapitaal dat door de aandeelhouder nog niet op de bankrekening is gestort"
+  ifrs: "Vordering op aandeelhouder (te verifiëren)"
+
+2025-12-15 open Assets:Btw:Voorbelasting                 AED
+  nl: "Btw op UAE-kosten die XCL mag terugvragen (alleen met TRN-factuur, alleen na btw-registratie)"
+  ifrs: "Belastingvordering"
+
+; ---------------------------------------------------------------------
+; PASSIVA
+; ---------------------------------------------------------------------
+2025-12-15 open Liabilities:Crediteuren                  AED,EUR
+  nl: "Ontvangen inkoopfacturen die nog betaald moeten worden"
+  ifrs: "Handelsschulden"
+
+2025-12-15 open Liabilities:Personeel:Loonschuld-Umar    AED
+  nl: "Opgebouwd maar nog niet uitbetaald salaris van Umar (contract AED 40.000 per maand; route a)"
+  ifrs: "Schuld aan bestuurder"
+
+2025-12-15 open Liabilities:Personeel:End-of-service     AED
+  nl: "Voorziening eindevergoeding (end of service gratuity) volgens UAE-arbeidsrecht"
+  ifrs: "Voorziening personeelsbeloningen"
+
+2025-12-15 open Liabilities:Btw:Af-te-dragen             AED
+  nl: "Btw die XCL moet afdragen (bij 0%-export nihil; saldo met voorbelasting bepaalt de aangifte)"
+  ifrs: "Belastingschuld"
+
+2025-12-15 open Liabilities:CT:Te-betalen                AED
+  nl: "Vennootschapsbelasting UAE (bij Small Business Relief 2026 nihil)"
+  ifrs: "Belastingschuld"
+
+2025-12-15 open Liabilities:Overlopend                   AED,EUR
+  nl: "Kosten die bij de maand horen maar nog niet gefactureerd of betaald zijn"
+  ifrs: "Overlopende passiva"
+
+; ---------------------------------------------------------------------
+; EIGEN VERMOGEN
+; ---------------------------------------------------------------------
+2025-12-15 open Equity:Aandelenkapitaal                  AED
+  nl: "Geplaatst kapitaal: 100 aandelen van AED 480 (resolutie bij oprichting)"
+  ifrs: "Aandelenkapitaal"
+
+2025-12-15 open Equity:Openingsbalans                    AED,EUR
+  nl: "Technische tegenrekening voor de openingsbalans"
+  ifrs: "n.v.t."
+
+2025-12-15 open Equity:Resultaat                         AED,EUR
+  nl: "Winst of verlies van afgesloten boekjaren"
+  ifrs: "Overige reserves"
+
+; ---------------------------------------------------------------------
+; OPBRENGSTEN
+; ---------------------------------------------------------------------
+2025-12-15 open Income:Omzet:Managementfee:Ekmekci       EUR
+  nl: "Managementfee aan Ekmekci Group B.V. (EUR 7.716 per maand)"
+  btw: "0-export"
+  ifrs: "Netto-omzet"
+
+2025-12-15 open Income:Omzet:Managementfee:MDI           EUR
+  nl: "Fee aan MDI Consultants B.V. (leergang ABN AMRO)"
+  btw: "0-export"
+  ifrs: "Netto-omzet"
+
+2025-12-15 open Income:Omzet:Managementfee:Point-Sixteen EUR
+  nl: "Fee aan Point Sixteen B.V. (vanaf besluit en managementovereenkomst)"
+  btw: "0-export"
+  ifrs: "Netto-omzet"
+
+2025-12-15 open Income:Omzet:Advies:Inclusionair         AED
+  nl: "Adviesdiensten aan Inclusionair (Nederlandse bv)"
+  btw: "0-export"
+  ifrs: "Netto-omzet"
+
+2025-12-15 open Income:Omzet:Overig                      AED,EUR
+  nl: "Overige omzet"
+  btw: "0-export"
+  ifrs: "Netto-omzet"
+
+2025-12-15 open Income:Koersresultaat                    AED
+  nl: "Winst op valutawissels en herwaardering van de EUR-rekening"
+  btw: "nvt"
+  ifrs: "Financiële baten"
+
+2025-12-15 open Income:Overig                            AED,EUR
+  nl: "Overige baten (terugbetalingen e.d.)"
+  btw: "nvt"
+  ifrs: "Overige baten"
+
+; ---------------------------------------------------------------------
+; KOSTEN
+; ---------------------------------------------------------------------
+2025-12-15 open Expenses:Personeel:Loon-Umar             AED
+  nl: "Brutosalaris Umar volgens arbeidscontract (AED 40.000 per maand tot addendum)"
+  btw: "nvt"
+  ifrs: "Personeelskosten"
+
+2025-12-15 open Expenses:Personeel:Huisvesting           AED
+  nl: "Woning Sharjah als loon in natura (villahuur, gespreid per maand) tot 14-2-2027"
+  btw: "geen-aftrek"
+  ifrs: "Personeelskosten"
+
+2025-12-15 open Expenses:Personeel:Huisvesting-nuts      AED
+  nl: "SEWA en andere woningkosten die bij de woning als loon in natura horen"
+  btw: "geen-aftrek"
+  ifrs: "Personeelskosten"
+
+2025-12-15 open Expenses:Personeel:End-of-service        AED
+  nl: "Jaarlijkse dotatie aan de voorziening eindevergoeding"
+  btw: "nvt"
+  ifrs: "Personeelskosten"
+
+2025-12-15 open Expenses:Personeel:Visa-medisch          AED
+  nl: "Visum, Emirates ID, medische keuring en verzekering van de werknemer"
+  btw: "geen-aftrek"
+  ifrs: "Personeelskosten"
+
+2025-12-15 open Expenses:Overheid:Licentie-IFZA          AED
+  nl: "IFZA-licentie, establishment card en registratiekosten (maandelijks deel van de jaarkosten)"
+  btw: "nvt"
+  ifrs: "Overige bedrijfskosten"
+
+2025-12-15 open Expenses:Overheid:Certificaten           AED
+  nl: "Certificaten en wijzigingen bij IFZA of FTA (salary certificate, CT-certificaat)"
+  btw: "5-voorbelasting"
+  ifrs: "Overige bedrijfskosten"
+
+2025-12-15 open Expenses:Overheid:Boetes                 AED
+  nl: "Boetes van FTA of IFZA (niet aftrekbaar voor CT)"
+  btw: "nvt"
+  ifrs: "Overige bedrijfskosten (niet aftrekbaar)"
+
+2025-12-15 open Expenses:Auto:Huur                       AED
+  nl: "Huur van de bedrijfsauto (Ezhire e.d.)"
+  btw: "5-voorbelasting"
+  ifrs: "Overige bedrijfskosten"
+
+2025-12-15 open Expenses:Auto:Brandstof-tol              AED
+  nl: "Brandstof (ADNOC, ENOC), Salik, parkeren"
+  btw: "5-voorbelasting"
+  ifrs: "Overige bedrijfskosten"
+
+2025-12-15 open Expenses:Reis:Vervoer                    AED
+  nl: "Taxi, Uber, metro, treinen"
+  btw: "5-voorbelasting"
+  ifrs: "Overige bedrijfskosten"
+
+2025-12-15 open Expenses:Reis:Vliegtickets               AED,EUR
+  nl: "Zakelijke vluchten (NL-bezoeken voor klanten)"
+  btw: "nvt"
+  ifrs: "Overige bedrijfskosten"
+
+2025-12-15 open Expenses:Reis:Verblijf                   AED,EUR
+  nl: "Hotels en verblijfkosten op zakenreis"
+  btw: "geen-aftrek"
+  ifrs: "Overige bedrijfskosten"
+
+2025-12-15 open Expenses:Representatie                   AED,EUR
+  nl: "Zakelijke lunches, diners en relatiegeschenken"
+  btw: "geen-aftrek"
+  ifrs: "Overige bedrijfskosten"
+
+2025-12-15 open Expenses:Telecom                         AED
+  nl: "Mobiel en internet (e& / Etisalat, du)"
+  btw: "5-voorbelasting"
+  ifrs: "Overige bedrijfskosten"
+
+2025-12-15 open Expenses:Software:AI                     AED
+  nl: "AI-abonnementen: Anthropic, OpenAI, Fireflies, Grok"
+  btw: "geen-aftrek"
+  ifrs: "Overige bedrijfskosten"
+
+2025-12-15 open Expenses:Software:Overig                 AED,EUR
+  nl: "Overige software: Google Workspace, Dropbox, TransIP, Microsoft, Figma, Netlify, Fiskl"
+  btw: "geen-aftrek"
+  ifrs: "Overige bedrijfskosten"
+
+2025-12-15 open Expenses:Kantoor:Benodigdheden           AED
+  nl: "Kantoorbenodigdheden en kleine apparatuur (Amazon e.d.)"
+  btw: "5-voorbelasting"
+  ifrs: "Overige bedrijfskosten"
+
+2025-12-15 open Expenses:Kantoor:Boeken-opleiding        AED,EUR
+  nl: "Vakliteratuur, cursussen, congressen"
+  btw: "geen-aftrek"
+  ifrs: "Overige bedrijfskosten"
+
+2025-12-15 open Expenses:Marketing                       AED,EUR
+  nl: "LinkedIn Premium, website, profilering"
+  btw: "geen-aftrek"
+  ifrs: "Verkoopkosten"
+
+2025-12-15 open Expenses:Advies:Corporate-services       AED
+  nl: "RD Advisory en andere PRO-diensten (visa, licentie, certificaten)"
+  btw: "5-voorbelasting"
+  ifrs: "Overige bedrijfskosten"
+
+2025-12-15 open Expenses:Advies:Fiscaal-juridisch        AED,EUR
+  nl: "Fiscaal en juridisch advies (transfer pricing, contracten)"
+  btw: "5-voorbelasting"
+  ifrs: "Overige bedrijfskosten"
+
+2025-12-15 open Expenses:Verzekering                     AED
+  nl: "Zakelijke verzekeringen"
+  btw: "geen-aftrek"
+  ifrs: "Overige bedrijfskosten"
+
+2025-12-15 open Expenses:Bank:Kosten                     AED,EUR
+  nl: "Bankkosten Wio (maandabonnement, overboekingskosten)"
+  btw: "nvt"
+  ifrs: "Financiële lasten"
+
+2025-12-15 open Expenses:Bank:Wisselkosten               AED
+  nl: "Wisselkoersopslag van Wio op buitenlandse kaartbetalingen"
+  btw: "nvt"
+  ifrs: "Financiële lasten"
+
+2025-12-15 open Expenses:Koersverschil                   AED
+  nl: "Verlies op valutawissels en herwaardering van de EUR-rekening"
+  btw: "nvt"
+  ifrs: "Financiële lasten"
+
+2025-12-15 open Expenses:Overig                          AED,EUR
+  nl: "Overige kosten die nergens anders passen (toelichting verplicht)"
+  btw: "geen-aftrek"
+  ifrs: "Overige bedrijfskosten"
+
+2025-12-15 open Expenses:Onbekend                        AED,EUR
+  nl: "Tijdelijk: nog te beoordelen posten (moet leeg zijn bij maandafsluiting)"
+  btw: "nvt"
+  ifrs: "n.v.t."

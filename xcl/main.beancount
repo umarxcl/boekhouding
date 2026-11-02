@@ -1,0 +1,19 @@
+; Hoofdbestand XCL MANAGEMENT CONSULTANCIES - FZCO
+; Controleren: bean-check xcl/main.beancount
+; Alle boekingen staan per maand in xcl/2026/MM.beancount; afgesloten maanden hebben een git-tag xcl-2026-MM.
+
+option "title" "XCL MANAGEMENT CONSULTANCIES - FZCO"
+option "operating_currency" "AED"
+option "operating_currency" "EUR"
+option "render_commas" "TRUE"
+option "booking_method" "FIFO"
+
+; Strikt: elke rekening moet in accounts.beancount geopend zijn, elke boeking moet sluiten.
+plugin "beancount.plugins.check_commodity"
+plugin "beancount.plugins.leafonly"
+
+include "../shared/commodities.beancount"
+include "../shared/prices.beancount"
+include "accounts.beancount"
+include "opening.beancount"
+include "2026/*.beancount"

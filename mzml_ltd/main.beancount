@@ -1,0 +1,16 @@
+; Hoofdbestand MZML HOLDING LIMITED (RAK ICC)
+; Controleren: bean-check mzml_ltd/main.beancount
+
+option "title" "MZML HOLDING LIMITED"
+option "operating_currency" "AED"
+option "operating_currency" "EUR"
+option "render_commas" "TRUE"
+
+plugin "beancount.plugins.check_commodity"
+plugin "beancount.plugins.leafonly"
+
+include "../shared/commodities.beancount"
+include "../shared/prices.beancount"
+include "accounts.beancount"
+include "opening.beancount"
+include "2026/*.beancount"

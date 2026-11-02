@@ -1,0 +1,14 @@
+; Gedeelde valuta-definities voor alle administraties.
+; AED is de rapportagevaluta voor de UAE-entiteiten; EUR wordt aangehouden als vreemde valuta.
+
+1900-01-01 commodity AED
+  name: "UAE dirham"
+  export: "AED"
+
+1900-01-01 commodity EUR
+  name: "Euro"
+  export: "EUR"
+
+1900-01-01 commodity USD
+  name: "US dollar"
+  export: "USD"

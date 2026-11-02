@@ -1,0 +1,6 @@
+tests/tmp/
+__pycache__/
+*.pyc
+.env
+*.json.tmp
+uitzonderingen*.json
