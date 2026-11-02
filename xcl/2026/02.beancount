@@ -14,17 +14,16 @@
   Assets:Bank:Wio-EUR                              7,755.50 EUR
   Assets:Debiteuren:Ekmekci                       -7,755.50 EUR
 
-2026-02-07 ! "Hotel of verblijf" "Viola hotel apartment"
+2026-02-07 * "Hotel of verblijf" "Viola hotel apartment"
   wio-ref: "210884233"
   wio-type: "Card"
   bron: "Wio-export"
   nl: "Verblijf zonder bon: volgens je regel privé (rekening-courant); zakelijke reis? Zet 'zakelijk, bon volgt'"
   goedkeuring: "2026-11-03"
-  antwoord: "zakelijke reis: huur van airbnb"
-  open: "Confirmation found, but the apartment is in Sharjah (home city): business purpose to be stated, else private"
+  antwoord: "prive (3-11-2026)"
   document: "Gmail: Booking.com confirmation 5358801383, Viola Hotel Apartments, Sharjah (6-2-2026)"
   Assets:Bank:Wio-AED                             -2,070.00 AED
-  Expenses:Reis:Verblijf                           2,070.00 AED
+  Assets:Rekening-courant:Umar                           2,070.00 AED
 
 2026-02-07 * "Ezhire (autohuur)" "Ezhire ae"
   wio-ref: "210916977"
