@@ -1,129 +1,235 @@
 ; =====================================================================
 ; Rekeningschema MZML HOLDING LIMITED (RAK ICC, ICC20251044)
-; Boekjaar 1: 15-12-2025 t/m 31-12-2026. Rapportagevaluta AED; deelnemingen en vendor loans in EUR.
+; Boekjaar 1: 15-12-2025 t/m 31-12-2026. Rapportagevaluta AED.
 ; Zuivere holding: geen bankrekening (aanvraag januari 2027), geen omzet, kosten voorgeschoten door MZML Holding B.V.
-; Metadata zoals bij XCL: nl (uitleg), btw (hier overal nvt: niet btw-plichtig), ifrs (jaarrekeningregel).
+; Versie 2 (2-11-2026) na de onafhankelijke review (docs/review_rekeningschema.md).
+; Deelnemingen: niet-monetair, vastgelegd in EUR met de kostprijs in AED (koers 31-12-2025), nooit herwaarderen.
+; Vendor loans en rekening-courant: monetair, worden herwaardeerd.
+; Metadata zoals bij XCL (nl, btw, ct, verbonden, ifrs, rgs). Btw: MZML Ltd is niet btw-plichtig, dus overal nvt.
 ; =====================================================================
 
 ; ACTIVA
-2025-12-15 open Assets:Bank:Nog-te-openen                AED
-  nl: "Bankrekening MZML Ltd, aan te vragen januari 2027"
-  ifrs: "Liquide middelen"
-
 2025-12-15 open Assets:Deelnemingen:Ekmekci              EUR
   nl: "75 aandelen Ekmekci Group B.V. (18,80%), gekocht 31-12-2025 tegen kostprijs"
-  ifrs: "Financiële vaste activa, deelnemingen tegen kostprijs"
+  ct: "vrijgesteld"
+  verbonden: "related-party"
+  ifrs: "Financiële vaste activa, deelneming tegen kostprijs (Section 14.4(a) of Section 11, afhankelijk van invloed)"
+  rgs: "BFvaAnd"
 
 2025-12-15 open Assets:Deelnemingen:Point-Sixteen        EUR
-  nl: "5.000 aandelen Point Sixteen B.V. (50%), gekocht 31-12-2025"
-  ifrs: "Financiële vaste activa, deelnemingen tegen kostprijs"
+  nl: "5.000 aandelen Point Sixteen B.V. (50%), gekocht 31-12-2025; joint venture tegen kostprijs"
+  ct: "vrijgesteld"
+  verbonden: "related-party"
+  ifrs: "Financiële vaste activa, joint venture tegen kostprijs (Section 15.9(a))"
+  rgs: "BFvaDio"
 
 2025-12-15 open Assets:Deelnemingen:The-Ocean            EUR
-  nl: "720 aandelen The Ocean B.V. (30%), gekocht 31-12-2025"
-  ifrs: "Financiële vaste activa, deelnemingen tegen kostprijs"
+  nl: "720 aandelen The Ocean B.V. (30%), gekocht 31-12-2025; geassocieerde deelneming tegen kostprijs"
+  ct: "vrijgesteld"
+  verbonden: "related-party"
+  ifrs: "Financiële vaste activa, geassocieerde deelneming tegen kostprijs (Section 14.4(a))"
+  rgs: "BFvaAnd"
+
+2025-12-15 open Assets:Waardevermindering:Ekmekci        AED
+  nl: "Bijzondere waardevermindering op de deelneming Ekmekci (tegenrekening, negatief saldo)"
+  ifrs: "Financiële vaste activa (bijzondere waardevermindering)"
+  rgs: "BFvaAnd"
+
+2025-12-15 open Assets:Waardevermindering:Point-Sixteen  AED
+  nl: "Bijzondere waardevermindering op de deelneming Point Sixteen"
+  ifrs: "Financiële vaste activa (bijzondere waardevermindering)"
+  rgs: "BFvaDio"
+
+2025-12-15 open Assets:Waardevermindering:The-Ocean      AED
+  nl: "Bijzondere waardevermindering op de deelneming The Ocean"
+  ifrs: "Financiële vaste activa (bijzondere waardevermindering)"
+  rgs: "BFvaAnd"
 
 2025-12-15 open Assets:Nog-te-storten-kapitaal           AED
-  nl: "Aandelenkapitaal (AED 100.000) dat nog niet is gestort; er is nog geen bankrekening"
-  ifrs: "Vordering op aandeelhouder (te verifiëren)"
+  nl: "Aandelenkapitaal (AED 100.000) dat nog niet is gestort; RAK ICC vereist geen storting; in de jaarrekening in mindering op het eigen vermogen"
+  verbonden: "connected-person"
+  ifrs: "In mindering op eigen vermogen (IFRS for SMEs 22.7(a))"
+  rgs: "BVorVao"
 
 2025-12-15 open Assets:Rekening-courant:Umar             AED,EUR
   nl: "Wat Umar privé heeft betaald voor MZML Ltd, of andersom"
-  ifrs: "Vordering op bestuurder"
+  ct: "marktwaarde-toets"
+  verbonden: "connected-person"
+  ifrs: "Vordering op of schuld aan bestuurder"
+  rgs: "BVorOvr"
+  rgs-omslag: "BSchOvs"
 
 2025-12-15 open Assets:Te-ontvangen-dividend             EUR
-  nl: "Vastgesteld maar nog niet ontvangen dividend van deelnemingen"
+  nl: "Vastgesteld maar nog niet ontvangen dividend van deelnemingen (bruto)"
+  verbonden: "related-party"
   ifrs: "Vorderingen"
+  rgs: "BVorVop"
 
 ; PASSIVA
+2025-12-15 open Liabilities:Crediteuren                  AED,EUR
+  nl: "Ontvangen facturen (RAK ICC, registered agent, adviseurs) die nog betaald moeten worden"
+  ifrs: "Handelsschulden"
+  rgs: "BSchCre"
+
 2025-12-15 open Liabilities:Vendor-loan:MZML-BV:Ekmekci  EUR
-  nl: "Koopsom aandelen Ekmekci, schuldig gebleven aan MZML Holding B.V. (voorwaarden: overeenkomst in Dropbox)"
+  nl: "Koopsom aandelen Ekmekci, schuldig gebleven aan MZML Holding B.V. (voorwaarden, looptijd en kortlopend deel: overeenkomst in Dropbox, nog in te zien)"
+  ct: "rente-art30-31"
+  verbonden: "related-party"
   ifrs: "Langlopende schuld aan verbonden partij"
+  rgs: "BLas"
 
 2025-12-15 open Liabilities:Vendor-loan:MZML-BV:Point-Sixteen EUR
   nl: "Koopsom aandelen Point Sixteen, schuldig gebleven aan MZML Holding B.V."
+  ct: "rente-art30-31"
+  verbonden: "related-party"
   ifrs: "Langlopende schuld aan verbonden partij"
+  rgs: "BLas"
 
 2025-12-15 open Liabilities:Vendor-loan:MZML-BV:The-Ocean EUR
   nl: "Koopsom aandelen The Ocean, schuldig gebleven aan MZML Holding B.V."
+  ct: "rente-art30-31"
+  verbonden: "related-party"
   ifrs: "Langlopende schuld aan verbonden partij"
+  rgs: "BLas"
 
 2025-12-15 open Liabilities:Rekening-courant:MZML-BV     AED,EUR
   nl: "Kosten van MZML Ltd die MZML Holding B.V. (NL) heeft voorgeschoten (oprichting, certificaten, RAK ICC)"
+  verbonden: "related-party"
   ifrs: "Kortlopende schuld aan verbonden partij"
+  rgs: "BSchOvs"
 
 2025-12-15 open Liabilities:Rekening-courant:XCL         AED,EUR
-  nl: "Kosten van MZML Ltd die XCL heeft voorgeschoten"
+  nl: "Kosten van MZML Ltd die XCL heeft voorgeschoten (af te wikkelen zodra er een bankrekening is; één financier is het doel)"
+  verbonden: "related-party"
   ifrs: "Kortlopende schuld aan verbonden partij"
+  rgs: "BSchOvs"
 
 2025-12-15 open Liabilities:Te-betalen-rente             EUR
   nl: "Opgelopen maar nog niet betaalde rente op de vendor loans (als rente is afgesproken)"
+  verbonden: "related-party"
   ifrs: "Overlopende passiva"
+  rgs: "BSchOpa"
+
+2025-12-15 open Liabilities:Overlopend                   AED,EUR
+  nl: "Kosten die bij het boekjaar horen maar nog niet gefactureerd zijn (bijv. verlenging RAK ICC)"
+  ifrs: "Overlopende passiva"
+  rgs: "BSchOpa"
 
 2025-12-15 open Liabilities:CT:Te-betalen                AED
   nl: "Vennootschapsbelasting UAE (verwacht nihil)"
   ifrs: "Belastingschuld"
+  rgs: "BSchBep"
 
-; EIGEN VERMOGEN
+; EIGEN VERMOGEN (alleen AED)
 2025-12-15 open Equity:Aandelenkapitaal                  AED
   nl: "Geplaatst kapitaal: 100 aandelen van AED 1.000 (register of members RAK ICC)"
   ifrs: "Aandelenkapitaal"
+  rgs: "BEivGok"
 
-2025-12-15 open Equity:Openingsbalans                    AED,EUR
+2025-12-15 open Equity:Kapitaalbijdrage                  AED
+  nl: "Inbreng buiten aandelen om (bijv. het voordeel van een renteloze vendor loan als die tegen contante waarde wordt gewaardeerd)"
+  ifrs: "Overige reserves (kapitaalbijdrage)"
+  rgs: "BEivAgi"
+
+2025-12-15 open Equity:Openingsbalans                    AED
   nl: "Technische tegenrekening voor de openingsbalans"
   ifrs: "n.v.t."
 
-2025-12-15 open Equity:Resultaat                         AED,EUR
+2025-12-15 open Equity:Resultaat                         AED
   nl: "Winst of verlies van afgesloten boekjaren"
   ifrs: "Overige reserves"
+  rgs: "BEivOvrAlr"
 
-; OPBRENGSTEN
-2025-12-15 open Income:Dividend                          EUR
-  nl: "Dividend van deelnemingen (deelnemingsvrijstelling CT vanaf 1-1-2027)"
+; OPBRENGSTEN (alleen AED)
+2025-12-15 open Income:Dividend                          AED
+  nl: "Dividend van deelnemingen, bruto (deelnemingsvrijstelling CT geldt vanaf het eerste boekjaar als aan de voorwaarden is voldaan: minimaal 5%, 12 maanden houden of de intentie daartoe, minimaal 9% belasting bij de deelneming)"
   btw: "nvt"
+  ct: "vrijgesteld"
+  verbonden: "related-party"
   ifrs: "Opbrengst deelnemingen"
+  rgs: "WFbe"
 
 2025-12-15 open Income:Koersresultaat                    AED
-  nl: "Koerswinst op EUR-posities bij herwaardering"
+  nl: "Koerswinst bij herwaardering van vendor loans en rekening-courant (nooit op deelnemingen)"
   btw: "nvt"
+  ct: "aftrekbaar"
   ifrs: "Financiële baten"
+  rgs: "WFbe"
 
-; KOSTEN
+; KOSTEN (alleen AED)
 2025-12-15 open Expenses:Overheid:RAK-ICC                AED
   nl: "Jaarlijkse verlenging RAK ICC inclusief registered agent"
   btw: "nvt"
+  ct: "aftrekbaar"
   ifrs: "Overige bedrijfskosten"
+  rgs: "WBedOrgHol"
 
 2025-12-15 open Expenses:Overheid:Certificaten           AED
   nl: "Certificate of incumbency, good standing, CT-certificaat"
   btw: "nvt"
+  ct: "aftrekbaar"
   ifrs: "Overige bedrijfskosten"
+  rgs: "WBedAlk"
 
 2025-12-15 open Expenses:Oprichting                      AED
-  nl: "Oprichtingskosten (eenmalig, boekjaar 1)"
+  nl: "Oprichtingskosten (eenmalig, boekjaar 1; IFRS for SMEs 18.15: niet activeren; NL kan activeren)"
   btw: "nvt"
-  ifrs: "Overige bedrijfskosten"
+  ct: "aftrekbaar"
+  ifrs: "Overige bedrijfskosten (oprichtingskosten)"
+  rgs: "WBedAlk"
 
-2025-12-15 open Expenses:Advies                          AED,EUR
+2025-12-15 open Expenses:Advies                          AED
   nl: "Fiscaal, juridisch en corporate-services advies"
   btw: "nvt"
+  ct: "aftrekbaar"
   ifrs: "Overige bedrijfskosten"
+  rgs: "WBedAlk"
 
-2025-12-15 open Expenses:Rente:Vendor-loan               EUR
-  nl: "Rente op de vendor loans aan MZML Holding B.V. (als afgesproken)"
+2025-12-15 open Expenses:Rente:Vendor-loan               AED
+  nl: "Rente op de vendor loans aan MZML Holding B.V. (als afgesproken); specifieke renteaftrekbeperking, veilige haven als MZML B.V. in NL minimaal 9% betaalt"
   btw: "nvt"
+  ct: "rente-art30-31"
+  verbonden: "related-party"
   ifrs: "Financiële lasten"
+  rgs: "WFbeRlsRil"
 
 2025-12-15 open Expenses:Bank                            AED
   nl: "Bankkosten (vanaf opening rekening)"
   btw: "nvt"
+  ct: "aftrekbaar"
   ifrs: "Financiële lasten"
+  rgs: "WBedAlk"
 
 2025-12-15 open Expenses:Koersverschil                   AED
-  nl: "Koersverlies op EUR-posities bij herwaardering"
+  nl: "Koersverlies bij herwaardering van vendor loans en rekening-courant"
   btw: "nvt"
+  ct: "aftrekbaar"
   ifrs: "Financiële lasten"
+  rgs: "WFbe"
 
-2025-12-15 open Expenses:Onbekend                        AED,EUR
+2025-12-15 open Expenses:Waardevermindering-deelnemingen AED
+  nl: "Last uit bijzondere waardevermindering van een deelneming"
+  btw: "nvt"
+  ct: "vrijgesteld"
+  ifrs: "Bijzondere waardeverminderingen"
+  rgs: "WFbe"
+
+2025-12-15 open Expenses:Bronbelasting                   AED
+  nl: "Ingehouden Nederlandse dividendbelasting die niet terug te krijgen is (verdragstarief NL-VAE, door Dinesh te bevestigen)"
+  btw: "nvt"
+  ct: "niet-aftrekbaar"
+  ifrs: "Belastinglast"
+  rgs: "WBel"
+
+2025-12-15 open Expenses:Vennootschapsbelasting          AED
+  nl: "UAE vennootschapsbelasting (verwacht nihil)"
+  btw: "nvt"
+  ct: "niet-aftrekbaar"
+  ifrs: "Belastinglast"
+  rgs: "WBel"
+
+2025-12-15 open Expenses:Onbekend                        AED
   nl: "Tijdelijk: nog te beoordelen (moet leeg zijn bij afsluiting)"
   btw: "nvt"
+  ct: "nvt"
   ifrs: "n.v.t."

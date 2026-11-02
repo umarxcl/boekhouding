@@ -23,3 +23,26 @@ Eén regel per besluit dat de boekingen of de werkwijze bepaalt. Bron is altijd 
 - Welke partij de MZML Ltd-kosten werkelijk betaalde (ING-export MZML B.V., RD-facturen F2025-9718, F2025-9730, F2026-1034).
 - Overboekingen "N" en "M" van juli 2026 (AED 10.000).
 - IFZA-licentiekosten 2025/2026: factuur en betaler (voor spreiding over de looptijd 15-12-2025 t/m 14-12-2026).
+
+## Review rekeningschema 2-11-2026 (docs/review_rekeningschema.md), verwerkt
+
+| Datum | Wijziging | Gevolg |
+|---|---|---|
+| 2026-11-02 | Resultaat- en eigenvermogensrekeningen alleen in AED; EUR-posten omgerekend tegen de CBUAE-koers van de dag (art. 69 btw-wet); ECB vervalt als bron | Importer rekent EUR-regels om; shared/prices.beancount uit CBUAE-maandoverzichten |
+| 2026-11-02 | Deelnemingen MZML Ltd in EUR met kostprijs in AED (koers CBUAE 30-12-2025: 4.319572), nooit herwaarderen; vendor loans wel | mzml_ltd/opening.beancount |
+| 2026-11-02 | Nieuwe btw-codeset (10 codes, elk gekoppeld aan een VAT 201-vak) en metadata ct, verbonden, rgs op elke rekening | accounts.beancount beide entiteiten; docs/rekeningschema.md |
+| 2026-11-02 | Reverse charge op buitenlandse diensten (software, AI, NL-advies, LinkedIn) vanaf de btw-registratiedatum | Assets:Btw:Voorbelasting-verlegd en Liabilities:Btw:Verlegd |
+| 2026-11-02 | Btw-codes gecorrigeerd: autohuur en brandstof geblokkeerd (auto privé beschikbaar), taxi/metro vrijgesteld, woninghuur vrijgesteld, SEWA geblokkeerd, bankkosten 5%, FTA/IFZA-heffingen buiten reikwijdte, verzekering 5% | accounts.beancount XCL |
+| 2026-11-02 | Nieuwe rekeningen XCL: vaste activa en afschrijving, waarborgsommen, kruisposten, vooruitontvangen omzet, lening aandeelhouder, verlofverplichting, zorgverzekering, auto privégebruik als loon in natura, binnenlandse omzet, representatie gesplitst, vennootschapsbelasting, donaties, kapitaalbijdrage | accounts.beancount XCL |
+| 2026-11-02 | Nieuwe rekeningen MZML Ltd: waardevermindering per deelneming, crediteuren, overlopend, kapitaalbijdrage, bronbelasting, vennootschapsbelasting; Bank:Nog-te-openen verwijderd | accounts.beancount MZML Ltd |
+| 2026-11-02 | IFZA-licentie eerst op vooruitbetaald, maandelijks naar kosten; geld van Umar privé naar XCL als lening aandeelhouder met vlag (kapitaalstorting eerst vaststellen) | rules_xcl.yaml |
+
+## Besluiten die Umar nog moet nemen (uit de review, sectie C)
+
+- Btw: doorgaan met registratie, of de uitzondering voor uitsluitend nultarief-leveringen aanvragen (vraag aan Davie; let op dat geïmporteerde diensten meetellen).
+- Route a: uitgestelde betaling van loon schriftelijk vastleggen (addendum), inclusief verrekeningsafspraak en voorschotregeling voor de rekening-courant; welk loon wordt opgebouwd in november en december 2026.
+- Verlies 2026 onder SBR vervalt; afweging SBR versus standaardregime vóór de aangifte; SBR zou zijn verlengd tot boekjaren t/m 2029 (MD 131/2026, te verifiëren).
+- Auto: privégebruik als loon in natura (Expenses:Personeel:Auto-prive), percentage vaststellen.
+- 0% export na de bestuurswissel: toetsen door Dinesh en Davie vóór de bestuurswissel (vestigingsplaats van de NL-bv's voor de btw).
+- EUR 25.000 van 26-1-2026: kapitaalstorting (AED 48.000) plus lening, of alleen lening.
+- MZML Ltd: één financier (bankrekening) in plaats van voorschotten van MZML B.V. en XCL.

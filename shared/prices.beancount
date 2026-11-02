@@ -1,10 +1,11 @@
-; Koersen EUR/AED voor herwaardering en rapportage.
-; Regel: alleen waargenomen koersen (werkelijke Wio-wissels, impliciete koers = AED ontvangen / EUR verkocht)
-; en, bij maandeinde zonder wissel, de ECB-referentiekoers van die dag met bronvermelding.
-; Geen geschatte koersen. Ontbrekende maanden worden tijdens de inhaalslag jan t/m sep 2026 aangevuld
-; uit de Wio-afschriften (Archief in Drive).
+; Koersen EUR/AED.
+; Bron voor omrekening van facturen, kosten, reverse charge en herwaardering per maandeinde: de CBUAE-koers
+; van de dag (art. 69 btw-wet, FTA VATP004). Bron: centralbank.ae, maandoverzichten fx_<mmm><jj>_en.pdf.
+; Wio-wissels worden niet als prijs opgenomen: de werkelijke conversie boekt zichzelf (@@) en het verschil
+; met de CBUAE-koers is koersresultaat. Geen geschatte koersen. Elke regel heeft een bron.
 
-; Waargenomen Wio-wissels oktober 2026 (bron: Wio statement 29-9 t/m 29-10-2026, ref. 312998962/312998963, 314399741/314399742, 322422498/322422499)
-2026-10-09 price EUR  4.0037 AED
-2026-10-12 price EUR  3.9944 AED
-2026-10-29 price EUR  3.9740 AED
+; CBUAE december 2025 (fx_dec25_en.pdf), laatste publicatiedag van het jaar
+2025-12-30 price EUR  4.319572 AED
+  bron: "CBUAE fx_dec25_en.pdf, 30-12-2025"
+
+; Maandeindekoersen 2026: aan te vullen uit de CBUAE-maandoverzichten tijdens de inhaalslag

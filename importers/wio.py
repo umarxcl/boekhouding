@@ -36,6 +36,28 @@ ACCOUNT_BY_IBAN = {
     "AE320860000009506419892": ("Assets:Bank:Wio-EUR", "EUR"),
 }
 UNKNOWN = "Expenses:Onbekend"
+PRICES = Path(__file__).resolve().parent.parent / "shared/prices.beancount"
+
+
+def load_prices() -> list[tuple[date, Decimal]]:
+    """EUR/AED-koersen uit shared/prices.beancount (CBUAE), oplopend op datum."""
+    out = []
+    for line in PRICES.read_text(encoding="utf-8").splitlines():
+        m = re.match(r"^(\d{4}-\d{2}-\d{2})\s+price\s+EUR\s+([\d.]+)\s+AED", line)
+        if m:
+            out.append((date.fromisoformat(m.group(1)), Decimal(m.group(2))))
+    return sorted(out)
+
+
+def rate_on(prices: list[tuple[date, Decimal]], d: date) -> Decimal | None:
+    """Laatste CBUAE-koers op of vóór de datum (None als er geen is: dan komt de post op de lijst)."""
+    r = None
+    for pd_, px in prices:
+        if pd_ <= d:
+            r = px
+        else:
+            break
+    return r
 
 
 @dataclass
@@ -155,9 +177,14 @@ def fmt_amount(x: Decimal, cur: str) -> str:
     return f"{q2(x):,.2f} {cur}"
 
 
-def entry_for(row: Row) -> str:
+def entry_for(row: Row, prices: list[tuple[date, Decimal]]) -> str:
     acct = row.account or UNKNOWN
     flag = row.flag or ("!" if acct == UNKNOWN else "*")
+    # Resultaatrekeningen voeren alleen AED: een EUR-regel wordt omgerekend tegen de CBUAE-koers van de dag.
+    convert = row.currency == "EUR" and acct.split(":")[0] in ("Income", "Expenses")
+    rate = rate_on(prices, row.date) if convert else None
+    if convert and rate is None:
+        flag = "!"
     payee = row.payee or row.desc
     narration = row.desc if row.notes in ("", "N/A") else f"{row.desc} | {row.notes}"
     lines = [f'{row.date.isoformat()} {flag} "{payee}" "{narration}"',
@@ -168,6 +195,14 @@ def entry_for(row: Row) -> str:
         lines.append(f'  nl: "{row.nl}"')
     if row.fx_fee:
         lines.append(f'  wio-fee-ref: "{row.fx_fee_ref}"')
+    if convert and rate is not None:
+        aed = q2(-row.amount * rate)
+        lines.append(f'  koers: "CBUAE {rate} AED per EUR"')
+        lines.append(f"  {row.bank_account:<42} {fmt_amount(row.amount, 'EUR'):>18} @@ {fmt_amount(abs(aed), 'AED')}")
+        lines.append(f"  {acct:<42} {fmt_amount(aed, 'AED'):>18}")
+        return "\n".join(lines) + "\n"
+    if convert and rate is None:
+        lines.append(f'  nl: "Geen CBUAE-koers voor deze datum in shared/prices.beancount: koers toevoegen"')
     lines.append(f"  {row.bank_account:<42} {fmt_amount(row.amount, row.currency):>18}")
     if row.fx_fee:
         lines.append(f"  {row.bank_account:<42} {fmt_amount(row.fx_fee, row.currency):>18}")
@@ -210,6 +245,7 @@ def main() -> None:
     fx_pairs = pair_fx(rows)
     fx_refs = {r.ref for p in fx_pairs for r in p}
     rules = load_rules(args.rules)
+    prices = load_prices()
 
     entries: list[str] = []
     exceptions: list[dict] = []
@@ -227,7 +263,7 @@ def main() -> None:
         if rule:
             r.account, r.payee = rule["account"], rule.get("payee", "")
             r.flag, r.nl = rule.get("flag", ""), rule.get("nl", "")
-        entries.append(entry_for(r))
+        entries.append(entry_for(r, prices))
         if not rule or r.flag == "!":
             exceptions.append({
                 "datum": r.date.isoformat(), "ref": r.ref, "rekening": r.bank_account,

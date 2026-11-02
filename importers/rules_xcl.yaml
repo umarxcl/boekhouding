@@ -33,6 +33,14 @@ rules:
     account: Assets:Debiteuren:Point-Sixteen
     payee: "Point Sixteen B.V."
 
+  # --- Geld van Umar privé naar XCL ---------------------------------------
+  - match: ["re:from (hr |mr )?u ?f mirza|from umar"]
+    type: Transfers
+    account: Liabilities:Lening-aandeelhouder:Umar
+    payee: "Umar Fahad Mirza (privé)"
+    flag: "!"
+    nl: "Geld van Umar privé naar XCL: lening van de aandeelhouder, tenzij het (deels) de kapitaalstorting van AED 48.000 is; vaststellen per overboeking"
+
   # --- Overboekingen naar Umar -------------------------------------------
   - match: ["to umar fahad mirza", "salary"]
     type: Transfers
@@ -56,10 +64,10 @@ rules:
     account: Expenses:Advies:Corporate-services
     payee: "RD Advisory FZCO"
   - match: ["ifza"]
-    account: Expenses:Overheid:Licentie-IFZA
+    account: Assets:Vooruitbetaald:Licentie
     payee: "IFZA"
     flag: "!"
-    nl: "Licentiekosten: controleren of dit over de looptijd gespreid moet worden"
+    nl: "Licentie of establishment card: eerst op vooruitbetaald, daarna maandelijks naar kosten over de licentieperiode"
   - match: ["decisive zone"]
     account: Assets:Rekening-courant:MZML-Ltd
     payee: "Decisive Zone (voor MZML Ltd)"
@@ -70,19 +78,16 @@ rules:
     account: Expenses:Auto:Huur
     payee: "Ezhire (autohuur)"
   - match: ["adnoc"]
-    account: Expenses:Auto:Brandstof-tol
+    account: Expenses:Auto:Brandstof
     payee: "ADNOC"
   - match: ["enoc"]
-    account: Expenses:Auto:Brandstof-tol
+    account: Expenses:Auto:Brandstof
     payee: "ENOC"
   - match: ["salik"]
-    account: Expenses:Auto:Brandstof-tol
+    account: Expenses:Auto:Tol-parkeren
     payee: "Salik"
-  - match: ["car park", "parking"]
-    account: Expenses:Auto:Brandstof-tol
-    payee: "Parkeren"
-  - match: ["re:car park|parking|rta "]
-    account: Expenses:Auto:Brandstof-tol
+  - match: ["re:car park|parking|rta |mawaqif"]
+    account: Expenses:Auto:Tol-parkeren
     payee: "Parkeren / RTA"
 
   # --- Vervoer en reizen ------------------------------------------------
