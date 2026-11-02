@@ -5,13 +5,15 @@
 
 2026-03-01 balance Assets:Bank:Wio-EUR              2,755.50 EUR
 
-2026-03-01 ! "Onbekende leverancier" "Digital sharjah"
+2026-03-01 * "Onbekende leverancier" "Digital sharjah"
   wio-ref: "219108725"
   wio-type: "Card"
   bron: "Wio-export"
   nl: "Onbekende betaling: wat is dit, en zakelijk of privé?"
+  goedkeuring: "2026-11-03"
+  antwoord: "parkeren"
   Assets:Bank:Wio-AED                                 -2.00 AED
-  Expenses:Onbekend                                    2.00 AED
+  Expenses:Auto:Tol-parkeren                           2.00 AED
 
 2026-03-01 * "Brandstof (EMARAT/EPPCO)" "Emarat"
   wio-ref: "219140971"
@@ -352,13 +354,15 @@
   Assets:Bank:Wio-AED                                -10.00 AED
   Assets:Rekening-courant:Umar                        10.00 AED
 
-2026-03-09 ! "Hotel of verblijf" "Westin"
+2026-03-09 * "Hotel of verblijf" "Westin"
   wio-ref: "222094815"
   wio-type: "Card"
   bron: "Wio-export"
   document: "53794559-27ae-434e-9295-d8c5606504c8_fiskl.jpg"
   drive-id: "1DKTzAXHmpTEzfK703OOMWMbav5iRWOgA"
   nl: "Bon Mina Kitchen (Westin Dubai Mina Seyahi), AED 195: zakelijke maaltijd? Wie was de gast en wat was het doel?"
+  goedkeuring: "2026-11-03"
+  antwoord: "ja, zakelijk"
   Assets:Bank:Wio-AED                               -195.00 AED
   Expenses:Representatie:Klanten                     195.00 AED
 
@@ -499,13 +503,15 @@
   Expenses:Bank:Wisselkosten                          16.06 AED
   Expenses:Software:AI                               803.28 AED
 
-2026-03-14 ! "Onbekende leverancier" "Digital sharjah"
+2026-03-14 * "Onbekende leverancier" "Digital sharjah"
   wio-ref: "223830933"
   wio-type: "Card"
   bron: "Wio-export"
   nl: "Onbekende betaling: wat is dit, en zakelijk of privé?"
+  goedkeuring: "2026-11-03"
+  antwoord: "parkeren"
   Assets:Bank:Wio-AED                                -20.25 AED
-  Expenses:Onbekend                                   20.25 AED
+  Expenses:Auto:Tol-parkeren                          20.25 AED
 
 2026-03-14 * "Eten en boodschappen" "Restaurant"
   wio-ref: "223840777"
@@ -710,13 +716,15 @@
   Assets:Bank:Wio-AED                                -99.00 AED
   Expenses:Bank:Kosten                                99.00 AED
 
-2026-03-20 ! "Eten en boodschappen" "Rukn al farooj alshami"
+2026-03-20 * "Eten en boodschappen" "Rukn al farooj alshami"
   wio-ref: "225871143"
   wio-type: "Card"
   bron: "Wio-export"
   document: "IMG_20260320_233551.jpg"
   drive-id: "13shsI4_9mBJRw3vtXXzf3FQ5Dn7YbzPC"
   nl: "Bon Al Farooj Al Shami, AED 147: zakelijke maaltijd? Wie was de gast en wat was het doel?"
+  goedkeuring: "2026-11-03"
+  antwoord: "zakelijk overleg"
   Assets:Bank:Wio-AED                               -147.00 AED
   Expenses:Representatie:Klanten                     147.00 AED
 

@@ -68,7 +68,7 @@
   ifrs: "Vorderingen op verbonden partijen"
   rgs: "BVorVov"
 
-2025-12-15 open Assets:Debiteuren:Point-Sixteen          EUR
+2025-12-15 open Assets:Debiteuren:Point-Sixteen          AED,EUR
   nl: "Nog te ontvangen van Point Sixteen B.V. (fee vanaf besluit en managementovereenkomst)"
   verbonden: "related-party"
   ifrs: "Vorderingen op verbonden partijen"
@@ -120,6 +120,14 @@
   ifrs: "Vordering op verbonden partij"
   rgs: "BVorVov"
 
+2026-01-01 open Assets:Rekening-courant:MZML-BV           AED
+  nl: "Vordering op MZML Holding B.V. (Nederland): kosten die XCL heeft betaald voor rekening van MZML Holding B.V., bijvoorbeeld de neWings-factuur 2026-0098"
+  btw: "nvt"
+  ct: "marktwaarde-toets"
+  verbonden: "ja"
+  ifrs: "Vordering op verbonden partij"
+  rgs: "BVorVov"
+
 2025-12-15 open Assets:Nog-te-storten-kapitaal           AED
   nl: "Aandelenkapitaal dat de aandeelhouder nog niet heeft gestort; in de jaarrekening in mindering op het eigen vermogen"
   verbonden: "connected-person"
@@ -150,6 +158,14 @@
   nl: "Lening van Umar privé aan XCL (o.a. EUR 25.000 op 26-1-2026), renteloos; voorwaarden schriftelijk vastleggen; eerst vaststellen welk deel kapitaalstorting is"
   ct: "marktwaarde-toets"
   verbonden: "connected-person"
+  ifrs: "Schuld aan aandeelhouder"
+  rgs: "BLas"
+
+2026-01-01 open Liabilities:Lening-aandeelhouder:Umar-AED AED
+  nl: "Renteloze lening van Umar privé aan XCL in AED (bijvoorbeeld AED 21.063,03 op 3-8-2026 uit privémiddelen); voorwaarden schriftelijk vastleggen"
+  btw: "nvt"
+  ct: "marktwaarde-toets"
+  verbonden: "ja"
   ifrs: "Schuld aan aandeelhouder"
   rgs: "BLas"
 

@@ -3,13 +3,16 @@
 
 2026-01-22 balance Assets:Bank:Wio-AED              0.00 AED
 
-2026-01-22 ! "Onbekende ontvangst" "From SILK VALLEY HOLIDAY HOMES LLC | Mirza724BreezSD"
+2026-01-22 * "Onbekende ontvangst" "From SILK VALLEY HOLIDAY HOMES LLC | Mirza724BreezSD"
   wio-ref: "204001669"
   wio-type: "Transfers"
   bron: "Wio-export"
   nl: "Geld ontvangen van een onbekende partij: terugbetaling van een privé-uitgave (dan rekening-courant) of omzet?"
+  goedkeuring: "2026-11-03"
+  antwoord: "zakelijke reis: huur van airbnb"
+  note: "Incoming AED 1,500 from Silk Valley Holiday Homes: refund on a business stay (credit on travel cost)"
   Assets:Bank:Wio-AED                              1,500.00 AED
-  Expenses:Onbekend                               -1,500.00 AED
+  Expenses:Reis:Verblijf                          -1,500.00 AED
 
 2026-01-26 balance Assets:Bank:Wio-EUR              0.00 EUR
 
@@ -19,6 +22,8 @@
   bron: "Wio-export"
   nl: "Besluit Umar 2-11-2026: AED 48.000 hiervan is de storting van het aandelenkapitaal, de rest is een renteloze lening van Umar aan XCL. Omrekening tegen de werkelijke Wio-koers van dezelfde dag (EUR 25.000 = AED 106.061,75, koers 4,242470). Vast te leggen in een aandeelhoudersbesluit."
   document: "Aandeelhoudersbesluit kapitaalstorting en lening (op te stellen)"
+  goedkeuring: "2026-11-03"
+  antwoord: "ja"
   Assets:Bank:Wio-EUR                             11,314.15 EUR @@ 48,000.00 AED
   Assets:Nog-te-storten-kapitaal                 -48,000.00 AED
   Assets:Bank:Wio-EUR                             13,685.85 EUR
@@ -53,13 +58,18 @@
   wio-type: "Transfers"
   bron: "Wio-export"
   nl: "Woning op naam van Umar: XCL betaalde namens hem; rekening-courant directeur, verrekend met de loonschuld (besluit Umar 2-11-2026)"
+  goedkeuring: "2026-11-03"
+  antwoord: "ja"
   Assets:Bank:Wio-AED                            -70,000.00 AED
   Assets:Rekening-courant:Umar                    70,000.00 AED
 
-2026-01-29 ! "Azeem Hussain" "To Azeem Hussain | Support"
+2026-01-29 * "Azeem Hussain" "To Azeem Hussain | Support"
   wio-ref: "206698291"
   wio-type: "Transfers"
   bron: "Wio-export"
   nl: "Omschrijving 'Support': waarschijnlijk privé (rekening-courant); wie is dit en waarvoor?"
+  goedkeuring: "2026-11-03"
+  antwoord: "een lening aan een vriend"
+  note: "Private loan by Umar to a friend, paid from the XCL account on his behalf"
   Assets:Bank:Wio-AED                             -8,000.00 AED
   Assets:Rekening-courant:Umar                     8,000.00 AED

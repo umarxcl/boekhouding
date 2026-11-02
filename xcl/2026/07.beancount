@@ -5,7 +5,7 @@
 
 2026-07-01 balance Assets:Bank:Wio-EUR              2,068.40 EUR
 
-2026-07-01 ! "Hotel of verblijf" "Hotel Ibis"
+2026-07-01 * "Hotel of verblijf" "Hotel Ibis"
   wio-ref: "268699937"
   wio-type: "Card"
   bron: "Wio-export"
@@ -13,6 +13,8 @@
   drive-id: "1MFiXodyZ-wpwfj9N_H4koUUHezB5-KQS"
   nl: "Bon of factuur in Drive gekoppeld: zakelijk (regel Umar 2-11-2026)"
   wio-fee-ref: "268699942"
+  goedkeuring: "2026-11-03"
+  antwoord: "ja, Conferentie"
   Assets:Bank:Wio-AED                               -448.59 AED
   Assets:Bank:Wio-AED                                 -8.97 AED
   Expenses:Bank:Wisselkosten                           8.97 AED
@@ -28,7 +30,7 @@
   Expenses:Bank:Wisselkosten                           1.15 AED
   Expenses:Software:Overig                            57.67 AED
 
-2026-07-03 ! "Hotel of verblijf" "Hotel Ibis"
+2026-07-03 * "Hotel of verblijf" "Hotel Ibis"
   wio-ref: "269293904"
   wio-type: "Card"
   bron: "Wio-export"
@@ -36,6 +38,8 @@
   drive-id: "1MFiXodyZ-wpwfj9N_H4koUUHezB5-KQS"
   nl: "Bon of factuur in Drive gekoppeld: zakelijk (regel Umar 2-11-2026)"
   wio-fee-ref: "269293908"
+  goedkeuring: "2026-11-03"
+  antwoord: "ja"
   Assets:Bank:Wio-AED                             -1,512.85 AED
   Assets:Bank:Wio-AED                                -30.25 AED
   Expenses:Bank:Wisselkosten                          30.25 AED
@@ -97,13 +101,16 @@
   Assets:Bank:Wio-EUR                             -1,227.41 EUR @@ 5,000.00 AED
   Assets:Bank:Wio-AED                              5,000.00 AED
 
-2026-07-09 ! "Khidmat Al Qalam / Mahmad Muslihar (typing-centrum)" "To Mahmad BURHENUDDIN KURUDI HUSSAIN MUSLIYAR | Visa processing"
+2026-07-09 * "Khidmat Al Qalam / Mahmad Muslihar (typing-centrum)" "To Mahmad BURHENUDDIN KURUDI HUSSAIN MUSLIYAR | Visa processing"
   wio-ref: "271747901"
   wio-type: "Transfers"
   bron: "Wio-export"
   document: "visa family.pdf"
   drive-id: "1hXGAFWmo0MEompYKxSkVxUj1sqjC_aUt"
   nl: "Familievisum (1 volwassene, 2 kinderen) factuur INV0517 AED 4.800 op naam van XCL; betaald AED 3.000 hier en 1.980 op 13-8 (samen 4.980, AED 180 meer dan de factuur). Persoonlijk voordeel (loon in natura) of zakelijk?"
+  goedkeuring: "2026-11-03"
+  antwoord: "ja"
+  note: "Family visa; invoice INV0517 AED 4,800, paid 4,980 in total (AED 180 more, see 286702330)"
   Assets:Bank:Wio-AED                             -3,000.00 AED
   Expenses:Personeel:Visa-overheid                 3,000.00 AED
 
@@ -123,13 +130,17 @@
   Assets:Bank:Wio-EUR                               -300.00 EUR @@ 1,225.30 AED
   Assets:Bank:Wio-AED                              1,225.30 AED
 
-2026-07-11 ! "Vliegticket of bagage" "Qatar Airways"
+2026-07-11 * "Vliegticket of bagage" "Qatar Airways"
   wio-ref: "272814439"
   wio-type: "Card"
   bron: "Wio-export"
   nl: "Vlucht zonder bon: volgens je regel privé (rekening-courant); zakelijke reis? Zet 'zakelijk, bon volgt'"
+  goedkeuring: "2026-11-03"
+  antwoord: "25% zakelijk, rest prive"
+  note: "Return flight from business trip to NL with family: 25% business, 75% private (Umar)"
   Assets:Bank:Wio-AED                             -3,440.00 AED
-  Assets:Rekening-courant:Umar                     3,440.00 AED
+  Expenses:Reis:Vliegtickets                         860.00 AED
+  Assets:Rekening-courant:Umar                     2,580.00 AED
 
 2026-07-12 * "Uber" "Uber"
   wio-ref: "273193284"
@@ -209,16 +220,24 @@
   wio-type: "Card"
   bron: "Wio-export"
   nl: "Onbekende betaling: wat is dit, en zakelijk of privé?"
+  goedkeuring: "2026-11-03"
+  antwoord: "Bagage extra boeken"
+  open: "Same as above"
   Assets:Bank:Wio-AED                               -775.83 AED
-  Expenses:Onbekend                                  775.83 AED
+  Expenses:Reis:Vliegtickets                         193.96 AED
+  Assets:Rekening-courant:Umar                       581.87 AED
 
 2026-07-16 ! "Onbekende leverancier" "E sas"
   wio-ref: "274848216"
   wio-type: "Card"
   bron: "Wio-export"
   nl: "Onbekende betaling: wat is dit, en zakelijk of privé?"
+  goedkeuring: "2026-11-03"
+  antwoord: "Bagage extra boeken"
+  open: "Extra baggage on the NL trip; treated like the flight (25/75); confirm"
   Assets:Bank:Wio-AED                               -162.50 AED
-  Expenses:Onbekend                                  162.50 AED
+  Expenses:Reis:Vliegtickets                          40.63 AED
+  Assets:Rekening-courant:Umar                       121.87 AED
 
 2026-07-16 * "Anthropic" "Anthropic claude sub"
   wio-ref: "274905106"
@@ -253,13 +272,15 @@
   Expenses:Bank:Wisselkosten                           0.88 AED
   Expenses:Software:AI                                44.40 AED
 
-2026-07-18 ! "Onbekende ontvangst" "From MOURAD  AOULAD EL HAJ"
+2026-07-18 * "Onbekende ontvangst" "From MOURAD  AOULAD EL HAJ"
   wio-ref: "275460792"
   wio-type: "Transfers"
   bron: "Wio-export"
   nl: "Geld ontvangen van een onbekende partij: terugbetaling van een privé-uitgave (dan rekening-courant) of omzet?"
+  goedkeuring: "2026-11-03"
+  antwoord: "terugbetaling van prive uitgave"
   Assets:Bank:Wio-AED                              1,675.00 AED
-  Expenses:Onbekend                               -1,675.00 AED
+  Assets:Rekening-courant:Umar                    -1,675.00 AED
 
 2026-07-18 * "Umar Fahad Mirza" "To Umar Fahad Mirza | Salary"
   wio-ref: "275489855"
@@ -269,13 +290,16 @@
   Assets:Bank:Wio-AED                             -5,000.00 AED
   Liabilities:Personeel:Loonschuld-Umar            5,000.00 AED
 
-2026-07-19 ! "Vliegticket of bagage" "Qatar Airways"
+2026-07-19 * "Vliegticket of bagage" "Qatar Airways"
   wio-ref: "275884054"
   wio-type: "Card"
   bron: "Wio-export"
   nl: "Vlucht zonder bon: volgens je regel privé (rekening-courant); zakelijke reis? Zet 'zakelijk, bon volgt'"
+  goedkeuring: "2026-11-03"
+  antwoord: "zie boven (25/75)"
   Assets:Bank:Wio-AED                             -2,535.00 AED
-  Assets:Rekening-courant:Umar                     2,535.00 AED
+  Expenses:Reis:Vliegtickets                         633.75 AED
+  Assets:Rekening-courant:Umar                     1,901.25 AED
 
 2026-07-19 * "Google Play (apps en abonnementen)" "GOOGLE*GOOGLE PLAY APP"
   wio-ref: "275929039"

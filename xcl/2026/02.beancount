@@ -19,8 +19,11 @@
   wio-type: "Card"
   bron: "Wio-export"
   nl: "Verblijf zonder bon: volgens je regel privé (rekening-courant); zakelijke reis? Zet 'zakelijk, bon volgt'"
+  goedkeuring: "2026-11-03"
+  antwoord: "zakelijke reis: huur van airbnb"
+  open: "Business per Umar, but no receipt in Drive yet; without receipt it reverts to private at month close"
   Assets:Bank:Wio-AED                             -2,070.00 AED
-  Assets:Rekening-courant:Umar                     2,070.00 AED
+  Expenses:Reis:Verblijf                           2,070.00 AED
 
 2026-02-07 * "Ezhire (autohuur)" "Ezhire ae"
   wio-ref: "210916977"
@@ -289,19 +292,23 @@
   Assets:Bank:Wio-AED                                -17.50 AED
   Assets:Rekening-courant:Umar                        17.50 AED
 
-2026-02-11 ! "Onbekende leverancier" "Digital sharjah"
+2026-02-11 * "Onbekende leverancier" "Digital sharjah"
   wio-ref: "212296544"
   wio-type: "Card"
   bron: "Wio-export"
   nl: "Onbekende betaling: wat is dit, en zakelijk of privé?"
+  goedkeuring: "2026-11-03"
+  antwoord: "parkeren"
   Assets:Bank:Wio-AED                                 -2.00 AED
-  Expenses:Onbekend                                    2.00 AED
+  Expenses:Auto:Tol-parkeren                           2.00 AED
 
-2026-02-11 ! "Vliegticket of bagage" "Emirates"
+2026-02-11 * "Vliegticket of bagage" "Emirates"
   wio-ref: "212302563"
   wio-type: "Card"
   bron: "Wio-export"
   nl: "Vlucht zonder bon: volgens je regel privé (rekening-courant); zakelijke reis? Zet 'zakelijk, bon volgt'"
+  goedkeuring: "2026-11-03"
+  antwoord: "ja"
   Assets:Bank:Wio-AED                             -5,996.00 AED
   Assets:Rekening-courant:Umar                     5,996.00 AED
 
@@ -353,27 +360,33 @@
   Assets:Bank:Wio-AED                                -17.00 AED
   Assets:Rekening-courant:Umar                        17.00 AED
 
-2026-02-12 ! "Onbekende leverancier" "Digital sharjah"
+2026-02-12 * "Onbekende leverancier" "Digital sharjah"
   wio-ref: "212678770"
   wio-type: "Card"
   bron: "Wio-export"
   nl: "Onbekende betaling: wat is dit, en zakelijk of privé?"
+  goedkeuring: "2026-11-03"
+  antwoord: "ja / parkeren"
   Assets:Bank:Wio-AED                                 -5.00 AED
-  Expenses:Onbekend                                    5.00 AED
+  Expenses:Auto:Tol-parkeren                           5.00 AED
 
-2026-02-12 ! "Vliegticket of bagage" "Emirates"
+2026-02-12 * "Vliegticket of bagage" "Emirates"
   wio-ref: "212631630"
   wio-type: "Card"
   bron: "Wio-export"
   nl: "Vlucht zonder bon: volgens je regel privé (rekening-courant); zakelijke reis? Zet 'zakelijk, bon volgt'"
+  goedkeuring: "2026-11-03"
+  antwoord: "ja"
   Assets:Bank:Wio-AED                               -295.00 AED
   Assets:Rekening-courant:Umar                       295.00 AED
 
-2026-02-12 ! "Vliegticket of bagage" "Emirates"
+2026-02-12 * "Vliegticket of bagage" "Emirates"
   wio-ref: "212631631"
   wio-type: "Card"
   bron: "Wio-export"
   nl: "Vlucht zonder bon: volgens je regel privé (rekening-courant); zakelijke reis? Zet 'zakelijk, bon volgt'"
+  goedkeuring: "2026-11-03"
+  antwoord: "ja"
   Assets:Bank:Wio-AED                             -7,065.00 AED
   Assets:Rekening-courant:Umar                     7,065.00 AED
 
@@ -463,16 +476,19 @@
   Assets:Bank:Wio-AED                               -175.70 AED
   Expenses:Auto:Huur                                 175.70 AED
 
-2026-02-14 ! "Onbekende leverancier" "Efon io"
+2026-02-14 * "Onbekende leverancier" "Efon io"
   wio-ref: "213436789"
   wio-type: "Card"
   bron: "Wio-export"
   nl: "Onbekende betaling: wat is dit, en zakelijk of privé?"
   wio-fee-ref: "213436805"
+  goedkeuring: "2026-11-03"
+  antwoord: "ja"
+  note: "Efon.io: business telephony (answer Q2)"
   Assets:Bank:Wio-AED                                -18.50 AED
   Assets:Bank:Wio-AED                                 -0.37 AED
   Expenses:Bank:Wisselkosten                           0.37 AED
-  Expenses:Onbekend                                   18.50 AED
+  Expenses:Telecom                                    18.50 AED
 
 2026-02-14 * "Amazon" "Amazon ae"
   wio-ref: "213453130"
@@ -622,6 +638,9 @@
   wio-type: "Transfers"
   bron: "Wio-export"
   nl: "Woning op naam van Umar: XCL betaalde namens hem; rekening-courant directeur, verrekend met de loonschuld (besluit Umar 2-11-2026)"
+  goedkeuring: "2026-11-03"
+  antwoord: "ja"
+  note: "Same landlord/agent as the villa: private (villa in Umar's name)"
   Assets:Bank:Wio-AED                               -400.00 AED
   Assets:Rekening-courant:Umar                       400.00 AED
 
@@ -789,16 +808,18 @@
   Assets:Bank:Wio-AED                                -80.84 AED
   Assets:Rekening-courant:Umar                        80.84 AED
 
-2026-02-18 ! "Onbekende leverancier" "Efon io"
+2026-02-18 * "Onbekende leverancier" "Efon io"
   wio-ref: "214832214"
   wio-type: "Card"
   bron: "Wio-export"
   nl: "Onbekende betaling: wat is dit, en zakelijk of privé?"
   wio-fee-ref: "214832223"
+  goedkeuring: "2026-11-03"
+  antwoord: "ja"
   Assets:Bank:Wio-AED                                -18.50 AED
   Assets:Bank:Wio-AED                                 -0.37 AED
   Expenses:Bank:Wisselkosten                           0.37 AED
-  Expenses:Onbekend                                   18.50 AED
+  Expenses:Telecom                                    18.50 AED
 
 2026-02-18 * "Amazon" "Amazon"
   wio-ref: "214793795"
@@ -979,13 +1000,15 @@
   Assets:Bank:Wio-AED                                -99.00 AED
   Expenses:Bank:Kosten                                99.00 AED
 
-2026-02-20 ! "Onbekende leverancier" "Digital sharjah"
+2026-02-20 * "Onbekende leverancier" "Digital sharjah"
   wio-ref: "215500432"
   wio-type: "Card"
   bron: "Wio-export"
   nl: "Onbekende betaling: wat is dit, en zakelijk of privé?"
+  goedkeuring: "2026-11-03"
+  antwoord: "parkeren"
   Assets:Bank:Wio-AED                                 -2.00 AED
-  Expenses:Onbekend                                    2.00 AED
+  Expenses:Auto:Tol-parkeren                           2.00 AED
 
 2026-02-20 * "Amazon" "Amazon"
   wio-ref: "215504967"

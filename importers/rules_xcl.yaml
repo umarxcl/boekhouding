@@ -211,10 +211,9 @@ rules:
     account: Expenses:Marketing
     payee: "LinkedIn Premium"
   - match: ["cardoo"]
-    account: Expenses:Software:Overig
+    account: Expenses:Auto:Huur
     payee: "Cardoo"
-    flag: "!"
-    nl: "Onbekende leverancier Cardoo Cyprus: wat is dit?"
+    nl: "Autohuur (Cardoo Cyprus, contract 26020060); bevestigd door Umar 3-11-2026"
   - match: ["olo technologi"]
     account: Expenses:Software:Overig
     payee: "Olo Technologies"
@@ -222,7 +221,7 @@ rules:
   - match: ["terrapinn"]
     account: Expenses:Kantoor:Boeken-opleiding
     payee: "Terrapinn (congres)"
-    flag: "!"
+    nl: "Congres (Dubai AI Festival): zakelijk, bevestigd door Umar 3-11-2026"
 
   # --- Kantoor en inkopen ------------------------------------------------
   - match: ["amazon"]
@@ -252,8 +251,7 @@ rules:
   - match: ["fleet master"]
     account: Expenses:Auto:Huur
     payee: "Fleet Master"
-    flag: "!"
-    nl: "Waarschijnlijk autohuur of autokosten (Fleet Master): bevestigen"
+    nl: "Autohuur (Fleet Master); bevestigd door Umar 3-11-2026"
   - match: ["re:emarat|eppco"]
     account: Expenses:Auto:Brandstof
     payee: "Brandstof (EMARAT/EPPCO)"
@@ -266,11 +264,6 @@ rules:
   - match: ["re:dubai taxi|union taxi|aman taxi|sharjah taxi|yango|zed mobility|dtc vip"]
     account: Expenses:Reis:Vervoer
     payee: "Taxi en chauffeur"
-  - match: ["cardoo"]
-    account: Expenses:Auto:Huur
-    payee: "Cardoo Cyprus"
-    flag: "!"
-    nl: "Onbekende leverancier Cardoo Cyprus; de Cashflow-Sheet noemt 'autohuur contract 26020060', hetzelfde contractnummer als de boete van Third Car Rental: is dit autohuur?"
 
   # --- Woning (loon in natura, besluit 21-10-2026) en overig zakelijk --------------
   - match: ["sewa"]
@@ -300,6 +293,24 @@ rules:
     payee: "neWings B.V."
     flag: "!"
     nl: "Factuur 2026-0098 (EUR 907,50) staat op MZML Holding B.V., niet op XCL: XCL heeft betaald voor MZML Holding B.V. De rekening Rekening-courant MZML-BV bestaat nog niet; tijdelijk op rekening-courant Umar"
+  # Antwoorden Umar 3-11-2026 op terugkerende patronen (staan vóór de vangnetregel hieronder)
+  - match: ["digital sharjah"]
+    account: Expenses:Auto:Tol-parkeren
+    payee: "Digital Sharjah (parkeren)"
+    nl: "Parkeren in Sharjah: zakelijk (autokosten), bevestigd door Umar 3-11-2026"
+  - match: ["efon io"]
+    account: Expenses:Telecom
+    payee: "Efon.io"
+    nl: "Zakelijke telefonie, bevestigd door Umar 3-11-2026"
+  - match: ["supernova"]
+    account: Expenses:Representatie:Klanten
+    payee: "Supernova Charters (jachtcharter)"
+    flag: "!"
+    nl: "Jachtcharter voor zakelijk netwerkevent (Umar 3-11-2026): representatie; vermeld doel en gasten, bon in Drive"
+  - match: ["re:tourist hub|clean car wash|red desert|\\bsquare\\b"]
+    account: Assets:Rekening-courant:Umar
+    payee: "Privé-uitgave"
+    nl: "Privé (antwoord Umar 3-11-2026): rekening-courant"
   - match: ["re:efon io|\\bsquare\\b|ziina|nlbcuae|supernova|nextuaeaedecomic|\\bcard e dubai|\\bcard e sas\\b|red desert|danat al rabei|dark door|digital sharjah|masaar|clean car wash"]
     account: Expenses:Onbekend
     payee: "Onbekende leverancier"

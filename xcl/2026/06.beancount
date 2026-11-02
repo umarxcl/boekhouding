@@ -5,11 +5,13 @@
 
 2026-06-01 balance Assets:Bank:Wio-EUR              34.74 EUR
 
-2026-06-01 ! "Vliegticket of bagage" "Emirates"
+2026-06-01 * "Vliegticket of bagage" "Emirates"
   wio-ref: "255175603"
   wio-type: "Card"
   bron: "Wio-export"
   nl: "Vlucht zonder bon: volgens je regel privé (rekening-courant); zakelijke reis? Zet 'zakelijk, bon volgt'"
+  goedkeuring: "2026-11-03"
+  antwoord: "prive"
   Assets:Bank:Wio-AED                               -486.00 AED
   Assets:Rekening-courant:Umar                       486.00 AED
 
@@ -145,16 +147,18 @@
   Assets:Bank:Wio-AED                                -55.00 AED
   Assets:Rekening-courant:Umar                        55.00 AED
 
-2026-06-03 ! "Onbekende leverancier" "Efon io"
+2026-06-03 * "Onbekende leverancier" "Efon io"
   wio-ref: "256266184"
   wio-type: "Card"
   bron: "Wio-export"
   nl: "Onbekende betaling: wat is dit, en zakelijk of privé?"
   wio-fee-ref: "256266199"
+  goedkeuring: "2026-11-03"
+  antwoord: "zakelijk telefonie"
   Assets:Bank:Wio-AED                                -18.50 AED
   Assets:Bank:Wio-AED                                 -0.37 AED
   Expenses:Bank:Wisselkosten                           0.37 AED
-  Expenses:Onbekend                                   18.50 AED
+  Expenses:Telecom                                    18.50 AED
 
 2026-06-03 * "Amazon" "Amazon"
   wio-ref: "256241765"
@@ -293,13 +297,16 @@
   Assets:Bank:Wio-AED                                -31.50 AED
   Assets:Rekening-courant:Umar                        31.50 AED
 
-2026-06-10 ! "Onbekende ontvangst" "From 1 Jamal Attraction | /BENEFRES/AE//FAM/"
+2026-06-10 * "Onbekende ontvangst" "From 1 Jamal Attraction | /BENEFRES/AE//FAM/"
   wio-ref: "258858689"
   wio-type: "Transfers"
   bron: "Wio-export"
   nl: "Geld ontvangen van een onbekende partij: terugbetaling van een privé-uitgave (dan rekening-courant) of omzet?"
+  goedkeuring: "2026-11-03"
+  antwoord: "terugbetaling prive"
+  note: "Refund of a private expense: reduces Umar's current-account debt"
   Assets:Bank:Wio-AED                                950.00 AED
-  Expenses:Onbekend                                 -950.00 AED
+  Assets:Rekening-courant:Umar                      -950.00 AED
 
 2026-06-10 * "Eten en boodschappen" "Spinneys nasma"
   wio-ref: "259180035"
@@ -400,11 +407,13 @@
   Expenses:Bank:Wisselkosten                           2.14 AED
   Expenses:Software:AI                               107.30 AED
 
-2026-06-18 ! "Vliegticket of bagage" "Qatar Airways"
+2026-06-18 * "Vliegticket of bagage" "Qatar Airways"
   wio-ref: "262455738"
   wio-type: "Card"
   bron: "Wio-export"
   nl: "Vlucht zonder bon: volgens je regel privé (rekening-courant); zakelijke reis? Zet 'zakelijk, bon volgt'"
+  goedkeuring: "2026-11-03"
+  antwoord: "prive"
   Assets:Bank:Wio-AED                               -120.00 AED
   Assets:Rekening-courant:Umar                       120.00 AED
 

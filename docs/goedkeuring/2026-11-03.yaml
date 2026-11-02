@@ -1,0 +1,134 @@
+# Answers of Umar in the Sheet "Boekhouding – Goedkeuring" (read 3-11-2026), translated into bookings.
+# Source: Sheet 1bIut_7ma21zmLTX4pvaL-ElRuCIbFIzl3XhWfcrau9w, tabs Q1 2026, Q2 2026, Q3 2026, Okt 2026.
+# Key = wio-ref. "answer" = Umar's own words (Akkoord / Opmerking). "account" = target account.
+# "flag": "*" = settled; "!" = still open (reason in "open").
+# "split": list of [account, amount AED] when a payment is divided.
+# Private (Assets:Rekening-courant:Umar) is the default for every line without a receipt (rule 2-11-2026).
+
+# ---------- Q1 2026 ----------
+"204001669": {answer: "zakelijke reis: huur van airbnb", account: "Expenses:Reis:Verblijf", flag: "*", note: "Incoming AED 1,500 from Silk Valley Holiday Homes: refund on a business stay (credit on travel cost)"}
+"205413395": {answer: "ja", account: "unchanged (capital AED 48,000 + loan EUR 13,685.85, already booked)", flag: "*"}
+"205820672": {answer: "ja", account: "unchanged (Rekening-courant:Umar, villa in Umar's name)", flag: "*"}
+"206698291": {answer: "een lening aan een vriend", account: "Assets:Rekening-courant:Umar", flag: "*", note: "Private loan by Umar to a friend, paid from the XCL account on his behalf"}
+"210884233": {answer: "zakelijke reis: huur van airbnb", account: "Expenses:Reis:Verblijf", flag: "!", open: "Business per Umar, but no receipt in Drive yet; without receipt it reverts to private at month close"}
+"212296544": {answer: "parkeren", account: "Expenses:Auto:Tol-parkeren", flag: "*"}
+"212302563": {answer: "ja", account: "Assets:Rekening-courant:Umar", flag: "*"}
+"212631630": {answer: "ja", account: "Assets:Rekening-courant:Umar", flag: "*"}
+"212631631": {answer: "ja", account: "Assets:Rekening-courant:Umar", flag: "*"}
+"212678770": {answer: "ja / parkeren", account: "Expenses:Auto:Tol-parkeren", flag: "*"}
+"213436789": {answer: "ja", account: "Expenses:Telecom", flag: "*", note: "Efon.io: business telephony (answer Q2)"}
+"213876281": {answer: "ja", account: "Assets:Rekening-courant:Umar", flag: "*", note: "Same landlord/agent as the villa: private (villa in Umar's name)"}
+"214832214": {answer: "ja", account: "Expenses:Telecom", flag: "*"}
+"215500432": {answer: "parkeren", account: "Expenses:Auto:Tol-parkeren", flag: "*"}
+"219108725": {answer: "parkeren", account: "Expenses:Auto:Tol-parkeren", flag: "*"}
+"222094815": {answer: "ja, zakelijk", account: "Expenses:Representatie:Klanten", flag: "*"}
+"223830933": {answer: "parkeren", account: "Expenses:Auto:Tol-parkeren", flag: "*"}
+"225871143": {answer: "zakelijk overleg", account: "Expenses:Representatie:Klanten", flag: "*"}
+
+# ---------- Q2 2026 ----------
+"230499069": {answer: "(blank)", account: "Expenses:Onbekend", flag: "!", open: "NLBC UAE AED 1,575: probably membership Netherlands Business Council UAE; confirm and add receipt"}
+"230959132": {answer: "parkeren", account: "Expenses:Auto:Tol-parkeren", flag: "*"}
+"231935446": {answer: "ja", account: "Assets:Rekening-courant:Umar", flag: "*"}
+"231950396": {answer: "ja", account: "Assets:Rekening-courant:Umar", flag: "*"}
+"231950397": {answer: "ja", account: "Assets:Rekening-courant:Umar", flag: "*"}
+"232677030": {answer: "ja", account: "Assets:Rekening-courant:Umar", flag: "*"}
+"232698883": {answer: "weet ik niet", account: "Assets:Rekening-courant:Umar", flag: "*", note: "Unknown, no receipt: private (rule 2-11-2026)"}
+"234454351": {answer: "zakelijk netwerk bijeenkomst, yacht geboekt", account: "Expenses:Representatie:Klanten", flag: "*", note: "Yacht charter for a business networking event; entertainment: input VAT blocked, CT 50% non-deductible"}
+"235151255": {answer: "prive", account: "Assets:Rekening-courant:Umar", flag: "*"}
+"236028696": {answer: "zakelijk telefonie", account: "Expenses:Telecom", flag: "*"}
+"236683033": {answer: "prive", account: "Assets:Rekening-courant:Umar", flag: "*"}
+"236934904": {answer: "prive", account: "Assets:Rekening-courant:Umar", flag: "*"}
+"238093845": {answer: "prive", account: "Assets:Rekening-courant:Umar", flag: "*"}
+"242385166": {answer: "prive", account: "Assets:Rekening-courant:Umar", flag: "*"}
+"245696497": {answer: "zakelijk congres", account: "Expenses:Kantoor:Boeken-opleiding", flag: "!", open: "ACUNS congress: business, receipt still missing"}
+"246337178": {answer: "zakelijk", account: "Expenses:Reis:Vliegtickets", flag: "!", open: "Emirates AED 4,010 business per Umar: ticket/receipt and purpose of trip missing"}
+"246353961": {answer: "prive", account: "Assets:Rekening-courant:Umar", flag: "*"}
+"246809796": {answer: "prive", account: "Assets:Rekening-courant:Umar", flag: "*"}
+"247324858": {answer: "als nog ruimte, dan kapitaalstorting", account: "Liabilities:Lening-aandeelhouder:Umar", flag: "*", note: "Capital AED 48,000 was fully paid on 26-1-2026 from the EUR 25,000; no room left, so EUR 6,000 is shareholder loan"}
+"249134393": {answer: "zakelijk netwerk bijeenkomst, yacht geboekt", account: "Expenses:Representatie:Klanten", flag: "*"}
+"249359054": {answer: "RC", account: "Assets:Rekening-courant:Umar", flag: "*", note: "Umar deposits AED 6,368.50 against his current-account debt"}
+"250373622": {answer: "prive", account: "Assets:Rekening-courant:Umar", flag: "*"}
+"251993445": {answer: "prive", account: "Assets:Rekening-courant:Umar", flag: "*"}
+"252021654": {answer: "prive", account: "Assets:Rekening-courant:Umar", flag: "*"}
+"252429551": {answer: "prive", account: "Assets:Rekening-courant:Umar", flag: "*"}
+"252448319": {answer: "prive", account: "Assets:Rekening-courant:Umar", flag: "*"}
+"252448388": {answer: "prive", account: "Assets:Rekening-courant:Umar", flag: "*"}
+"252874594": {answer: "zakelijk", account: "Expenses:Kantoor:Boeken-opleiding", flag: "!", open: "ACUNS: receipt missing"}
+"254047847": {answer: "prive", account: "Assets:Rekening-courant:Umar", flag: "*"}
+"254262526": {answer: "ja", account: "unchanged (Rekening-courant:Umar, villa)", flag: "*"}
+"255175603": {answer: "prive", account: "Assets:Rekening-courant:Umar", flag: "*"}
+"256266184": {answer: "zakelijk telefonie", account: "Expenses:Telecom", flag: "*"}
+"258858689": {answer: "terugbetaling prive", account: "Assets:Rekening-courant:Umar", flag: "*", note: "Refund of a private expense: reduces Umar's current-account debt"}
+"262455738": {answer: "prive", account: "Assets:Rekening-courant:Umar", flag: "*"}
+
+# ---------- Q3 2026 ----------
+"268699937": {answer: "ja, Conferentie", account: "Expenses:Reis:Verblijf", flag: "*"}
+"269293904": {answer: "ja", account: "Expenses:Reis:Verblijf", flag: "*"}
+"271747901": {answer: "ja", account: "Expenses:Personeel:Visa-overheid", flag: "*", note: "Family visa; invoice INV0517 AED 4,800, paid 4,980 in total (AED 180 more, see 286702330)"}
+"272814439": {answer: "25% zakelijk, rest prive", split: [["Expenses:Reis:Vliegtickets", 860.00], ["Assets:Rekening-courant:Umar", 2580.00]], flag: "*", note: "Return flight from business trip to NL with family: 25% business, 75% private (Umar)"}
+"274848216": {answer: "Bagage extra boeken", split: [["Expenses:Reis:Vliegtickets", 40.63], ["Assets:Rekening-courant:Umar", 121.87]], flag: "!", open: "Extra baggage on the NL trip; treated like the flight (25/75); confirm"}
+"274848230": {answer: "Bagage extra boeken", split: [["Expenses:Reis:Vliegtickets", 193.96], ["Assets:Rekening-courant:Umar", 581.87]], flag: "!", open: "Same as above"}
+"275460792": {answer: "terugbetaling van prive uitgave", account: "Assets:Rekening-courant:Umar", flag: "*"}
+"275884054": {answer: "zie boven (25/75)", split: [["Expenses:Reis:Vliegtickets", 633.75], ["Assets:Rekening-courant:Umar", 1901.25]], flag: "*"}
+"282324655": {answer: "Dit is Autohuur", account: "Expenses:Auto:Huur", flag: "!", open: "Car rental paid by Umar and reimbursed; rental invoice missing. Falls under the 30% private car share"}
+"282391939": {answer: "lening van mij prive", account: "Liabilities:Lening-aandeelhouder:Umar-AED", flag: "*", note: "AED 21,063.03 deposited by Umar from private funds: shareholder loan (AED)"}
+"INV-0008-FX": {answer: "het gaat erom dat het in euro wel overeenkomt", account: "Income:Koersresultaat", amount: 843.98, flag: "*", note: "Invoice INV-0008 agreed in EUR; AED difference on receipt is exchange result"}
+"285082547": {answer: "zoek in inbox, misschien telefonie", account: "Assets:Rekening-courant:Umar", flag: "!", open: "Search Gmail for Emirates/e& receipts of AED 122 on 9-8-2026"}
+"285528920": {answer: "zoek in inbox", account: "Assets:Rekening-courant:Umar", flag: "!", open: "Search Gmail, AED 57 on 10-8-2026"}
+"285528925": {answer: "zoek in inbox", account: "Assets:Rekening-courant:Umar", flag: "!", open: "Search Gmail, AED 11 on 10-8-2026"}
+"286702330": {answer: "ja", account: "Expenses:Personeel:Visa-overheid", flag: "*"}
+"286703055": {answer: "doorbelasten naar Point Sixteen", account: "Assets:Debiteuren:Point-Sixteen", flag: "!", open: "Recharge AED 491.68 to Point Sixteen B.V.: recharge invoice to be issued"}
+"286706768": {answer: "ok", account: "Assets:Debiteuren:Point-Sixteen", flag: "!", open: "Service charge AED 25 follows the courier recharge"}
+"287056228": {answer: "ja", account: "Assets:Rekening-courant:Umar", flag: "*"}
+"287569696": {answer: "prive", account: "Assets:Rekening-courant:Umar", flag: "*"}
+"288114878": {answer: "ja", account: "unchanged (Rekening-courant:Umar, villa)", flag: "*"}
+"288294909": {answer: "weet ik het niet", account: "Assets:Rekening-courant:Umar", flag: "*"}
+"288298792": {answer: "autohuur", account: "Expenses:Auto:Huur", flag: "*"}
+"290011341": {answer: "prive kleren", account: "Assets:Rekening-courant:Umar", flag: "*"}
+"290057083": {answer: "prive", account: "Assets:Rekening-courant:Umar", flag: "*"}
+"290774401": {answer: "prive", account: "Assets:Rekening-courant:Umar", flag: "*"}
+"293209799": {answer: "(blank)", account: "Assets:Rekening-courant:Umar", flag: "*", note: "No answer, no receipt: private (default)"}
+"294000442": {answer: "prive", account: "Assets:Rekening-courant:Umar", flag: "*"}
+"294506205": {answer: "prive", account: "Assets:Rekening-courant:Umar", flag: "*"}
+"295168103": {answer: "prive", account: "Assets:Rekening-courant:Umar", flag: "*"}
+"295172676": {answer: "prive", account: "Assets:Rekening-courant:Umar", flag: "*"}
+"295758237": {answer: "prive", account: "Assets:Rekening-courant:Umar", flag: "*"}
+"296273136": {answer: "prive", account: "Assets:Rekening-courant:Umar", flag: "*"}
+"296769492": {answer: "prive", account: "Assets:Rekening-courant:Umar", flag: "*"}
+"297485289": {answer: "prive", account: "Assets:Rekening-courant:Umar", flag: "*"}
+"297923796": {answer: "prive", account: "Assets:Rekening-courant:Umar", flag: "*"}
+"297931513": {answer: "prive", account: "Assets:Rekening-courant:Umar", flag: "*"}
+"298360365": {answer: "prive", account: "Assets:Rekening-courant:Umar", flag: "*"}
+"298855544": {answer: "prive", account: "Assets:Rekening-courant:Umar", flag: "*"}
+"298870598": {answer: "prive", account: "Assets:Rekening-courant:Umar", flag: "*"}
+"300149576": {answer: "prive", account: "Assets:Rekening-courant:Umar", flag: "*"}
+"300466757": {answer: "prive", account: "Assets:Rekening-courant:Umar", flag: "*"}
+"300501690": {answer: "prive", account: "Assets:Rekening-courant:Umar", flag: "*"}
+"300947878": {answer: "prive", account: "Assets:Rekening-courant:Umar", flag: "*"}
+"301413294": {answer: "prive", account: "Assets:Rekening-courant:Umar", flag: "*"}
+"303141625": {answer: "zakelijk", account: "Expenses:Advies:Corporate-services", flag: "!", open: "Typing centre AED 610: business per Umar; what was it for (visa, translation, attestation)? receipt missing"}
+"303143553": {answer: "prive", account: "Assets:Rekening-courant:Umar", flag: "*"}
+"303481306": {answer: "prive (bon aanwezig)", account: "Assets:Rekening-courant:Umar", flag: "*", note: "Receipt present but Umar says private: Umar's answer overrides the receipt rule"}
+"303510492": {answer: "(blank)", account: "Assets:Rekening-courant:Umar", flag: "*", note: "Grocery receipt: private (proposal accepted by default)"}
+"303514750": {answer: "(blank)", account: "Expenses:Auto:Huur", flag: "*", note: "Fleet Master car rental, same as 288298792"}
+"303516683": {answer: "ja", account: "Expenses:Kantoor:Benodigdheden", flag: "*"}
+"305954341": {answer: "prive", account: "Assets:Rekening-courant:Umar", flag: "*"}
+"306481097": {answer: "prive", account: "Assets:Rekening-courant:Umar", flag: "*"}
+"306814111": {answer: "zakelijk", account: "Expenses:Advies:Corporate-services", flag: "!", open: "Typing centre AED 65: purpose missing"}
+"306829282": {answer: "prive (bon aanwezig)", account: "Assets:Rekening-courant:Umar", flag: "*"}
+"307387104": {answer: "prive", account: "Assets:Rekening-courant:Umar", flag: "*"}
+"307446597": {answer: "prive", account: "Assets:Rekening-courant:Umar", flag: "*"}
+"307447321": {answer: "prive", account: "Assets:Rekening-courant:Umar", flag: "*"}
+"307447340": {answer: "prive", account: "Assets:Rekening-courant:Umar", flag: "*"}
+
+# ---------- October 2026 ----------
+"310571529": {answer: "Samira prive, overige twee zakelijk", split: [["Expenses:Telecom", 860.43], ["Assets:Rekening-courant:Umar", 575.14]], flag: "*"}
+"313453107": {answer: "prive", account: "Assets:Rekening-courant:Umar", flag: "*"}
+"315519199": {answer: "prive (bon aanwezig)", account: "Assets:Rekening-courant:Umar", flag: "*"}
+"INV-0012": {answer: "niet feb, typfout; managementfee Ekmekci", account: "Income:Omzet:Managementfee:Ekmekci", flag: "!", open: "Description corrected to management fee October 2026; CBUAE rate October still to come"}
+"318203276": {answer: "autokosten", account: "Expenses:Auto:Huur", flag: "*", note: "Cardoo Cyprus: car rental contract"}
+"318575760": {answer: "weet ik niet", account: "Assets:Rekening-courant:Umar", flag: "*"}
+"321596350": {answer: "zakelijk, Dubai AI Festival", account: "Expenses:Kantoor:Boeken-opleiding", flag: "*"}
+"323267093": {answer: "zakelijk, waarderingen van bedrijven", account: "Assets:Rekening-courant:MZML-BV", flag: "*", note: "neWings invoice 2026-0098 is addressed to MZML Holding B.V.; XCL paid on its behalf: receivable on MZML Holding B.V."}
+"INV-0008-DATE": {answer: "tot eind oktober gerund en afgerond", account: "Income:Omzet:Advies:Inclusionair", flag: "*", note: "Service completed end of October 2026; revenue on 31-10-2026"}
+"EKM-SHORT": {answer: "afschrijven als bankkosten", account: "Expenses:Bank:Kosten", amount_eur: 94.50, flag: "*", note: "Ekmekci paid EUR 10.50 less per invoice (their bank charges); written off"}

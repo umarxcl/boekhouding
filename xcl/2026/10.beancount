@@ -5,15 +5,18 @@
 
 2026-10-01 balance Assets:Bank:Wio-EUR              14,023.02 EUR
 
-2026-10-03 ! "e& (Etisalat)" "e& Digital App"
+2026-10-03 * "e& (Etisalat)" "e& Digital App"
   wio-ref: "310571529"
   wio-type: "Card"
   bron: "Wio-export"
   document: "Recharge_20261002.png"
   drive-id: "1tQoPEtUHVSihQhw1EdqtiqNhzL8OEW0W"
   nl: "Bon toont drie nummers (UMAR, Samira, UMAR) samen AED 1.435,57: het nummer van Samira (AED 575,14) is privé; splitsen?"
+  goedkeuring: "2026-11-03"
+  antwoord: "Samira prive, overige twee zakelijk"
   Assets:Bank:Wio-AED                             -1,435.57 AED
-  Expenses:Telecom                                 1,435.57 AED
+  Expenses:Telecom                                   860.43 AED
+  Assets:Rekening-courant:Umar                       575.14 AED
 
 2026-10-03 * "Google Workspace" "Google Workspace_umarmi"
   wio-ref: "310187572"
@@ -48,12 +51,14 @@
   Assets:Bank:Wio-EUR                             -1,248.86 EUR @@ 5,000.00 AED
   Assets:Bank:Wio-AED                              5,000.00 AED
 
-2026-10-10 ! "Vliegticket of bagage" "Qatar Airways"
+2026-10-10 * "Vliegticket of bagage" "Qatar Airways"
   wio-ref: "313453107"
   wio-type: "Card"
   bron: "Wio-export"
   nl: "Vlucht zonder bon: volgens je regel privé (rekening-courant); zakelijke reis? Zet 'zakelijk, bon volgt'"
   wio-fee-ref: "313453111"
+  goedkeuring: "2026-11-03"
+  antwoord: "prive"
   Assets:Bank:Wio-AED                             -1,952.94 AED
   Assets:Bank:Wio-AED                                -39.05 AED
   Assets:Rekening-courant:Umar                        39.05 AED
@@ -132,15 +137,17 @@
   Assets:Rekening-courant:Umar                         0.53 AED
   Assets:Rekening-courant:Umar                        26.94 AED
 
-2026-10-14 ! "Eten en boodschappen" "Saya dh cafe n rest"
+2026-10-14 * "Eten en boodschappen" "Saya dh cafe n rest"
   wio-ref: "315519199"
   wio-type: "Card"
   bron: "Wio-export"
   document: "2026-10-13 21.19.24.jpg"
   drive-id: "1ETx2z4bmzge_-j1qtQ1xoeE4bbYJomyb"
   nl: "Bon Saya DH Cafe 13-10, AED 291,00, bank AED 300 (fooi?), 2 gasten: zakelijke maaltijd? Wie was de gast en wat was het doel?"
+  goedkeuring: "2026-11-03"
+  antwoord: "prive (bon aanwezig)"
   Assets:Bank:Wio-AED                               -300.00 AED
-  Expenses:Representatie:Klanten                     300.00 AED
+  Assets:Rekening-courant:Umar                       300.00 AED
 
 2026-10-14 * "Amazon" "Amazon"
   wio-ref: "315533157"
@@ -278,16 +285,19 @@
   Assets:Bank:Wio-AED                                -99.00 AED
   Expenses:Bank:Kosten                                99.00 AED
 
-2026-10-20 ! "Cardoo" "Cardoo cyprus ltd"
+2026-10-20 * "Cardoo" "Cardoo cyprus ltd"
   wio-ref: "318203276"
   wio-type: "Card"
   bron: "Wio-export"
   nl: "Onbekende leverancier Cardoo Cyprus: wat is dit?"
   wio-fee-ref: "318203306"
+  goedkeuring: "2026-11-03"
+  antwoord: "autokosten"
+  note: "Cardoo Cyprus: car rental contract"
   Assets:Bank:Wio-AED                               -590.84 AED
   Assets:Bank:Wio-AED                                -11.81 AED
   Expenses:Bank:Wisselkosten                          11.81 AED
-  Expenses:Software:Overig                           590.84 AED
+  Expenses:Auto:Huur                                 590.84 AED
 
 2026-10-20 * "Eten en boodschappen" "Mondieu Restaurant"
   wio-ref: "318151133"
@@ -308,12 +318,14 @@
   Assets:Rekening-courant:Umar                         1.45 AED
   Assets:Rekening-courant:Umar                        72.94 AED
 
-2026-10-21 ! "Olo Technologies" "Olo technologi"
+2026-10-21 * "Olo Technologies" "Olo technologi"
   wio-ref: "318575760"
   wio-type: "Card"
   bron: "Wio-export"
+  goedkeuring: "2026-11-03"
+  antwoord: "weet ik niet"
   Assets:Bank:Wio-AED                                -40.00 AED
-  Expenses:Software:Overig                            40.00 AED
+  Assets:Rekening-courant:Umar                        40.00 AED
 
 2026-10-21 * "Google Play (apps en abonnementen)" "GOOGLE*GOOGLE PLAY APP"
   wio-ref: "318669823"
@@ -410,11 +422,13 @@
   Expenses:Bank:Wisselkosten                           0.66 AED
   Expenses:Software:Overig                            33.30 AED
 
-2026-10-27 ! "Terrapinn (congres)" "Terrapinn ltd"
+2026-10-27 * "Terrapinn (congres)" "Terrapinn ltd"
   wio-ref: "321596350"
   wio-type: "Card"
   bron: "Wio-export"
   wio-fee-ref: "321596364"
+  goedkeuring: "2026-11-03"
+  antwoord: "zakelijk, Dubai AI Festival"
   Assets:Bank:Wio-AED                               -194.25 AED
   Assets:Bank:Wio-AED                                 -3.88 AED
   Expenses:Bank:Wisselkosten                           3.88 AED
@@ -484,7 +498,7 @@
 
 2026-10-30 balance Assets:Bank:Wio-EUR              10,943.68 EUR
 
-2026-10-30 ! "neWings B.V." "Newings b v"
+2026-10-30 * "neWings B.V." "Newings b v"
   wio-ref: "323267093"
   wio-type: "Card"
   bron: "Wio-export"
@@ -492,9 +506,12 @@
   drive-id: "1EzZNNJ2gVJBStVmmvHXbX2Pqn3_gsWj0"
   nl: "neWings factuur 2026-0098 (EUR 907,50, bedrijfswaardering) staat op MZML Holding B.V., niet op XCL; XCL heeft betaald. Rekening 'Rekening-courant MZML-BV' bestaat nog niet; tijdelijk op Umar"
   wio-fee-ref: "323267128"
+  goedkeuring: "2026-11-03"
+  antwoord: "zakelijk, waarderingen van bedrijven"
+  note: "neWings invoice 2026-0098 is addressed to MZML Holding B.V.; XCL paid on its behalf: receivable on MZML Holding B.V."
   Assets:Bank:Wio-AED                             -3,756.10 AED
   Assets:Bank:Wio-AED                                -75.12 AED
-  Assets:Rekening-courant:Umar                        75.12 AED
-  Assets:Rekening-courant:Umar                     3,756.10 AED
+  Assets:Rekening-courant:MZML-BV                     75.12 AED
+  Assets:Rekening-courant:MZML-BV                  3,756.10 AED
 
 2026-10-31 balance Assets:Bank:Wio-AED              3,312.91 AED

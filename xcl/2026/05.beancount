@@ -5,11 +5,13 @@
 
 2026-05-01 balance Assets:Bank:Wio-EUR              8,530.45 EUR
 
-2026-05-01 ! "Vliegticket of bagage" "Fly jinnah czmo"
+2026-05-01 * "Vliegticket of bagage" "Fly jinnah czmo"
   wio-ref: "242385166"
   wio-type: "Card"
   bron: "Wio-export"
   nl: "Vlucht zonder bon: volgens je regel privé (rekening-courant); zakelijke reis? Zet 'zakelijk, bon volgt'"
+  goedkeuring: "2026-11-03"
+  antwoord: "prive"
   Assets:Bank:Wio-AED                             -1,374.10 AED
   Assets:Rekening-courant:Umar                     1,374.10 AED
 
@@ -380,6 +382,9 @@
   bron: "Wio-export"
   nl: "ACUNS (lidmaatschap of congres): zakelijk? Je hebt een rol bij ACUNS 2026; bon opsturen"
   wio-fee-ref: "245696504"
+  goedkeuring: "2026-11-03"
+  antwoord: "zakelijk congres"
+  open: "ACUNS congress: business, receipt still missing"
   Assets:Bank:Wio-AED                               -333.00 AED
   Assets:Bank:Wio-AED                                 -6.66 AED
   Expenses:Bank:Wisselkosten                           6.66 AED
@@ -543,21 +548,26 @@
   Assets:Bank:Wio-AED                                -30.00 AED
   Assets:Rekening-courant:Umar                        30.00 AED
 
-2026-05-11 ! "Onbekende leverancier" "Clean Car Washers"
+2026-05-11 * "Onbekende leverancier" "Clean Car Washers"
   wio-ref: "246353961"
   wio-type: "Card"
   bron: "Wio-export"
   nl: "Onbekende betaling: wat is dit, en zakelijk of privé?"
+  goedkeuring: "2026-11-03"
+  antwoord: "prive"
   Assets:Bank:Wio-AED                                -18.00 AED
-  Expenses:Onbekend                                   18.00 AED
+  Assets:Rekening-courant:Umar                        18.00 AED
 
 2026-05-11 ! "Vliegticket of bagage" "Emirates"
   wio-ref: "246337178"
   wio-type: "Card"
   bron: "Wio-export"
   nl: "Vlucht zonder bon: volgens je regel privé (rekening-courant); zakelijke reis? Zet 'zakelijk, bon volgt'"
+  goedkeuring: "2026-11-03"
+  antwoord: "zakelijk"
+  open: "Emirates AED 4,010 business per Umar: ticket/receipt and purpose of trip missing"
   Assets:Bank:Wio-AED                             -4,010.00 AED
-  Assets:Rekening-courant:Umar                     4,010.00 AED
+  Expenses:Reis:Vliegtickets                       4,010.00 AED
 
 2026-05-11 * "Eten en boodschappen" "Restaurant"
   wio-ref: "246351189"
@@ -582,11 +592,13 @@
   Assets:Bank:Wio-AED                                -25.00 AED
   Expenses:Telecom                                    25.00 AED
 
-2026-05-12 ! "Toerisme en luchthaven" "Dubai Airport"
+2026-05-12 * "Toerisme en luchthaven" "Dubai Airport"
   wio-ref: "246809796"
   wio-type: "Card"
   bron: "Wio-export"
   nl: "Reisgerelateerd zonder bon: privé tenzij zakelijk met bon"
+  goedkeuring: "2026-11-03"
+  antwoord: "prive"
   Assets:Bank:Wio-AED                                 -4.00 AED
   Assets:Rekening-courant:Umar                         4.00 AED
 
@@ -664,11 +676,14 @@
   Assets:Bank:Wio-AED                               -166.50 AED
   Assets:Rekening-courant:Umar                       166.50 AED
 
-2026-05-14 ! "Umar Fahad Mirza (privé)" "From Hr U F Mirza | /RNT/"
+2026-05-14 * "Umar Fahad Mirza (privé)" "From Hr U F Mirza | /RNT/"
   wio-ref: "247324858"
   wio-type: "Transfers"
   bron: "Wio-export"
   nl: "Geld van Umar privé naar XCL: lening van de aandeelhouder, tenzij het (deels) de kapitaalstorting van AED 48.000 is; vaststellen per overboeking"
+  goedkeuring: "2026-11-03"
+  antwoord: "als nog ruimte, dan kapitaalstorting"
+  note: "Capital AED 48,000 was fully paid on 26-1-2026 from the EUR 25,000; no room left, so EUR 6,000 is shareholder loan"
   Assets:Bank:Wio-EUR                              6,000.00 EUR
   Liabilities:Lening-aandeelhouder:Umar           -6,000.00 EUR
 
@@ -745,13 +760,15 @@
   Assets:Rekening-courant:Umar                         0.55 AED
   Assets:Rekening-courant:Umar                        27.61 AED
 
-2026-05-18 ! "Onbekende leverancier" "Supernova charters for"
+2026-05-18 * "Onbekende leverancier" "Supernova charters for"
   wio-ref: "249134393"
   wio-type: "Card"
   bron: "Wio-export"
   nl: "Onbekende betaling: wat is dit, en zakelijk of privé?"
+  goedkeuring: "2026-11-03"
+  antwoord: "zakelijk netwerk bijeenkomst, yacht geboekt"
   Assets:Bank:Wio-AED                             -1,150.00 AED
-  Expenses:Onbekend                                1,150.00 AED
+  Expenses:Representatie:Klanten                   1,150.00 AED
 
 2026-05-18 * "ADNOC" "ADNOC"
   wio-ref: "249143628"
@@ -802,11 +819,14 @@
   Assets:Bank:Wio-AED                               -264.08 AED
   Expenses:Telecom                                   264.08 AED
 
-2026-05-19 ! "Umar Fahad Mirza (privé)" "From UMAR FAHAD MIRZA | UMAR FAHAD MIRZA"
+2026-05-19 * "Umar Fahad Mirza (privé)" "From UMAR FAHAD MIRZA | UMAR FAHAD MIRZA"
   wio-ref: "249359054"
   wio-type: "Transfers"
   bron: "Wio-export"
   nl: "Geld van Umar privé naar XCL in dirham: lening of kapitaal of terugstorting? De leningrekening kent alleen euro, daarom tijdelijk op de rekening-courant"
+  goedkeuring: "2026-11-03"
+  antwoord: "RC"
+  note: "Umar deposits AED 6,368.50 against his current-account debt"
   Assets:Bank:Wio-AED                              6,368.50 AED
   Assets:Rekening-courant:Umar                    -6,368.50 AED
 
@@ -911,11 +931,13 @@
   Assets:Bank:Wio-AED                                -16.80 AED
   Assets:Rekening-courant:Umar                        16.80 AED
 
-2026-05-21 ! "Vliegticket of bagage" "Emirates"
+2026-05-21 * "Vliegticket of bagage" "Emirates"
   wio-ref: "250373622"
   wio-type: "Card"
   bron: "Wio-export"
   nl: "Vlucht zonder bon: volgens je regel privé (rekening-courant); zakelijke reis? Zet 'zakelijk, bon volgt'"
+  goedkeuring: "2026-11-03"
+  antwoord: "prive"
   Assets:Bank:Wio-AED                               -149.00 AED
   Assets:Rekening-courant:Umar                       149.00 AED
 
@@ -1072,19 +1094,23 @@
   Assets:Bank:Wio-AED                                 -2.50 AED
   Assets:Rekening-courant:Umar                         2.50 AED
 
-2026-05-25 ! "Onbekende leverancier" "Ziina payment llc"
+2026-05-25 * "Onbekende leverancier" "Ziina payment llc"
   wio-ref: "251993445"
   wio-type: "Card"
   bron: "Wio-export"
   nl: "Onbekende betaling: wat is dit, en zakelijk of privé?"
+  goedkeuring: "2026-11-03"
+  antwoord: "prive"
   Assets:Bank:Wio-AED                                -55.00 AED
-  Expenses:Onbekend                                   55.00 AED
+  Assets:Rekening-courant:Umar                        55.00 AED
 
-2026-05-25 ! "Vliegticket of bagage" "Emirates"
+2026-05-25 * "Vliegticket of bagage" "Emirates"
   wio-ref: "252021654"
   wio-type: "Card"
   bron: "Wio-export"
   nl: "Vlucht zonder bon: volgens je regel privé (rekening-courant); zakelijke reis? Zet 'zakelijk, bon volgt'"
+  goedkeuring: "2026-11-03"
+  antwoord: "prive"
   Assets:Bank:Wio-AED                                -23.00 AED
   Assets:Rekening-courant:Umar                        23.00 AED
 
@@ -1128,27 +1154,33 @@
   Assets:Bank:Wio-AED                                -43.40 AED
   Assets:Rekening-courant:Umar                        43.40 AED
 
-2026-05-26 ! "Onbekende leverancier" "Optional ziina hisham"
+2026-05-26 * "Onbekende leverancier" "Optional ziina hisham"
   wio-ref: "252429551"
   wio-type: "Card"
   bron: "Wio-export"
   nl: "Onbekende betaling: wat is dit, en zakelijk of privé?"
+  goedkeuring: "2026-11-03"
+  antwoord: "prive"
   Assets:Bank:Wio-AED                                -30.00 AED
-  Expenses:Onbekend                                   30.00 AED
+  Assets:Rekening-courant:Umar                        30.00 AED
 
-2026-05-26 ! "Toerisme en luchthaven" "Dubai Airport"
+2026-05-26 * "Toerisme en luchthaven" "Dubai Airport"
   wio-ref: "252448319"
   wio-type: "Card"
   bron: "Wio-export"
   nl: "Reisgerelateerd zonder bon: privé tenzij zakelijk met bon"
+  goedkeuring: "2026-11-03"
+  antwoord: "prive"
   Assets:Bank:Wio-AED                                 -4.00 AED
   Assets:Rekening-courant:Umar                         4.00 AED
 
-2026-05-26 ! "Vliegticket of bagage" "Emirates"
+2026-05-26 * "Vliegticket of bagage" "Emirates"
   wio-ref: "252448388"
   wio-type: "Card"
   bron: "Wio-export"
   nl: "Vlucht zonder bon: volgens je regel privé (rekening-courant); zakelijke reis? Zet 'zakelijk, bon volgt'"
+  goedkeuring: "2026-11-03"
+  antwoord: "prive"
   Assets:Bank:Wio-AED                                -40.00 AED
   Assets:Rekening-courant:Umar                        40.00 AED
 
@@ -1232,6 +1264,9 @@
   bron: "Wio-export"
   nl: "ACUNS (lidmaatschap of congres): zakelijk? Je hebt een rol bij ACUNS 2026; bon opsturen"
   wio-fee-ref: "252874604"
+  goedkeuring: "2026-11-03"
+  antwoord: "zakelijk"
+  open: "ACUNS: receipt missing"
   Assets:Bank:Wio-AED                               -370.00 AED
   Assets:Bank:Wio-AED                                 -7.40 AED
   Expenses:Bank:Wisselkosten                           7.40 AED
@@ -1339,13 +1374,15 @@
   Expenses:Bank:Wisselkosten                          16.39 AED
   Expenses:Software:AI                               819.50 AED
 
-2026-05-30 ! "Onbekende leverancier" "Masaar developments"
+2026-05-30 * "Onbekende leverancier" "Masaar developments"
   wio-ref: "254047847"
   wio-type: "Card"
   bron: "Wio-export"
   nl: "Onbekende betaling: wat is dit, en zakelijk of privé?"
+  goedkeuring: "2026-11-03"
+  antwoord: "prive"
   Assets:Bank:Wio-AED                                -40.00 AED
-  Expenses:Onbekend                                   40.00 AED
+  Assets:Rekening-courant:Umar                        40.00 AED
 
 2026-05-30 * "Eten en boodschappen" "Express eat and drink r"
   wio-ref: "254056662"
@@ -1392,6 +1429,8 @@
   wio-type: "Transfers"
   bron: "Wio-export"
   nl: "Woning op naam van Umar: XCL betaalde namens hem; rekening-courant directeur, verrekend met de loonschuld (besluit Umar 2-11-2026)"
+  goedkeuring: "2026-11-03"
+  antwoord: "ja"
   Assets:Bank:Wio-AED                            -42,500.00 AED
   Assets:Rekening-courant:Umar                    42,500.00 AED
 

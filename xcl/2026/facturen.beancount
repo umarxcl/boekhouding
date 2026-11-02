@@ -89,19 +89,33 @@
   Assets:Debiteuren:Ekmekci                            7,716.00 EUR @@ 32,556.30 AED
   Income:Omzet:Managementfee:Ekmekci                -32,556.30 AED
 
-2026-10-17 ! "Ekmekci Group B.V." "Factuur INV-0012: Fiskl-omschrijving 'Managementfee feb 2026' (6.916) + bijdrage auto (800), factuurdatum 17-10"
+2026-10-17 ! "Ekmekci Group B.V." "Factuur INV-0012: Management fee October 2026 (6.916) + bijdrage auto (800), factuurdatum 17-10"
   factuur: "INV-0012"
   document: "INV-0012.pdf"
   drive-id: "1yFFqHPItxSHUQauS94BJvMgSnrOi4Py_"
-  nl: "Voorlopige koers: het CBUAE-overzicht van oktober 2026 is nog niet gepubliceerd; koers van 2026-09-30 gebruikt, corrigeren zodra de koers van 16-10-2026 (laatste publicatiedag voor 17-10) bekend is. Ook: Fiskl noemt de omschrijving Managementfee feb 2026 (6.916) op een factuur van oktober; klopt dit?"
+  nl: "Voorlopige koers: het CBUAE-overzicht van oktober 2026 is nog niet gepubliceerd; koers van 2026-09-30 gebruikt, corrigeren zodra de koers van 16-10-2026 (laatste publicatiedag voor 17-10) bekend is. Omschrijving gecorrigeerd: Fiskl noemde 'feb 2026', dit is een typfout van Umar; het is de managementfee van oktober 2026."
   koers: "VOORLOPIG CBUAE 4.169505 AED per EUR (koers van 2026-09-30)"
+  goedkeuring: "2026-11-03"
+  antwoord: "niet feb, typfout; managementfee Ekmekci"
+  open: "Description corrected to management fee October 2026; CBUAE rate October still to come"
   Assets:Debiteuren:Ekmekci                            7,716.00 EUR @@ 32,171.90 AED
   Income:Omzet:Managementfee:Ekmekci                -32,171.90 AED
 
-2026-10-31 ! "Inclusionair" "Omzet INV-0008 genomen: diensten Leergang geleverd eind oktober 2026"
+2026-10-31 * "Inclusionair" "Omzet INV-0008 genomen: diensten Leergang geleverd eind oktober 2026"
   factuur: "INV-0008"
   document: "INV-0008.pdf"
   drive-id: "1Jq9HuJLTda91Oxp5sIAHqgERFzToR19p"
-  nl: "Leverdatum bevestigen: Umar zegt eind oktober 2026, Fiskl noemt 24-5-2026 als datum van verkoop. Bij 24-5 verschuift de omzet naar mei"
+  nl: "Leverdatum bevestigd door Umar (3-11-2026): eind oktober 2026; Fiskl noemde 24-5-2026 als datum van verkoop."
+  goedkeuring: "2026-11-03"
+  antwoord: "tot eind oktober gerund en afgerond"
+  note: "Service completed end of October 2026; revenue on 31-10-2026"
   Liabilities:Vooruitontvangen:Omzet                 89,120.00 AED
   Income:Omzet:Advies:Inclusionair                  -89,120.00 AED
+
+2026-10-31 * "Ekmekci Group B.V." "Write-off short payments invoices INV-0001, INV-0003 to INV-0011 (9 x EUR 10.50, Ekmekci bank charges)"
+  goedkeuring: "2026-11-03"
+  antwoord: "afschrijven als bankkosten"
+  note: "Ekmekci paid EUR 10.50 less per invoice (their bank charges); written off, 9 payments, total EUR 94.50"
+  koers: "CBUAE 4.169505 AED per EUR (koers van 2026-09-30, laatst beschikbare koers voor 2026-10-31; oktober nog niet gepubliceerd)"
+  Assets:Debiteuren:Ekmekci                           -94.50 EUR @@ 394.02 AED
+  Expenses:Bank:Kosten                                394.02 AED

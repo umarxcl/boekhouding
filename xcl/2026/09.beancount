@@ -5,19 +5,23 @@
 
 2026-09-01 balance Assets:Bank:Wio-EUR              16,867.62 EUR
 
-2026-09-01 ! "Toerisme en luchthaven" "Tourist hub"
+2026-09-01 * "Toerisme en luchthaven" "Tourist hub"
   wio-ref: "295168103"
   wio-type: "Card"
   bron: "Wio-export"
   nl: "Reisgerelateerd zonder bon: privé tenzij zakelijk met bon"
+  goedkeuring: "2026-11-03"
+  antwoord: "prive"
   Assets:Bank:Wio-AED                                -18.00 AED
   Assets:Rekening-courant:Umar                        18.00 AED
 
-2026-09-01 ! "Toerisme en luchthaven" "Tourist hub"
+2026-09-01 * "Toerisme en luchthaven" "Tourist hub"
   wio-ref: "295172676"
   wio-type: "Card"
   bron: "Wio-export"
   nl: "Reisgerelateerd zonder bon: privé tenzij zakelijk met bon"
+  goedkeuring: "2026-11-03"
+  antwoord: "prive"
   Assets:Bank:Wio-AED                                -48.00 AED
   Assets:Rekening-courant:Umar                        48.00 AED
 
@@ -29,11 +33,13 @@
   Assets:Bank:Wio-AED                                 -7.00 AED
   Assets:Rekening-courant:Umar                         7.00 AED
 
-2026-09-02 ! "Toerisme en luchthaven" "Tourist hub"
+2026-09-02 * "Toerisme en luchthaven" "Tourist hub"
   wio-ref: "295758237"
   wio-type: "Card"
   bron: "Wio-export"
   nl: "Reisgerelateerd zonder bon: privé tenzij zakelijk met bon"
+  goedkeuring: "2026-11-03"
+  antwoord: "prive"
   Assets:Bank:Wio-AED                                -34.50 AED
   Assets:Rekening-courant:Umar                        34.50 AED
 
@@ -63,19 +69,23 @@
   Assets:Bank:Wio-EUR                             -1,207.93 EUR @@ 5,000.00 AED
   Assets:Bank:Wio-AED                              5,000.00 AED
 
-2026-09-03 ! "Toerisme en luchthaven" "Tourist hub"
+2026-09-03 * "Toerisme en luchthaven" "Tourist hub"
   wio-ref: "296273136"
   wio-type: "Card"
   bron: "Wio-export"
   nl: "Reisgerelateerd zonder bon: privé tenzij zakelijk met bon"
+  goedkeuring: "2026-11-03"
+  antwoord: "prive"
   Assets:Bank:Wio-AED                                -65.00 AED
   Assets:Rekening-courant:Umar                        65.00 AED
 
-2026-09-04 ! "Toerisme en luchthaven" "Tourist hub"
+2026-09-04 * "Toerisme en luchthaven" "Tourist hub"
   wio-ref: "296769492"
   wio-type: "Card"
   bron: "Wio-export"
   nl: "Reisgerelateerd zonder bon: privé tenzij zakelijk met bon"
+  goedkeuring: "2026-11-03"
+  antwoord: "prive"
   Assets:Bank:Wio-AED                                -88.00 AED
   Assets:Rekening-courant:Umar                        88.00 AED
 
@@ -166,11 +176,13 @@
   Assets:Bank:Wio-AED                                 -5.96 AED
   Assets:Rekening-courant:Umar                         5.96 AED
 
-2026-09-06 ! "Hotel of verblijf" "Vida creek harbour hote"
+2026-09-06 * "Hotel of verblijf" "Vida creek harbour hote"
   wio-ref: "297485289"
   wio-type: "Card"
   bron: "Wio-export"
   nl: "Verblijf zonder bon: volgens je regel privé (rekening-courant); zakelijke reis? Zet 'zakelijk, bon volgt'"
+  goedkeuring: "2026-11-03"
+  antwoord: "prive"
   Assets:Bank:Wio-AED                               -122.00 AED
   Assets:Rekening-courant:Umar                       122.00 AED
 
@@ -221,19 +233,23 @@
   Assets:Bank:Wio-AED                               -500.00 AED
   Assets:Rekening-courant:Umar                       500.00 AED
 
-2026-09-07 ! "Toerisme en luchthaven" "Tourist hub"
+2026-09-07 * "Toerisme en luchthaven" "Tourist hub"
   wio-ref: "297923796"
   wio-type: "Card"
   bron: "Wio-export"
   nl: "Reisgerelateerd zonder bon: privé tenzij zakelijk met bon"
+  goedkeuring: "2026-11-03"
+  antwoord: "prive"
   Assets:Bank:Wio-AED                                -40.00 AED
   Assets:Rekening-courant:Umar                        40.00 AED
 
-2026-09-07 ! "Vliegticket of bagage" "Emirates"
+2026-09-07 * "Vliegticket of bagage" "Emirates"
   wio-ref: "297931513"
   wio-type: "Card"
   bron: "Wio-export"
   nl: "Vlucht zonder bon: volgens je regel privé (rekening-courant); zakelijke reis? Zet 'zakelijk, bon volgt'"
+  goedkeuring: "2026-11-03"
+  antwoord: "prive"
   Assets:Bank:Wio-AED                                -19.50 AED
   Assets:Rekening-courant:Umar                        19.50 AED
 
@@ -253,11 +269,13 @@
   Assets:Bank:Wio-AED                               -227.79 AED
   Assets:Rekening-courant:Umar                       227.79 AED
 
-2026-09-08 ! "Hotel of verblijf" "Premier inn al jaddaf"
+2026-09-08 * "Hotel of verblijf" "Premier inn al jaddaf"
   wio-ref: "298360365"
   wio-type: "Card"
   bron: "Wio-export"
   nl: "Verblijf zonder bon: volgens je regel privé (rekening-courant); zakelijke reis? Zet 'zakelijk, bon volgt'"
+  goedkeuring: "2026-11-03"
+  antwoord: "prive"
   Assets:Bank:Wio-AED                               -767.66 AED
   Assets:Rekening-courant:Umar                       767.66 AED
 
@@ -285,19 +303,23 @@
   Assets:Bank:Wio-AED                                 -2.50 AED
   Assets:Rekening-courant:Umar                         2.50 AED
 
-2026-09-09 ! "Toerisme en luchthaven" "Tourist hub"
+2026-09-09 * "Toerisme en luchthaven" "Tourist hub"
   wio-ref: "298855544"
   wio-type: "Card"
   bron: "Wio-export"
   nl: "Reisgerelateerd zonder bon: privé tenzij zakelijk met bon"
+  goedkeuring: "2026-11-03"
+  antwoord: "prive"
   Assets:Bank:Wio-AED                                -15.00 AED
   Assets:Rekening-courant:Umar                        15.00 AED
 
-2026-09-09 ! "Vliegticket of bagage" "Emirates"
+2026-09-09 * "Vliegticket of bagage" "Emirates"
   wio-ref: "298870598"
   wio-type: "Card"
   bron: "Wio-export"
   nl: "Vlucht zonder bon: volgens je regel privé (rekening-courant); zakelijke reis? Zet 'zakelijk, bon volgt'"
+  goedkeuring: "2026-11-03"
+  antwoord: "prive"
   Assets:Bank:Wio-AED                                -12.00 AED
   Assets:Rekening-courant:Umar                        12.00 AED
 
@@ -438,11 +460,13 @@
   Assets:Bank:Wio-AED                                -41.90 AED
   Assets:Rekening-courant:Umar                        41.90 AED
 
-2026-09-12 ! "Hotel of verblijf" "Premier inn al jaddaf"
+2026-09-12 * "Hotel of verblijf" "Premier inn al jaddaf"
   wio-ref: "300149576"
   wio-type: "Card"
   bron: "Wio-export"
   nl: "Verblijf zonder bon: volgens je regel privé (rekening-courant); zakelijke reis? Zet 'zakelijk, bon volgt'"
+  goedkeuring: "2026-11-03"
+  antwoord: "prive"
   Assets:Bank:Wio-AED                               -210.90 AED
   Assets:Rekening-courant:Umar                       210.90 AED
 
@@ -501,19 +525,23 @@
   Assets:Bank:Wio-AED                                 -1.00 AED
   Assets:Rekening-courant:Umar                         1.00 AED
 
-2026-09-13 ! "Hotel of verblijf" "Premier inn al jaddaf"
+2026-09-13 * "Hotel of verblijf" "Premier inn al jaddaf"
   wio-ref: "300466757"
   wio-type: "Card"
   bron: "Wio-export"
   nl: "Verblijf zonder bon: volgens je regel privé (rekening-courant); zakelijke reis? Zet 'zakelijk, bon volgt'"
+  goedkeuring: "2026-11-03"
+  antwoord: "prive"
   Assets:Bank:Wio-AED                             -1,181.62 AED
   Assets:Rekening-courant:Umar                     1,181.62 AED
 
-2026-09-13 ! "Toerisme en luchthaven" "Tourist hub"
+2026-09-13 * "Toerisme en luchthaven" "Tourist hub"
   wio-ref: "300501690"
   wio-type: "Card"
   bron: "Wio-export"
   nl: "Reisgerelateerd zonder bon: privé tenzij zakelijk met bon"
+  goedkeuring: "2026-11-03"
+  antwoord: "prive"
   Assets:Bank:Wio-AED                                 -2.00 AED
   Assets:Rekening-courant:Umar                         2.00 AED
 
@@ -602,11 +630,13 @@
   Assets:Bank:Wio-EUR                             -2,433.58 EUR @@ 10,000.00 AED
   Assets:Bank:Wio-AED                             10,000.00 AED
 
-2026-09-14 ! "Vliegticket of bagage" "Emirates"
+2026-09-14 * "Vliegticket of bagage" "Emirates"
   wio-ref: "300947878"
   wio-type: "Card"
   bron: "Wio-export"
   nl: "Vlucht zonder bon: volgens je regel privé (rekening-courant); zakelijke reis? Zet 'zakelijk, bon volgt'"
+  goedkeuring: "2026-11-03"
+  antwoord: "prive"
   Assets:Bank:Wio-AED                                -19.50 AED
   Assets:Rekening-courant:Umar                        19.50 AED
 
@@ -659,11 +689,13 @@
   Assets:Bank:Wio-AED                               -120.00 AED
   Assets:Rekening-courant:Umar                       120.00 AED
 
-2026-09-15 ! "Toerisme en luchthaven" "Tourist hub"
+2026-09-15 * "Toerisme en luchthaven" "Tourist hub"
   wio-ref: "301413294"
   wio-type: "Card"
   bron: "Wio-export"
   nl: "Reisgerelateerd zonder bon: privé tenzij zakelijk met bon"
+  goedkeuring: "2026-11-03"
+  antwoord: "prive"
   Assets:Bank:Wio-AED                                -15.00 AED
   Assets:Rekening-courant:Umar                        15.00 AED
 
@@ -806,11 +838,13 @@
   Assets:Bank:Wio-AED                                -52.00 AED
   Assets:Rekening-courant:Umar                        52.00 AED
 
-2026-09-19 ! "Hotel of verblijf" "Premier inn al jaddaf"
+2026-09-19 * "Hotel of verblijf" "Premier inn al jaddaf"
   wio-ref: "303143553"
   wio-type: "Card"
   bron: "Wio-export"
   nl: "Verblijf zonder bon: volgens je regel privé (rekening-courant); zakelijke reis? Zet 'zakelijk, bon volgt'"
+  goedkeuring: "2026-11-03"
+  antwoord: "prive"
   Assets:Bank:Wio-AED                               -224.38 AED
   Assets:Rekening-courant:Umar                       224.38 AED
 
@@ -819,8 +853,11 @@
   wio-type: "Card"
   bron: "Wio-export"
   nl: "Typing-centrum (visa, vertalingen, koerier): waarvoor was dit en voor wie?"
+  goedkeuring: "2026-11-03"
+  antwoord: "zakelijk"
+  open: "Typing centre AED 610: business per Umar; what was it for (visa, translation, attestation)? receipt missing"
   Assets:Bank:Wio-AED                               -610.00 AED
-  Expenses:Overig                                    610.00 AED
+  Expenses:Advies:Corporate-services                 610.00 AED
 
 2026-09-19 * "Wio (maandabonnement)" "Subscription fee for Sep 2026 | Essential"
   wio-ref: "302874877"
@@ -829,7 +866,7 @@
   Assets:Bank:Wio-AED                                -99.00 AED
   Expenses:Bank:Kosten                                99.00 AED
 
-2026-09-20 ! "Eten en boodschappen" "Gmg Consumer"
+2026-09-20 * "Eten en boodschappen" "Gmg Consumer"
   wio-ref: "303510492"
   wio-type: "Card"
   bron: "Wio-export"
@@ -840,36 +877,47 @@
   document-3: "7efe553f-655f-4052-8eba-93e34cf6fd93_fiskl.jpg"
   drive-id-3: "1gyHWfrKn6u-7zmvZ0ciJeQ1ilGSCIB4g"
   nl: "Bon (Géant, AED 20,51, 3 foto's van dezelfde bon) is een boodschappenbon: privé; je regel zegt 'bon = zakelijk', daarom ter bevestiging"
+  goedkeuring: "2026-11-03"
+  antwoord: "(blank)"
+  note: "Grocery receipt: private (proposal accepted by default)"
   Assets:Bank:Wio-AED                                -20.51 AED
   Assets:Rekening-courant:Umar                        20.51 AED
 
-2026-09-20 ! "Fleet Master" "Fleet master"
+2026-09-20 * "Fleet Master" "Fleet master"
   wio-ref: "303514750"
   wio-type: "Card"
   bron: "Wio-export"
   nl: "Waarschijnlijk autohuur of autokosten (Fleet Master): bevestigen"
+  goedkeuring: "2026-11-03"
+  antwoord: "(blank)"
+  note: "Fleet Master car rental, same as 288298792"
   Assets:Bank:Wio-AED                             -1,057.00 AED
   Expenses:Auto:Huur                               1,057.00 AED
 
-2026-09-20 ! "Gezin, huishouden en klein inkopen (privé)" "Tech corner general tr"
+2026-09-20 * "Gezin, huishouden en klein inkopen (privé)" "Tech corner general tr"
   wio-ref: "303516683"
   wio-type: "Card"
   bron: "Wio-export"
   document: "51f222b9-3f7e-464e-a1df-4484c3aefd36_fiskl.jpg"
   drive-id: "15Ynpa2KFhZTQznayNDBtCjycYQqzQv4O"
   nl: "Bon Tech Corner General Trading AED 55 zonder specificatie: wat is gekocht en is het zakelijk?"
+  goedkeuring: "2026-11-03"
+  antwoord: "ja"
   Assets:Bank:Wio-AED                                -55.00 AED
   Expenses:Kantoor:Benodigdheden                      55.00 AED
 
-2026-09-20 ! "Hotel of verblijf" "Premier inn al jaddaf"
+2026-09-20 * "Hotel of verblijf" "Premier inn al jaddaf"
   wio-ref: "303481306"
   wio-type: "Card"
   bron: "Wio-export"
   document: "260925 Hotel Mr Umar Mirza.pdf"
   drive-id: "169ZFUhWC7iwnAS_rHympofLBVT_qAvrM"
   nl: "Bon of factuur in Drive gekoppeld: zakelijk (regel Umar 2-11-2026)"
+  goedkeuring: "2026-11-03"
+  antwoord: "prive (bon aanwezig)"
+  note: "Receipt present but Umar says private: Umar's answer overrides the receipt rule"
   Assets:Bank:Wio-AED                             -1,240.86 AED
-  Expenses:Reis:Verblijf                           1,240.86 AED
+  Assets:Rekening-courant:Umar                     1,240.86 AED
 
 2026-09-20 * "Eten en boodschappen" "Talabat"
   wio-ref: "303505612"
@@ -956,19 +1004,23 @@
   Assets:Bank:Wio-AED                             -1,000.00 AED
   Assets:Rekening-courant:Umar                     1,000.00 AED
 
-2026-09-25 ! "Vliegticket of bagage" "Emirates"
+2026-09-25 * "Vliegticket of bagage" "Emirates"
   wio-ref: "305954341"
   wio-type: "Card"
   bron: "Wio-export"
   nl: "Vlucht zonder bon: volgens je regel privé (rekening-courant); zakelijke reis? Zet 'zakelijk, bon volgt'"
+  goedkeuring: "2026-11-03"
+  antwoord: "prive"
   Assets:Bank:Wio-AED                             -9,400.00 AED
   Assets:Rekening-courant:Umar                     9,400.00 AED
 
-2026-09-26 ! "Vliegticket of bagage" "Emirates"
+2026-09-26 * "Vliegticket of bagage" "Emirates"
   wio-ref: "306481097"
   wio-type: "Card"
   bron: "Wio-export"
   nl: "Vlucht zonder bon: volgens je regel privé (rekening-courant); zakelijke reis? Zet 'zakelijk, bon volgt'"
+  goedkeuring: "2026-11-03"
+  antwoord: "prive"
   Assets:Bank:Wio-AED                                -19.50 AED
   Assets:Rekening-courant:Umar                        19.50 AED
 
@@ -1011,23 +1063,28 @@
   Assets:Bank:Wio-EUR                             -1,238.90 EUR @@ 5,000.00 AED
   Assets:Bank:Wio-AED                              5,000.00 AED
 
-2026-09-27 ! "Hotel of verblijf" "Premier inn al jaddaf"
+2026-09-27 * "Hotel of verblijf" "Premier inn al jaddaf"
   wio-ref: "306829282"
   wio-type: "Card"
   bron: "Wio-export"
   document: "260926 print premier inn.jpg"
   drive-id: "1gJyUs4DEUpJtSkl9k-MvrDzc1SikMxEh"
   nl: "Bon of factuur in Drive gekoppeld: zakelijk (regel Umar 2-11-2026)"
+  goedkeuring: "2026-11-03"
+  antwoord: "prive (bon aanwezig)"
   Assets:Bank:Wio-AED                                -50.00 AED
-  Expenses:Reis:Verblijf                              50.00 AED
+  Assets:Rekening-courant:Umar                        50.00 AED
 
 2026-09-27 ! "Khidmat Al Qalam Typing Services" "Khidmat al qal"
   wio-ref: "306814111"
   wio-type: "Card"
   bron: "Wio-export"
   nl: "Typing-centrum (visa, vertalingen, koerier): waarvoor was dit en voor wie?"
+  goedkeuring: "2026-11-03"
+  antwoord: "zakelijk"
+  open: "Typing centre AED 65: purpose missing"
   Assets:Bank:Wio-AED                                -65.00 AED
-  Expenses:Overig                                     65.00 AED
+  Expenses:Advies:Corporate-services                  65.00 AED
 
 2026-09-27 * "Hotel of verblijf" "Premier inn al jaddaf"
   wio-ref: "306828437"
@@ -1039,7 +1096,7 @@
   Assets:Bank:Wio-AED                                 20.00 AED
   Expenses:Reis:Verblijf                             -20.00 AED
 
-2026-09-28 ! "Vliegticket of bagage" "Emirates"
+2026-09-28 * "Vliegticket of bagage" "Emirates"
   wio-ref: "307387104"
   wio-type: "Card"
   bron: "Wio-export"
@@ -1048,32 +1105,40 @@
   document-2: "260926 TransactionReceipt-1764223736894.pdf"
   drive-id-2: "1DRDkzYMAb_ZmylH8AZdW2809bL8Putjl"
   nl: "Bon (Emirates EMD, AED 2.020) is excess baggage voor passagier Samira: privé; je regel zegt 'bon = zakelijk', daarom ter bevestiging"
+  goedkeuring: "2026-11-03"
+  antwoord: "prive"
   Assets:Bank:Wio-AED                             -2,020.00 AED
   Assets:Rekening-courant:Umar                     2,020.00 AED
 
-2026-09-28 ! "Vliegticket of bagage" "Emirates"
+2026-09-28 * "Vliegticket of bagage" "Emirates"
   wio-ref: "307446597"
   wio-type: "Card"
   bron: "Wio-export"
   nl: "Vlucht zonder bon: volgens je regel privé (rekening-courant); zakelijke reis? Zet 'zakelijk, bon volgt'"
+  goedkeuring: "2026-11-03"
+  antwoord: "prive"
   Assets:Bank:Wio-AED                                -40.00 AED
   Assets:Rekening-courant:Umar                        40.00 AED
 
-2026-09-28 ! "Vliegticket of bagage" "Emirates"
+2026-09-28 * "Vliegticket of bagage" "Emirates"
   wio-ref: "307447321"
   wio-type: "Card"
   bron: "Wio-export"
   document: "2026-09-26 emirates weight.jpg"
   drive-id: "19OqQmYu0shTig2E4DJf-luIEORvh5mbv"
   nl: "Bon (Emirates, AED 3.240) is excess baggage 32 kg voor passagier Samira: privé; ter bevestiging"
+  goedkeuring: "2026-11-03"
+  antwoord: "prive"
   Assets:Bank:Wio-AED                             -3,240.00 AED
   Assets:Rekening-courant:Umar                     3,240.00 AED
 
-2026-09-28 ! "Vliegticket of bagage" "Emirates"
+2026-09-28 * "Vliegticket of bagage" "Emirates"
   wio-ref: "307447340"
   wio-type: "Card"
   bron: "Wio-export"
   nl: "Vlucht zonder bon: volgens je regel privé (rekening-courant); zakelijke reis? Zet 'zakelijk, bon volgt'"
+  goedkeuring: "2026-11-03"
+  antwoord: "prive"
   Assets:Bank:Wio-AED                                -40.00 AED
   Assets:Rekening-courant:Umar                        40.00 AED
 
