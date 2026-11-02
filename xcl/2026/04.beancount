@@ -506,8 +506,9 @@
   document: "TF_Mis2604-0007.pdf"
   drive-id: "1BQcys6QyD1trqEcdylFKioJqu4sIrDpA"
   note: "Sharjah Municipality fine on the rental car (Third Car Rental invoice AED 165.75): business car, not deductible"
+  reclassified: "2026-11-03: Traffic fine via car rental company: not deductible (CT law art. 33); private per Umar 3-11-2026"
   Assets:Bank:Wio-AED                               -165.75 AED
-  Expenses:Government:Fines                          165.75 AED
+  Assets:Receivables:Director:Umar                          165.75 AED
 
 2026-04-11 * "Food and groceries" "Bck be ce b v"
   wio-ref: "234213370"

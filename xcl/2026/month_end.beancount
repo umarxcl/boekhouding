@@ -25,6 +25,13 @@
   Expenses:Staff:EndOfService                   2,333.33 AED
   Liabilities:Employees:EndOfService           -2,333.33 AED
 
+2026-01-31 * "FX result" "FX result on EUR items 2026-01"
+  generated: "month_end"
+  basis: "All AED amounts plus all EUR units (-5919.85 EUR) at CBUAE 4.375149 of 2026-01-30; cumulative FX result -1,657.09 AED, booked as the change since the previous month-end"
+  rate-source: "CBUAE fx_jan26_en.pdf, month-end January"
+  Expenses:FXLoss                               1,657.09 AED
+  Equity:FXTranslation                          -1,657.09 AED
+
 2026-02-28 * "Salary accrual" "Contract salary 2026-02"
   generated: "month_end"
   basis: "Employment contract 18-12-2025, basic salary per month, pro rata per calendar day; xcl/parameters.yaml"
@@ -40,10 +47,17 @@
 2026-02-28 * "Car costs private share" "Private share 30% of car costs 2026-02"
   generated: "month_end"
   basis: "Decision Umar 2-11-2026: 30% private via the director current account (debt route, no benefit in kind)"
-  Assets:Receivables:Director:Umar              1,381.62 AED
+  Assets:Receivables:Director:Umar              1,120.62 AED
   Expenses:Car:Fuel                             -51.81 AED
   Expenses:Car:Rental                           -1,066.11 AED
-  Expenses:Car:TollsParking                     -263.70 AED
+  Expenses:Car:TollsParking                     -2.70 AED
+
+2026-02-28 * "FX result" "FX result on EUR items 2026-02"
+  generated: "month_end"
+  basis: "All AED amounts plus all EUR units (-3203.85 EUR) at CBUAE 4.330778 of 2026-02-27; cumulative FX result -1,963.01 AED, booked as the change since the previous month-end"
+  rate-source: "CBUAE fx_feb26_en.pdf, month-end February (last publication day)"
+  Expenses:FXLoss                               305.92 AED
+  Equity:FXTranslation                          -305.92 AED
 
 2026-03-31 * "Salary accrual" "Contract salary 2026-03"
   generated: "month_end"
@@ -65,6 +79,13 @@
   Expenses:Car:Rental                           -861.00 AED
   Expenses:Car:TollsParking                     -6.68 AED
 
+2026-03-31 * "FX result" "FX result on EUR items 2026-03"
+  generated: "month_end"
+  basis: "All AED amounts plus all EUR units (-3487.85 EUR) at CBUAE 4.234406 of 2026-03-31; cumulative FX result -2,408.07 AED, booked as the change since the previous month-end"
+  rate-source: "CBUAE fx_mar26_en.pdf, month-end March"
+  Expenses:FXLoss                               445.06 AED
+  Equity:FXTranslation                          -445.06 AED
+
 2026-04-30 * "Salary accrual" "Contract salary 2026-04"
   generated: "month_end"
   basis: "Employment contract 18-12-2025, basic salary per month, pro rata per calendar day; xcl/parameters.yaml"
@@ -84,6 +105,13 @@
   Expenses:Car:Fuel                             -191.17 AED
   Expenses:Car:Rental                           -958.97 AED
   Expenses:Car:TollsParking                     -40.09 AED
+
+2026-04-30 * "FX result" "FX result on EUR items 2026-04"
+  generated: "month_end"
+  basis: "All AED amounts plus all EUR units (-5113.40 EUR) at CBUAE 4.292811 of 2026-04-30; cumulative FX result -4,116.94 AED, booked as the change since the previous month-end"
+  rate-source: "CBUAE fx_apr26_en.pdf, month-end April"
+  Expenses:FXLoss                               1,708.87 AED
+  Equity:FXTranslation                          -1,708.87 AED
 
 2026-05-31 * "Salary accrual" "Contract salary 2026-05"
   generated: "month_end"
@@ -105,6 +133,13 @@
   Expenses:Car:Rental                           -1,022.48 AED
   Expenses:Car:TollsParking                     -41.15 AED
 
+2026-05-31 * "FX result" "FX result on EUR items 2026-05"
+  generated: "month_end"
+  basis: "All AED amounts plus all EUR units (-11893.11 EUR) at CBUAE 4.277810 of 2026-05-29; cumulative FX result -5,700.24 AED, booked as the change since the previous month-end"
+  rate-source: "CBUAE fx_may26_en.pdf, month-end May (last publication day)"
+  Expenses:FXLoss                               1,583.30 AED
+  Equity:FXTranslation                          -1,583.30 AED
+
 2026-06-30 * "Salary accrual" "Contract salary 2026-06"
   generated: "month_end"
   basis: "Employment contract 18-12-2025, basic salary per month, pro rata per calendar day; xcl/parameters.yaml"
@@ -117,11 +152,24 @@
   Expenses:Staff:EndOfService                   2,333.33 AED
   Liabilities:Employees:EndOfService           -2,333.33 AED
 
+2026-06-30 * "Leave accrual" "Annual leave statutory minimum 2026-06"
+  generated: "month_end"
+  basis: "FDL 33/2021 art. 29 statutory minimum: 13.01 days entitled at 2026-06-30 (service 6.51 months, days taken 0), x basic salary / 30; liability 17,347.02 AED"
+  Expenses:Staff:Leave                          17,347.02 AED
+  Liabilities:Employees:LeaveAccrual           -17,347.02 AED
+
 2026-06-30 * "Car costs private share" "Private share 30% of car costs 2026-06"
   generated: "month_end"
   basis: "Decision Umar 2-11-2026: 30% private via the director current account (debt route, no benefit in kind)"
   Assets:Receivables:Director:Umar              67.62 AED
   Expenses:Car:Fuel                             -67.62 AED
+
+2026-06-30 * "FX result" "FX result on EUR items 2026-06"
+  generated: "month_end"
+  basis: "All AED amounts plus all EUR units (-9848.95 EUR) at CBUAE 4.184232 of 2026-06-30; cumulative FX result -5,389.52 AED, booked as the change since the previous month-end"
+  rate-source: "CBUAE fx_jun26_en.pdf, month-end June"
+  Income:FXGain                                 -310.72 AED
+  Equity:FXTranslation                          310.72 AED
 
 2026-07-31 * "Salary accrual" "Contract salary 2026-07"
   generated: "month_end"
@@ -135,6 +183,19 @@
   Expenses:Staff:EndOfService                   2,333.33 AED
   Liabilities:Employees:EndOfService           -2,333.33 AED
 
+2026-07-31 * "Leave accrual" "Annual leave statutory minimum 2026-07"
+  generated: "month_end"
+  basis: "FDL 33/2021 art. 29 statutory minimum: 15.05 days entitled at 2026-07-31 (service 7.52 months, days taken 0), x basic salary / 30; liability 20,062.97 AED"
+  Expenses:Staff:Leave                          2,715.95 AED
+  Liabilities:Employees:LeaveAccrual           -2,715.95 AED
+
+2026-07-31 * "FX result" "FX result on EUR items 2026-07"
+  generated: "month_end"
+  basis: "All AED amounts plus all EUR units (-11298.59 EUR) at CBUAE 4.233429 of 2026-07-30; cumulative FX result -7,039.49 AED, booked as the change since the previous month-end"
+  rate-source: "CBUAE fx_jul26_en.pdf, last legible day of July; 31-7 not legible in the PDF rendering (cut off after 30-7), so not the actual month-end"
+  Expenses:FXLoss                               1,649.97 AED
+  Equity:FXTranslation                          -1,649.97 AED
+
 2026-08-31 * "Salary accrual" "Contract salary 2026-08"
   generated: "month_end"
   basis: "Employment contract 18-12-2025, basic salary per month, pro rata per calendar day; xcl/parameters.yaml"
@@ -147,12 +208,25 @@
   Expenses:Staff:EndOfService                   2,333.33 AED
   Liabilities:Employees:EndOfService           -2,333.33 AED
 
+2026-08-31 * "Leave accrual" "Annual leave statutory minimum 2026-08"
+  generated: "month_end"
+  basis: "FDL 33/2021 art. 29 statutory minimum: 17.08 days entitled at 2026-08-31 (service 8.54 months, days taken 0), x basic salary / 30; liability 22,778.92 AED"
+  Expenses:Staff:Leave                          2,715.95 AED
+  Liabilities:Employees:LeaveAccrual           -2,715.95 AED
+
 2026-08-31 * "Car costs private share" "Private share 30% of car costs 2026-08"
   generated: "month_end"
   basis: "Decision Umar 2-11-2026: 30% private via the director current account (debt route, no benefit in kind)"
   Assets:Receivables:Director:Umar              1,471.85 AED
   Expenses:Car:Fuel                             -265.57 AED
   Expenses:Car:Rental                           -1,206.28 AED
+
+2026-08-31 * "FX result" "FX result on EUR items 2026-08"
+  generated: "month_end"
+  basis: "All AED amounts plus all EUR units (4971.27 EUR) at CBUAE 4.258465 of 2026-08-31; cumulative FX result -8,382.09 AED, booked as the change since the previous month-end"
+  rate-source: "CBUAE fx_aug26_en.pdf, month-end August"
+  Expenses:FXLoss                               1,342.60 AED
+  Equity:FXTranslation                          -1,342.60 AED
 
 2026-09-30 * "Salary accrual" "Contract salary 2026-09"
   generated: "month_end"
@@ -166,12 +240,25 @@
   Expenses:Staff:EndOfService                   2,333.33 AED
   Liabilities:Employees:EndOfService           -2,333.33 AED
 
+2026-09-30 * "Leave accrual" "Annual leave statutory minimum 2026-09"
+  generated: "month_end"
+  basis: "FDL 33/2021 art. 29 statutory minimum: 19.06 days entitled at 2026-09-30 (service 9.53 months, days taken 0), x basic salary / 30; liability 25,407.26 AED"
+  Expenses:Staff:Leave                          2,628.34 AED
+  Liabilities:Employees:LeaveAccrual           -2,628.34 AED
+
 2026-09-30 * "Car costs private share" "Private share 30% of car costs 2026-09"
   generated: "month_end"
   basis: "Decision Umar 2-11-2026: 30% private via the director current account (debt route, no benefit in kind)"
   Assets:Receivables:Director:Umar              540.01 AED
   Expenses:Car:Fuel                             -222.91 AED
   Expenses:Car:Rental                           -317.10 AED
+
+2026-09-30 * "FX result" "FX result on EUR items 2026-09"
+  generated: "month_end"
+  basis: "All AED amounts plus all EUR units (2137.17 EUR) at CBUAE 4.169505 of 2026-09-30; cumulative FX result -9,908.79 AED, booked as the change since the previous month-end"
+  rate-source: "CBUAE fx_sep26_en.pdf, month-end September"
+  Expenses:FXLoss                               1,526.70 AED
+  Equity:FXTranslation                          -1,526.70 AED
 
 2026-10-31 * "Salary accrual" "Contract salary 2026-10"
   generated: "month_end"
@@ -185,6 +272,12 @@
   Expenses:Staff:EndOfService                   2,333.33 AED
   Liabilities:Employees:EndOfService           -2,333.33 AED
 
+2026-10-31 * "Leave accrual" "Annual leave statutory minimum 2026-10"
+  generated: "month_end"
+  basis: "FDL 33/2021 art. 29 statutory minimum: 21.09 days entitled at 2026-10-31 (service 10.55 months, days taken 0), x basic salary / 30; liability 28,123.20 AED"
+  Expenses:Staff:Leave                          2,715.94 AED
+  Liabilities:Employees:LeaveAccrual           -2,715.94 AED
+
 2026-10-31 * "Car costs private share" "Private share 30% of car costs 2026-10"
   generated: "month_end"
   basis: "Decision Umar 2-11-2026: 30% private via the director current account (debt route, no benefit in kind)"
@@ -192,3 +285,11 @@
   Expenses:Car:Fuel                             -54.31 AED
   Expenses:Car:Rental                           -848.86 AED
   Expenses:Car:TollsParking                     -6.00 AED
+
+2026-10-31 ! "FX result" "FX result on EUR items 2026-10"
+  generated: "month_end"
+  basis: "All AED amounts plus all EUR units (-1026.17 EUR) at CBUAE 4.169505 of 2026-09-30; cumulative FX result -11,898.79 AED, booked as the change since the previous month-end"
+  rate-source: "CBUAE fx_sep26_en.pdf, month-end September"
+  open: "Provisional: CBUAE rate of 2026-10-31 not yet published, rate of 2026-09-30 used; regenerate when published"
+  Expenses:FXLoss                               1,990.00 AED
+  Equity:FXTranslation                          -1,990.00 AED

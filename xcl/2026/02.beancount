@@ -164,8 +164,9 @@
   wio-ref: "211509807"
   wio-type: "Card"
   source: "Wio export"
+  reclassified: "2026-11-03: RTA AED 870 on 9-2-2026: RTA notifications that week concern Umar's UAE driving licence (eye test, learning booklet, receipt), not tolls; personal licence: private"
   Assets:Bank:Wio-AED                               -870.00 AED
-  Expenses:Car:TollsParking                          870.00 AED
+  Assets:Receivables:Director:Umar                          870.00 AED
 
 2026-02-09 * "Taxi and chauffeur" "Yango"
   wio-ref: "211496378"

@@ -74,7 +74,7 @@ def main():
     totals = {"Assets": D(0), "Liabilities": D(0), "Equity": D(0)}
     for x in accounts:
         root = x.split(":")[0]
-        if root in totals:
+        if root in totals and x != "Equity:FXTranslation":
             totals[root] += (D(1) if root == "Assets" else D(-1)) * aed_equiv(x)
     inc = [(x, -aed_equiv(x)) for x in accounts if x.startswith("Income:")]
     exp = [(x, aed_equiv(x)) for x in accounts if x.startswith("Expenses:")]
@@ -83,6 +83,9 @@ def main():
     result = rev_total - exp_total
     fx = sum(v.get("AED", D(0)) for v in bal.values()) + sum(v.get("EUR", D(0)) for v in bal.values()) * rate
     # independent of the statements: all AED units plus all EUR units at the closing rate (every transaction balances in weights)
+    fx -= bal["Equity:FXTranslation"].get("AED", D(0))
+    # Equity:FXTranslation holds the offset of the FX result booked by scripts/month_end.py; it is netted with the
+    # translation of the EUR items and therefore not shown as equity. What remains is the FX difference not yet booked.
     write_csv(out / "income_statement.csv", ["account", "AED"],
               [[x, f2(v)] for x, v in inc if v != 0] + [["TOTAL INCOME", f2(rev_total)]]
               + [[x, f2(v)] for x, v in exp if v != 0] + [["TOTAL EXPENSES", f2(exp_total)], ["RESULT AS BOOKED", f2(result)],
@@ -92,7 +95,7 @@ def main():
     totals = {"Assets": D(0), "Liabilities": D(0), "Equity": D(0)}
     for x in accounts:
         root = x.split(":")[0]
-        if root not in totals:
+        if root not in totals or x == "Equity:FXTranslation":
             continue
         aed, eur = bal[x].get("AED", D(0)), bal[x].get("EUR", D(0))
         if aed == 0 and eur == 0:

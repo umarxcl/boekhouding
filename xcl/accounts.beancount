@@ -243,6 +243,11 @@
   ifrs: "Retained earnings"
   rgs: "BEivOvrAlr"
 
+2025-12-15 open Equity:FXTranslation                     AED
+  note: "Technical offset of the FX result on EUR items booked monthly by scripts/month_end.py (approved by Umar 3-11-2026). Netted with the translation of the EUR items at the month-end CBUAE rate; never shown as equity in the reports"
+  ifrs: "Not presented (translation offset of monetary items, IFRS for SMEs section 30)"
+  rgs: "n/a"
+
 ; ---------------------------------------------------------------------
 ; INCOME (AED only; EUR invoices converted at the CBUAE rate of the invoice date)
 ; ---------------------------------------------------------------------

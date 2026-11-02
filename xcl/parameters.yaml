@@ -14,13 +14,24 @@ eosb:
   days_per_year: 21
   day_divisor: 30
 
-# Unused annual leave is NOT accrued automatically: it depends on the leave days actually taken.
-# Set enabled: true and fill days_taken_to_date once Umar has given the number.
+# Annual leave: statutory minimum (decision Umar 3-11-2026), UAE Federal Decree-Law 33/2021 art. 29:
+# no entitlement in the first 6 months; 2 days per month of service between 6 and 12 months; 30 days per year after.
+# Liability = (entitled days - days taken) x basic salary / 30, remeasured each month-end.
+# days_taken: none reported (assumption, to be corrected when Umar reports leave taken).
 leave:
-  enabled: false
+  enabled: true
+  method: statutory
+  days_taken: 0
 
 # Private share of car costs (Expenses:Car:*), charged to the director's current account.
 # Decision of Umar 2-11-2026 (debt route, no benefit in kind). Applies to the whole of 2026.
 car_private_share:
   - from: 2026-01-01
     share: 0.30
+
+# FX result on EUR items, booked monthly against Equity:FXTranslation (decision Umar 3-11-2026).
+# Rate: CBUAE rate of the month-end; a rate older than `max_rate_age_days` before the month-end makes the entry
+# provisional (flag !), to be regenerated when the rate is published.
+fx:
+  enabled: true
+  max_rate_age_days: 3

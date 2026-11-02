@@ -7,3 +7,4 @@ date,reference,amount,currency,narration,open reason
 2026-09-19,303141625,-610.00,AED,Khidmat al qal,"Typing centre AED 610: business per Umar; what was it for (visa, translation, attestation)? receipt missing"
 2026-09-27,306814111,-65.00,AED,Khidmat al qal,Typing centre AED 65: purpose missing
 2026-10-17,INV-0012,7716.00,EUR,"Invoice INV-0012: Management fee October 2026 (6,916) + car contribution (800), invoice date 17-10",Description corrected to management fee October 2026; CBUAE rate October still to come
+2026-10-31,,1990.00,AED,FX result on EUR items 2026-10,"Provisional: CBUAE rate of 2026-10-31 not yet published, rate of 2026-09-30 used; regenerate when published"

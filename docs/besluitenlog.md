@@ -87,3 +87,14 @@ Eén regel per besluit dat de boekingen of de werkwijze bepaalt. Bron is altijd 
 | 2026-11-03 | Independent review (Opus): SEWA villa utilities AED 5,121.27 moved from Expenses:Staff:HousingUtilities to the director's current account (consistent with the villa decision of 2-11-2026; to be confirmed by Umar) | Director receivable AED 383,346.29; pro forma net owed by Umar AED 6,410.81 |
 | 2026-11-03 | Independent review: balance assertions dated 2026-11-01 added (Wio AED 3,312.91, Wio EUR 10,943.68, from the bank export); report FX line now computed independently, check line is 0.00 | xcl/2026/10.beancount, scripts/reports.py |
 | 2026-11-03 | Open after review, not booked: leave accrual (reviewer estimate up to about AED 35,000 if no leave was taken; statutory minimum lower), VAT registration effective date (threshold exceeded 17-9-2026), car costs recharged to Ekmekci (EUR 800 per month) AND 30% charged to Umar (possible double recovery), Silk Valley refund AED 1,500 without original cost, fine AED 165.75 and RTA AED 870 classification | decisions Umar |
+
+## Besluiten Umar 3-11-2026 (afsluiting oktober)
+
+| Date | Decision | Effect in the ledger |
+|---|---|---|
+| 2026-11-03 | FX result on EUR items booked monthly (one correction entry per month) instead of a redesign with EUR lots | scripts/month_end.py, Expenses:FXLoss / Income:FXGain against Equity:FXTranslation; cumulative AED -11,898.79 at 31-10 (October provisional, flag !) |
+| 2026-11-03 | Leave accrual at the statutory minimum (FDL 33/2021 art. 29), no leave taken reported | AED 28,123.20 at 31-10 (21.09 days x 1,333.33); Claude's earlier estimate of about AED 12,000 counted only months after month 6 and was wrong |
+| 2026-11-03 | Silk Valley AED 1,500 (22-1): probably a deposit refund, original not paid by XCL | Credited to the director's current account |
+| 2026-11-03 | Fines private if not deductible: CCA third car rental fine AED 165.75 private; RTA AED 870 (9-2) is Umar's driving licence (RTA mails that week), private | Director's current account |
+| 2026-11-03 | EUR 800 per month on Ekmekci invoices is no longer called car contribution; from the next invoice it is part of the management fee. Issued invoices stay as issued (no reissue, no backdating) | Note for the invoicing module and the transfer pricing file |
+| 2026-11-03 | IFZA first-year package was paid by MZML Holding B.V. NOT booked in XCL: it sits inside RD invoice F2025-9718 (AED 77,000, "tax guidance") deducted by MZML B.V.; booking it in XCL as XCL cost with a debt to MZML B.V. contradicts that deduction | Decision Umar with Hans/Dinesh before the MZML B.V. 2025 accounts; breakdown of F2025-9718 to be requested from RD |

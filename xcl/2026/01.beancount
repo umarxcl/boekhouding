@@ -11,8 +11,9 @@
   approved: "2026-11-03"
   owner-answer: "zakelijke reis: huur van airbnb"
   note: "Incoming AED 1,500 from Silk Valley Holiday Homes: refund on a business stay (credit on travel cost)"
+  reclassified: "2026-11-03: Refund from Silk Valley Holiday Homes without an original cost in XCL; probably a deposit refund (Umar, 3-11-2026) of a payment not made by XCL: belongs to Umar, credited to his current account"
   Assets:Bank:Wio-AED                              1,500.00 AED
-  Expenses:Travel:Accommodation                   -1,500.00 AED
+  Assets:Receivables:Director:Umar                   -1,500.00 AED
 
 2026-01-26 balance Assets:Bank:Wio-EUR              0.00 EUR
 
