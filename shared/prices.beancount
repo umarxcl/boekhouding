@@ -8,4 +8,67 @@
 2025-12-30 price EUR  4.319572 AED
   bron: "CBUAE fx_dec25_en.pdf, 30-12-2025"
 
-; Maandeindekoersen 2026: aan te vullen uit de CBUAE-maandoverzichten tijdens de inhaalslag
+; Koersen 2026 uit de CBUAE-maandoverzichten (centralbank.ae/media/.../fx_<mmm>26_en.pdf, 'Exchange Rates against UAE Dirham
+; for VAT related obligations'): maandeinde (laatste publicatiedag) plus de datums waarop een factuur of ontvangst in EUR is omgerekend.
+; Oktober 2026: het CBUAE-maandoverzicht was op 2-11-2026 nog niet gepubliceerd; geen koers, dus geen regel (INV-0012 staat op '!').
+; Weekenddagen hebben geen CBUAE-koers: dan de laatste publicatiedag ervoor (staat in de bron).
+
+2026-01-21 price EUR  4.310952 AED
+  bron: "CBUAE fx_jan26_en.pdf, factuurdatum INV-0001"
+
+2026-01-23 price EUR  4.309434 AED
+  bron: "CBUAE fx_jan26_en.pdf, laatste publicatiedag voor factuurdatum 24-1 (zaterdag), INV-0002"
+
+2026-01-30 price EUR  4.375149 AED
+  bron: "CBUAE fx_jan26_en.pdf, maandeinde januari"
+
+2026-02-17 price EUR  4.341017 AED
+  bron: "CBUAE fx_feb26_en.pdf, factuurdatum INV-0003"
+
+2026-02-27 price EUR  4.330778 AED
+  bron: "CBUAE fx_feb26_en.pdf, maandeinde februari (laatste publicatiedag)"
+
+2026-03-17 price EUR  4.233917 AED
+  bron: "CBUAE fx_mar26_en.pdf, factuurdatum INV-0004"
+
+2026-03-31 price EUR  4.234406 AED
+  bron: "CBUAE fx_mar26_en.pdf, maandeinde maart"
+
+2026-04-17 price EUR  4.345125 AED
+  bron: "CBUAE fx_apr26_en.pdf, factuurdatum INV-0005"
+
+2026-04-30 price EUR  4.292811 AED
+  bron: "CBUAE fx_apr26_en.pdf, maandeinde april"
+
+2026-05-15 price EUR  4.268364 AED
+  bron: "CBUAE fx_may26_en.pdf, laatste publicatiedag voor factuurdatum 17-5 (zondag), INV-0006"
+
+2026-05-29 price EUR  4.277810 AED
+  bron: "CBUAE fx_may26_en.pdf, maandeinde mei (laatste publicatiedag)"
+
+2026-06-19 price EUR  4.209652 AED
+  bron: "CBUAE fx_jun26_en.pdf, factuurdatum INV-0007"
+
+2026-06-30 price EUR  4.184232 AED
+  bron: "CBUAE fx_jun26_en.pdf, maandeinde juni"
+
+2026-07-17 price EUR  4.199543 AED
+  bron: "CBUAE fx_jul26_en.pdf, factuurdatum INV-0009"
+
+2026-07-30 price EUR  4.233429 AED
+  bron: "CBUAE fx_jul26_en.pdf, laatste leesbare dag van juli; 31-7 niet leesbaar in de PDF-weergave (afgekapt na 30-7), daarom niet het echte maandeinde"
+
+2026-08-04 price EUR  4.231966 AED
+  bron: "CBUAE fx_aug26_en.pdf, ontvangstdatum betaling Inclusionair (INV-0008) in EUR"
+
+2026-08-17 price EUR  4.257477 AED
+  bron: "CBUAE fx_aug26_en.pdf, factuurdatum INV-0010"
+
+2026-08-31 price EUR  4.258465 AED
+  bron: "CBUAE fx_aug26_en.pdf, maandeinde augustus"
+
+2026-09-17 price EUR  4.219324 AED
+  bron: "CBUAE fx_sep26_en.pdf, factuurdatum INV-0011"
+
+2026-09-30 price EUR  4.169505 AED
+  bron: "CBUAE fx_sep26_en.pdf, maandeinde september"

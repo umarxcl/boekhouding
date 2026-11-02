@@ -1,1 +1,62 @@
-; Boekingen XCL januari 2026 (gevuld door de importer)
+; Boekingen XCL januari 2026 (importer wio.py uit de Wio-jaarexport; 7 boekingen)
+; Bijlagen: Drive Boekhouding/XCL/Inkoop 2026. Vlag ! = nog niet beoordeeld (zie Sheet Boekhouding - Goedkeuring).
+
+2026-01-22 balance Assets:Bank:Wio-AED              0.00 AED
+
+2026-01-22 ! "Onbekende ontvangst" "From SILK VALLEY HOLIDAY HOMES LLC | Mirza724BreezSD"
+  wio-ref: "204001669"
+  wio-type: "Transfers"
+  bron: "Wio-export"
+  nl: "Geld ontvangen van een onbekende partij: terugbetaling van een privé-uitgave (dan rekening-courant) of omzet?"
+  Assets:Bank:Wio-AED                              1,500.00 AED
+  Expenses:Onbekend                               -1,500.00 AED
+
+2026-01-26 balance Assets:Bank:Wio-EUR              0.00 EUR
+
+2026-01-26 ! "Umar Fahad Mirza (privé)" "From Hr U F Mirza | /OAT/Private nl account to uae acco unt"
+  wio-ref: "205413395"
+  wio-type: "Transfers"
+  bron: "Wio-export"
+  nl: "Geld van Umar privé naar XCL: lening van de aandeelhouder, tenzij het (deels) de kapitaalstorting van AED 48.000 is; vaststellen per overboeking"
+  Assets:Bank:Wio-EUR                             25,000.00 EUR
+  Liabilities:Lening-aandeelhouder:Umar          -25,000.00 EUR
+
+2026-01-26 * "MDI Consultants B.V." "From MDI Consultants B.V. | Invoice INV-0002"
+  wio-ref: "205314645"
+  wio-type: "Transfers"
+  bron: "Wio-export"
+  factuur: "INV-0002"
+  Assets:Bank:Wio-EUR                              4,500.00 EUR
+  Assets:Debiteuren:MDI                           -4,500.00 EUR
+
+2026-01-26 * "Wio" "Valutawissel EUR naar AED (koers 4.2339)"
+  wio-ref: "205372200"
+  wio-ref-2: "205372202"
+  wio-type: "Currency exchange"
+  bron: "Wio-export"
+  Assets:Bank:Wio-EUR                             -4,500.00 EUR @@ 19,052.69 AED
+  Assets:Bank:Wio-AED                             19,052.69 AED
+
+2026-01-26 * "Wio" "Valutawissel EUR naar AED (koers 4.2425)"
+  wio-ref: "205648102"
+  wio-ref-2: "205648106"
+  wio-type: "Currency exchange"
+  bron: "Wio-export"
+  Assets:Bank:Wio-EUR                            -25,000.00 EUR @@ 106,061.75 AED
+  Assets:Bank:Wio-AED                            106,061.75 AED
+
+2026-01-27 ! "Sajjad Hussain" "To Sajjad Hussain | Rent and commission Nesma house"
+  wio-ref: "205820672"
+  wio-type: "Transfers"
+  bron: "Wio-export"
+  nl: "Huur en commissie voor het huis (omschrijving 'Rent and commission Nesma house'): splitsing huur, commissie en borg nodig"
+  Assets:Bank:Wio-AED                            -70,000.00 AED
+  Assets:Vooruitbetaald:Huisvesting               70,000.00 AED
+
+2026-01-29 ! "Azeem Hussain" "To Azeem Hussain | Support"
+  wio-ref: "206698291"
+  wio-type: "Transfers"
+  bron: "Wio-export"
+  nl: "Omschrijving 'Support': waarschijnlijk privé (rekening-courant); wie is dit en waarvoor?"
+  Assets:Bank:Wio-AED                             -8,000.00 AED
+  Assets:Rekening-courant:Umar                     8,000.00 AED

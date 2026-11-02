@@ -1,0 +1,979 @@
+; Boekingen XCL augustus 2026 (importer wio.py uit de Wio-jaarexport; 117 boekingen)
+; Bijlagen: Drive Boekhouding/XCL/Inkoop 2026. Vlag ! = nog niet beoordeeld (zie Sheet Boekhouding - Goedkeuring).
+
+2026-08-01 balance Assets:Bank:Wio-AED              8,174.91 AED
+
+2026-08-01 balance Assets:Bank:Wio-EUR              608.26 EUR
+
+2026-08-01 * "Umar Fahad Mirza" "To Umar Fahad Mirza | For samira clothes"
+  wio-ref: "281736133"
+  wio-type: "Transfers"
+  bron: "Wio-export"
+  nl: "Overboeking naar privé zonder Salary: rekening-courant directeur (besluit 18-10-2026), later verrekend met de loonschuld"
+  Assets:Bank:Wio-AED                             -2,000.00 AED
+  Assets:Rekening-courant:Umar                     2,000.00 AED
+
+2026-08-01 * "Umar Fahad Mirza" "To Umar Fahad Mirza | For samira"
+  wio-ref: "281824107"
+  wio-type: "Transfers"
+  bron: "Wio-export"
+  nl: "Overboeking naar privé zonder Salary: rekening-courant directeur (besluit 18-10-2026), later verrekend met de loonschuld"
+  Assets:Bank:Wio-AED                             -1,500.00 AED
+  Assets:Rekening-courant:Umar                     1,500.00 AED
+
+2026-08-02 * "Gezin, huishouden en klein inkopen (privé)" "Tph center for domesti"
+  wio-ref: "282128485"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Gezinsuitje, huishoudelijke hulp of kleine aankoop: privé tenzij er een bon met zakelijk doel is"
+  Assets:Bank:Wio-AED                             -3,349.00 AED
+  Assets:Rekening-courant:Umar                     3,349.00 AED
+
+2026-08-02 * "Google Workspace" "Google Workspace_umarmi"
+  wio-ref: "282176649"
+  wio-type: "Card"
+  bron: "Wio-export"
+  wio-fee-ref: "282176653"
+  Assets:Bank:Wio-AED                                -58.17 AED
+  Assets:Bank:Wio-AED                                 -1.16 AED
+  Expenses:Bank:Wisselkosten                           1.16 AED
+  Expenses:Software:Overig                            58.17 AED
+
+2026-08-03 ! "Umar Fahad Mirza (privé)" "From UMAR FAHAD MIRZA | UMAR FAHAD MIRZA"
+  wio-ref: "282391939"
+  wio-type: "Transfers"
+  bron: "Wio-export"
+  nl: "Geld van Umar privé naar XCL in dirham: lening of kapitaal of terugstorting? De leningrekening kent alleen euro, daarom tijdelijk op de rekening-courant"
+  Assets:Bank:Wio-AED                             21,063.03 AED
+  Assets:Rekening-courant:Umar                   -21,063.03 AED
+
+2026-08-03 ! "Umar Fahad Mirza" "To Umar Fahad Mirza | Car rental"
+  wio-ref: "282324655"
+  wio-type: "Transfers"
+  bron: "Wio-export"
+  nl: "Omschrijving 'Car rental': was dit een zakelijke autohuur die jij betaald hebt (dan Auto:Huur) of privé (rekening-courant)?"
+  Assets:Bank:Wio-AED                             -3,450.00 AED
+  Assets:Rekening-courant:Umar                     3,450.00 AED
+
+2026-08-03 * "Wio" "Valutawissel EUR naar AED (koers 4.1172)"
+  wio-ref: "282320284"
+  wio-ref-2: "282320287"
+  wio-type: "Currency exchange"
+  bron: "Wio-export"
+  Assets:Bank:Wio-EUR                               -600.00 EUR @@ 2,470.31 AED
+  Assets:Bank:Wio-AED                              2,470.31 AED
+
+2026-08-04 * "Inclusionair" "From Inclusionair B.V. | /PMS/"
+  wio-ref: "282891274"
+  wio-type: "Transfers"
+  bron: "Wio-export"
+  koers: "CBUAE 4.231966 AED per EUR (koers van 2026-08-04)"
+  Assets:Bank:Wio-EUR                             21,258.20 EUR @@ 89,963.98 AED
+  Assets:Debiteuren:Inclusionair                 -89,963.98 AED
+
+2026-08-04 * "Speedy Machine Car Rental (via Mamo)" "Mamopay speedy machine"
+  wio-ref: "283070608"
+  wio-type: "Card"
+  bron: "Wio-export"
+  Assets:Bank:Wio-AED                               -179.92 AED
+  Expenses:Auto:Huur                                 179.92 AED
+
+2026-08-04 * "Winkelen en kleding (privé)" "Mango"
+  wio-ref: "283063649"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Winkel of kleding: privé tenzij er een bon met zakelijk doel is (regel Umar 2-11-2026)"
+  Assets:Bank:Wio-AED                               -107.37 AED
+  Assets:Rekening-courant:Umar                       107.37 AED
+
+2026-08-05 * "ADNOC" "ADNOC"
+  wio-ref: "283547612"
+  wio-type: "Card"
+  bron: "Wio-export"
+  Assets:Bank:Wio-AED                               -104.70 AED
+  Expenses:Auto:Brandstof                            104.70 AED
+
+2026-08-05 * "Eten en boodschappen" "Shj cooperative societ"
+  wio-ref: "283567288"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Standaard privé (rekening-courant); alleen zakelijk als er een bon met klant of doel is"
+  Assets:Bank:Wio-AED                               -552.54 AED
+  Assets:Rekening-courant:Umar                       552.54 AED
+
+2026-08-05 * "Gezin, huishouden en klein inkopen (privé)" "Khafayef"
+  wio-ref: "283562775"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Gezinsuitje, huishoudelijke hulp of kleine aankoop: privé tenzij er een bon met zakelijk doel is"
+  Assets:Bank:Wio-AED                                 -2.50 AED
+  Assets:Rekening-courant:Umar                         2.50 AED
+
+2026-08-05 * "Gezin, huishouden en klein inkopen (privé)" "Khafayef"
+  wio-ref: "283573808"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Gezinsuitje, huishoudelijke hulp of kleine aankoop: privé tenzij er een bon met zakelijk doel is"
+  Assets:Bank:Wio-AED                                 -5.00 AED
+  Assets:Rekening-courant:Umar                         5.00 AED
+
+2026-08-05 * "Umar Fahad Mirza" "To Umar Fahad Mirza | For private"
+  wio-ref: "283342131"
+  wio-type: "Transfers"
+  bron: "Wio-export"
+  nl: "Overboeking naar privé zonder Salary: rekening-courant directeur (besluit 18-10-2026), later verrekend met de loonschuld"
+  Assets:Bank:Wio-AED                             -4,000.00 AED
+  Assets:Rekening-courant:Umar                     4,000.00 AED
+
+2026-08-05 * "e& (Etisalat)" "e& Digital App"
+  wio-ref: "283570521"
+  wio-type: "Card"
+  bron: "Wio-export"
+  Assets:Bank:Wio-AED                             -1,247.10 AED
+  Expenses:Telecom                                 1,247.10 AED
+
+2026-08-06 * "Eten en boodschappen" "Restaurant"
+  wio-ref: "284004392"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Standaard privé (rekening-courant); alleen zakelijk als er een bon met klant of doel is"
+  Assets:Bank:Wio-AED                                -33.00 AED
+  Assets:Rekening-courant:Umar                        33.00 AED
+
+2026-08-06 * "Eten en boodschappen" "Spinneys nasma"
+  wio-ref: "284004383"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Standaard privé (rekening-courant); alleen zakelijk als er een bon met klant of doel is"
+  Assets:Bank:Wio-AED                                -32.02 AED
+  Assets:Rekening-courant:Umar                        32.02 AED
+
+2026-08-06 * "Eten en boodschappen" "Texas sahara"
+  wio-ref: "283984901"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Standaard privé (rekening-courant); alleen zakelijk als er een bon met klant of doel is"
+  Assets:Bank:Wio-AED                                -31.00 AED
+  Assets:Rekening-courant:Umar                        31.00 AED
+
+2026-08-06 * "Eten en boodschappen" "Texas sahara"
+  wio-ref: "283984904"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Standaard privé (rekening-courant); alleen zakelijk als er een bon met klant of doel is"
+  Assets:Bank:Wio-AED                                -31.00 AED
+  Assets:Rekening-courant:Umar                        31.00 AED
+
+2026-08-06 * "Gezin, huishouden en klein inkopen (privé)" "Khafayef"
+  wio-ref: "284002500"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Gezinsuitje, huishoudelijke hulp of kleine aankoop: privé tenzij er een bon met zakelijk doel is"
+  Assets:Bank:Wio-AED                                 -2.50 AED
+  Assets:Rekening-courant:Umar                         2.50 AED
+
+2026-08-07 * "Amazon" "Amazon"
+  wio-ref: "284458993"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Regel Umar 2-11-2026: zakelijk zodra er een bon of factuur in Drive staat (dan Kantoor:Benodigdheden of Boeken-opleiding), anders privé (rekening-courant)"
+  Assets:Bank:Wio-AED                                -16.00 AED
+  Assets:Rekening-courant:Umar                        16.00 AED
+
+2026-08-07 * "Eten en boodschappen" "Express eat and drink r"
+  wio-ref: "284446686"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Standaard privé (rekening-courant); alleen zakelijk als er een bon met klant of doel is"
+  Assets:Bank:Wio-AED                                -30.00 AED
+  Assets:Rekening-courant:Umar                        30.00 AED
+
+2026-08-07 * "Eten en boodschappen" "Restaurant"
+  wio-ref: "284436536"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Standaard privé (rekening-courant); alleen zakelijk als er een bon met klant of doel is"
+  Assets:Bank:Wio-AED                                -25.00 AED
+  Assets:Rekening-courant:Umar                        25.00 AED
+
+2026-08-07 * "Gezin, huishouden en klein inkopen (privé)" "Khafayef"
+  wio-ref: "284431872"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Gezinsuitje, huishoudelijke hulp of kleine aankoop: privé tenzij er een bon met zakelijk doel is"
+  Assets:Bank:Wio-AED                                 -2.50 AED
+  Assets:Rekening-courant:Umar                         2.50 AED
+
+2026-08-07 * "Winkelen en kleding (privé)" "Mango"
+  wio-ref: "284394659"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Winkel of kleding: privé tenzij er een bon met zakelijk doel is (regel Umar 2-11-2026)"
+  Assets:Bank:Wio-AED                                -46.97 AED
+  Assets:Rekening-courant:Umar                        46.97 AED
+
+2026-08-08 * "ADNOC" "ADNOC"
+  wio-ref: "284804597"
+  wio-type: "Card"
+  bron: "Wio-export"
+  Assets:Bank:Wio-AED                               -165.01 AED
+  Expenses:Auto:Brandstof                            165.01 AED
+
+2026-08-08 * "Eten en boodschappen" "Restaurant"
+  wio-ref: "284793438"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Standaard privé (rekening-courant); alleen zakelijk als er een bon met klant of doel is"
+  Assets:Bank:Wio-AED                                -25.00 AED
+  Assets:Rekening-courant:Umar                        25.00 AED
+
+2026-08-08 * "Google Play (apps en abonnementen)" "Google Play Apps"
+  wio-ref: "284845591"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Regel Umar 2-11-2026: zakelijk zodra er een bon of factuur in Drive staat, anders privé (rekening-courant)"
+  Assets:Bank:Wio-AED                                169.11 AED
+  Assets:Rekening-courant:Umar                      -169.11 AED
+
+2026-08-08 * "Umar Fahad Mirza" "To Umar Fahad Mirza | For samira"
+  wio-ref: "284664880"
+  wio-type: "Transfers"
+  bron: "Wio-export"
+  nl: "Overboeking naar privé zonder Salary: rekening-courant directeur (besluit 18-10-2026), later verrekend met de loonschuld"
+  Assets:Bank:Wio-AED                             -4,000.00 AED
+  Assets:Rekening-courant:Umar                     4,000.00 AED
+
+2026-08-09 ! "Vliegticket of bagage" "Emirates"
+  wio-ref: "285082547"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Vlucht zonder bon: volgens je regel privé (rekening-courant); zakelijke reis? Zet 'zakelijk, bon volgt'"
+  Assets:Bank:Wio-AED                               -122.00 AED
+  Assets:Rekening-courant:Umar                       122.00 AED
+
+2026-08-09 * "Eten en boodschappen" "Candy castle sweets l"
+  wio-ref: "285052603"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Standaard privé (rekening-courant); alleen zakelijk als er een bon met klant of doel is"
+  Assets:Bank:Wio-AED                               -180.00 AED
+  Assets:Rekening-courant:Umar                       180.00 AED
+
+2026-08-09 * "Gezin, huishouden en klein inkopen (privé)" "Khafayef"
+  wio-ref: "285057592"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Gezinsuitje, huishoudelijke hulp of kleine aankoop: privé tenzij er een bon met zakelijk doel is"
+  Assets:Bank:Wio-AED                                -15.00 AED
+  Assets:Rekening-courant:Umar                        15.00 AED
+
+2026-08-09 * "Gezin, huishouden en klein inkopen (privé)" "Khafayef"
+  wio-ref: "285058817"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Gezinsuitje, huishoudelijke hulp of kleine aankoop: privé tenzij er een bon met zakelijk doel is"
+  Assets:Bank:Wio-AED                                 -2.50 AED
+  Assets:Rekening-courant:Umar                         2.50 AED
+
+2026-08-09 * "Gezin, huishouden en klein inkopen (privé)" "Khafayef"
+  wio-ref: "285063915"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Gezinsuitje, huishoudelijke hulp of kleine aankoop: privé tenzij er een bon met zakelijk doel is"
+  Assets:Bank:Wio-AED                                 -2.50 AED
+  Assets:Rekening-courant:Umar                         2.50 AED
+
+2026-08-10 ! "Vliegticket of bagage" "Emirates"
+  wio-ref: "285528920"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Vlucht zonder bon: volgens je regel privé (rekening-courant); zakelijke reis? Zet 'zakelijk, bon volgt'"
+  Assets:Bank:Wio-AED                                -57.00 AED
+  Assets:Rekening-courant:Umar                        57.00 AED
+
+2026-08-10 ! "Vliegticket of bagage" "Emirates"
+  wio-ref: "285528925"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Vlucht zonder bon: volgens je regel privé (rekening-courant); zakelijke reis? Zet 'zakelijk, bon volgt'"
+  Assets:Bank:Wio-AED                                -11.00 AED
+  Assets:Rekening-courant:Umar                        11.00 AED
+
+2026-08-10 * "Verzorging, sport en zorg (privé)" "Energy fitness"
+  wio-ref: "285512567"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Persoonlijke verzorging, sport of apotheek: privé (rekening-courant)"
+  Assets:Bank:Wio-AED                               -234.00 AED
+  Assets:Rekening-courant:Umar                       234.00 AED
+
+2026-08-10 * "Verzorging, sport en zorg (privé)" "Energy fitness"
+  wio-ref: "285512570"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Persoonlijke verzorging, sport of apotheek: privé (rekening-courant)"
+  Assets:Bank:Wio-AED                                -11.00 AED
+  Assets:Rekening-courant:Umar                        11.00 AED
+
+2026-08-11 * "Contante opname" "Ajman bank s"
+  wio-ref: "286009399"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Contante opname met de XCL-pas: rekening-courant directeur (besluit 18-10-2026)"
+  wio-fee-ref: "286009400"
+  Assets:Bank:Wio-AED                             -3,000.00 AED
+  Assets:Bank:Wio-AED                                 -2.10 AED
+  Assets:Rekening-courant:Umar                         2.10 AED
+  Assets:Rekening-courant:Umar                     3,000.00 AED
+
+2026-08-11 * "Ekmekci Group B.V." "From Ekmekci Group B.V. | /BENEFRES/AE//PMS/ INV-0009"
+  wio-ref: "285900426"
+  wio-type: "Transfers"
+  bron: "Wio-export"
+  factuur: "INV-0009"
+  nl: "Ontvangst managementfee; wordt afgeboekt op de openstaande factuur"
+  Assets:Bank:Wio-EUR                              7,705.50 EUR
+  Assets:Debiteuren:Ekmekci                       -7,705.50 EUR
+
+2026-08-11 * "Eten en boodschappen" "Al Ain Food and Beverages"
+  wio-ref: "285954416"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Standaard privé (rekening-courant); alleen zakelijk als er een bon met klant of doel is"
+  Assets:Bank:Wio-AED                               -100.00 AED
+  Assets:Rekening-courant:Umar                       100.00 AED
+
+2026-08-11 * "Gezin, huishouden en klein inkopen (privé)" "Khafayef"
+  wio-ref: "285933994"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Gezinsuitje, huishoudelijke hulp of kleine aankoop: privé tenzij er een bon met zakelijk doel is"
+  Assets:Bank:Wio-AED                                -15.50 AED
+  Assets:Rekening-courant:Umar                        15.50 AED
+
+2026-08-11 * "Google (via Wio)" "WL*GOOGLE"
+  wio-ref: "285995240"
+  wio-type: "Card"
+  bron: "Wio-export"
+  wio-fee-ref: "285995253"
+  Assets:Bank:Wio-AED                               -128.30 AED
+  Assets:Bank:Wio-AED                                 -2.56 AED
+  Expenses:Bank:Wisselkosten                           2.56 AED
+  Expenses:Software:Overig                           128.30 AED
+
+2026-08-12 * "Eten en boodschappen" "Restaurant"
+  wio-ref: "286352573"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Standaard privé (rekening-courant); alleen zakelijk als er een bon met klant of doel is"
+  Assets:Bank:Wio-AED                                -25.00 AED
+  Assets:Rekening-courant:Umar                        25.00 AED
+
+2026-08-12 * "Eten en boodschappen" "Restaurant"
+  wio-ref: "286366650"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Standaard privé (rekening-courant); alleen zakelijk als er een bon met klant of doel is"
+  Assets:Bank:Wio-AED                               -121.50 AED
+  Assets:Rekening-courant:Umar                       121.50 AED
+
+2026-08-13 ! "Khidmat Al Qalam / Mahmad Muslihar (typing-centrum)" "To Mahmad BURHENUDDIN KURUDI HUSSAIN MUSLIYAR | Service charge for courier transport"
+  wio-ref: "286706768"
+  wio-type: "Transfers"
+  bron: "Wio-export"
+  document: "260808 courier send via typing center.pdf"
+  drive-id: "1BU8jla7pPBON5cIHxHRdZAjzoKm693RM"
+  nl: "Servicekosten bij de koerier (zelfde factuur INV00148): zie de koerierregel"
+  Assets:Bank:Wio-AED                                -25.00 AED
+  Expenses:Overig                                     25.00 AED
+
+2026-08-13 ! "Khidmat Al Qalam / Mahmad Muslihar (typing-centrum)" "To Mahmad BURHENUDDIN KURUDI HUSSAIN MUSLIYAR | Visa application wife and kids second payment"
+  wio-ref: "286702330"
+  wio-type: "Transfers"
+  bron: "Wio-export"
+  document: "visa family.pdf"
+  drive-id: "1hXGAFWmo0MEompYKxSkVxUj1sqjC_aUt"
+  nl: "Tweede betaling familievisum (zie 9-7): samen AED 4.980 tegen een factuur van AED 4.800"
+  Assets:Bank:Wio-AED                             -1,980.00 AED
+  Expenses:Personeel:Visa-overheid                 1,980.00 AED
+
+2026-08-13 ! "Point Sixteen B.V." "To Mahmad BURHENUDDIN KURUDI HUSSAIN MUSLIYAR | Parcel send to Netherlands for point sixteen"
+  wio-ref: "286703055"
+  wio-type: "Transfers"
+  bron: "Wio-export"
+  document: "260808 courier send via typing center.pdf"
+  drive-id: "1BU8jla7pPBON5cIHxHRdZAjzoKm693RM"
+  nl: "Koerier naar Nederland 'for point sixteen', factuur INV00148 op naam van XCL (AED 491,68 + 25,00 servicekosten): kosten van Point Sixteen? Doorbelasten of zakelijk voor XCL?"
+  Assets:Bank:Wio-AED                               -491.68 AED
+  Expenses:Overig                                    491.68 AED
+
+2026-08-13 * "Eten en boodschappen" "Shj cooperative societ"
+  wio-ref: "286784863"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Standaard privé (rekening-courant); alleen zakelijk als er een bon met klant of doel is"
+  Assets:Bank:Wio-AED                               -370.59 AED
+  Assets:Rekening-courant:Umar                       370.59 AED
+
+2026-08-13 * "Fireflies.ai" "Fireflies ai"
+  wio-ref: "286837784"
+  wio-type: "Card"
+  bron: "Wio-export"
+  wio-fee-ref: "286837793"
+  Assets:Bank:Wio-AED                                -44.40 AED
+  Assets:Bank:Wio-AED                                 -0.88 AED
+  Expenses:Bank:Wisselkosten                           0.88 AED
+  Expenses:Software:AI                                44.40 AED
+
+2026-08-13 * "Google Play (apps en abonnementen)" "GOOGLE*GOOGLE PLAY APP"
+  wio-ref: "286823121"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Regel Umar 2-11-2026: zakelijk zodra er een bon of factuur in Drive staat, anders privé (rekening-courant)"
+  wio-fee-ref: "286823127"
+  Assets:Bank:Wio-AED                                -27.76 AED
+  Assets:Bank:Wio-AED                                 -0.55 AED
+  Assets:Rekening-courant:Umar                         0.55 AED
+  Assets:Rekening-courant:Umar                        27.76 AED
+
+2026-08-14 ! "Umar Fahad Mirza (privé)" "From UMAR FAHAD  MIRZA"
+  wio-ref: "287056228"
+  wio-type: "Transfers"
+  bron: "Wio-export"
+  nl: "Geld van Umar privé naar XCL in dirham: lening of kapitaal of terugstorting? De leningrekening kent alleen euro, daarom tijdelijk op de rekening-courant"
+  Assets:Bank:Wio-AED                              4,000.00 AED
+  Assets:Rekening-courant:Umar                    -4,000.00 AED
+
+2026-08-14 * "Winkelen en kleding (privé)" "Royal Melody"
+  wio-ref: "287228118"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Winkel of kleding: privé tenzij er een bon met zakelijk doel is (regel Umar 2-11-2026)"
+  Assets:Bank:Wio-AED                                -45.00 AED
+  Assets:Rekening-courant:Umar                        45.00 AED
+
+2026-08-15 ! "Onbekende leverancier" "Square"
+  wio-ref: "287569696"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Onbekende betaling: wat is dit, en zakelijk of privé?"
+  Assets:Bank:Wio-AED                                -20.44 AED
+  Expenses:Onbekend                                   20.44 AED
+
+2026-08-15 * "ADNOC" "ADNOC"
+  wio-ref: "287582329"
+  wio-type: "Card"
+  bron: "Wio-export"
+  Assets:Bank:Wio-AED                               -123.30 AED
+  Expenses:Auto:Brandstof                            123.30 AED
+
+2026-08-15 * "Eten en boodschappen" "Tim Hortons"
+  wio-ref: "287559983"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Standaard privé (rekening-courant); alleen zakelijk als er een bon met klant of doel is"
+  Assets:Bank:Wio-AED                                -21.00 AED
+  Assets:Rekening-courant:Umar                        21.00 AED
+
+2026-08-15 * "Gezin, huishouden en klein inkopen (privé)" "Khafayef"
+  wio-ref: "287568929"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Gezinsuitje, huishoudelijke hulp of kleine aankoop: privé tenzij er een bon met zakelijk doel is"
+  Assets:Bank:Wio-AED                                 -2.50 AED
+  Assets:Rekening-courant:Umar                         2.50 AED
+
+2026-08-15 * "Gezin, huishouden en klein inkopen (privé)" "Khafayef"
+  wio-ref: "287577854"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Gezinsuitje, huishoudelijke hulp of kleine aankoop: privé tenzij er een bon met zakelijk doel is"
+  Assets:Bank:Wio-AED                                -16.00 AED
+  Assets:Rekening-courant:Umar                        16.00 AED
+
+2026-08-15 * "Gezin, huishouden en klein inkopen (privé)" "Khafayef"
+  wio-ref: "287577861"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Gezinsuitje, huishoudelijke hulp of kleine aankoop: privé tenzij er een bon met zakelijk doel is"
+  Assets:Bank:Wio-AED                                 -1.00 AED
+  Assets:Rekening-courant:Umar                         1.00 AED
+
+2026-08-15 * "Wio" "Valutawissel EUR naar AED (koers 4.1307)"
+  wio-ref: "287297000"
+  wio-ref-2: "287297001"
+  wio-type: "Currency exchange"
+  bron: "Wio-export"
+  Assets:Bank:Wio-EUR                            -12,104.34 EUR @@ 50,000.00 AED
+  Assets:Bank:Wio-AED                             50,000.00 AED
+
+2026-08-16 * "Fireflies.ai" "Fireflies ai"
+  wio-ref: "287917751"
+  wio-type: "Card"
+  bron: "Wio-export"
+  wio-fee-ref: "287917754"
+  Assets:Bank:Wio-AED                               -107.30 AED
+  Assets:Bank:Wio-AED                                 -2.14 AED
+  Expenses:Bank:Wisselkosten                           2.14 AED
+  Expenses:Software:AI                               107.30 AED
+
+2026-08-16 * "Verzorging, sport en zorg (privé)" "Life Pharmacy"
+  wio-ref: "287848384"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Persoonlijke verzorging, sport of apotheek: privé (rekening-courant)"
+  Assets:Bank:Wio-AED                                -17.00 AED
+  Assets:Rekening-courant:Umar                        17.00 AED
+
+2026-08-17 ! "Fleet Master" "Fleet master"
+  wio-ref: "288298792"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Waarschijnlijk autohuur of autokosten (Fleet Master): bevestigen"
+  Assets:Bank:Wio-AED                               -391.00 AED
+  Expenses:Auto:Huur                                 391.00 AED
+
+2026-08-17 ! "Verhuurder villa (cheque 000002)" "Cheque payment | Ref. 000002"
+  wio-ref: "288114878"
+  wio-type: "Cheque"
+  bron: "Wio-export"
+  nl: "Cheque van AED 42.500, zelfde bedrag als de kwartaalhuur: waarschijnlijk huur 15 aug t/m 14 nov; bevestig en lever de chequekopie"
+  Assets:Bank:Wio-AED                            -42,500.00 AED
+  Assets:Vooruitbetaald:Huisvesting               42,500.00 AED
+
+2026-08-17 ! "Vliegticket of bagage" "Emirates"
+  wio-ref: "288294909"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Vlucht zonder bon: volgens je regel privé (rekening-courant); zakelijke reis? Zet 'zakelijk, bon volgt'"
+  Assets:Bank:Wio-AED                                -93.00 AED
+  Assets:Rekening-courant:Umar                        93.00 AED
+
+2026-08-17 * "Amazon" "Amazon ae"
+  wio-ref: "288299671"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Regel Umar 2-11-2026: zakelijk zodra er een bon of factuur in Drive staat (dan Kantoor:Benodigdheden of Boeken-opleiding), anders privé (rekening-courant)"
+  Assets:Bank:Wio-AED                                 10.80 AED
+  Assets:Rekening-courant:Umar                       -10.80 AED
+
+2026-08-17 * "Anthropic" "Anthropic claude sub"
+  wio-ref: "288335098"
+  wio-type: "Card"
+  bron: "Wio-export"
+  document: "260816 Anthropic Claude Invoice-QS2SZLW1-0008.pdf"
+  drive-id: "15QpclawYwE7i6M7KuWdXLu2q5CpzKNOv"
+  nl: "Bon of factuur in Drive gekoppeld: zakelijk (regel Umar 2-11-2026)"
+  wio-fee-ref: "288335105"
+  Assets:Bank:Wio-AED                               -777.00 AED
+  Assets:Bank:Wio-AED                                -15.54 AED
+  Expenses:Bank:Wisselkosten                          15.54 AED
+  Expenses:Software:AI                               777.00 AED
+
+2026-08-17 * "Eten en boodschappen" "Shj cooperative societ"
+  wio-ref: "288296222"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Standaard privé (rekening-courant); alleen zakelijk als er een bon met klant of doel is"
+  Assets:Bank:Wio-AED                               -592.83 AED
+  Assets:Rekening-courant:Umar                       592.83 AED
+
+2026-08-18 * "Verzorging, sport en zorg (privé)" "800 Pharmacy"
+  wio-ref: "288727001"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Persoonlijke verzorging, sport of apotheek: privé (rekening-courant)"
+  Assets:Bank:Wio-AED                                -54.60 AED
+  Assets:Rekening-courant:Umar                        54.60 AED
+
+2026-08-18 * "Verzorging, sport en zorg (privé)" "Energy fitness"
+  wio-ref: "288732081"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Persoonlijke verzorging, sport of apotheek: privé (rekening-courant)"
+  Assets:Bank:Wio-AED                               -138.00 AED
+  Assets:Rekening-courant:Umar                       138.00 AED
+
+2026-08-19 * "Wio (maandabonnement)" "Subscription fee for Aug 2026 | Essential"
+  wio-ref: "288847484"
+  wio-type: "Fees"
+  bron: "Wio-export"
+  Assets:Bank:Wio-AED                                -99.00 AED
+  Expenses:Bank:Kosten                                99.00 AED
+
+2026-08-20 * "Winkelen en kleding (privé)" "Mango"
+  wio-ref: "289550996"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Winkel of kleding: privé tenzij er een bon met zakelijk doel is (regel Umar 2-11-2026)"
+  Assets:Bank:Wio-AED                               -131.15 AED
+  Assets:Rekening-courant:Umar                       131.15 AED
+
+2026-08-20 * "Winkelen en kleding (privé)" "Mango"
+  wio-ref: "289550998"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Winkel of kleding: privé tenzij er een bon met zakelijk doel is (regel Umar 2-11-2026)"
+  Assets:Bank:Wio-AED                               -170.76 AED
+  Assets:Rekening-courant:Umar                       170.76 AED
+
+2026-08-21 ! "Onbekende leverancier" "Dark door speciality co"
+  wio-ref: "290057083"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Onbekende betaling: wat is dit, en zakelijk of privé?"
+  Assets:Bank:Wio-AED                                -73.50 AED
+  Expenses:Onbekend                                   73.50 AED
+
+2026-08-21 ! "Onbekende leverancier" "Nextuaeaedecomic"
+  wio-ref: "290011341"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Onbekende betaling: wat is dit, en zakelijk of privé?"
+  Assets:Bank:Wio-AED                             -2,040.00 AED
+  Expenses:Onbekend                                2,040.00 AED
+
+2026-08-21 * "ADNOC" "ADNOC"
+  wio-ref: "290047458"
+  wio-type: "Card"
+  bron: "Wio-export"
+  Assets:Bank:Wio-AED                               -130.02 AED
+  Expenses:Auto:Brandstof                            130.02 AED
+
+2026-08-21 * "Gezin, huishouden en klein inkopen (privé)" "Khafayef"
+  wio-ref: "290027456"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Gezinsuitje, huishoudelijke hulp of kleine aankoop: privé tenzij er een bon met zakelijk doel is"
+  Assets:Bank:Wio-AED                                 -2.50 AED
+  Assets:Rekening-courant:Umar                         2.50 AED
+
+2026-08-21 * "Umar Fahad Mirza" "To Umar Fahad Mirza | Private"
+  wio-ref: "289844202"
+  wio-type: "Transfers"
+  bron: "Wio-export"
+  nl: "Overboeking naar privé zonder Salary: rekening-courant directeur (besluit 18-10-2026), later verrekend met de loonschuld"
+  Assets:Bank:Wio-AED                             -2,000.00 AED
+  Assets:Rekening-courant:Umar                     2,000.00 AED
+
+2026-08-22 * "Eten en boodschappen" "Restaurant"
+  wio-ref: "290402807"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Standaard privé (rekening-courant); alleen zakelijk als er een bon met klant of doel is"
+  Assets:Bank:Wio-AED                               -118.50 AED
+  Assets:Rekening-courant:Umar                       118.50 AED
+
+2026-08-22 * "Gezin, huishouden en klein inkopen (privé)" "Amir al arab mobiles p"
+  wio-ref: "290404045"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Gezinsuitje, huishoudelijke hulp of kleine aankoop: privé tenzij er een bon met zakelijk doel is"
+  Assets:Bank:Wio-AED                                -40.00 AED
+  Assets:Rekening-courant:Umar                        40.00 AED
+
+2026-08-23 ! "Hotel of verblijf" "Booking"
+  wio-ref: "290774401"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Verblijf zonder bon: volgens je regel privé (rekening-courant); zakelijke reis? Zet 'zakelijk, bon volgt'"
+  wio-fee-ref: "290774406"
+  Assets:Bank:Wio-AED                             -2,351.17 AED
+  Assets:Bank:Wio-AED                                -47.02 AED
+  Assets:Rekening-courant:Umar                        47.02 AED
+  Assets:Rekening-courant:Umar                     2,351.17 AED
+
+2026-08-23 * "Umar Fahad Mirza" "To Umar Fahad Mirza | Private"
+  wio-ref: "290574567"
+  wio-type: "Transfers"
+  bron: "Wio-export"
+  nl: "Overboeking naar privé zonder Salary: rekening-courant directeur (besluit 18-10-2026), later verrekend met de loonschuld"
+  Assets:Bank:Wio-AED                             -1,100.00 AED
+  Assets:Rekening-courant:Umar                     1,100.00 AED
+
+2026-08-24 * "Eten en boodschappen" "Shj cooperative societ"
+  wio-ref: "291226559"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Standaard privé (rekening-courant); alleen zakelijk als er een bon met klant of doel is"
+  Assets:Bank:Wio-AED                               -263.91 AED
+  Assets:Rekening-courant:Umar                       263.91 AED
+
+2026-08-24 * "Umar Fahad Mirza" "To Umar Fahad Mirza | Private"
+  wio-ref: "291108331"
+  wio-type: "Transfers"
+  bron: "Wio-export"
+  nl: "Overboeking naar privé zonder Salary: rekening-courant directeur (besluit 18-10-2026), later verrekend met de loonschuld"
+  wio-fee-ref: "291108417"
+  Assets:Bank:Wio-AED                             -1,200.00 AED
+  Assets:Bank:Wio-AED                                 -1.05 AED
+  Assets:Rekening-courant:Umar                         1.05 AED
+  Assets:Rekening-courant:Umar                     1,200.00 AED
+
+2026-08-24 * "Winkelen en kleding (privé)" "Aswaq al seyouh gifts l"
+  wio-ref: "291190379"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Winkel of kleding: privé tenzij er een bon met zakelijk doel is (regel Umar 2-11-2026)"
+  Assets:Bank:Wio-AED                               -118.98 AED
+  Assets:Rekening-courant:Umar                       118.98 AED
+
+2026-08-25 * "Amazon" "Amazon"
+  wio-ref: "291719931"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Regel Umar 2-11-2026: zakelijk zodra er een bon of factuur in Drive staat (dan Kantoor:Benodigdheden of Boeken-opleiding), anders privé (rekening-courant)"
+  Assets:Bank:Wio-AED                               -196.84 AED
+  Assets:Rekening-courant:Umar                       196.84 AED
+
+2026-08-25 * "Gezin, huishouden en klein inkopen (privé)" "Khafayef"
+  wio-ref: "291701715"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Gezinsuitje, huishoudelijke hulp of kleine aankoop: privé tenzij er een bon met zakelijk doel is"
+  Assets:Bank:Wio-AED                                -31.00 AED
+  Assets:Rekening-courant:Umar                        31.00 AED
+
+2026-08-25 * "Google Play (apps en abonnementen)" "Google Play Apps"
+  wio-ref: "291755545"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Regel Umar 2-11-2026: zakelijk zodra er een bon of factuur in Drive staat, anders privé (rekening-courant)"
+  wio-fee-ref: "291755560"
+  Assets:Bank:Wio-AED                                -14.68 AED
+  Assets:Bank:Wio-AED                                 -0.29 AED
+  Assets:Rekening-courant:Umar                         0.29 AED
+  Assets:Rekening-courant:Umar                        14.68 AED
+
+2026-08-25 * "Winkelen en kleding (privé)" "Aswaq al seyouh gifts l"
+  wio-ref: "291685876"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Winkel of kleding: privé tenzij er een bon met zakelijk doel is (regel Umar 2-11-2026)"
+  Assets:Bank:Wio-AED                               -110.99 AED
+  Assets:Rekening-courant:Umar                       110.99 AED
+
+2026-08-26 * "Eten en boodschappen" "Noon food llc"
+  wio-ref: "292152650"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Standaard privé (rekening-courant); alleen zakelijk als er een bon met klant of doel is"
+  Assets:Bank:Wio-AED                                -44.00 AED
+  Assets:Rekening-courant:Umar                        44.00 AED
+
+2026-08-26 * "Netlify" "Netlify"
+  wio-ref: "292270752"
+  wio-type: "Card"
+  bron: "Wio-export"
+  wio-fee-ref: "292270761"
+  Assets:Bank:Wio-AED                                -16.65 AED
+  Assets:Bank:Wio-AED                                 -0.33 AED
+  Expenses:Bank:Wisselkosten                           0.33 AED
+  Expenses:Software:Overig                            16.65 AED
+
+2026-08-27 * "ADNOC" "ADNOC"
+  wio-ref: "292736799"
+  wio-type: "Card"
+  bron: "Wio-export"
+  Assets:Bank:Wio-AED                               -163.37 AED
+  Expenses:Auto:Brandstof                            163.37 AED
+
+2026-08-27 * "Eten en boodschappen" "Carry food mini mart l"
+  wio-ref: "292727854"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Standaard privé (rekening-courant); alleen zakelijk als er een bon met klant of doel is"
+  Assets:Bank:Wio-AED                                -14.00 AED
+  Assets:Rekening-courant:Umar                        14.00 AED
+
+2026-08-27 * "Eten en boodschappen" "Express eat and drink r"
+  wio-ref: "292728102"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Standaard privé (rekening-courant); alleen zakelijk als er een bon met klant of doel is"
+  Assets:Bank:Wio-AED                                -99.00 AED
+  Assets:Rekening-courant:Umar                        99.00 AED
+
+2026-08-27 * "Fiskl" "Fiskl accounting"
+  wio-ref: "292794286"
+  wio-type: "Card"
+  bron: "Wio-export"
+  wio-fee-ref: "292794293"
+  Assets:Bank:Wio-AED                                -51.87 AED
+  Assets:Bank:Wio-AED                                 -1.03 AED
+  Expenses:Bank:Wisselkosten                           1.03 AED
+  Expenses:Software:Overig                            51.87 AED
+
+2026-08-27 * "Gezin, huishouden en klein inkopen (privé)" "Valley lock repairing"
+  wio-ref: "292711223"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Gezinsuitje, huishoudelijke hulp of kleine aankoop: privé tenzij er een bon met zakelijk doel is"
+  Assets:Bank:Wio-AED                                -30.00 AED
+  Assets:Rekening-courant:Umar                        30.00 AED
+
+2026-08-28 ! "Vliegticket of bagage" "Emirates"
+  wio-ref: "293209799"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Vlucht zonder bon: volgens je regel privé (rekening-courant); zakelijke reis? Zet 'zakelijk, bon volgt'"
+  Assets:Bank:Wio-AED                                -80.00 AED
+  Assets:Rekening-courant:Umar                        80.00 AED
+
+2026-08-28 * "Eten en boodschappen" "Mea chaiiwala restaura"
+  wio-ref: "293187796"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Standaard privé (rekening-courant); alleen zakelijk als er een bon met klant of doel is"
+  Assets:Bank:Wio-AED                                -12.00 AED
+  Assets:Rekening-courant:Umar                        12.00 AED
+
+2026-08-28 * "Eten en boodschappen" "Oporto portuguese chic"
+  wio-ref: "293185526"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Standaard privé (rekening-courant); alleen zakelijk als er een bon met klant of doel is"
+  Assets:Bank:Wio-AED                                -32.00 AED
+  Assets:Rekening-courant:Umar                        32.00 AED
+
+2026-08-28 * "Gezin, huishouden en klein inkopen (privé)" "Khafayef"
+  wio-ref: "293190542"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Gezinsuitje, huishoudelijke hulp of kleine aankoop: privé tenzij er een bon met zakelijk doel is"
+  Assets:Bank:Wio-AED                                 -8.50 AED
+  Assets:Rekening-courant:Umar                         8.50 AED
+
+2026-08-29 * "OpenAI" "Openai chatgpt subscr"
+  wio-ref: "293668820"
+  wio-type: "Card"
+  bron: "Wio-export"
+  wio-fee-ref: "293668829"
+  Assets:Bank:Wio-AED                                -28.41 AED
+  Assets:Bank:Wio-AED                                 -0.56 AED
+  Expenses:Bank:Wisselkosten                           0.56 AED
+  Expenses:Software:AI                                28.41 AED
+
+2026-08-29 * "Umar Fahad Mirza" "To Umar Fahad Mirza | For samira expenses"
+  wio-ref: "293457420"
+  wio-type: "Transfers"
+  bron: "Wio-export"
+  nl: "Overboeking naar privé zonder Salary: rekening-courant directeur (besluit 18-10-2026), later verrekend met de loonschuld"
+  wio-fee-ref: "293457436"
+  Assets:Bank:Wio-AED                               -800.00 AED
+  Assets:Bank:Wio-AED                                 -1.05 AED
+  Assets:Rekening-courant:Umar                         1.05 AED
+  Assets:Rekening-courant:Umar                       800.00 AED
+
+2026-08-30 ! "Toerisme en luchthaven" "Tourist hub"
+  wio-ref: "294000442"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Reisgerelateerd zonder bon: privé tenzij zakelijk met bon"
+  Assets:Bank:Wio-AED                                -31.50 AED
+  Assets:Rekening-courant:Umar                        31.50 AED
+
+2026-08-30 * "ENOC" "ENOC"
+  wio-ref: "293994085"
+  wio-type: "Card"
+  bron: "Wio-export"
+  Assets:Bank:Wio-AED                                -69.80 AED
+  Expenses:Auto:Brandstof                             69.80 AED
+
+2026-08-30 * "Eten en boodschappen" "Carry food mini mart l"
+  wio-ref: "294003561"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Standaard privé (rekening-courant); alleen zakelijk als er een bon met klant of doel is"
+  Assets:Bank:Wio-AED                                 -3.50 AED
+  Assets:Rekening-courant:Umar                         3.50 AED
+
+2026-08-30 * "Eten en boodschappen" "Mea chaiiwala restaura"
+  wio-ref: "293996910"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Standaard privé (rekening-courant); alleen zakelijk als er een bon met klant of doel is"
+  Assets:Bank:Wio-AED                                -47.00 AED
+  Assets:Rekening-courant:Umar                        47.00 AED
+
+2026-08-31 ! "Vliegticket of bagage" "Emirates"
+  wio-ref: "294506205"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Vlucht zonder bon: volgens je regel privé (rekening-courant); zakelijke reis? Zet 'zakelijk, bon volgt'"
+  Assets:Bank:Wio-AED                                -19.50 AED
+  Assets:Rekening-courant:Umar                        19.50 AED
+
+2026-08-31 * "ADNOC" "ADNOC"
+  wio-ref: "294506572"
+  wio-type: "Card"
+  bron: "Wio-export"
+  Assets:Bank:Wio-AED                               -129.03 AED
+  Expenses:Auto:Brandstof                            129.03 AED
+
+2026-08-31 * "Eten en boodschappen" "Carry food mini mart l"
+  wio-ref: "294503330"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Standaard privé (rekening-courant); alleen zakelijk als er een bon met klant of doel is"
+  Assets:Bank:Wio-AED                                 -6.00 AED
+  Assets:Rekening-courant:Umar                         6.00 AED
+
+2026-08-31 * "Eten en boodschappen" "Carry food mini mart l"
+  wio-ref: "294503683"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Standaard privé (rekening-courant); alleen zakelijk als er een bon met klant of doel is"
+  Assets:Bank:Wio-AED                                 -4.25 AED
+  Assets:Rekening-courant:Umar                         4.25 AED
+
+2026-08-31 * "Eten en boodschappen" "Carry food mini mart l"
+  wio-ref: "294503795"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Standaard privé (rekening-courant); alleen zakelijk als er een bon met klant of doel is"
+  Assets:Bank:Wio-AED                                 -9.50 AED
+  Assets:Rekening-courant:Umar                         9.50 AED
+
+2026-08-31 * "Eten en boodschappen" "Dash Hospitality"
+  wio-ref: "294481090"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Standaard privé (rekening-courant); alleen zakelijk als er een bon met klant of doel is"
+  Assets:Bank:Wio-AED                                -20.00 AED
+  Assets:Rekening-courant:Umar                        20.00 AED
+
+2026-08-31 * "Eten en boodschappen" "Express eat and drink r"
+  wio-ref: "294503473"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Standaard privé (rekening-courant); alleen zakelijk als er een bon met klant of doel is"
+  Assets:Bank:Wio-AED                                -31.50 AED
+  Assets:Rekening-courant:Umar                        31.50 AED
+
+2026-08-31 * "Gezin, huishouden en klein inkopen (privé)" "Al mutameyzah auto log"
+  wio-ref: "294490301"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Gezinsuitje, huishoudelijke hulp of kleine aankoop: privé tenzij er een bon met zakelijk doel is"
+  Assets:Bank:Wio-AED                                -11.00 AED
+  Assets:Rekening-courant:Umar                        11.00 AED
+
+2026-08-31 * "Gezin, huishouden en klein inkopen (privé)" "Khafayef"
+  wio-ref: "294488773"
+  wio-type: "Card"
+  bron: "Wio-export"
+  nl: "Gezinsuitje, huishoudelijke hulp of kleine aankoop: privé tenzij er een bon met zakelijk doel is"
+  Assets:Bank:Wio-AED                                 -8.50 AED
+  Assets:Rekening-courant:Umar                         8.50 AED
+
+2026-08-31 * "Umar Fahad Mirza" "To Umar Fahad Mirza | Samira"
+  wio-ref: "294456014"
+  wio-type: "Transfers"
+  bron: "Wio-export"
+  nl: "Overboeking naar privé zonder Salary: rekening-courant directeur (besluit 18-10-2026), later verrekend met de loonschuld"
+  wio-fee-ref: "294456065"
+  Assets:Bank:Wio-AED                               -600.00 AED
+  Assets:Bank:Wio-AED                                 -1.05 AED
+  Assets:Rekening-courant:Umar                         1.05 AED
+  Assets:Rekening-courant:Umar                       600.00 AED

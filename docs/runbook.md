@@ -60,3 +60,11 @@ UAE: 7 jaar (Corporate Tax-wet; btw 5 jaar, voor onroerend goed 15). Nederland: 
 - GitHub: Umar (eigenaar), Claude via de GitHub-koppeling in claude.ai.
 - Drive en Sheets: Umar (eigenaar), Claude via de Google-koppeling.
 - Geen bankinloggegevens in het systeem; exports komen handmatig uit de Wio-app.
+
+## 8. Inhaalslag XCL januari t/m oktober 2026 (2-11-2026)
+
+- Bankexport: `data/wio_2025-11-02_2026-11-02.csv` (staat in `.gitignore`; het origineel staat in Drive, niet in git).
+- Importeren: `python3 importers/wio.py data/<export>.csv --since 2026-01-01 --until 2026-10-31 --documents importers/documenten_xcl.yaml --out <tijdelijk>.beancount --exceptions <tijdelijk>.json`, daarna `python3 scripts/split_maanden.py <tijdelijk>.beancount` om per maand `xcl/2026/MM.beancount` te schrijven (saldoregels van het volgende maand-begin komen in de laatste maand).
+- `importers/documenten_xcl.yaml` koppelt bankregels (Wio-ref) aan bonnen in Drive (`document` en `drive-id`). Bon aanwezig = zakelijk; zonder bon = privé via `Assets:Rekening-courant:Umar` met vlag `!`.
+- Verkoopfacturen: `python3 scripts/facturen.py` schrijft `xcl/2026/facturen.beancount` (koersen uit `shared/prices.beancount`).
+- Goedkeuring: de open posten met vlag `!` staan in de Google Sheet 'Boekhouding – Goedkeuring' (tabs per kwartaal).

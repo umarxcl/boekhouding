@@ -11,9 +11,42 @@
 #   account: tegenrekening
 #   payee:   nette naam van de tegenpartij
 #   flag:    optioneel "!" om altijd op de uitzonderingenlijst te zetten (bijv. grote bedragen)
+#   currency: optioneel, alleen voor regels in deze valuta (EUR of AED)
 #   nl:      optioneel, uitleg die op de maandlijst komt
 
 rules:
+  # --- Contant geld ------------------------------------------------------
+  # De importer geeft de pinopname een tag 'atm withdrawal fee' omdat Wio daar een aparte kostenregel voor boekt.
+  - match: ["atm withdrawal"]
+    account: Assets:Rekening-courant:Umar
+    payee: "Contante opname"
+    nl: "Contante opname met de XCL-pas: rekening-courant directeur (besluit 18-10-2026)"
+
+  # --- Villahuur (nog niet gespreid: dat volgt na besluit Umar) --------------
+  - match: ["sheikha latifa"]
+    type: Transfers
+    account: Assets:Vooruitbetaald:Huisvesting
+    payee: "Verhuurder villa 1153A (Sheikha Latifa Ahmed Sultan al Qassemi)"
+    flag: "!"
+    nl: "Kwartaalhuur villa (AED 42.500, 15 mei t/m 14 aug): vooruitbetaald, spreiding per maand volgt na jouw besluit"
+  - match: ["cheque payment"]
+    type: Cheque
+    account: Assets:Vooruitbetaald:Huisvesting
+    payee: "Verhuurder villa (cheque 000002)"
+    flag: "!"
+    nl: "Cheque van AED 42.500, zelfde bedrag als de kwartaalhuur: waarschijnlijk huur 15 aug t/m 14 nov; bevestig en lever de chequekopie"
+  - match: ["to sajjad hussain"]
+    type: Transfers
+    account: Assets:Vooruitbetaald:Huisvesting
+    payee: "Sajjad Hussain"
+    flag: "!"
+    nl: "Huur en commissie voor het huis (omschrijving 'Rent and commission Nesma house'): splitsing huur, commissie en borg nodig"
+  - match: ["to azeem hussain"]
+    type: Transfers
+    account: Assets:Rekening-courant:Umar
+    payee: "Azeem Hussain"
+    flag: "!"
+    nl: "Omschrijving 'Support': waarschijnlijk privé (rekening-courant); wie is dit en waarvoor?"
   # --- Omzet en klanten -------------------------------------------------
   - match: ["from ekmekci"]
     type: Transfers
@@ -34,12 +67,22 @@ rules:
     payee: "Point Sixteen B.V."
 
   # --- Geld van Umar privé naar XCL ---------------------------------------
+  # EUR: lening aandeelhouder (rekening is alleen EUR). AED: de leningrekening kent geen AED; tot Umar beslist
+  # (en een AED-rekening is toegevoegd) staat dit op de rekening-courant, met vlag.
   - match: ["re:from (hr |mr )?u ?f mirza|from umar"]
     type: Transfers
+    currency: EUR
     account: Liabilities:Lening-aandeelhouder:Umar
     payee: "Umar Fahad Mirza (privé)"
     flag: "!"
     nl: "Geld van Umar privé naar XCL: lening van de aandeelhouder, tenzij het (deels) de kapitaalstorting van AED 48.000 is; vaststellen per overboeking"
+  - match: ["re:from (hr |mr )?u ?f mirza|from umar"]
+    type: Transfers
+    currency: AED
+    account: Assets:Rekening-courant:Umar
+    payee: "Umar Fahad Mirza (privé)"
+    flag: "!"
+    nl: "Geld van Umar privé naar XCL in dirham: lening of kapitaal of terugstorting? De leningrekening kent alleen euro, daarom tijdelijk op de rekening-courant"
 
   # --- Overboekingen naar Umar -------------------------------------------
   - match: ["to umar fahad mirza", "salary"]
@@ -47,12 +90,23 @@ rules:
     account: Liabilities:Personeel:Loonschuld-Umar
     payee: "Umar Fahad Mirza"
     nl: "Salarisbetaling; verlaagt de loonschuld"
-  - match: ["to umar fahad mirza"]
+  - match: ["re:to umar fahad mirza (n|m)$"]
     type: Transfers
     account: Assets:Rekening-courant:Umar
     payee: "Umar Fahad Mirza"
     flag: "!"
-    nl: "Overboeking naar privé zonder omschrijving Salary: rekening-courant directeur, verrekend met de loonschuld"
+    nl: "Overboeking naar jou met alleen een letter als omschrijving (juli 2026, samen AED 10.000): wat was dit? Zonder uitleg boek ik het als rekening-courant"
+  - match: ["to umar fahad mirza", "car rental"]
+    type: Transfers
+    account: Assets:Rekening-courant:Umar
+    payee: "Umar Fahad Mirza"
+    flag: "!"
+    nl: "Omschrijving 'Car rental': was dit een zakelijke autohuur die jij betaald hebt (dan Auto:Huur) of privé (rekening-courant)?"
+  - match: ["to umar fahad mirza"]
+    type: Transfers
+    account: Assets:Rekening-courant:Umar
+    payee: "Umar Fahad Mirza"
+    nl: "Overboeking naar privé zonder Salary: rekening-courant directeur (besluit 18-10-2026), later verrekend met de loonschuld"
   - match: ["samira"]
     type: Transfers
     account: Assets:Rekening-courant:Umar
@@ -100,11 +154,6 @@ rules:
   - match: ["careem"]
     account: Expenses:Reis:Vervoer
     payee: "Careem"
-  - match: ["re:qatar airways|emirates|klm|flydubai|etihad|transavia"]
-    account: Expenses:Reis:Vliegtickets
-    payee: "Vliegticket"
-    flag: "!"
-    nl: "Vlucht: bevestigen dat de reis zakelijk was"
 
   # --- Telecom ----------------------------------------------------------
   - match: ["e& digital"]
@@ -183,6 +232,130 @@ rules:
 
   # --- Eten en drinken (standaard privé via rekening-courant, tenzij bon met zakelijk doel) ---
   - match: ["re:restaurant|rest\\b|cafe|caf\\xe9|coffee|starbucks|mcdonald|kfc|talabat|deliveroo|noon food|carrefour|lulu|spinneys|union coop|venice|chinese house|saya|mondieu|centr"]
+    account: Assets:Rekening-courant:Umar
+    payee: "Eten en boodschappen"
+    nl: "Standaard privé (rekening-courant); alleen zakelijk als er een bon met klant of doel is"
+
+  # --- Auto's (besluit 21-10-2026: auto via XCL is zakelijk) ----------------------
+  - match: ["amazon car park"]
+    account: Expenses:Auto:Tol-parkeren
+    payee: "Parkeren (Amazon Car Park Rental)"
+  - match: ["re:third car rental|cca third"]
+    account: Expenses:Auto:Huur
+    payee: "Third Car Rental"
+  - match: ["re:speedy machine"]
+    account: Expenses:Auto:Huur
+    payee: "Speedy Machine Car Rental (via Mamo)"
+  - match: ["invygo"]
+    account: Expenses:Auto:Huur
+    payee: "Invygo (autoabonnement)"
+  - match: ["fleet master"]
+    account: Expenses:Auto:Huur
+    payee: "Fleet Master"
+    flag: "!"
+    nl: "Waarschijnlijk autohuur of autokosten (Fleet Master): bevestigen"
+  - match: ["re:emarat|eppco"]
+    account: Expenses:Auto:Brandstof
+    payee: "Brandstof (EMARAT/EPPCO)"
+  - match: ["ev charge"]
+    account: Expenses:Auto:Brandstof
+    payee: "Elektrisch laden"
+  - match: ["re:\\bmawgif\\b|parkonic"]
+    account: Expenses:Auto:Tol-parkeren
+    payee: "Parkeren"
+  - match: ["re:dubai taxi|union taxi|aman taxi|sharjah taxi|yango|zed mobility|dtc vip"]
+    account: Expenses:Reis:Vervoer
+    payee: "Taxi en chauffeur"
+  - match: ["cardoo"]
+    account: Expenses:Auto:Huur
+    payee: "Cardoo Cyprus"
+    flag: "!"
+    nl: "Onbekende leverancier Cardoo Cyprus; de Cashflow-Sheet noemt 'autohuur contract 26020060', hetzelfde contractnummer als de boete van Third Car Rental: is dit autohuur?"
+
+  # --- Woning (loon in natura, besluit 21-10-2026) en overig zakelijk --------------
+  - match: ["sewa"]
+    account: Expenses:Personeel:Huisvesting-nuts
+    payee: "SEWA (water en stroom woning)"
+  - match: ["hostinger"]
+    account: Expenses:Software:Overig
+    payee: "Hostinger"
+  - match: ["claude"]
+    account: Expenses:Software:AI
+    payee: "Anthropic (Claude)"
+  - match: ["re:google.?workspace"]
+    account: Expenses:Software:Overig
+    payee: "Google Workspace"
+  - match: ["khidmat al qal"]
+    account: Expenses:Overig
+    payee: "Khidmat Al Qalam Typing Services"
+    flag: "!"
+    nl: "Typing-centrum (visa, vertalingen, koerier): waarvoor was dit en voor wie?"
+  - match: ["acuns"]
+    account: Expenses:Kantoor:Boeken-opleiding
+    payee: "ACUNS"
+    flag: "!"
+    nl: "ACUNS (lidmaatschap of congres): zakelijk? Je hebt een rol bij ACUNS 2026; bon opsturen"
+  - match: ["newings"]
+    account: Assets:Rekening-courant:Umar
+    payee: "neWings B.V."
+    flag: "!"
+    nl: "Factuur 2026-0098 (EUR 907,50) staat op MZML Holding B.V., niet op XCL: XCL heeft betaald voor MZML Holding B.V. De rekening Rekening-courant MZML-BV bestaat nog niet; tijdelijk op rekening-courant Umar"
+  - match: ["re:efon io|\\bsquare\\b|ziina|nlbcuae|supernova|nextuaeaedecomic|\\bcard e dubai|\\bcard e sas\\b|red desert|danat al rabei|dark door|digital sharjah|masaar|clean car wash"]
+    account: Expenses:Onbekend
+    payee: "Onbekende leverancier"
+    flag: "!"
+    nl: "Onbekende betaling: wat is dit, en zakelijk of privé?"
+
+  # --- Reizen zonder bon: volgens je regel privé, tenzij je een bon levert -----------
+  - match: ["re:hotel|premier inn|viola|vida creek|booking|westin|invygo hotel"]
+    account: Assets:Rekening-courant:Umar
+    payee: "Hotel of verblijf"
+    flag: "!"
+    nl: "Verblijf zonder bon: volgens je regel privé (rekening-courant); zakelijke reis? Zet 'zakelijk, bon volgt'"
+  - match: ["re:emirates|qatar airways|fly jinnah|flydubai|etihad|klm|transavia"]
+    account: Assets:Rekening-courant:Umar
+    payee: "Vliegticket of bagage"
+    flag: "!"
+    nl: "Vlucht zonder bon: volgens je regel privé (rekening-courant); zakelijke reis? Zet 'zakelijk, bon volgt'"
+  - match: ["re:tourist hub|dubai airport|supernova"]
+    account: Assets:Rekening-courant:Umar
+    payee: "Toerisme en luchthaven"
+    flag: "!"
+    nl: "Reisgerelateerd zonder bon: privé tenzij zakelijk met bon"
+
+  # --- Duidelijk privé (rekening-courant, besluit 18-10-2026): huishouden, kleding, zorg, sport, kinderen --------
+  - match: ["re:mango|landmark|ikea|home centre|danube|mumuso|swarovski|flat moda|torino moda|xseswary|temu|royal melody|yateem|\\bsadaf\\b|al futtaim|\\bseven\\b|\\bpaul\\b|\\bexpert\\b|\\bcarts\\b|gift"]
+    account: Assets:Rekening-courant:Umar
+    payee: "Winkelen en kleding (privé)"
+    nl: "Winkel of kleding: privé tenzij er een bon met zakelijk doel is (regel Umar 2-11-2026)"
+  - match: ["re:laundry|haircutting|antaliya|grooming|lockup|salon|platform health|energy fitness|\\bcentr\\b|\\brise\\b|pharmacy|optic"]
+    account: Assets:Rekening-courant:Umar
+    payee: "Verzorging, sport en zorg (privé)"
+    nl: "Persoonlijke verzorging, sport of apotheek: privé (rekening-courant)"
+  - match: ["re:jump n fun|global village|noqodi|nshama|pygmy|mosque|tph center|bab alwadi|valley lock|amir al arab|tech corner|dar molhimon|greensouq|royal bay|khafayef|al mutameyzah|al insaf auto|fakhr"]
+    account: Assets:Rekening-courant:Umar
+    payee: "Gezin, huishouden en klein inkopen (privé)"
+    nl: "Gezinsuitje, huishoudelijke hulp of kleine aankoop: privé tenzij er een bon met zakelijk doel is"
+  - match: ["re:to (al jimi curtains|m n j global|asim khan|mohamed ahmed attia)"]
+    type: Transfers
+    account: Assets:Rekening-courant:Umar
+    payee: "Inrichting en onderhoud woning (privé)"
+    nl: "Gordijnen, tuin, installatie of training voor de woning/jezelf: privé (rekening-courant)"
+  - match: ["re:from (silk valley|1 jamal|mourad)"]
+    type: Transfers
+    account: Expenses:Onbekend
+    payee: "Onbekende ontvangst"
+    flag: "!"
+    nl: "Geld ontvangen van een onbekende partij: terugbetaling van een privé-uitgave (dan rekening-courant) of omzet?"
+  - match: ["re:to mahmad"]
+    type: Transfers
+    account: Expenses:Personeel:Visa-overheid
+    payee: "Khidmat Al Qalam / Mahmad Muslihar (typing-centrum)"
+    flag: "!"
+    nl: "Visum of koerier via typing-centrum: familievisum is een persoonlijk voordeel (loon in natura?) of zakelijk; wat was dit?"
+
+  # --- Meer eten en boodschappen (uit de jaar-export 2026); standaard privé -------------------------
+  - match: ["re:shj cooperative|express eat|smoked meat|qlub|bateel|bhuk|the bh |al ain food|chaiiwala|candy castle|tlr service|farooj|reyadah|frozen factory|mian jee|caffe nero|home bakery|tikka and kabab|dash hospitality|blue bird|\\bpunjab\\b|telal al rabie|papa johns|texas sahara|gmg consumer|carry food|bait al shai|bonanza|backyard|albert heijn|barbecue station|thouq|qasr al seyouh|one madison|grandiose|oporto|yougurtland|flafil|seyouh al madinah|al dana|first house of tea|alhayawia|tim hortons|shake shack|grand mos|kuwait food|halla shawarma|katrina sweet|al hadeyah|zam zam|flevoland|\\bkiosk\\b|mall mart|fareej al|koukh|pk mart|bck be ce|hamzah|aswaq|le noir|good life|iceberg|tabaq|speciality club|french spirit|coffee seeds|mcdonald|starbucks|kfc|dubai hills"]
     account: Assets:Rekening-courant:Umar
     payee: "Eten en boodschappen"
     nl: "Standaard privé (rekening-courant); alleen zakelijk als er een bon met klant of doel is"

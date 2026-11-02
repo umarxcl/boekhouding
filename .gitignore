@@ -4,3 +4,4 @@ __pycache__/
 .env
 *.json.tmp
 uitzonderingen*.json
+data/

@@ -36,6 +36,7 @@ Eén regel per besluit dat de boekingen of de werkwijze bepaalt. Bron is altijd 
 | 2026-11-02 | Nieuwe rekeningen XCL: vaste activa en afschrijving, waarborgsommen, kruisposten, vooruitontvangen omzet, lening aandeelhouder, verlofverplichting, zorgverzekering, auto privégebruik als loon in natura, binnenlandse omzet, representatie gesplitst, vennootschapsbelasting, donaties, kapitaalbijdrage | accounts.beancount XCL |
 | 2026-11-02 | Nieuwe rekeningen MZML Ltd: waardevermindering per deelneming, crediteuren, overlopend, kapitaalbijdrage, bronbelasting, vennootschapsbelasting; Bank:Nog-te-openen verwijderd | accounts.beancount MZML Ltd |
 | 2026-11-02 | IFZA-licentie eerst op vooruitbetaald, maandelijks naar kosten; geld van Umar privé naar XCL als lening aandeelhouder met vlag (kapitaalstorting eerst vaststellen) | rules_xcl.yaml |
+| 2026-11-02 | Inhaalslag XCL jan-okt 2026: bank is waarheid, Cashflow-Sheet en Fiskl alleen hints; bon in Drive = zakelijk, zonder bon = privé (rekening-courant, vlag !); INV-0008 Inclusionair als vooruitontvangen, omzet 31-10-2026 (leverdatum nog te bevestigen); CBUAE-koersen alleen waargenomen, oktober ontbreekt | rules_xcl.yaml, documenten_xcl.yaml, facturen.beancount |
 
 ## Besluiten die Umar nog moet nemen (uit de review, sectie C)
 

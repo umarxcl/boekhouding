@@ -1,0 +1,251 @@
+# Koppeling bankregel (Wio-referentie) en bijlage in Drive (Boekhouding/XCL/Inkoop 2026).
+# Regel Umar 2-11-2026: bon of factuur aanwezig = zakelijk, anders privé (rekening-courant).
+# Een koppeling zet metadata document/drive-id en kan de rekening en de vlag overschrijven; bij een tegenstrijdige bon
+# (bijv. boodschappen, bagage voor Samira, factuur op naam van een andere bv) blijft de vlag "!" staan.
+# Gekoppeld op bestandsnaam, bedrag, leverancier en datum; zie docs/runbook.md. Eén bon kan meerdere bankregels dekken.
+documenten:
+  '216502954':
+    bestanden:
+    - naam: 260222 Claude Invoice-QS2SZLW1-0001.pdf
+      id: 1DmbHfjPQM2bnZF_m_vYOP6v1QGgRxH9g
+    account: Expenses:Software:AI
+  '216507092':
+    bestanden:
+    - naam: 260222 Claude Invoice-QS2SZLW1-0002.pdf
+      id: 1szjQiGVTETima3tr8Tq1s_2WU1ThOhVV
+    account: Expenses:Software:AI
+  '228712041':
+    bestanden:
+    - naam: 260327 Claude Invoice-QS2SZLW1-0003.pdf
+      id: 1-NIDERekb3Nwem7d0oqn3SuCaAv-iQFy
+    account: Expenses:Software:AI
+  '236005763':
+    bestanden:
+    - naam: 260415 Claude Invoice-QS2SZLW1-0004.pdf
+      id: 1Z1MqylWVhcUgghcaRX_7ULbvf3ipHfgI
+    account: Expenses:Software:AI
+  '248437523':
+    bestanden:
+    - naam: 260516 Claude Invoice-QS2SZLW1-0005.pdf
+      id: 1UvrfyQyuLgCEtW62fyZ71qlzsgvFqO3T
+    account: Expenses:Software:AI
+  '261697155':
+    bestanden:
+    - naam: 260616 Anthropic claude.pdf
+      id: 1aia-NIQKEtdx1gX3dxgML4fJ-WXEoM81
+    account: Expenses:Software:AI
+  '274905106':
+    bestanden:
+    - naam: 260716 anthropic claude Invoice-QS2SZLW1-0007.pdf
+      id: 1bxzNFl159SG4kFA3_b7G4lAAgYvUOiGG
+    account: Expenses:Software:AI
+  '288335098':
+    bestanden:
+    - naam: 260816 Anthropic Claude Invoice-QS2SZLW1-0008.pdf
+      id: 15QpclawYwE7i6M7KuWdXLu2q5CpzKNOv
+    account: Expenses:Software:AI
+  '301925031':
+    bestanden:
+    - naam: 260916 Claude Invoice-QS2SZLW1-0009.pdf
+      id: 1V0DrwuV7GzHSwL3RvlPPlZ6Rkbl4tumH
+    account: Expenses:Software:AI
+  '321064407':
+    bestanden:
+    - naam: 261026 Invoice-QHIUZK-00008.pdf
+      id: 1fUyiZGIHEK1epj2HUQbGz2yB37bE26Rd
+    account: Expenses:Software:Overig
+  '317615864':
+    bestanden:
+    - naam: 261019 payment RD Advisory Invoice-F2026-1141.pdf
+      id: 1SoDiHNK83qzn5kP4DdhHHO3iDF_FIzZS
+    account: Expenses:Advies:Corporate-services
+  '244669684':
+    bestanden:
+    - naam: Invoice-F2026-1056 RD Corporate Tax registry.pdf
+      id: 15zt19Q6JeNtcAK3wc3clK-iHn9rAjNAM
+    account: Expenses:Overheid:Certificaten
+  '233831880':
+    bestanden:
+    - naam: TF_Mis2604-0007.pdf
+      id: 1BQcys6QyD1trqEcdylFKioJqu4sIrDpA
+    account: Expenses:Overheid:Boetes
+    flag: ''
+    nl: 'Boete Sharjah Municipality op huurauto (factuur Third Car Rental AED 165,75): zakelijke auto, niet aftrekbaar'
+  '255733973':
+    bestanden:
+    - naam: etisalat may bill.pdf
+      id: 13MsnPlwPceMp55eZPXUf40CgBM_x9ukM
+    account: Expenses:Telecom
+  '249145370':
+    bestanden:
+    - naam: Etisalat bill.png
+      id: 1kgVaKku5Gec_2ez_dAd08zVtb2rGsqpb
+    account: Expenses:Telecom
+  '302340292':
+    bestanden:
+    - naam: Etisalat sep e-Receipt.pdf
+      id: 1JQmN2QsTRrIyer9zQ-Kq0kvHBz4L6Rgv
+    - naam: Etisalat sep e-Receipt2.pdf
+      id: 1oAkauojErrIk7Fr1Z28s0ZAmIiAXNb-Y
+    - naam: Etisalat sep e-Receipt3.pdf
+      id: 1gM3rHB_2B_XvZZLDJHpnt4c3Jt5583Sj
+    account: Expenses:Telecom
+    flag: ''
+    nl: Drie e&-betalingen (525,15 + 370,90 + 442,58) in een bankregel; bon aanwezig
+  '310571529':
+    bestanden:
+    - naam: Recharge_20261002.png
+      id: 1tQoPEtUHVSihQhw1EdqtiqNhzL8OEW0W
+    account: Expenses:Telecom
+    flag: '!'
+    nl: 'Bon toont drie nummers (UMAR, Samira, UMAR) samen AED 1.435,57: het nummer van Samira (AED 575,14) is privé; splitsen?'
+  '306483591':
+    bestanden:
+    - naam: 260926 fuel.pdf
+      id: 14b8nlFCuqWfwF7pHVQVkwdQX_OWYdTKZ
+    account: Expenses:Auto:Brandstof
+  '304011617':
+    bestanden:
+    - naam: 2026-09-20 fuel.17.jpg
+      id: 1zxCTru9nbLR0e_cQ1-DwfcgSZyQjfaSO
+    account: Expenses:Auto:Brandstof
+  '319593853':
+    bestanden:
+    - naam: 2026-10-22 15.00.04.jpg
+      id: 1ljP9awwolbYvJ5xuK0OTakbUNISWncHD
+    account: Expenses:Auto:Brandstof
+  '318593577':
+    bestanden:
+    - naam: 2026-10-19 13.24.01.jpg
+      id: 1noVkAFLuiiZgT65snQ4JJRwRMmTRxYNp
+    account: Expenses:Auto:Tol-parkeren
+    flag: ''
+    nl: Parkeerbon 19-10 (AED 20); bank boekte op 21-10
+  '249140511':
+    bestanden:
+    - naam: IMG_20260517_012906.jpg
+      id: 1fBuIJozcP_Pqkz6Fd1yV9eFzwNSEpcMG
+    account: Expenses:Reis:Vervoer
+  '262873598':
+    bestanden:
+    - naam: 260617 Uber.pdf
+      id: 1ld5K39onaxOZmceFoZG0qTgdQAiRllLl
+    account: Expenses:Reis:Vervoer
+  '303481306':
+    bestanden:
+    - naam: 260925 Hotel Mr Umar Mirza.pdf
+      id: 169ZFUhWC7iwnAS_rHympofLBVT_qAvrM
+    account: Expenses:Reis:Verblijf
+  '306828437':
+    bestanden:
+    - naam: 260925 Hotel Mr Umar Mirza.pdf
+      id: 169ZFUhWC7iwnAS_rHympofLBVT_qAvrM
+    account: Expenses:Reis:Verblijf
+    flag: ''
+    nl: Terugbetaling AED 20 op de hotelfactuur (7 nachten Premier Inn Al Jaddaf, Dubai)
+  '306829282':
+    bestanden:
+    - naam: 260926 print premier inn.jpg
+      id: 1gJyUs4DEUpJtSkl9k-MvrDzc1SikMxEh
+    account: Expenses:Reis:Verblijf
+  '268699937':
+    bestanden:
+    - naam: 260704 hotel lissabon 2pages.pdf
+      id: 1MFiXodyZ-wpwfj9N_H4koUUHezB5-KQS
+    account: Expenses:Reis:Verblijf
+  '269293904':
+    bestanden:
+    - naam: 260704 hotel lissabon 2pages.pdf
+      id: 1MFiXodyZ-wpwfj9N_H4koUUHezB5-KQS
+    account: Expenses:Reis:Verblijf
+  '286703055':
+    bestanden:
+    - naam: 260808 courier send via typing center.pdf
+      id: 1BU8jla7pPBON5cIHxHRdZAjzoKm693RM
+    account: Expenses:Overig
+    flag: '!'
+    nl: 'Koerier naar Nederland ''for point sixteen'', factuur INV00148 op naam van XCL (AED 491,68 + 25,00 servicekosten): kosten van Point Sixteen? Doorbelasten of zakelijk voor XCL?'
+  '286706768':
+    bestanden:
+    - naam: 260808 courier send via typing center.pdf
+      id: 1BU8jla7pPBON5cIHxHRdZAjzoKm693RM
+    account: Expenses:Overig
+    flag: '!'
+    nl: 'Servicekosten bij de koerier (zelfde factuur INV00148): zie de koerierregel'
+  '271747901':
+    bestanden:
+    - naam: visa family.pdf
+      id: 1hXGAFWmo0MEompYKxSkVxUj1sqjC_aUt
+    account: Expenses:Personeel:Visa-overheid
+    flag: '!'
+    nl: Familievisum (1 volwassene, 2 kinderen) factuur INV0517 AED 4.800 op naam van XCL; betaald AED 3.000 hier en 1.980 op 13-8 (samen 4.980, AED 180 meer dan de factuur). Persoonlijk voordeel (loon
+      in natura) of zakelijk?
+  '286702330':
+    bestanden:
+    - naam: visa family.pdf
+      id: 1hXGAFWmo0MEompYKxSkVxUj1sqjC_aUt
+    account: Expenses:Personeel:Visa-overheid
+    flag: '!'
+    nl: 'Tweede betaling familievisum (zie 9-7): samen AED 4.980 tegen een factuur van AED 4.800'
+  '323267093':
+    bestanden:
+    - naam: newings factuur.pdf
+      id: 1EzZNNJ2gVJBStVmmvHXbX2Pqn3_gsWj0
+    account: Assets:Rekening-courant:Umar
+    flag: '!'
+    nl: neWings factuur 2026-0098 (EUR 907,50, bedrijfswaardering) staat op MZML Holding B.V., niet op XCL; XCL heeft betaald. Rekening 'Rekening-courant MZML-BV' bestaat nog niet; tijdelijk op Umar
+  '307387104':
+    bestanden:
+    - naam: 260925 TransactionReceipt-1764223736894.pdf
+      id: 1BArKqjiABa_neYhWIMUPwStYf7podQq5
+    - naam: 260926 TransactionReceipt-1764223736894.pdf
+      id: 1DRDkzYMAb_ZmylH8AZdW2809bL8Putjl
+    account: Assets:Rekening-courant:Umar
+    flag: '!'
+    nl: 'Bon (Emirates EMD, AED 2.020) is excess baggage voor passagier Samira: privé; je regel zegt ''bon = zakelijk'', daarom ter bevestiging'
+  '307447321':
+    bestanden:
+    - naam: 2026-09-26 emirates weight.jpg
+      id: 19OqQmYu0shTig2E4DJf-luIEORvh5mbv
+    account: Assets:Rekening-courant:Umar
+    flag: '!'
+    nl: 'Bon (Emirates, AED 3.240) is excess baggage 32 kg voor passagier Samira: privé; ter bevestiging'
+  '222094815':
+    bestanden:
+    - naam: 53794559-27ae-434e-9295-d8c5606504c8_fiskl.jpg
+      id: 1DKTzAXHmpTEzfK703OOMWMbav5iRWOgA
+    account: Expenses:Representatie:Klanten
+    flag: '!'
+    nl: 'Bon Mina Kitchen (Westin Dubai Mina Seyahi), AED 195: zakelijke maaltijd? Wie was de gast en wat was het doel?'
+  '225871143':
+    bestanden:
+    - naam: IMG_20260320_233551.jpg
+      id: 13shsI4_9mBJRw3vtXXzf3FQ5Dn7YbzPC
+    account: Expenses:Representatie:Klanten
+    flag: '!'
+    nl: 'Bon Al Farooj Al Shami, AED 147: zakelijke maaltijd? Wie was de gast en wat was het doel?'
+  '315519199':
+    bestanden:
+    - naam: 2026-10-13 21.19.24.jpg
+      id: 1ETx2z4bmzge_-j1qtQ1xoeE4bbYJomyb
+    account: Expenses:Representatie:Klanten
+    flag: '!'
+    nl: 'Bon Saya DH Cafe 13-10, AED 291,00, bank AED 300 (fooi?), 2 gasten: zakelijke maaltijd? Wie was de gast en wat was het doel?'
+  '303510492':
+    bestanden:
+    - naam: 2026-09-18 15.22.01.pdf
+      id: 1u4hoEVm3DmipHNTLRY_9VgJPPu7Wd-3p
+    - naam: 2026-09-18 15.22.11.jpg
+      id: 1JxFU7aWsLEw737FF277VnI-Ib2wacSgw
+    - naam: 7efe553f-655f-4052-8eba-93e34cf6fd93_fiskl.jpg
+      id: 1gyHWfrKn6u-7zmvZ0ciJeQ1ilGSCIB4g
+    account: Assets:Rekening-courant:Umar
+    flag: '!'
+    nl: 'Bon (Géant, AED 20,51, 3 foto''s van dezelfde bon) is een boodschappenbon: privé; je regel zegt ''bon = zakelijk'', daarom ter bevestiging'
+  '303516683':
+    bestanden:
+    - naam: 51f222b9-3f7e-464e-a1df-4484c3aefd36_fiskl.jpg
+      id: 15Ynpa2KFhZTQznayNDBtCjycYQqzQv4O
+    account: Expenses:Kantoor:Benodigdheden
+    flag: '!'
+    nl: 'Bon Tech Corner General Trading AED 55 zonder specificatie: wat is gekocht en is het zakelijk?'
