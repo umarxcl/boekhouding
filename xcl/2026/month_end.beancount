@@ -25,6 +25,12 @@
   Expenses:Staff:EndOfService                   2,333.33 AED
   Liabilities:Employees:EndOfService           -2,333.33 AED
 
+2026-01-31 * "Car costs private share" "Private share 30% of car costs 2026-01"
+  generated: "month_end"
+  basis: "Decision Umar 2-11-2026: 30% private via the director current account (debt route, no benefit in kind)"
+  Assets:Receivables:Director:Umar              149.15 AED
+  Expenses:Car:Rental                           -149.15 AED
+
 2026-01-31 * "FX result" "FX result on EUR items 2026-01"
   generated: "month_end"
   basis: "All AED amounts plus all EUR units (-5919.85 EUR) at CBUAE 4.375149 of 2026-01-30; cumulative FX result -1,657.09 AED, booked as the change since the previous month-end"
@@ -128,9 +134,9 @@
 2026-05-31 * "Car costs private share" "Private share 30% of car costs 2026-05"
   generated: "month_end"
   basis: "Decision Umar 2-11-2026: 30% private via the director current account (debt route, no benefit in kind)"
-  Assets:Receivables:Director:Umar              1,341.77 AED
+  Assets:Receivables:Director:Umar              1,692.41 AED
   Expenses:Car:Fuel                             -278.14 AED
-  Expenses:Car:Rental                           -1,022.48 AED
+  Expenses:Car:Rental                           -1,373.12 AED
   Expenses:Car:TollsParking                     -41.15 AED
 
 2026-05-31 * "FX result" "FX result on EUR items 2026-05"
@@ -161,8 +167,9 @@
 2026-06-30 * "Car costs private share" "Private share 30% of car costs 2026-06"
   generated: "month_end"
   basis: "Decision Umar 2-11-2026: 30% private via the director current account (debt route, no benefit in kind)"
-  Assets:Receivables:Director:Umar              67.62 AED
+  Assets:Receivables:Director:Umar              1,034.79 AED
   Expenses:Car:Fuel                             -67.62 AED
+  Expenses:Car:Rental                           -967.17 AED
 
 2026-06-30 * "FX result" "FX result on EUR items 2026-06"
   generated: "month_end"
@@ -217,9 +224,9 @@
 2026-08-31 * "Car costs private share" "Private share 30% of car costs 2026-08"
   generated: "month_end"
   basis: "Decision Umar 2-11-2026: 30% private via the director current account (debt route, no benefit in kind)"
-  Assets:Receivables:Director:Umar              1,471.85 AED
+  Assets:Receivables:Director:Umar              1,590.09 AED
   Expenses:Car:Fuel                             -265.57 AED
-  Expenses:Car:Rental                           -1,206.28 AED
+  Expenses:Car:Rental                           -1,324.52 AED
 
 2026-08-31 * "FX result" "FX result on EUR items 2026-08"
   generated: "month_end"
@@ -249,9 +256,9 @@
 2026-09-30 * "Car costs private share" "Private share 30% of car costs 2026-09"
   generated: "month_end"
   basis: "Decision Umar 2-11-2026: 30% private via the director current account (debt route, no benefit in kind)"
-  Assets:Receivables:Director:Umar              540.01 AED
+  Assets:Receivables:Director:Umar              1,909.56 AED
   Expenses:Car:Fuel                             -222.91 AED
-  Expenses:Car:Rental                           -317.10 AED
+  Expenses:Car:Rental                           -1,686.65 AED
 
 2026-09-30 * "FX result" "FX result on EUR items 2026-09"
   generated: "month_end"
@@ -281,10 +288,10 @@
 2026-10-31 * "Car costs private share" "Private share 30% of car costs 2026-10"
   generated: "month_end"
   basis: "Decision Umar 2-11-2026: 30% private via the director current account (debt route, no benefit in kind)"
-  Assets:Receivables:Director:Umar              909.17 AED
+  Assets:Receivables:Director:Umar              1,555.20 AED
   Expenses:Car:Fuel                             -54.31 AED
-  Expenses:Car:Rental                           -848.86 AED
-  Expenses:Car:TollsParking                     -6.00 AED
+  Expenses:Car:Rental                           -1,482.59 AED
+  Expenses:Car:TollsParking                     -18.30 AED
 
 2026-10-31 ! "FX result" "FX result on EUR items 2026-10"
   generated: "month_end"

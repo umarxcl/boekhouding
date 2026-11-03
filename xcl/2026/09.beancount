@@ -848,16 +848,16 @@
   Assets:Bank:Wio-AED                               -224.38 AED
   Assets:Receivables:Director:Umar                   224.38 AED
 
-2026-09-19 ! "Khidmat Al Qalam Typing Services" "Khidmat al qal"
+2026-09-19 * "Khidmat Al Qalam Typing Services" "Khidmat al qal"
   wio-ref: "303141625"
   wio-type: "Card"
   source: "Wio export"
   note: "Typing centre (visas, translations, courier): what was this for and for whom?"
   approved: "2026-11-03"
   owner-answer: "zakelijk"
-  open: "Typing centre AED 610: business per Umar; what was it for (visa, translation, attestation)? receipt missing"
+  owner-decision: "2026-11-03: replacement Emirates ID after Umar lost his card (ICP request 17-9-2026, card printed 18-9); residency document of the employee sponsored by XCL"
   Assets:Bank:Wio-AED                               -610.00 AED
-  Expenses:Professional:CorporateServices            610.00 AED
+  Expenses:Staff:VisaGovernment            610.00 AED
 
 2026-09-19 * "Wio (monthly subscription)" "Subscription fee for Sep 2026 | Essential"
   wio-ref: "302874877"
@@ -1075,16 +1075,16 @@
   Assets:Bank:Wio-AED                                -50.00 AED
   Assets:Receivables:Director:Umar                    50.00 AED
 
-2026-09-27 ! "Khidmat Al Qalam Typing Services" "Khidmat al qal"
+2026-09-27 * "Khidmat Al Qalam Typing Services" "Khidmat al qal"
   wio-ref: "306814111"
   wio-type: "Card"
   source: "Wio export"
   note: "Typing centre (visas, translations, courier): what was this for and for whom?"
   approved: "2026-11-03"
   owner-answer: "zakelijk"
-  open: "Typing centre AED 65: purpose missing"
+  owner-decision: "2026-11-03: replacement Emirates ID after Umar lost his card (ICP request 17-9-2026, card printed 18-9); residency document of the employee sponsored by XCL"
   Assets:Bank:Wio-AED                                -65.00 AED
-  Expenses:Professional:CorporateServices             65.00 AED
+  Expenses:Staff:VisaGovernment             65.00 AED
 
 2026-09-27 * "Hotel or accommodation" "Premier inn al jaddaf"
   wio-ref: "306828437"

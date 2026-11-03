@@ -7,26 +7,26 @@ TOTAL INCOME,438236.10
 Expenses:Bank:Charges,1285.02
 Expenses:Bank:FXCharges,356.83
 Expenses:Car:Fuel,2886.44
-Expenses:Car:Rental,14655.19
-Expenses:Car:TollsParking,225.41
+Expenses:Car:Rental,23028.34
+Expenses:Car:TollsParking,254.11
 Expenses:Entertainment:Clients,3002.00
 Expenses:FXLoss,12209.51
 Expenses:Government:Certificates,3000.00
 Expenses:Marketing,1575.00
 Expenses:Office:BooksTraining,897.25
 Expenses:Office:Supplies,55.00
-Expenses:Professional:CorporateServices,1200.00
+Expenses:Professional:CorporateServices,525.00
 Expenses:Software:AI,11789.02
 Expenses:Software:Other,2057.09
 Expenses:Staff:EndOfService,24612.87
 Expenses:Staff:Leave,28123.20
 Expenses:Staff:Salary-Umar,421935.48
-Expenses:Staff:VisaGovernment,4980.00
+Expenses:Staff:VisaGovernment,5655.00
 Expenses:Telecom,6387.88
 Expenses:Travel:Accommodation,1941.44
 Expenses:Travel:Flights,5738.34
 Expenses:Travel:LocalTransport,2054.48
-TOTAL EXPENSES,550967.45
-RESULT AS BOOKED,-112731.35
+TOTAL EXPENSES,559369.30
+RESULT AS BOOKED,-121133.20
 UNBOOKED FX DIFFERENCE ON EUR ITEMS (see balance_sheet.csv),-0.00
-RESULT INCL. UNBOOKED FX,-112731.35
+RESULT INCL. UNBOOKED FX,-121133.20

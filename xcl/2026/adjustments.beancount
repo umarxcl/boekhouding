@@ -9,3 +9,270 @@
   rate: "CBUAE 4.169505 AED per EUR (rate of 2026-09-30, last available rate for 2026-10-31; October not yet published)"
   Assets:Receivables:Trade:Ekmekci                      -94.50 EUR @@ 394.02 AED
   Expenses:Bank:Charges                                 394.02 AED
+
+; ---- XCL car costs paid outside XCL (found 3-11-2026 in the Cashflow Sheet 'Transacties'; AED = foreign spend amount on the card) ----
+
+2026-01-15 * "eZhire" "XCL car cost paid outside XCL (MZML B.V. card)"
+  approved: "2026-11-03"
+  owner-answer: "Door NLse bv's waren foutjes, omdat het per ongeluk gekoppeld was aan de app / ezhire: correct"
+  source: "Cashflow Sheet Transacties row 547, MZML Holding B.V. business card (ING)"
+  Expenses:Car:Rental                           400.11 AED
+  Assets:Receivables:Related:MZML-BV            -400.11 AED
+
+2026-01-16 * "eZhire" "XCL car cost paid outside XCL (MZML B.V. card)"
+  approved: "2026-11-03"
+  owner-answer: "Door NLse bv's waren foutjes, omdat het per ongeluk gekoppeld was aan de app / ezhire: correct"
+  source: "Cashflow Sheet Transacties row 555, MZML Holding B.V. business card (ING)"
+  Expenses:Car:Rental                           5.00 AED
+  Assets:Receivables:Related:MZML-BV            -5.00 AED
+
+2026-05-06 * "eZhire" "XCL car cost paid outside XCL (MZML B.V. card)"
+  approved: "2026-11-03"
+  owner-answer: "Door NLse bv's waren foutjes, omdat het per ongeluk gekoppeld was aan de app / ezhire: correct"
+  source: "Cashflow Sheet Transacties row 1590, MZML Holding B.V. business card (ING)"
+  Expenses:Car:Rental                           187.93 AED
+  Assets:Receivables:Related:MZML-BV            -187.93 AED
+
+2026-05-06 * "eZhire" "XCL car cost paid outside XCL (MZML B.V. card)"
+  approved: "2026-11-03"
+  owner-answer: "Door NLse bv's waren foutjes, omdat het per ongeluk gekoppeld was aan de app / ezhire: correct"
+  source: "Cashflow Sheet Transacties row 1589, MZML Holding B.V. business card (ING)"
+  Expenses:Car:Rental                           12.07 AED
+  Assets:Receivables:Related:MZML-BV            -12.07 AED
+
+2026-05-12 * "eZhire" "XCL car cost paid outside XCL (MZML B.V. card)"
+  approved: "2026-11-03"
+  owner-answer: "Door NLse bv's waren foutjes, omdat het per ongeluk gekoppeld was aan de app / ezhire: correct"
+  source: "Cashflow Sheet Transacties row 1645, MZML Holding B.V. business card (ING)"
+  Expenses:Car:Rental                           958.30 AED
+  Assets:Receivables:Related:MZML-BV            -958.30 AED
+
+2026-05-15 * "eZhire" "XCL car cost paid outside XCL (MZML B.V. card)"
+  approved: "2026-11-03"
+  owner-answer: "Door NLse bv's waren foutjes, omdat het per ongeluk gekoppeld was aan de app / ezhire: correct"
+  source: "Cashflow Sheet Transacties row 1674, MZML Holding B.V. business card (ING)"
+  Expenses:Car:Rental                           10.50 AED
+  Assets:Receivables:Related:MZML-BV            -10.50 AED
+
+2026-08-14 * "eZhire" "XCL car cost paid outside XCL (MZML B.V. card)"
+  approved: "2026-11-03"
+  owner-answer: "Door NLse bv's waren foutjes, omdat het per ongeluk gekoppeld was aan de app / ezhire: correct"
+  source: "Cashflow Sheet Transacties row 2511, MZML Holding B.V. business card (ING)"
+  Expenses:Car:Rental                           272.96 AED
+  Assets:Receivables:Related:MZML-BV            -272.96 AED
+
+2026-08-16 * "eZhire" "XCL car cost paid outside XCL (MZML B.V. card)"
+  approved: "2026-11-03"
+  owner-answer: "Door NLse bv's waren foutjes, omdat het per ongeluk gekoppeld was aan de app / ezhire: correct"
+  source: "Cashflow Sheet Transacties row 2535, MZML Holding B.V. business card (ING)"
+  Expenses:Car:Rental                           94.49 AED
+  Assets:Receivables:Related:MZML-BV            -94.49 AED
+
+2026-08-17 * "eZhire" "XCL car cost paid outside XCL (MZML B.V. card)"
+  approved: "2026-11-03"
+  owner-answer: "Door NLse bv's waren foutjes, omdat het per ongeluk gekoppeld was aan de app / ezhire: correct"
+  source: "Cashflow Sheet Transacties row 2547, MZML Holding B.V. business card (ING)"
+  Expenses:Car:Rental                           94.49 AED
+  Assets:Receivables:Related:MZML-BV            -94.49 AED
+
+2026-08-18 * "eZhire" "XCL car cost paid outside XCL (MZML B.V. card)"
+  approved: "2026-11-03"
+  owner-answer: "Door NLse bv's waren foutjes, omdat het per ongeluk gekoppeld was aan de app / ezhire: correct"
+  source: "Cashflow Sheet Transacties row 2557, MZML Holding B.V. business card (ING)"
+  Expenses:Car:Rental                           94.49 AED
+  Assets:Receivables:Related:MZML-BV            -94.49 AED
+
+2026-08-19 * "eZhire" "XCL car cost paid outside XCL (MZML B.V. card)"
+  approved: "2026-11-03"
+  owner-answer: "Door NLse bv's waren foutjes, omdat het per ongeluk gekoppeld was aan de app / ezhire: correct"
+  source: "Cashflow Sheet Transacties row 2563, MZML Holding B.V. business card (ING)"
+  Expenses:Car:Rental                           94.49 AED
+  Assets:Receivables:Related:MZML-BV            -94.49 AED
+
+2026-08-21 * "eZhire" "XCL car cost paid outside XCL (MZML B.V. card)"
+  approved: "2026-11-03"
+  owner-answer: "Door NLse bv's waren foutjes, omdat het per ongeluk gekoppeld was aan de app / ezhire: correct"
+  source: "Cashflow Sheet Transacties row 2578, MZML Holding B.V. business card (ING)"
+  Expenses:Car:Rental                           1,072.40 AED
+  Assets:Receivables:Related:MZML-BV            -1,072.40 AED
+
+2026-09-19 * "eZhire" "XCL car cost paid outside XCL (MZML B.V. card)"
+  approved: "2026-11-03"
+  owner-answer: "Door NLse bv's waren foutjes, omdat het per ongeluk gekoppeld was aan de app / ezhire: correct"
+  source: "Cashflow Sheet Transacties row 2925, MZML Holding B.V. business card (ING)"
+  Expenses:Car:Rental                           240.26 AED
+  Assets:Receivables:Related:MZML-BV            -240.26 AED
+
+2026-01-18 * "eZhire" "XCL car cost paid outside XCL (MDI Amex)"
+  approved: "2026-11-03"
+  owner-answer: "Door NLse bv's waren foutjes, omdat het per ongeluk gekoppeld was aan de app / ezhire: correct"
+  source: "Cashflow Sheet Transacties row 569, MDI Consultants B.V. Amex"
+  Expenses:Car:Rental                           92.07 AED
+  Assets:Receivables:Related:MDI                -92.07 AED
+
+2026-08-27 * "eZhire" "XCL car cost paid outside XCL (MDI Amex)"
+  approved: "2026-11-03"
+  owner-answer: "Door NLse bv's waren foutjes, omdat het per ongeluk gekoppeld was aan de app / ezhire: correct"
+  source: "Cashflow Sheet Transacties row 2656, MDI Consultants B.V. Amex"
+  Expenses:Car:Rental                           15.75 AED
+  Assets:Receivables:Related:MDI                -15.75 AED
+
+2026-08-28 * "eZhire" "XCL car cost paid outside XCL (MDI Amex)"
+  approved: "2026-11-03"
+  owner-answer: "Door NLse bv's waren foutjes, omdat het per ongeluk gekoppeld was aan de app / ezhire: correct"
+  source: "Cashflow Sheet Transacties row 2670, MDI Consultants B.V. Amex"
+  Expenses:Car:Rental                           5.08 AED
+  Assets:Receivables:Related:MDI                -5.08 AED
+
+2026-09-01 * "eZhire" "XCL car cost paid outside XCL (MDI Amex)"
+  approved: "2026-11-03"
+  owner-answer: "Door NLse bv's waren foutjes, omdat het per ongeluk gekoppeld was aan de app / ezhire: correct"
+  source: "Cashflow Sheet Transacties row 2714, MDI Consultants B.V. Amex"
+  Expenses:Car:Rental                           1,007.11 AED
+  Assets:Receivables:Related:MDI                -1,007.11 AED
+
+2026-09-02 * "eZhire" "XCL car cost paid outside XCL (MDI Amex)"
+  approved: "2026-11-03"
+  owner-answer: "Door NLse bv's waren foutjes, omdat het per ongeluk gekoppeld was aan de app / ezhire: correct"
+  source: "Cashflow Sheet Transacties row 2727, MDI Consultants B.V. Amex"
+  Expenses:Car:Rental                           14.70 AED
+  Assets:Receivables:Related:MDI                -14.70 AED
+
+2026-09-03 * "eZhire" "XCL car cost paid outside XCL (MDI Amex)"
+  approved: "2026-11-03"
+  owner-answer: "Door NLse bv's waren foutjes, omdat het per ongeluk gekoppeld was aan de app / ezhire: correct"
+  source: "Cashflow Sheet Transacties row 2738, MDI Consultants B.V. Amex"
+  Expenses:Car:Rental                           15.24 AED
+  Assets:Receivables:Related:MDI                -15.24 AED
+
+2026-09-09 * "eZhire" "XCL car cost paid outside XCL (MDI Amex)"
+  approved: "2026-11-03"
+  owner-answer: "Door NLse bv's waren foutjes, omdat het per ongeluk gekoppeld was aan de app / ezhire: correct"
+  source: "Cashflow Sheet Transacties row 2789, MDI Consultants B.V. Amex"
+  Expenses:Car:Rental                           36.75 AED
+  Assets:Receivables:Related:MDI                -36.75 AED
+
+2026-09-09 * "eZhire" "XCL car cost paid outside XCL (MDI Amex)"
+  approved: "2026-11-03"
+  owner-answer: "Door NLse bv's waren foutjes, omdat het per ongeluk gekoppeld was aan de app / ezhire: correct"
+  source: "Cashflow Sheet Transacties row 2790, MDI Consultants B.V. Amex"
+  Expenses:Car:Rental                           63.00 AED
+  Assets:Receivables:Related:MDI                -63.00 AED
+
+2026-09-10 * "eZhire" "XCL car cost paid outside XCL (MDI Amex)"
+  approved: "2026-11-03"
+  owner-answer: "Door NLse bv's waren foutjes, omdat het per ongeluk gekoppeld was aan de app / ezhire: correct"
+  source: "Cashflow Sheet Transacties row 2804, MDI Consultants B.V. Amex"
+  Expenses:Car:Rental                           19.06 AED
+  Assets:Receivables:Related:MDI                -19.06 AED
+
+2026-09-16 * "eZhire" "XCL car cost paid outside XCL (MDI Amex)"
+  approved: "2026-11-03"
+  owner-answer: "Door NLse bv's waren foutjes, omdat het per ongeluk gekoppeld was aan de app / ezhire: correct"
+  source: "Cashflow Sheet Transacties row 2890, MDI Consultants B.V. Amex"
+  Expenses:Car:Rental                           42.00 AED
+  Assets:Receivables:Related:MDI                -42.00 AED
+
+2026-09-22 * "eZhire" "XCL car cost paid outside XCL (MDI Amex)"
+  approved: "2026-11-03"
+  owner-answer: "Door NLse bv's waren foutjes, omdat het per ongeluk gekoppeld was aan de app / ezhire: correct"
+  source: "Cashflow Sheet Transacties row 2973, MDI Consultants B.V. Amex"
+  Expenses:Car:Rental                           457.22 AED
+  Assets:Receivables:Related:MDI                -457.22 AED
+
+2026-09-23 * "eZhire" "XCL car cost paid outside XCL (MDI Amex)"
+  approved: "2026-11-03"
+  owner-answer: "Door NLse bv's waren foutjes, omdat het per ongeluk gekoppeld was aan de app / ezhire: correct"
+  source: "Cashflow Sheet Transacties row 2988, MDI Consultants B.V. Amex"
+  Expenses:Car:Rental                           30.45 AED
+  Assets:Receivables:Related:MDI                -30.45 AED
+
+2026-09-24 * "eZhire" "XCL car cost paid outside XCL (MDI Amex)"
+  approved: "2026-11-03"
+  owner-answer: "Door NLse bv's waren foutjes, omdat het per ongeluk gekoppeld was aan de app / ezhire: correct"
+  source: "Cashflow Sheet Transacties row 3003, MDI Consultants B.V. Amex"
+  Expenses:Car:Rental                           31.50 AED
+  Assets:Receivables:Related:MDI                -31.50 AED
+
+2026-09-26 * "eZhire" "XCL car cost paid outside XCL (MDI Amex)"
+  approved: "2026-11-03"
+  owner-answer: "Door NLse bv's waren foutjes, omdat het per ongeluk gekoppeld was aan de app / ezhire: correct"
+  source: "Cashflow Sheet Transacties row 3025, MDI Consultants B.V. Amex"
+  Expenses:Car:Rental                           445.90 AED
+  Assets:Receivables:Related:MDI                -445.90 AED
+
+2026-09-30 * "eZhire" "XCL car cost paid outside XCL (MDI Amex)"
+  approved: "2026-11-03"
+  owner-answer: "Door NLse bv's waren foutjes, omdat het per ongeluk gekoppeld was aan de app / ezhire: correct"
+  source: "Cashflow Sheet Transacties row 3082, MDI Consultants B.V. Amex"
+  Expenses:Car:Rental                           5.08 AED
+  Assets:Receivables:Related:MDI                -5.08 AED
+
+2026-09-30 * "eZhire" "XCL car cost paid outside XCL (MDI Amex)"
+  approved: "2026-11-03"
+  owner-answer: "Door NLse bv's waren foutjes, omdat het per ongeluk gekoppeld was aan de app / ezhire: correct"
+  source: "Cashflow Sheet Transacties row 3083, MDI Consultants B.V. Amex"
+  Expenses:Car:Rental                           10.16 AED
+  Assets:Receivables:Related:MDI                -10.16 AED
+
+2026-09-30 * "eZhire" "XCL car cost paid outside XCL (MDI Amex)"
+  approved: "2026-11-03"
+  owner-answer: "Door NLse bv's waren foutjes, omdat het per ongeluk gekoppeld was aan de app / ezhire: correct"
+  source: "Cashflow Sheet Transacties row 3084, MDI Consultants B.V. Amex"
+  Expenses:Car:Rental                           10.16 AED
+  Assets:Receivables:Related:MDI                -10.16 AED
+
+2026-09-30 * "eZhire" "XCL car cost paid outside XCL (MDI Amex)"
+  approved: "2026-11-03"
+  owner-answer: "Door NLse bv's waren foutjes, omdat het per ongeluk gekoppeld was aan de app / ezhire: correct"
+  source: "Cashflow Sheet Transacties row 3085, MDI Consultants B.V. Amex"
+  Expenses:Car:Rental                           36.58 AED
+  Assets:Receivables:Related:MDI                -36.58 AED
+
+2026-10-01 * "eZhire" "XCL car cost paid outside XCL (MDI Amex)"
+  approved: "2026-11-03"
+  owner-answer: "Door NLse bv's waren foutjes, omdat het per ongeluk gekoppeld was aan de app / ezhire: correct"
+  source: "Cashflow Sheet Transacties row 3104, MDI Consultants B.V. Amex"
+  Expenses:Car:Rental                           12.43 AED
+  Assets:Receivables:Related:MDI                -12.43 AED
+
+2026-10-23 * "eZhire" "XCL car cost paid outside XCL (MDI Amex)"
+  approved: "2026-11-03"
+  owner-answer: "Door NLse bv's waren foutjes, omdat het per ongeluk gekoppeld was aan de app / ezhire: correct"
+  source: "Cashflow Sheet Transacties row 3408, MDI Consultants B.V. Amex"
+  Expenses:Car:TollsParking                     26.30 AED
+  Assets:Receivables:Related:MDI                -26.30 AED
+
+2026-10-23 * "eZhire" "XCL car cost paid outside XCL (MDI Amex)"
+  approved: "2026-11-03"
+  owner-answer: "Door NLse bv's waren foutjes, omdat het per ongeluk gekoppeld was aan de app / ezhire: correct"
+  source: "Cashflow Sheet Transacties row 3409, MDI Consultants B.V. Amex"
+  Expenses:Car:TollsParking                     14.70 AED
+  Assets:Receivables:Related:MDI                -14.70 AED
+
+2026-06-16 * "Speedy Machine Car Rental" "XCL car rental paid privately by Umar (Emirates Islamic card), mid-June to mid-July"
+  approved: "2026-11-03"
+  source: "Cashflow Sheet Transacties row 1983; Gmail MamoPay receipt PAY-90E3CA1708 (16-6-2026): AED 3,130.00 + 93.90 processing fee"
+  document: "Gmail: Payment to speedy machine car rental, 16-6-2026"
+  Expenses:Car:Rental                              3,223.90 AED
+  Assets:Receivables:Director:Umar                -3,223.90 AED
+
+2026-08-03 * "Prime Lease Car Rental" "XCL car rental 3 months (August to October 2026, no deposit for a 3-month term), paid by Umar privately and by MDI by mistake"
+  approved: "2026-11-03"
+  owner-answer: "als ik direct drie maanden zou afnemen, hoefde ik geen borg te betalen"
+  source: "Cashflow Sheet Transacties rows 2410 (Emirates Islamic, AED 5,100) and 2395 (MDI Knab, AED 1,200); no invoice found"
+  Assets:Prepayments:Other                         6,300.00 AED
+  Assets:Receivables:Director:Umar                -5,100.00 AED
+  Assets:Receivables:Related:MDI                  -1,200.00 AED
+
+2026-08-31 * "Prime Lease Car Rental" "Release prepaid car rental, August 2026 (1/3 of AED 6,300)"
+  Expenses:Car:Rental                              2,100.00 AED
+  Assets:Prepayments:Other                        -2,100.00 AED
+
+2026-09-30 * "Prime Lease Car Rental" "Release prepaid car rental, September 2026 (1/3 of AED 6,300)"
+  Expenses:Car:Rental                              2,100.00 AED
+  Assets:Prepayments:Other                        -2,100.00 AED
+
+2026-10-31 * "Prime Lease Car Rental" "Release prepaid car rental, October 2026 (1/3 of AED 6,300)"
+  Expenses:Car:Rental                              2,100.00 AED
+  Assets:Prepayments:Other                        -2,100.00 AED

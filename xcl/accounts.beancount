@@ -123,11 +123,19 @@
   rgs: "BVorVov"
 
 2026-01-01 open Assets:Receivables:Related:MZML-BV       AED
-  note: "Receivable from MZML Holding B.V. (Netherlands): costs XCL paid on behalf of MZML Holding B.V., e.g. neWings invoice 2026-0098"
+  note: "Current account with MZML Holding B.V. (Netherlands), both directions: costs XCL paid for MZML B.V. (neWings 2026-0098) and XCL car costs paid by mistake with the MZML B.V. card (ezhire app linked to the wrong card). Positive = MZML B.V. owes XCL"
   vat: "n/a"
   ct: "arms-length-test"
   related-party: "related-party"
   ifrs: "Receivable from related party"
+  rgs: "BVorVov"
+
+2026-01-01 open Assets:Receivables:Related:MDI           AED
+  note: "Current account with MDI Consultants B.V. (Netherlands), both directions: XCL car costs paid by mistake with MDI's Amex and Knab cards (ezhire app and Prime Lease, 2026). Negative = XCL owes MDI. Separate from the trade receivable for MDI's management fees"
+  vat: "n/a"
+  ct: "arms-length-test"
+  related-party: "related-party"
+  ifrs: "Payable to / receivable from related party"
   rgs: "BVorVov"
 
 2025-12-15 open Assets:ShareCapitalUnpaid                AED

@@ -1,0 +1,36 @@
+entity_paid,card,date,counterparty,AED,EUR,cashflow_row,treatment
+MZML Holding B.V.,ING businesscard,2026-01-15,ezhire.ae,400.11,95.99,547,XCL cost: book as receivable on XCL (not as MZML cost)
+MZML Holding B.V.,ING businesscard,2026-01-16,ezhire.ae,5.00,1.19,555,idem
+MZML Holding B.V.,ING businesscard,2026-05-06,ezhire.ae,187.93,44.87,1590,idem
+MZML Holding B.V.,ING businesscard,2026-05-06,ezhire.ae,12.07,2.88,1589,idem
+MZML Holding B.V.,ING businesscard,2026-05-12,ezhire.ae,958.30,227.74,1645,idem
+MZML Holding B.V.,ING businesscard,2026-05-15,ezhire.ae,10.50,2.51,1674,idem
+MZML Holding B.V.,ING businesscard,2026-08-14,ezhire.ae,272.96,66.19,2511,idem
+MZML Holding B.V.,ING businesscard,2026-08-16,ezhire.ae,94.49,22.88,2535,idem
+MZML Holding B.V.,ING businesscard,2026-08-17,ezhire.ae,94.49,22.88,2547,idem
+MZML Holding B.V.,ING businesscard,2026-08-18,ezhire.ae,94.49,22.81,2557,idem
+MZML Holding B.V.,ING businesscard,2026-08-19,ezhire.ae,94.49,22.80,2563,idem
+MZML Holding B.V.,ING businesscard,2026-08-21,ezhire.ae,1072.40,256.74,2578,idem
+MZML Holding B.V.,ING businesscard,2026-09-19,ezhire.ae,240.26,58.54,2925,idem
+MDI Consultants B.V.,Amex,2026-01-18,Ezhire,92.07,22.11,569,XCL cost: book as receivable on XCL (not as MDI cost)
+MDI Consultants B.V.,Amex,2026-08-27,Ezhire,15.75,3.78,2656,idem
+MDI Consultants B.V.,Amex,2026-08-28,Ezhire,5.08,1.21,2670,idem
+MDI Consultants B.V.,Amex,2026-09-01,Ezhire,1007.11,242.32,2714,idem
+MDI Consultants B.V.,Amex,2026-09-02,Ezhire,14.70,3.54,2727,idem
+MDI Consultants B.V.,Amex,2026-09-03,Ezhire,15.24,3.66,2738,idem
+MDI Consultants B.V.,Amex,2026-09-09,Ezhire,36.75,8.81,2789,idem
+MDI Consultants B.V.,Amex,2026-09-09,Ezhire,63.00,15.10,2790,idem
+MDI Consultants B.V.,Amex,2026-09-10,Ezhire,19.06,4.59,2804,idem
+MDI Consultants B.V.,Amex,2026-09-16,Ezhire,42.00,10.15,2890,idem
+MDI Consultants B.V.,Amex,2026-09-22,Ezhire,457.22,111.38,2973,idem
+MDI Consultants B.V.,Amex,2026-09-23,Ezhire,30.45,7.44,2988,idem
+MDI Consultants B.V.,Amex,2026-09-24,Ezhire,31.50,7.70,3003,idem
+MDI Consultants B.V.,Amex,2026-09-26,Ezhire,445.90,109.13,3025,idem
+MDI Consultants B.V.,Amex,2026-09-30,Ezhire,5.08,1.24,3082,idem
+MDI Consultants B.V.,Amex,2026-09-30,Ezhire,10.16,2.50,3083,idem
+MDI Consultants B.V.,Amex,2026-09-30,Ezhire,10.16,2.50,3084,idem
+MDI Consultants B.V.,Amex,2026-09-30,Ezhire,36.58,8.98,3085,idem
+MDI Consultants B.V.,Amex,2026-10-01,Ezhire,12.43,3.07,3104,idem
+MDI Consultants B.V.,Amex,2026-10-23,Ezhire (Salik),26.30,6.56,3408,idem
+MDI Consultants B.V.,Amex,2026-10-23,Ezhire (Salik),14.70,3.65,3409,idem
+MDI Consultants B.V.,Knab,2026-08-03,Prime Lease Car Rental,1200.00,289.30,2395,idem
