@@ -50,14 +50,14 @@
   Assets:Bank:Wio-AED                             21,063.03 AED
   Liabilities:ShareholderLoan:Umar-AED           -21,063.03 AED
 
-2026-08-03 ! "Umar Fahad Mirza" "To Umar Fahad Mirza | Car rental"
+2026-08-03 * "Umar Fahad Mirza" "To Umar Fahad Mirza | Car rental"
   wio-ref: "282324655"
   wio-type: "Transfers"
   source: "Wio export"
   note: "Description 'Car rental': was this a business car rental that you paid (then Car:Rental) or private (director's current account)?"
   approved: "2026-11-03"
   owner-answer: "Dit is Autohuur"
-  open: "Car rental paid by Umar and reimbursed; rental invoice missing. Falls under the 30% private car share"
+  owner-decision: "2026-11-03: business, same as the other car rentals (30% private via month-end); reimbursement to Umar of a rental he paid privately; supplier receipt not found in Gmail (searched 3-11-2026)"
   Assets:Bank:Wio-AED                             -3,450.00 AED
   Expenses:Car:Rental                              3,450.00 AED
 
