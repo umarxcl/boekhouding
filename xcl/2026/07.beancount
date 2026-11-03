@@ -215,26 +215,26 @@
   Assets:Bank:Wio-AED                               -212.10 AED
   Assets:Receivables:Director:Umar                   212.10 AED
 
-2026-07-16 ! "Unknown supplier" "E dubai"
+2026-07-16 * "Unknown supplier" "E dubai"
   wio-ref: "274848230"
   wio-type: "Card"
   source: "Wio export"
   note: "Unknown payment: what is this, and is it business or private?"
   approved: "2026-11-03"
   owner-answer: "Bagage extra boeken"
-  open: "Same as above"
+  owner-decision: "2026-11-03: confirmed, 25% business / 75% private like the return flight"
   Assets:Bank:Wio-AED                               -775.83 AED
   Expenses:Travel:Flights                            193.96 AED
   Assets:Receivables:Director:Umar                   581.87 AED
 
-2026-07-16 ! "Unknown supplier" "E sas"
+2026-07-16 * "Unknown supplier" "E sas"
   wio-ref: "274848216"
   wio-type: "Card"
   source: "Wio export"
   note: "Unknown payment: what is this, and is it business or private?"
   approved: "2026-11-03"
   owner-answer: "Bagage extra boeken"
-  open: "Extra baggage on the NL trip; treated like the flight (25/75); confirm"
+  owner-decision: "2026-11-03: confirmed, 25% business / 75% private like the return flight"
   Assets:Bank:Wio-AED                               -162.50 AED
   Expenses:Travel:Flights                             40.63 AED
   Assets:Receivables:Director:Umar                   121.87 AED
